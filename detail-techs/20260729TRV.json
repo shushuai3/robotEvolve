@@ -1,0 +1,17 @@
+{
+  "id": "20260729TRV",
+  "title": "TurboVLA Runs a Real-Time VLA at 32 Hz on One RTX 4090",
+  "date": "2026-07-29",
+  "organization": "HUST & Huawei",
+  "summary": "Standard VLA models route perception through a large language model on an LLM-centric V -> L -> A pathway, paying that cost on every policy invocation. TurboVLA reformulates it as a direct V + L -> A mapping: vision and language are encoded independently and exchange information directly, with no LLM sitting between perception and action. The reported operating point is 32 Hz inference on a single RTX 4090 in under 1 GB of VRAM.",
+  "whyItMatters": "Sub-gigabyte, 32 Hz control collapses the hardware bill for a generalist policy from a server rack to a consumer GPU — and 32 Hz is fast enough for closed-loop contact-rich work, not just open-loop demos. Dropping the LLM from the inner loop challenges the assumption that a language backbone has to mediate perception and action at every timestep.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2607.27205",
+    "code": "https://github.com/H-EmbodVis/TurboVLA"
+  },
+  "tags": [
+    "vla",
+    "efficiency",
+    "manipulation"
+  ]
+}

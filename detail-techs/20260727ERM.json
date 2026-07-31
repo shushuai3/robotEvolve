@@ -1,0 +1,16 @@
+{
+  "id": "20260727ERM",
+  "title": "Enigma Raises $71M for Intuitive Robot Control",
+  "date": "2026-07-27",
+  "organization": "Enigma",
+  "summary": "Enigma, founded by Jonathan Jacobi and Gal Niv, raised a $71 million seed round led by Index Ventures and Ribbit Capital with participation from Sarah Guo's Conviction. The company runs more than 100 proprietary robotic arms in hangars across Israel and California, using them for tasks as varied as painting, sword fighting and chemistry experiments. Its stated goal is to make controlling a robot as intuitive as turning a car's volume knob, informed by a large-scale online experiment on how people prefer to steer machines.",
+  "whyItMatters": "Most embodied-AI money is chasing autonomy; Enigma is buying down the interface instead. By collecting human preference data on robot control at internet scale — rather than teleoperation demonstrations for a single task — it treats the human-robot handoff as the learnable component, which is the part that decides whether a capable robot is actually usable on a real job site.",
+  "links": {
+    "news": "https://techcrunch.com/2026/07/27/enigma-raises-70m-to-make-controlling-a-robot-as-easy-as-adjusting-the-volume/"
+  },
+  "tags": [
+    "funding",
+    "industry",
+    "manipulation"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "20260728III",
+  "title": "INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models",
+  "date": "2026-07-28",
+  "organization": "Zhejiang University",
+  "summary": "INTACT is a JEPA-style latent world model for goal-conditioned control that removes the planning search normally needed at inference. It learns an isomorphic mapping from intent to action, so latent dynamics can be rolled out and acted on directly rather than searched over. The Zhejiang University release ships code and a project site covering imitation learning, latent dynamics and model-predictive control.",
+  "whyItMatters": "Latent world models are usually paired with an expensive search or MPC loop at runtime, which is what keeps them out of real-time control. Making intent and action isomorphic in latent space means the plan is read off the representation instead of searched for, removing the main latency barrier to using JEPA-style models on hardware.",
+  "links": {
+    "code": "https://github.com/zju3dv/INTACT-JEPA",
+    "project": "https://zju3dv.github.io/INTACT-JEPA/"
+  },
+  "tags": [
+    "world-model",
+    "imitation-learning",
+    "planning"
+  ]
+}

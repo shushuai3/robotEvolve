@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#04060f"/>
+      <stop offset="55%" stop-color="#0a0f2b"/>
+      <stop offset="100%" stop-color="#141b46"/>
+    </linearGradient>
+    <radialGradient id="env" cx="35%" cy="28%" r="85%">
+      <stop offset="0%" stop-color="#8ff0ff"/>
+      <stop offset="55%" stop-color="#3ec7e8"/>
+      <stop offset="100%" stop-color="#1d7fb8"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <g fill="#ffffff">
+    <circle cx="110" cy="90" r="2" opacity=".8"/><circle cx="300" cy="50" r="1.5" opacity=".5"/>
+    <circle cx="520" cy="120" r="2" opacity=".7"/><circle cx="760" cy="60" r="1.5" opacity=".6"/>
+    <circle cx="1050" cy="100" r="2" opacity=".8"/><circle cx="920" cy="200" r="1.5" opacity=".5"/>
+    <circle cx="180" cy="260" r="1.5" opacity=".6"/><circle cx="1120" cy="320" r="1.5" opacity=".5"/>
+    <circle cx="80" cy="480" r="1.5" opacity=".4"/><circle cx="640" cy="40" r="1.5" opacity=".6"/>
+  </g>
+  <g transform="translate(830 90) scale(2.6)">
+    <path fill="url(#env)" d="M50 4c24 0 40 18 40 42 0 20-15 33-26 43l-4 9H40l-4-9C25 79 10 66 10 46 10 22 26 4 50 4Z"/>
+    <path fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5" d="M50 4c-11 13-14 60-9 94M50 4c11 13 14 60 9 94M50 4v94"/>
+    <line x1="41" y1="98" x2="39" y2="110" stroke="#cfd8ff" stroke-width="1.6"/>
+    <line x1="59" y1="98" x2="61" y2="110" stroke="#cfd8ff" stroke-width="1.6"/>
+    <rect x="37" y="110" width="26" height="15" rx="3" fill="#a06a33" stroke="#6b431c" stroke-width="1.6"/>
+  </g>
+  <text x="90" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="92" font-weight="700" fill="#e8ecff">Robot<tspan fill="#5ee6ff">Evolve</tspan></text>
+  <text x="94" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#9aa3c7">Tracking the evolution of robots &amp; AI</text>
+  <text x="94" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#5ee6ff" letter-spacing="4">WWW.ROBOTEVOLVE.COM</text>
+</svg>

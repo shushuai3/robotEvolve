@@ -1,0 +1,17 @@
+{
+  "id": "20260730XND",
+  "title": "X-NavDP Generalizes Navigation Diffusion Policies Across Embodiments",
+  "date": "2026-07-30",
+  "organization": "Shanghai AI Laboratory",
+  "summary": "Navigation diffusion policies are normally pretrained on demonstrations from a fully-informed oracle planner tuned to one nominal robot, which limits them to that body and to easy scenarios. X-NavDP post-trains such policies with reinforcement learning using group Q-score reweighted matching, addressing the unstable policy gradients that come from a diffusion policy's intractable likelihood. The result is reactive behaviour — escaping dead ends, detouring long obstacles — from onboard local observations across different embodiments.",
+  "whyItMatters": "Earlier attempts to RL-finetune diffusion policies produced only marginal gains because the likelihood term is intractable. Reweighting by group Q-scores sidesteps that and makes post-training actually move the policy, which is the missing step between a demonstration-cloned navigator and one that improvises when the oracle's assumptions break.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2607.28560",
+    "project": "https://yty-sky.github.io/x-navdp-project-page"
+  },
+  "tags": [
+    "navigation",
+    "diffusion-policy",
+    "reinforcement-learning"
+  ]
+}

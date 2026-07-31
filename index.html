@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RobotEvolve — Tracking the evolution of robots &amp; AI</title>
+  <meta name="description" content="RobotEvolve tracks the evolution of robots and AI: this week's news with organization and date, plus the hottest topics with their representative technologies.">
+  <link rel="canonical" href="https://www.robotevolve.com/">
+  <meta property="og:site_name" content="RobotEvolve">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RobotEvolve — Tracking the evolution of robots &amp; AI">
+  <meta property="og:description" content="This week's robotics &amp; AI news, plus the hottest topics with their representative technologies.">
+  <meta property="og:url" content="https://www.robotevolve.com/">
+  <meta property="og:image" content="https://www.robotevolve.com/assets/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <svg class="brand-logo" width="212" height="42" viewBox="30 62 1140 226" aria-hidden="true" focusable="false">
+        <!-- the full march of progress: arm -> mobile -> legged -> humanoid -> AI-driven -->
+        <defs>
+          <linearGradient id="logoGrad" x1="1015" y1="0" x2="1095" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#22d3ee"/>
+            <stop offset="1" stop-color="#e879f9"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+          <!-- ground line with arrow -->
+          <g stroke-width="5" opacity=".5">
+            <path d="M40 272 H1132"/>
+            <path d="M1132 264 l20 8 l-20 8"/>
+          </g>
+          <!-- 01 · industrial arm -->
+          <g opacity=".55">
+            <path d="M75 272 v-16 h70 v16"/>
+            <path d="M110 256 L145 200"/>
+            <path d="M145 200 L110 150"/>
+            <path d="M110 150 l-15 -13 M110 150 l3 -19"/>
+            <circle cx="110" cy="256" r="6"/>
+            <circle cx="145" cy="200" r="6"/>
+            <circle cx="110" cy="150" r="6"/>
+          </g>
+          <!-- 02 · mobile + sensors -->
+          <g opacity=".68">
+            <circle cx="310" cy="262" r="10"/>
+            <circle cx="354" cy="262" r="10"/>
+            <path d="M296 254 v-48 h72 v48"/>
+            <path d="M332 206 v-28"/>
+            <path d="M316 178 h32 v-22 h-32 z"/>
+            <path d="M332 156 v-14"/>
+            <circle cx="332" cy="167" r="6" fill="currentColor" stroke="none"/>
+            <circle cx="332" cy="138" r="7" fill="currentColor" stroke="none"/>
+          </g>
+          <!-- 03 · legged -->
+          <g opacity=".8">
+            <path d="M522 186 h96 a12 12 0 0 1 12 12 v6 a12 12 0 0 1 -12 12 h-96 a12 12 0 0 1 -12 -12 v-6 a12 12 0 0 1 12 -12 z"/>
+            <path d="M528 216 l-2 26 l6 30"/>
+            <path d="M552 216 v26 l-4 30"/>
+            <path d="M600 216 l4 26 l-2 30"/>
+            <path d="M622 216 l2 26 l4 30"/>
+            <path d="M628 188 l20 -17"/>
+            <path d="M640 176 h30 v-18 h-30 z"/>
+            <path d="M510 190 l-14 -12"/>
+            <circle cx="662" cy="167" r="6" fill="currentColor" stroke="none"/>
+          </g>
+          <!-- 04 · humanoid v1 (hunched) -->
+          <g opacity=".9">
+            <path d="M786 272 l4 -26 l14 -22"/>
+            <path d="M836 272 l-6 -24 l-26 -24"/>
+            <path d="M804 224 L838 172"/>
+            <path d="M838 172 L852 226"/>
+            <path d="M834 178 L818 224"/>
+            <circle cx="846" cy="158" r="13"/>
+          </g>
+          <!-- 05 · AI-driven (upright, glowing mind) -->
+          <g stroke="url(#logoGrad)">
+            <path d="M1038 272 V202"/>
+            <path d="M1066 272 V202"/>
+            <path d="M1038 202 h28"/>
+            <path d="M1040 202 V138"/>
+            <path d="M1064 202 V138"/>
+            <path d="M1034 138 h36"/>
+            <path d="M1034 138 l-8 54"/>
+            <path d="M1070 138 l20 -34"/>
+            <path d="M1052 138 v-10"/>
+            <circle class="logo-glow" cx="1052" cy="114" r="14"/>
+          </g>
+          <!-- spark of intelligence -->
+          <g stroke="#8b5cf6" stroke-width="5">
+            <path d="M1028 99 L1041 106"/>
+            <path d="M1052 86 v12"/>
+            <path d="M1076 99 L1063 106"/>
+          </g>
+          <g fill="url(#logoGrad)" stroke="none">
+            <circle cx="1022" cy="94" r="7"/>
+            <circle cx="1052" cy="82" r="7"/>
+            <circle cx="1082" cy="94" r="7"/>
+          </g>
+        </g>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Robot<b>Evolve</b></span>
+        <span class="tagline">Tracking the evolution of robots &amp; AI</span>
+      </span>
+    </a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu"
+            aria-controls="siteNav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <a href="#news">Weekly news</a>
+      <a href="#trend">Trend</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== WEEKLY NEWS: the floating sky ===== -->
+    <section class="section section-first" id="news">
+      <div class="section-head">
+        <h1>This Week's <span class="gradient-text">Signals</span></h1>
+      </div>
+      <p id="sky-status" class="status" hidden></p>
+      <div id="sky" class="sky" aria-label="This week's technologies, newest first"></div>
+    </section>
+
+    <!-- ===== TREND: hottest topics ===== -->
+    <section class="section" id="trend">
+      <div class="section-head reveal">
+        <h2>Where the Heat <span class="gradient-text">Concentrates</span></h2>
+      </div>
+      <div id="topic-chart" class="topic-chart reveal"
+           aria-label="Bar chart: tracked entries per topic, with the leading technology of each"></div>
+
+      <div class="evo-wrap reveal" aria-label="Illustration: robot evolution from industrial arm to AI-driven humanoid, in the style of the human evolution march">
+        <div class="evo-scroll">
+          <svg id="evoSvg" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <linearGradient id="evoGrad" x1="1015" y1="0" x2="1095" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#22d3ee"/>
+                <stop offset="1" stop-color="#e879f9"/>
+              </linearGradient>
+            </defs>
+
+            <!-- ground line with arrow -->
+            <g class="evo-ground">
+              <path class="evo-path" pathLength="1" d="M40 272 H1132"/>
+              <path class="evo-path" pathLength="1" d="M1132 264 l20 8 l-20 8"/>
+            </g>
+
+            <!-- 01 · industrial arm -->
+            <g class="evo-g evo-g1">
+              <path class="evo-path" pathLength="1" d="M75 272 v-16 h70 v16"/>
+              <path class="evo-path" pathLength="1" d="M110 256 L145 200"/>
+              <path class="evo-path" pathLength="1" d="M145 200 L110 150"/>
+              <path class="evo-path" pathLength="1" d="M110 150 l-15 -13 M110 150 l3 -19"/>
+              <circle class="evo-path" pathLength="1" cx="110" cy="256" r="5"/>
+              <circle class="evo-path" pathLength="1" cx="145" cy="200" r="5"/>
+              <circle class="evo-path" pathLength="1" cx="110" cy="150" r="5"/>
+              <text class="evo-label" x="110" y="302" text-anchor="middle">1961 · ARM</text>
+            </g>
+
+            <!-- 02 · mobile + sensors -->
+            <g class="evo-g evo-g2">
+              <circle class="evo-path" pathLength="1" cx="310" cy="262" r="10"/>
+              <circle class="evo-path" pathLength="1" cx="354" cy="262" r="10"/>
+              <path class="evo-path" pathLength="1" d="M296 254 v-48 h72 v48"/>
+              <path class="evo-path" pathLength="1" d="M332 206 v-28"/>
+              <path class="evo-path" pathLength="1" d="M316 178 h32 v-22 h-32 z"/>
+              <path class="evo-path" pathLength="1" d="M332 156 v-14"/>
+              <circle class="evo-dot" cx="332" cy="167" r="3"/>
+              <circle class="evo-dot" cx="332" cy="138" r="3.5"/>
+              <text class="evo-label" x="332" y="302" text-anchor="middle">1970s · MOBILE</text>
+            </g>
+
+            <!-- 03 · legged -->
+            <g class="evo-g evo-g3">
+              <path class="evo-path" pathLength="1" d="M522 186 h96 a12 12 0 0 1 12 12 v6 a12 12 0 0 1 -12 12 h-96 a12 12 0 0 1 -12 -12 v-6 a12 12 0 0 1 12 -12 z"/>
+              <path class="evo-path" pathLength="1" d="M528 216 l-2 26 l6 30"/>
+              <path class="evo-path" pathLength="1" d="M552 216 v26 l-4 30"/>
+              <path class="evo-path" pathLength="1" d="M600 216 l4 26 l-2 30"/>
+              <path class="evo-path" pathLength="1" d="M622 216 l2 26 l4 30"/>
+              <path class="evo-path" pathLength="1" d="M628 188 l20 -17"/>
+              <path class="evo-path" pathLength="1" d="M640 176 h30 v-18 h-30 z"/>
+              <path class="evo-path" pathLength="1" d="M510 190 l-14 -12"/>
+              <circle class="evo-dot" cx="662" cy="167" r="2.5"/>
+              <text class="evo-label" x="575" y="302" text-anchor="middle">2005+ · LEGGED</text>
+            </g>
+
+            <!-- 04 · humanoid v1 (hunched) -->
+            <g class="evo-g evo-g4">
+              <path class="evo-path" pathLength="1" d="M786 272 l4 -26 l14 -22"/>
+              <path class="evo-path" pathLength="1" d="M836 272 l-6 -24 l-26 -24"/>
+              <path class="evo-path" pathLength="1" d="M804 224 L838 172"/>
+              <path class="evo-path" pathLength="1" d="M838 172 L852 226"/>
+              <path class="evo-path" pathLength="1" d="M834 178 L818 224"/>
+              <circle class="evo-path" pathLength="1" cx="846" cy="158" r="13"/>
+              <text class="evo-label" x="812" y="302" text-anchor="middle">2015+ · HUMANOID</text>
+            </g>
+
+            <!-- 05 · AI-driven (upright, glowing mind) -->
+            <g class="evo-g evo-g5">
+              <path class="evo-path" pathLength="1" d="M1038 272 V202"/>
+              <path class="evo-path" pathLength="1" d="M1066 272 V202"/>
+              <path class="evo-path" pathLength="1" d="M1038 202 h28"/>
+              <path class="evo-path" pathLength="1" d="M1040 202 V138"/>
+              <path class="evo-path" pathLength="1" d="M1064 202 V138"/>
+              <path class="evo-path" pathLength="1" d="M1034 138 h36"/>
+              <path class="evo-path" pathLength="1" d="M1034 138 l-8 54"/>
+              <path class="evo-path" pathLength="1" d="M1070 138 l20 -34"/>
+              <path class="evo-path" pathLength="1" d="M1052 138 v-10"/>
+              <circle class="evo-path evo-glow" pathLength="1" cx="1052" cy="114" r="14"/>
+              <g class="evo-spark">
+                <circle class="evo-dot" cx="1022" cy="94" r="3"/>
+                <circle class="evo-dot" cx="1052" cy="82" r="3"/>
+                <circle class="evo-dot" cx="1082" cy="94" r="3"/>
+                <path class="evo-line" d="M1028 99 L1041 106"/>
+                <path class="evo-line" d="M1052 86 v12"/>
+                <path class="evo-line" d="M1076 99 L1063 106"/>
+              </g>
+              <text class="evo-label evo-label-now" x="1052" y="302" text-anchor="middle">NOW · AI-DRIVEN</text>
+            </g>
+          </svg>
+        </div>
+        <p class="evo-caption">The march of progress — robot edition</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    RobotEvolve · Tracking the evolution of robots &amp; AI ·
+    <a href="https://www.robotevolve.com">www.robotevolve.com</a>
+  </footer>
+
+  <script src="assets/detail.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+[
+  {
+    "id": "20260730XND",
+    "title": "X-NavDP Generalizes Navigation Diffusion Policies Across Embodiments",
+    "date": "2026-07-30",
+    "organization": "Shanghai AI Laboratory",
+    "category": "tech",
+    "tags": [
+      "navigation",
+      "diffusion-policy",
+      "reinforcement-learning"
+    ],
+    "detailPath": "detail-techs/20260730XND.json"
+  },
+  {
+    "id": "20260730WAP",
+    "title": "World Action Planner: Decision-Making with Action-Conditioned World Models",
+    "date": "2026-07-30",
+    "organization": "Harvard University",
+    "category": "tech",
+    "tags": [
+      "world-model",
+      "planning",
+      "manipulation"
+    ],
+    "detailPath": "detail-techs/20260730WAP.json"
+  },
+  {
+    "id": "20260730GR2",
+    "title": "Gemini Robotics 2 Brings Whole-Body Intelligence to Robots",
+    "date": "2026-07-30",
+    "organization": "Google DeepMind",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "foundation-model",
+      "manipulation",
+      "locomotion",
+      "multi-robot"
+    ],
+    "detailPath": "detail-techs/20260730GR2.json"
+  },
+  {
+    "id": "20260729TRV",
+    "title": "TurboVLA Runs a Real-Time VLA at 32 Hz on One RTX 4090",
+    "date": "2026-07-29",
+    "organization": "HUST & Huawei",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "efficiency",
+      "manipulation"
+    ],
+    "detailPath": "detail-techs/20260729TRV.json"
+  },
+  {
+    "id": "20260729HCV",
+    "title": "HumanCLAW Asks Whether Vision-Language Models Can Act Through a Body",
+    "date": "2026-07-29",
+    "organization": "Meta & NTU",
+    "category": "tech",
+    "tags": [
+      "benchmark",
+      "foundation-model",
+      "humanoid"
+    ],
+    "detailPath": "detail-techs/20260729HCV.json"
+  },
+  {
+    "id": "20260728TRR",
+    "title": "Teradyne Robotics Revenue Jumps 33% on AI Demand",
+    "date": "2026-07-28",
+    "organization": "Teradyne Robotics",
+    "category": "news",
+    "tags": [
+      "industry",
+      "hardware",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260728TRR.json"
+  },
+  {
+    "id": "20260728III",
+    "title": "INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models",
+    "date": "2026-07-28",
+    "organization": "Zhejiang University",
+    "category": "tech",
+    "tags": [
+      "world-model",
+      "imitation-learning",
+      "planning"
+    ],
+    "detailPath": "detail-techs/20260728III.json"
+  },
+  {
+    "id": "20260728ARC",
+    "title": "Agility Robotics Confirms $2.5B Listing and Fremont AI Hub",
+    "date": "2026-07-28",
+    "organization": "Agility Robotics",
+    "category": "news",
+    "tags": [
+      "industry",
+      "deployment",
+      "humanoid"
+    ],
+    "detailPath": "detail-techs/20260728ARC.json"
+  },
+  {
+    "id": "20260727TVH",
+    "title": "Tau-0 VLA: Hierarchical Robot Foundation Model with Test-Time Compute",
+    "date": "2026-07-27",
+    "organization": "Shanghai Innovation Institute",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "world-model",
+      "planning"
+    ],
+    "detailPath": "detail-techs/20260727TVH.json"
+  },
+  {
+    "id": "20260727ERM",
+    "title": "Enigma Raises $71M for Intuitive Robot Control",
+    "date": "2026-07-27",
+    "organization": "Enigma",
+    "category": "news",
+    "tags": [
+      "funding",
+      "industry",
+      "manipulation"
+    ],
+    "detailPath": "detail-techs/20260727ERM.json"
+  },
+  {
+    "id": "20260726RSR",
+    "title": "RynnValue Scales Robotic Value Foundation Models with Temporal Distance",
+    "date": "2026-07-26",
+    "organization": "Alibaba DAMO Academy",
+    "category": "tech",
+    "tags": [
+      "foundation-model",
+      "reinforcement-learning"
+    ],
+    "detailPath": "detail-techs/20260726RSR.json"
+  },
+  {
+    "id": "20260725HDP",
+    "title": "Hyundai Declares Physical AI Strategy at SF AI Summit",
+    "date": "2026-07-25",
+    "organization": "Hyundai Motor Group",
+    "category": "news",
+    "tags": [
+      "industry",
+      "humanoid",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260725HDP.json"
+  }
+]

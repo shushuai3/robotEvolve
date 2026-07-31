@@ -1,0 +1,17 @@
+{
+  "id": "20260728ARC",
+  "title": "Agility Robotics Confirms $2.5B Listing and Fremont AI Hub",
+  "date": "2026-07-28",
+  "organization": "Agility Robotics",
+  "summary": "Agility Robotics is going public through a merger with Churchill Capital Corp XI at a US$2.5 billion pre-money valuation, a deal expected to close in 2026 and to deliver over US$620 million in gross proceeds. The July 28 update reported that its Digit humanoid has logged more than 65,000 operating hours across nine customer facilities against more than US$300 million in multi-year orders. Proceeds go to fulfilling those orders and scaling Digit v5 production, alongside a new 60,000-square-foot Fremont, California AI hub for training, software and field testing that adds roughly 200 technical roles.",
+  "whyItMatters": "Operating hours, not demo videos, are the metric being taken public: 65,000 hours across nine real customer sites is the first humanoid deployment record large enough to underwrite a public listing. It also puts a humanoid AI training facility next door to Tesla's Optimus line in Fremont, turning the Bay Area into a head-to-head proving ground for warehouse humanoids.",
+  "links": {
+    "news": "https://www.globenewswire.com/news-release/2026/07/28/3333986/0/en/Humanoid-Global-Provides-Update-on-Agility-Robotics-Public-Listing-Opens-Silicon-Valley-AI-Hub-to-Scale-Digit-Deployments.html",
+    "project": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/"
+  },
+  "tags": [
+    "industry",
+    "deployment",
+    "humanoid"
+  ]
+}
