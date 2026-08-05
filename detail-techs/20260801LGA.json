@@ -1,0 +1,16 @@
+{
+  "id": "20260801LGA",
+  "title": "Light-Loco-Parkour Gives a Humanoid One Policy for Parkour",
+  "date": "2026-08-01",
+  "organization": "Light Origins",
+  "summary": "Light Origins published Light-Loco-Parkour on arXiv on August 1, 2026: a single end-to-end policy for perceptive whole-body humanoid locomotion, conditioned only on onboard depth and a velocity command. The policy decides on its own when to walk, balance, climb, step down or vault, with no reference motion, skill label, hand-coded gate or runtime motion graph. It acquires terrain-conditioned skills from sparse seeds — expanding a single motion into dynamically feasible, terrain-paired references across obstacle geometries — instead of relying on a large motion corpus, and learns skill transitions from reward alone. The same policy transfers zero-shot to indoor and outdoor hardware, holding high success on benchmark terrains and on unseen obstacle variations.",
+  "whyItMatters": "Humanoid locomotion has split into two camps: systems that track expressive whole-body references but fall apart off known terrain, and reactive terrain controllers that leave the arms, torso and knees idle. Folding both into one depth-conditioned policy — with the robot choosing the skill rather than a state machine choosing for it — removes the runtime scaffolding that keeps parkour demos tied to instrumented courses. Learning from sparse motion seeds rather than a large corpus matters just as much, since motion-capture data is the usual reason these controllers stay in the lab.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2608.02653"
+  },
+  "tags": [
+    "locomotion",
+    "reinforcement-learning",
+    "humanoid"
+  ]
+}

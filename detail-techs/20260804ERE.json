@@ -1,0 +1,17 @@
+{
+  "id": "20260804ERE",
+  "title": "ETA Recasts Embodied Tasks as an Agent Calling Robot Tools",
+  "date": "2026-08-04",
+  "organization": "Shanghai Innovation Institute",
+  "summary": "Posted to arXiv on August 4, 2026, the Embodied Task Agent (ETA) paper argues that end-to-end observation-to-action policies inherit their generalization from robot training data coverage and are hard to control or inspect over long tasks. ETA instead structures a robot as three parts: a Planner that issues one Tool call at a time, an Interface that gates execution, and a World that returns the result plus a fresh observation. That loop lets the agent verify each outcome, revise the plan, and file both successes and failures as reusable experience. The team from Shanghai Innovation Institute, Fudan, Jilin, Nanjing and Zhejiang universities released OpenETA as the open-source implementation, with swappable Planners, composable Tools and Skills, auditable memory, replayable trajectories, and one interface spanning simulation and real robots. It can also run as a thin plugin for a coding agent such as Codex, exposing only observe, mark_point and move_to.",
+  "whyItMatters": "Most robot foundation-model work answers the generalization question by adding data; ETA answers it by adding structure. Making the robot a tool-calling agent means every step produces an inspectable receipt, so a long task can be audited, resumed, or corrected instead of failing opaquely — the same shift that turned language models into usable software agents. The Codex plugin is the pointed part of the claim: if a general coding agent can drive a robot through three primitives, the boundary between digital agents and embodied ones is thinner than the VLA literature assumes.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2608.03924",
+    "code": "https://github.com/OpenMOSS/OpenETA"
+  },
+  "tags": [
+    "planning",
+    "foundation-model",
+    "simulation"
+  ]
+}

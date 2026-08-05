@@ -1,5 +1,161 @@
 [
   {
+    "id": "20260805ZSC",
+    "title": "Zoox Starts Charging for Robotaxi Rides in Las Vegas",
+    "date": "2026-08-05",
+    "organization": "Zoox",
+    "category": "news",
+    "tags": [
+      "deployment",
+      "industry",
+      "navigation"
+    ],
+    "detailPath": "detail-techs/20260805ZSC.json"
+  },
+  {
+    "id": "20260804ERE",
+    "title": "ETA Recasts Embodied Tasks as an Agent Calling Robot Tools",
+    "date": "2026-08-04",
+    "organization": "Shanghai Innovation Institute",
+    "category": "tech",
+    "tags": [
+      "planning",
+      "foundation-model",
+      "simulation"
+    ],
+    "detailPath": "detail-techs/20260804ERE.json"
+  },
+  {
+    "id": "20260804UNP",
+    "title": "U.S. Navy Picks Blue Water Autonomy for Deep-Ocean Survey Ships",
+    "date": "2026-08-04",
+    "organization": "Blue Water Autonomy",
+    "category": "news",
+    "tags": [
+      "industry",
+      "deployment",
+      "navigation"
+    ],
+    "detailPath": "detail-techs/20260804UNP.json"
+  },
+  {
+    "id": "20260803WRP",
+    "title": "Walden Robotics Partners with Toyota on Practical Humanoids",
+    "date": "2026-08-03",
+    "organization": "Walden Robotics",
+    "category": "news",
+    "tags": [
+      "humanoid",
+      "industry",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260803WRP.json"
+  },
+  {
+    "id": "20260803RRE",
+    "title": "Reimagine Robotics Exits Stealth with Robots That Learn on the Job",
+    "date": "2026-08-03",
+    "organization": "Reimagine Robotics",
+    "category": "news",
+    "tags": [
+      "funding",
+      "industry",
+      "imitation-learning"
+    ],
+    "detailPath": "detail-techs/20260803RRE.json"
+  },
+  {
+    "id": "20260803ESR",
+    "title": "Ego2Robot Synthesizes Robot Training Data from Egocentric Video",
+    "date": "2026-08-03",
+    "organization": "Renmin & Alibaba Qwen",
+    "category": "tech",
+    "tags": [
+      "dataset",
+      "vla",
+      "imitation-learning"
+    ],
+    "detailPath": "detail-techs/20260803ESR.json"
+  },
+  {
+    "id": "20260803TTA",
+    "title": "Teleopit Teleoperates a Full Humanoid Body from VR",
+    "date": "2026-08-03",
+    "organization": "Westlake University",
+    "category": "tech",
+    "tags": [
+      "humanoid",
+      "imitation-learning",
+      "hardware"
+    ],
+    "detailPath": "detail-techs/20260803TTA.json"
+  },
+  {
+    "id": "20260802FDW",
+    "title": "FACT Diagnoses Why VLAs Fail at Contact-Rich Manipulation",
+    "date": "2026-08-02",
+    "organization": "Stanford University",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "manipulation",
+      "benchmark"
+    ],
+    "detailPath": "detail-techs/20260802FDW.json"
+  },
+  {
+    "id": "20260801LGA",
+    "title": "Light-Loco-Parkour Gives a Humanoid One Policy for Parkour",
+    "date": "2026-08-01",
+    "organization": "Light Origins",
+    "category": "tech",
+    "tags": [
+      "locomotion",
+      "reinforcement-learning",
+      "humanoid"
+    ],
+    "detailPath": "detail-techs/20260801LGA.json"
+  },
+  {
+    "id": "20260731CTG",
+    "title": "CLIFT Turns Gemini Robotics On-Device into a Humanoid Specialist",
+    "date": "2026-07-31",
+    "organization": "UC Berkeley & DeepMind",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "reinforcement-learning",
+      "humanoid"
+    ],
+    "detailPath": "detail-techs/20260731CTG.json"
+  },
+  {
+    "id": "20260731WAA",
+    "title": "WCM Adds a World Model to the Critic for VLA Reinforcement Learning",
+    "date": "2026-07-31",
+    "organization": "Tongji & Fudan",
+    "category": "tech",
+    "tags": [
+      "world-model",
+      "reinforcement-learning",
+      "vla"
+    ],
+    "detailPath": "detail-techs/20260731WAA.json"
+  },
+  {
+    "id": "20260731PAD",
+    "title": "Procore Acquires DroneDeploy for $845M",
+    "date": "2026-07-31",
+    "organization": "Procore Technologies",
+    "category": "news",
+    "tags": [
+      "industry",
+      "perception",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260731PAD.json"
+  },
+  {
     "id": "20260730XND",
     "title": "X-NavDP Generalizes Navigation Diffusion Policies Across Embodiments",
     "date": "2026-07-30",

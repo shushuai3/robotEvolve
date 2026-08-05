@@ -1,0 +1,17 @@
+{
+  "id": "20260802FDW",
+  "title": "FACT Diagnoses Why VLAs Fail at Contact-Rich Manipulation",
+  "date": "2026-08-02",
+  "organization": "Stanford University",
+  "summary": "Stanford's IPRL lab posted a study on August 2, 2026 asking not how to patch vision-language-action failures on contact-rich tasks but why they happen. It isolates two distinct causes: precision failures, which trace back to a training mismatch in flow-matching policies, and force failures, which come from the distinctive structure of force signals rather than from the architecture consuming them. Each gets its own targeted fix, combined into a method the authors call FACT. Across five contact-rich tasks and an evaluation spanning nearly 2,500 real-world rollouts, FACT reaches 66% average success against 41% for the strongest prior baseline.",
+  "whyItMatters": "Contact-rich work — insertion, wiping, anything where the robot pushes back against the world — is where general-purpose VLAs still visibly break, and the field's response has mostly been to bolt on force-augmented architectures and regularizers without establishing what was actually wrong. Separating a policy-training mismatch from a force-signal-structure problem turns a vague weakness into two fixable defects, and a 25-point gain measured over 2,500 physical rollouts rather than in simulation is the kind of evidence that transfers. It also raises the bar for the field: the comparison here is real hardware at a sample size where the numbers mean something.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2608.01402",
+    "project": "https://stanford-iprl-lab.github.io/fact/"
+  },
+  "tags": [
+    "vla",
+    "manipulation",
+    "benchmark"
+  ]
+}

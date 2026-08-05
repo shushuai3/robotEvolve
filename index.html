@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RobotEvolve — Tracking the evolution of robots &amp; AI</title>
-  <meta name="description" content="RobotEvolve tracks the evolution of robots and AI: this week's news with organization and date, plus the hottest topics with their representative technologies.">
+  <meta name="description" content="RobotEvolve tracks the evolution of robots and AI: recent signals with organization and date, plus the hottest topics with their representative technologies.">
   <link rel="canonical" href="https://www.robotevolve.com/">
   <meta property="og:site_name" content="RobotEvolve">
   <meta property="og:type" content="website">
   <meta property="og:title" content="RobotEvolve — Tracking the evolution of robots &amp; AI">
-  <meta property="og:description" content="This week's robotics &amp; AI news, plus the hottest topics with their representative technologies.">
+  <meta property="og:description" content="Recent robotics &amp; AI signals, plus the hottest topics with their representative technologies.">
   <meta property="og:url" content="https://www.robotevolve.com/">
   <meta property="og:image" content="https://www.robotevolve.com/assets/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -111,7 +111,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-      <a href="#news">Weekly news</a>
+      <a href="#news">Recent signals</a>
       <a href="#trend">Trend</a>
     </nav>
   </header>
@@ -120,10 +120,13 @@
     <!-- ===== WEEKLY NEWS: the floating sky ===== -->
     <section class="section section-first" id="news">
       <div class="section-head">
-        <h1>This Week's <span class="gradient-text">Signals</span></h1>
+        <h1>Recent <span class="gradient-text">Signals</span></h1>
       </div>
       <p id="sky-status" class="status" hidden></p>
-      <div id="sky" class="sky" aria-label="This week's technologies, newest first"></div>
+      <div id="sky" class="sky" aria-label="Recent signals, newest first"></div>
+      <button type="button" id="loadMore" class="load-more" aria-controls="sky" hidden>
+        Load one more week
+      </button>
     </section>
 
     <!-- ===== TREND: hottest topics ===== -->

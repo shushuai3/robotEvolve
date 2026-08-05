@@ -1,0 +1,16 @@
+{
+  "id": "20260803WRP",
+  "title": "Walden Robotics Partners with Toyota on Practical Humanoids",
+  "date": "2026-08-03",
+  "organization": "Walden Robotics",
+  "summary": "IEEE Spectrum reported on August 3, 2026 on Walden Robotics — a Toyota Research Institute spinout led by CEO and co-founder Russ Tedrake — and its continuing partnership with Toyota, including a robot already deployed in a Toyota factory. Walden left stealth on July 15, 2026 with $300 million at a $1.1 billion valuation. Its robot is a deliberately unglamorous wheeled humanoid: no legs, a large wheeled base that carries batteries and gives static stability, and simple two-finger grippers chosen for durability on a factory floor. The company targets manufacturing and logistics work that is repetitive enough to justify 24/7 utilization, and says it picked the application before designing the robot rather than the other way round.",
+  "whyItMatters": "The humanoid field has mostly optimized for the demo: legs, five fingers, human proportions. Walden inverts that, dropping legs and dexterity in exchange for uptime, stability and battery capacity, and it can do so because Toyota supplies a real factory to be judged against rather than a stage. Coming from the TRI lineage — a decade of diffusion-policy and manipulation research — the bet is that the hard part was never the body, and that a boring wheeled base with good policies reaches paid work faster than a bipedal one.",
+  "links": {
+    "news": "https://spectrum.ieee.org/humanoid-robots-walden-robotics-toyota"
+  },
+  "tags": [
+    "humanoid",
+    "industry",
+    "deployment"
+  ]
+}

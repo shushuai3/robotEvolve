@@ -1,0 +1,17 @@
+{
+  "id": "20260803ESR",
+  "title": "Ego2Robot Synthesizes Robot Training Data from Egocentric Video",
+  "date": "2026-08-03",
+  "organization": "Renmin & Alibaba Qwen",
+  "summary": "Ego2Robot, released on arXiv on August 3, 2026 by AIM3 Lab at Renmin University of China with Alibaba's Qwen Team and ShanghaiTech University, is a pipeline that converts egocentric human manipulation video into robot training data through action retargeting, robot-arm visual synthesis and multi-level quality curation. It runs on both curated datasets and in-the-wild video, and produces 18,561 hours of robot training data across 15 robot morphologies — the largest ego-to-robot dataset to date. To measure generalization the authors extend RoboTwin2.0 with separate perturbation axes for visual appearance, scene layout, embodiment morphology and task semantics. Jointly pretraining on Ego2Robot-synthesized data plus real robot data improves out-of-distribution generalization across perturbation types, with the gains confirmed on real hardware.",
+  "whyItMatters": "Robot foundation models are starved of data in a way language models never were, and teleoperated demonstrations cost hours of human time per hour of data. Egocentric video is the one manipulation corpus that already exists at internet scale, so the question that matters is whether retargeted human video helps at pretraining scale rather than just for single-task policies — and 18,561 hours across 15 morphologies is the first answer at that size. Splitting the evaluation into appearance, layout, embodiment and semantics axes also makes the result diagnosable instead of a single benchmark number.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2608.02580",
+    "project": "https://www-ye.github.io/ego2robot_blog/"
+  },
+  "tags": [
+    "dataset",
+    "vla",
+    "imitation-learning"
+  ]
+}

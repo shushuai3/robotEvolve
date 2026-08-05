@@ -1,0 +1,50 @@
+# Local tooling / data-fetch scripts (not part of the published site)
+scripts/
+
+# OS metadata
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+CLAUDE.local.md
+
+# Python (used by the local scripts)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Node (only if tooling is ever added)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs & temp files
+*.log
+*.tmp
+*.bak
+tmp/

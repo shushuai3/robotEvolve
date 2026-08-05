@@ -1,7 +1,8 @@
 /* RobotEvolve — single-scroll front page.
-   Weekly news = cards for entries dated in the last 7 days (news/tech
+   Recent signals = cards for entries dated in the last 7 days (news/tech
    category left and date right on one line above the title, organization
-   under it) flowing left-to-right, then down;
+   under it) flowing left-to-right, then down, with "load one more week"
+   appending the preceding seven-day window on each click;
    Trend = hottest-topics bar chart (entries per topic). Fetches the
    single news list file; detail files stay lazy in detail.js. */
 (function () {
@@ -9,8 +10,8 @@
 
   var sky = document.getElementById("sky");
   var skyStatus = document.getElementById("sky-status");
+  var loadMore = document.getElementById("loadMore");
   var topicChart = document.getElementById("topic-chart");
-  var MAX_NEWS = 12;
   var MAX_TOPICS = 10;
 
   /* ---------- phone nav toggle ---------- */
@@ -34,8 +35,6 @@
   }
 
   var SOURCE = "data/news.json";
-  var DAY_MS = 24 * 60 * 60 * 1000;
-
   function dateMs(e) {
     var t = new Date((e.date || "") + "T00:00:00").getTime();
     return isNaN(t) ? 0 : t;
@@ -47,23 +46,80 @@
       (a.title || "").localeCompare(b.title || "");
   }
 
-  // Entries dated within the trailing 7-day window ending today. If the
-  // data hasn't been refreshed for over a week, fall back to the window
-  // ending at the newest entry so the sky is never empty.
-  function lastSevenDays(entries) {
+  /* ---------- weekly windows ----------
+     Week 0 is the seven days ending at the anchor, week 1 the seven before
+     that, and so on; the sky starts at week 0 and each "load more" click
+     reveals one more week of history. */
+
+  var allEntries = [];
+  var anchorMs = 0;     // local midnight the newest window ends on
+  var oldestMs = 0;     // oldest entry we have, so we know when history ends
+  var weeksShown = 0;
+
+  // Day arithmetic on local midnights (setDate, not ±ms) so a DST shift can
+  // never land a window boundary on the wrong day.
+  function addDays(ms, days) {
+    var d = new Date(ms);
+    d.setDate(d.getDate() + days);
+    d.setHours(0, 0, 0, 0);
+    return d.getTime();
+  }
+
+  function windowEnd(weeksBack) { return addDays(anchorMs, -7 * weeksBack); }
+  function windowStart(weeksBack) { return addDays(anchorMs, -7 * weeksBack - 6); }
+
+  // The newest window ends today. If the data hasn't been refreshed for over
+  // a week, anchor on the newest entry instead so the sky is never empty.
+  function anchorFor(entries) {
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    function windowEnding(endMs) {
-      return entries.filter(function (e) {
-        var t = dateMs(e);
-        return t >= endMs - 6 * DAY_MS && t <= endMs;
-      });
-    }
-    var week = windowEnding(today.getTime());
-    if (week.length) return week;
-    var newest = entries.reduce(function (m, e) { return Math.max(m, dateMs(e)); }, 0);
-    return newest ? windowEnding(newest) : [];
+    var end = today.getTime();
+    var thisWeek = entries.some(function (e) {
+      var t = dateMs(e);
+      return t >= addDays(end, -6) && t <= end;
+    });
+    if (thisWeek) return end;
+    return entries.reduce(function (m, e) { return Math.max(m, dateMs(e)); }, 0) || end;
   }
+
+  // A whole week, uncapped: the window already bounds the batch, and dropping
+  // the tail would strand entries no later click can ever reach.
+  function weekEntries(weeksBack) {
+    var start = windowStart(weeksBack);
+    var end = windowEnd(weeksBack);
+    return allEntries
+      .filter(function (e) {
+        var t = dateMs(e);
+        return t >= start && t <= end;
+      })
+      .sort(byDateDesc);
+  }
+
+  // Anything left before the oldest window on screen?
+  function hasOlder() {
+    return weeksShown > 0 && oldestMs > 0 && oldestMs < windowStart(weeksShown - 1);
+  }
+
+  // One click = one more week. Weeks with no entries are skipped over, so a
+  // click always reveals something rather than appending nothing.
+  function showOlderWeek() {
+    var batch = [];
+    while (!batch.length && hasOlder()) {
+      batch = weekEntries(weeksShown);
+      weeksShown++;
+    }
+    if (batch.length) {
+      renderWeekLabel(weeksShown - 1);
+      renderSky(batch);
+    }
+    updateLoadMore();
+  }
+
+  function updateLoadMore() {
+    if (loadMore) loadMore.hidden = !hasOlder();
+  }
+
+  if (loadMore) loadMore.addEventListener("click", showOlderWeek);
 
   RE.fetchJSON(SOURCE).then(function (entries) {
     RE.markSourceLoaded(SOURCE);
@@ -78,18 +134,22 @@
       }
     });
 
-    var week = lastSevenDays(all);
+    allEntries = all;
+    anchorMs = anchorFor(all);
+    oldestMs = all.reduce(function (m, e) {
+      var t = dateMs(e);
+      return t && (!m || t < m) ? t : m;
+    }, 0);
+
+    var week = weekEntries(0);
 
     if (week.length) {
-      renderSky(
-        week
-          .slice()
-          .sort(byDateDesc)
-          .slice(0, MAX_NEWS)
-      );
+      weeksShown = 1;
+      renderSky(week);
+      updateLoadMore();
     } else {
       skyStatus.textContent =
-        "This week's data could not be loaded. Please refresh in a moment.";
+        "Recent signals could not be loaded. Please refresh in a moment.";
       skyStatus.hidden = false;
     }
 
@@ -97,9 +157,23 @@
   }).catch(function (err) {
     console.warn("RobotEvolve: could not load " + SOURCE, err);
     skyStatus.textContent =
-      "This week's data could not be loaded. Please refresh in a moment.";
+      "Recent signals could not be loaded. Please refresh in a moment.";
     skyStatus.hidden = false;
   });
+
+  // Full-width rule naming the week a freshly loaded batch belongs to, e.g.
+  // "Jul 19 – Jul 25, 2026", so appended history stays readable as weeks.
+  function renderWeekLabel(weeksBack) {
+    function day(ms, opts) { return new Date(ms).toLocaleDateString(undefined, opts); }
+    var label =
+      day(windowStart(weeksBack), { month: "short", day: "numeric" }) + " – " +
+      day(windowEnd(weeksBack), { year: "numeric", month: "short", day: "numeric" });
+
+    var el = document.createElement("p");
+    el.className = "sky-divider";
+    el.innerHTML = "<span>" + RE.esc(label) + "</span>";
+    sky.appendChild(el);
+  }
 
   function renderSky(entries) {
     // Entries arrive newest-first and flow left-to-right, wrapping down,
