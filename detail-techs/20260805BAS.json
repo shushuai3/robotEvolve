@@ -1,0 +1,17 @@
+{
+  "id": "20260805BAS",
+  "title": "BridgeVLA++ Adds Spatio-Temporal Memory to 3D VLA Manipulation",
+  "date": "2026-08-05",
+  "organization": "CASIA & ByteDance Seed",
+  "summary": "Researchers from CASIA's NLPR and ByteDance Seed posted BridgeVLA++ to arXiv on August 5, 2026, extending their NeurIPS 2025 BridgeVLA model with a unified spatio-temporal memory architecture for 3D manipulation. The added memory module lets the vision-language-action model reason over past observations and interaction history while preserving the original BridgeVLA's data efficiency and generalization, which come from aligning point-cloud inputs and predicted heatmaps with a pre-trained vision-language model. The team reports state-of-the-art results on two memory-dependent manipulation benchmarks without sacrificing performance on BridgeVLA's original spatial manipulation tasks. BridgeVLA++ is also validated on bimanual manipulation and on an additional real-world robot platform beyond the original paper's setup.",
+  "whyItMatters": "Most VLA manipulation models react to a single snapshot of the scene, which breaks down on tasks that require remembering where an object was placed or what happened earlier in a sequence; adding explicit memory to an already data-efficient VLA is a step toward robots that handle longer, more realistic household and industrial tasks without retraining from scratch for every new environment.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2608.05042"
+  },
+  "tags": [
+    "vla",
+    "manipulation",
+    "planning",
+    "benchmark"
+  ]
+}

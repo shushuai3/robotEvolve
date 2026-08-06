@@ -1,0 +1,17 @@
+{
+  "id": "20260805ARR",
+  "title": "Avatar Robotics Raises $6.5M for Industrial Humanoid Fleet",
+  "date": "2026-08-05",
+  "organization": "Avatar Robotics",
+  "summary": "Avatar Robotics announced on August 5, 2026 a $6.5 million seed round led by AlleyCorp, following an earlier pre-seed led by Defy.vc, with Headline, Henry Ford III, Refashiond and others participating. The San Francisco startup, launched in December 2025, builds humanoid robots for warehouse and factory tasks such as picking, packing, sorting, kitting and inventory counting, and says its fleet has helped pack, sort and ship more than 900,000 products in customer facilities including a large global beauty retailer. Rather than relying on full autonomy from day one, its system pairs robots with remote human operators who complete tasks while generating data used to train the robots' autonomous capabilities. The company will use the funding to expand deployments, grow autonomy software, and hire engineering and operations staff, with a long-term goal of one operator overseeing a fleet rather than controlling a single machine. The team includes people from Cruise, Apple, Tesla, Intuitive Surgical and Unity.",
+  "whyItMatters": "Avatar's bet is that the fastest route to useful industrial humanoids is a human-in-the-loop model: put robots into real warehouses now with remote operators, and let every completed task become training data that gradually shifts work from humans to autonomy. That reframes the humanoid business from a hardware moonshot into a data-collection flywheel with revenue from day one, and the 900,000-product figure since December 2025 is early evidence the approach can run in live facilities. The seed size is modest, but the teleoperation-to-autonomy path is one of the more credible near-term strategies in a field crowded with full-autonomy promises.",
+  "links": {
+    "news": "https://theaiinsider.tech/2026/08/05/avatar-robotics-raises-6-5m-in-seed-funding-to-develop-industrial-humanoid-robots/",
+    "project": "https://www.prnewswire.com/news-releases/avatar-robotics-raises-6-5-million-seed-to-build-the-unlimited-industrial-workforce-302843349.html"
+  },
+  "tags": [
+    "humanoid",
+    "funding",
+    "deployment"
+  ]
+}

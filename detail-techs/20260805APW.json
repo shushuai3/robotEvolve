@@ -1,0 +1,17 @@
+{
+  "id": "20260805APW",
+  "title": "Avnet Partners with Weston Robot on Edge AI Inspection Platform",
+  "date": "2026-08-05",
+  "organization": "Avnet & Weston Robot",
+  "summary": "Avnet and Weston Robot announced a partnership on August 5, 2026 to launch a real-time autonomous inspection platform built on Unitree quadruped robots. Avnet supplies an edge-compute backpack powered by AMD Ryzen AI Embedded processors that delivers up to 50 TOPS of on-device AI performance for inspection, thermal and visual analytics, and 3D lidar mapping in GPS-denied environments. Singapore-based Weston Robot, which primarily resells Unitree hardware in a robots-as-a-service model, provides the fleet management software that lets the robot patrol a defined route and stop to investigate flagged sites. New inspection and recognition tasks can be trained and deployed directly to the robot using the onboard Avnet compute architecture.",
+  "whyItMatters": "The partnership packages edge AI compute, autonomous navigation and fleet software into a deployable product rather than a research prototype, pushing physical-AI inspection out of pilots and into factories, warehouses, ports and utilities that need continuous, low-latency monitoring without reliable cloud connectivity.",
+  "links": {
+    "news": "https://www.therobotreport.com/avnet-and-weston-robot-partner-to-launch-edge-ai-inspection-platform/"
+  },
+  "tags": [
+    "deployment",
+    "industry",
+    "hardware",
+    "perception"
+  ]
+}

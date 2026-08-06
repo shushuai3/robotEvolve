@@ -13,6 +13,47 @@
     "detailPath": "detail-techs/20260805ZSC.json"
   },
   {
+    "id": "20260805ARR",
+    "title": "Avatar Robotics Raises $6.5M for Industrial Humanoid Fleet",
+    "date": "2026-08-05",
+    "organization": "Avatar Robotics",
+    "category": "news",
+    "tags": [
+      "humanoid",
+      "funding",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260805ARR.json"
+  },
+  {
+    "id": "20260805APW",
+    "title": "Avnet Partners with Weston Robot on Edge AI Inspection Platform",
+    "date": "2026-08-05",
+    "organization": "Avnet & Weston Robot",
+    "category": "news",
+    "tags": [
+      "deployment",
+      "industry",
+      "hardware",
+      "perception"
+    ],
+    "detailPath": "detail-techs/20260805APW.json"
+  },
+  {
+    "id": "20260805BAS",
+    "title": "BridgeVLA++ Adds Spatio-Temporal Memory to 3D VLA Manipulation",
+    "date": "2026-08-05",
+    "organization": "CASIA & ByteDance Seed",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "manipulation",
+      "planning",
+      "benchmark"
+    ],
+    "detailPath": "detail-techs/20260805BAS.json"
+  },
+  {
     "id": "20260804ERE",
     "title": "ETA Recasts Embodied Tasks as an Agent Calling Robot Tools",
     "date": "2026-08-04",
