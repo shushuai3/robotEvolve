@@ -1,0 +1,18 @@
+{
+  "id": "20260407ARA",
+  "title": "AgiBot Releases AGIBOT WORLD 2026 Embodied Dataset",
+  "date": "2026-04-07",
+  "organization": "AgiBot",
+  "summary": "Shanghai-based AgiBot open-sourced AGIBOT WORLD 2026 on April 7, 2026, a heterogeneous, 100%-real-world dataset collected on its G2 robot platform using a free-form teleoperation strategy rather than scripted demonstrations. The dataset combines whole-body control, first-person beyond-visual-range teleoperation and force-controlled data collection to capture contact dynamics alongside motion trajectories, with synchronized RGB(D), tactile, lidar and IMU streams. AgiBot also released matching 1:1 digital-twin simulation data through its companion GenieSim project. The first of five planned phases targets imitation learning, providing hundreds of hours of hierarchically annotated data spanning task-level instructions, atomic skill labels, object bounding boxes and retained error-recovery trajectories.",
+  "whyItMatters": "AGIBOT WORLD 2026 addresses the same data scarcity problem constraining most robot foundation models, but takes a different route than embodiment-free approaches: it captures full whole-body, force-aware robot behavior plus paired simulation twins, which is closer to the exact signal manipulation and locomotion policies need. Retaining annotated error-recovery trajectories, rather than only successful demonstrations, is also a deliberate bet that models trained on failure-and-correction data generalize better than those trained on curated successes alone.",
+  "links": {
+    "news": "https://www.therobotreport.com/agibot-world-2026-dataset-open-source-accelerate-embodied-ai-development/",
+    "project": "https://huggingface.co/datasets/agibot-world/AgiBotWorld2026"
+  },
+  "tags": [
+    "dataset",
+    "imitation-learning",
+    "simulation",
+    "manipulation"
+  ]
+}

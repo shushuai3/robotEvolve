@@ -1,0 +1,17 @@
+{
+  "id": "20260730GRE",
+  "title": "Gemini Robotics ER 2 Adds Multi-Robot Tool Orchestration",
+  "date": "2026-07-30",
+  "organization": "Google DeepMind",
+  "summary": "Google DeepMind launched Gemini Robotics ER 2 on July 30, 2026, an upgraded embodied-reasoning model that acts as a high-level planning brain, handing off motor execution to lower-level VLA models or robot APIs while it reasons about what to do next. The model watches continuous video feeds to track task progress in real time, achieving 57.4% accuracy on progress classification and 91.3% accuracy with a 0.96-second mean absolute distance on precision moment-finding, both improvements over Gemini Robotics ER 1.6. New multi-robot collaboration lets heterogeneous robots, demonstrated with Apptronik's Apollo 2 and the Franka F3 Duo, share semantic understanding to hand off subtasks. Gemini Robotics ER 2 is publicly available through the Gemini API and Google AI Studio, and in private preview on the Gemini Enterprise Agent Platform.",
+  "whyItMatters": "By separating high-level embodied reasoning from low-level motor control, Gemini Robotics ER 2 pushes toward an architecture where a single reasoning model can orchestrate many different robot bodies and action policies, rather than each robot needing its own bespoke planner. The gains in progress tracking and moment-finding are aimed squarely at the reliability problem that keeps long-horizon, multi-step robot tasks from working outside controlled demos.",
+  "links": {
+    "news": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/"
+  },
+  "tags": [
+    "foundation-model",
+    "planning",
+    "multi-robot",
+    "perception"
+  ]
+}

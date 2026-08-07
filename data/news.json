@@ -1,5 +1,31 @@
 [
   {
+    "id": "20260806UPS",
+    "title": "Unitree Prices Shanghai IPO at $9 Billion Valuation",
+    "date": "2026-08-06",
+    "organization": "Unitree Robotics",
+    "category": "news",
+    "tags": [
+      "humanoid",
+      "industry",
+      "funding"
+    ],
+    "detailPath": "detail-techs/20260806UPS.json"
+  },
+  {
+    "id": "20260806SRG",
+    "title": "Serve Robotics Grows Revenue 404% but Cuts Full-Year Outlook",
+    "date": "2026-08-06",
+    "organization": "Serve Robotics",
+    "category": "news",
+    "tags": [
+      "deployment",
+      "industry",
+      "navigation"
+    ],
+    "detailPath": "detail-techs/20260806SRG.json"
+  },
+  {
     "id": "20260805ZSC",
     "title": "Zoox Starts Charging for Robotaxi Rides in Las Vegas",
     "date": "2026-08-05",
@@ -197,6 +223,20 @@
     "detailPath": "detail-techs/20260731PAD.json"
   },
   {
+    "id": "20260730GRE",
+    "title": "Gemini Robotics ER 2 Adds Multi-Robot Tool Orchestration",
+    "date": "2026-07-30",
+    "organization": "Google DeepMind",
+    "category": "tech",
+    "tags": [
+      "foundation-model",
+      "planning",
+      "multi-robot",
+      "perception"
+    ],
+    "detailPath": "detail-techs/20260730GRE.json"
+  },
+  {
     "id": "20260730XND",
     "title": "X-NavDP Generalizes Navigation Diffusion Policies Across Embodiments",
     "date": "2026-07-30",
@@ -352,5 +392,33 @@
       "deployment"
     ],
     "detailPath": "detail-techs/20260725HDP.json"
+  },
+  {
+    "id": "20260716XOR",
+    "title": "Xiaomi Open-Sources Robot Foundation Model XR-1",
+    "date": "2026-07-16",
+    "organization": "Xiaomi Robotics",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "foundation-model",
+      "manipulation",
+      "benchmark"
+    ],
+    "detailPath": "detail-techs/20260716XOR.json"
+  },
+  {
+    "id": "20260407ARA",
+    "title": "AgiBot Releases AGIBOT WORLD 2026 Embodied Dataset",
+    "date": "2026-04-07",
+    "organization": "AgiBot",
+    "category": "tech",
+    "tags": [
+      "dataset",
+      "imitation-learning",
+      "simulation",
+      "manipulation"
+    ],
+    "detailPath": "detail-techs/20260407ARA.json"
   }
 ]

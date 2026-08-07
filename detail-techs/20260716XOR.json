@@ -1,0 +1,19 @@
+{
+  "id": "20260716XOR",
+  "title": "Xiaomi Open-Sources Robot Foundation Model XR-1",
+  "date": "2026-07-16",
+  "organization": "Xiaomi Robotics",
+  "summary": "Xiaomi Robotics released Xiaomi-Robotics-1 (XR-1) on July 16, 2026, a vision-language-action foundation model pre-trained on more than 100,000 hours of embodiment-free UMI trajectories spanning over 1,700 real-world scenarios, then post-trained on 7,200-plus hours of in-house robot data. A scalable auto-labeling pipeline annotates trajectory clips with language descriptions of scene state transitions, letting the model scale without manual labeling. XR-1 sets new state-of-the-art results on four simulation benchmarks, including a 57.6% success rate on RoboCasa365 versus a prior best of 46.6%, and adapts to new real-world tasks like phone packing or printer refilling with under 10 hours of demonstration data, roughly double the success rate of the π0.5 baseline at the same data budget. Code, model checkpoints and the accompanying arXiv paper were released alongside the announcement.",
+  "whyItMatters": "XR-1 is evidence that the data bottleneck limiting robot foundation models can be worked around with large-scale embodiment-free video capture (UMI) rather than expensive teleoperated robot data alone, and that the resulting scaling laws transfer cleanly from simulation to real-robot post-training. Its efficient few-shot adaptation to new tasks also makes a stronger practical case for deploying general-purpose manipulation policies in settings where collecting robot-specific data at scale isn't feasible.",
+  "links": {
+    "paper": "https://arxiv.org/abs/2607.15330",
+    "project": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
+    "code": "https://github.com/XiaomiRobotics/Xiaomi-Robotics-1"
+  },
+  "tags": [
+    "vla",
+    "foundation-model",
+    "manipulation",
+    "benchmark"
+  ]
+}
