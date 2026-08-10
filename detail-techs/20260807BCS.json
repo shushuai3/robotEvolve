@@ -1,0 +1,17 @@
+{
+  "id": "20260807BCS",
+  "title": "Brain Corp Surpasses 50,000 Autonomous Robots Worldwide",
+  "date": "2026-08-07",
+  "organization": "Brain Corp",
+  "summary": "Brain Corp, the AI operating system provider for commercial service robots, announced on August 7, 2026 that its BrainOS-powered robot fleet surpassed 50,000 deployed units worldwide. The company reported 68% year-over-year growth in fleet deployments for the first half of 2026, alongside 5.3 million autonomous operating hours (up 24% year over year) and 400 million square feet of added autonomous coverage, for a first-half total of more than 3.7 billion square feet covered. Brain Corp also achieved SOC 2 Type II compliance and expanded partnerships with Tennant Company and ShelfOptix. The company said it is now investing in semantic mapping, a 'contextual grounding layer' intended to let robots interpret the spaces around them rather than simply navigate through them.",
+  "whyItMatters": "Brain Corp's fleet numbers are one of the clearest signals that autonomous mobile robots have moved from pilot programs into everyday commercial infrastructure across retail, logistics, airports and cleaning; 68% deployment growth alongside a SOC 2 certification points to buyers treating fleet autonomy as a procurement decision rather than an experiment. The pivot toward semantic, context-aware navigation also signals where the next competitive edge in commercial AMRs is expected to come from: understanding a space, not just mapping it.",
+  "links": {
+    "news": "https://roboticsandautomationnews.com/2026/08/07/brain-corp-reports-68-percent-growth-and-surpasses-50000-autonomous-robots-worldwide/104006/"
+  },
+  "tags": [
+    "deployment",
+    "industry",
+    "navigation",
+    "perception"
+  ]
+}

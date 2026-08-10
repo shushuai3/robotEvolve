@@ -1,5 +1,33 @@
 [
   {
+    "id": "20260807BCS",
+    "title": "Brain Corp Surpasses 50,000 Autonomous Robots Worldwide",
+    "date": "2026-08-07",
+    "organization": "Brain Corp",
+    "category": "news",
+    "tags": [
+      "deployment",
+      "industry",
+      "navigation",
+      "perception"
+    ],
+    "detailPath": "detail-techs/20260807BCS.json"
+  },
+  {
+    "id": "20260806HSS",
+    "title": "HII Signs Shipbuilding Robotics Deal Worth $900M",
+    "date": "2026-08-06",
+    "organization": "Huntington Ingalls",
+    "category": "news",
+    "tags": [
+      "industry",
+      "deployment",
+      "manipulation",
+      "hardware"
+    ],
+    "detailPath": "detail-techs/20260806HSS.json"
+  },
+  {
     "id": "20260806UPS",
     "title": "Unitree Prices Shanghai IPO at $9 Billion Valuation",
     "date": "2026-08-06",
@@ -24,6 +52,19 @@
       "navigation"
     ],
     "detailPath": "detail-techs/20260806SRG.json"
+  },
+  {
+    "id": "20260805MRS",
+    "title": "Moove Raises Series C for AV Infrastructure",
+    "date": "2026-08-05",
+    "organization": "Moove",
+    "category": "news",
+    "tags": [
+      "funding",
+      "industry",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260805MRS.json"
   },
   {
     "id": "20260805ZSC",
@@ -278,6 +319,20 @@
     "detailPath": "detail-techs/20260730GR2.json"
   },
   {
+    "id": "20260729TSU",
+    "title": "Tacta Systems Unveils TactaBot Dexterous Robotic Hand",
+    "date": "2026-07-29",
+    "organization": "Tacta Systems",
+    "category": "tech",
+    "tags": [
+      "manipulation",
+      "hardware",
+      "dataset",
+      "imitation-learning"
+    ],
+    "detailPath": "detail-techs/20260729TSU.json"
+  },
+  {
     "id": "20260729TRV",
     "title": "TurboVLA Runs a Real-Time VLA at 32 Hz on One RTX 4090",
     "date": "2026-07-29",
@@ -406,6 +461,20 @@
       "benchmark"
     ],
     "detailPath": "detail-techs/20260716XOR.json"
+  },
+  {
+    "id": "20260705BDA",
+    "title": "Boston Dynamics' Atlas Performs at FIFA World Cup Halftime",
+    "date": "2026-07-05",
+    "organization": "Boston Dynamics",
+    "category": "news",
+    "tags": [
+      "humanoid",
+      "locomotion",
+      "industry",
+      "reinforcement-learning"
+    ],
+    "detailPath": "detail-techs/20260705BDA.json"
   },
   {
     "id": "20260407ARA",

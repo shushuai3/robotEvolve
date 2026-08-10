@@ -1,18 +1,24 @@
-/* RobotEvolve — single-scroll front page.
-   Recent signals = cards for entries dated in the last 7 days (news/tech
-   category left and date right on one line above the title, organization
-   under it) flowing left-to-right, then down, with "load one more week"
-   appending the preceding seven-day window on each click;
-   Trend = hottest-topics bar chart (entries per topic). Fetches the
-   single news list file; detail files stay lazy in detail.js. */
+/* RobotEvolve — single-scroll front page, three sections:
+
+     1 · Recent technology — model, method, dataset and code releases
+         (category "tech") as floating cards, tag and date above the title;
+     2 · Recent news — deployments, funding and industry moves
+         (category "news") as a dated list, newest first;
+     3 · Techniques by category — every tech entry grouped into the four tag
+         facets, each technique expandable into the work behind it. News never
+         appears here.
+
+   Sections 1 and 2 are independent weekly streams: each starts at its own
+   newest seven-day window, backfills older weeks until it holds at least
+   MIN_VISIBLE entries, and appends the preceding week per click — so a quiet
+   week on one side never blanks it or the other. Fetches the single news
+   list file; detail files stay lazy in detail.js. */
 (function () {
   "use strict";
 
-  var sky = document.getElementById("sky");
-  var skyStatus = document.getElementById("sky-status");
-  var loadMore = document.getElementById("loadMore");
-  var topicChart = document.getElementById("topic-chart");
-  var MAX_TOPICS = 10;
+  var SOURCE = "data/news.json";
+  var MAX_TAG_ENTRIES = 6;      // entries listed when a technique row expands
+  var MIN_VISIBLE = 12;         // per section: open with at least this many
 
   /* ---------- phone nav toggle ---------- */
 
@@ -34,7 +40,8 @@
     });
   }
 
-  var SOURCE = "data/news.json";
+  /* ---------- dates ---------- */
+
   function dateMs(e) {
     var t = new Date((e.date || "") + "T00:00:00").getTime();
     return isNaN(t) ? 0 : t;
@@ -46,16 +53,6 @@
       (a.title || "").localeCompare(b.title || "");
   }
 
-  /* ---------- weekly windows ----------
-     Week 0 is the seven days ending at the anchor, week 1 the seven before
-     that, and so on; the sky starts at week 0 and each "load more" click
-     reveals one more week of history. */
-
-  var allEntries = [];
-  var anchorMs = 0;     // local midnight the newest window ends on
-  var oldestMs = 0;     // oldest entry we have, so we know when history ends
-  var weeksShown = 0;
-
   // Day arithmetic on local midnights (setDate, not ±ms) so a DST shift can
   // never land a window boundary on the wrong day.
   function addDays(ms, days) {
@@ -65,61 +62,383 @@
     return d.getTime();
   }
 
-  function windowEnd(weeksBack) { return addDays(anchorMs, -7 * weeksBack); }
-  function windowStart(weeksBack) { return addDays(anchorMs, -7 * weeksBack - 6); }
+  /* ---------- weekly stream ----------
+     Week 0 is the seven days ending at the anchor, week 1 the seven before
+     that, and so on; a stream starts at week 0 and each "load more" click
+     reveals one more week of its own history. A thin week reads as a broken
+     page, so a stream that opens with fewer than MIN_VISIBLE entries keeps
+     pulling older weeks in until it clears that floor or runs out of
+     history — whole weeks at a time, each under its own dated divider, so
+     the dividers never imply a week held less than it did. */
 
-  // The newest window ends today. If the data hasn't been refreshed for over
-  // a week, anchor on the newest entry instead so the sky is never empty.
-  function anchorFor(entries) {
+  function createStream(cfg) {
+    var entries = (cfg.entries || []).slice().sort(byDateDesc);
+    var container = cfg.container;
+    var loadMore = cfg.loadMore;
+    if (!container) return;
+
+    if (!entries.length) {
+      if (cfg.status) {
+        cfg.status.textContent = cfg.emptyText;
+        cfg.status.hidden = false;
+      }
+      if (loadMore) loadMore.hidden = true;
+      return;
+    }
+
+    // The newest window ends today. If this stream hasn't been refreshed for
+    // over a week, anchor on its newest entry instead so it is never empty.
     var today = new Date();
     today.setHours(0, 0, 0, 0);
-    var end = today.getTime();
-    var thisWeek = entries.some(function (e) {
-      var t = dateMs(e);
-      return t >= addDays(end, -6) && t <= end;
-    });
-    if (thisWeek) return end;
-    return entries.reduce(function (m, e) { return Math.max(m, dateMs(e)); }, 0) || end;
-  }
+    var todayMs = today.getTime();
+    var newestMs = entries.reduce(function (m, e) { return Math.max(m, dateMs(e)); }, 0);
+    var anchorMs = newestMs >= addDays(todayMs, -6) ? todayMs : (newestMs || todayMs);
 
-  // A whole week, uncapped: the window already bounds the batch, and dropping
-  // the tail would strand entries no later click can ever reach.
-  function weekEntries(weeksBack) {
-    var start = windowStart(weeksBack);
-    var end = windowEnd(weeksBack);
-    return allEntries
-      .filter(function (e) {
+    var oldestMs = entries.reduce(function (m, e) {
+      var t = dateMs(e);
+      return t && (!m || t < m) ? t : m;
+    }, 0);
+    var weeksShown = 0;
+    var shown = 0;      // entries on screen, against the MIN_VISIBLE floor
+
+    function windowEnd(weeksBack) { return addDays(anchorMs, -7 * weeksBack); }
+    function windowStart(weeksBack) { return addDays(anchorMs, -7 * weeksBack - 6); }
+
+    // A whole week, uncapped: the window already bounds the batch, and dropping
+    // the tail would strand entries no later click can ever reach.
+    function weekEntries(weeksBack) {
+      var start = windowStart(weeksBack);
+      var end = windowEnd(weeksBack);
+      return entries.filter(function (e) {
         var t = dateMs(e);
         return t >= start && t <= end;
-      })
-      .sort(byDateDesc);
-  }
-
-  // Anything left before the oldest window on screen?
-  function hasOlder() {
-    return weeksShown > 0 && oldestMs > 0 && oldestMs < windowStart(weeksShown - 1);
-  }
-
-  // One click = one more week. Weeks with no entries are skipped over, so a
-  // click always reveals something rather than appending nothing.
-  function showOlderWeek() {
-    var batch = [];
-    while (!batch.length && hasOlder()) {
-      batch = weekEntries(weeksShown);
-      weeksShown++;
+      });
     }
-    if (batch.length) {
-      renderWeekLabel(weeksShown - 1);
-      renderSky(batch);
+
+    // Anything left before the oldest window on screen?
+    function hasOlder() {
+      return weeksShown > 0 && oldestMs > 0 && oldestMs < windowStart(weeksShown - 1);
     }
+
+    // Full-width rule naming the week a freshly loaded batch belongs to, e.g.
+    // "Jul 19 – Jul 25, 2026", so appended history stays readable as weeks.
+    function appendWeekLabel(weeksBack) {
+      function day(ms, opts) { return new Date(ms).toLocaleDateString(undefined, opts); }
+      var label =
+        day(windowStart(weeksBack), { month: "short", day: "numeric" }) + " – " +
+        day(windowEnd(weeksBack), { year: "numeric", month: "short", day: "numeric" });
+
+      var el = document.createElement("p");
+      el.className = "week-divider";
+      el.innerHTML = "<span>" + RE.esc(label) + "</span>";
+      container.appendChild(el);
+    }
+
+    function updateLoadMore() {
+      if (loadMore) loadMore.hidden = !hasOlder();
+    }
+
+    // One click = one more week. Weeks with no entries are skipped over, so a
+    // click always reveals something rather than appending nothing.
+    function showOlderWeek() {
+      var batch = [];
+      while (!batch.length && hasOlder()) {
+        batch = weekEntries(weeksShown);
+        weeksShown++;
+      }
+      if (batch.length) {
+        appendWeekLabel(weeksShown - 1);
+        cfg.render(container, batch);
+        shown += batch.length;
+      }
+      updateLoadMore();
+    }
+
+    if (loadMore) loadMore.addEventListener("click", showOlderWeek);
+
+    var first = weekEntries(0);
+    cfg.render(container, first);
+    shown = first.length;
+    weeksShown = 1;
+
+    // Backfill a thin opening week. Each pass either appends a week or
+    // exhausts the history, so this always terminates.
+    while (shown < MIN_VISIBLE && hasOlder()) showOlderWeek();
+
     updateLoadMore();
   }
 
-  function updateLoadMore() {
-    if (loadMore) loadMore.hidden = !hasOlder();
+  /* ---------- 1 · recent technology ---------- */
+
+  // Cards flow left-to-right, wrapping down, so the latest reads first; the
+  // browser decides how many fit per row from the display width. The pill
+  // carries the entry's leading tag — every card here is already "tech".
+  function renderTechCards(container, entries) {
+    var frag = document.createDocumentFragment();
+
+    entries.forEach(function (entry) {
+      var tag = (entry.tags && entry.tags[0]) || "robotics";
+
+      var el = document.createElement("button");
+      el.type = "button";
+      el.className = "sky-card";
+      // Randomized 6–10s bob, negative delay so cards start desynchronized.
+      el.style.setProperty("--bob-dur", (6 + Math.random() * 4).toFixed(2) + "s");
+      el.style.setProperty("--bob-delay", (-Math.random() * 6).toFixed(2) + "s");
+      el.setAttribute("aria-label",
+        "Technology: " + entry.title +
+        (entry.organization ? ", " + entry.organization : "") + " — open details");
+
+      el.innerHTML =
+        '<span class="sky-meta">' +
+        '<span class="tag-pill">' + RE.esc(tag) + "</span>" +
+        '<span class="sky-date">' +
+        (entry.date ? RE.esc(RE.fmtDate(entry.date)) : "") + "</span>" +
+        "</span>" +
+        '<span class="sky-label">' + RE.esc(entry.title) + "</span>" +
+        '<span class="sky-org">' +
+        (entry.organization ? RE.esc(entry.organization) : "") + "</span>";
+
+      el.addEventListener("click", function () { RE.openDetail(entry.id); });
+      frag.appendChild(el);
+    });
+
+    container.appendChild(frag);
   }
 
-  if (loadMore) loadMore.addEventListener("click", showOlderWeek);
+  /* ---------- 2 · recent news ---------- */
+
+  // One row per story: day block, headline over organization, up to three
+  // tags. The tags are decorative on narrow screens and hidden by CSS there.
+  function renderNewsList(container, entries) {
+    var frag = document.createDocumentFragment();
+
+    entries.forEach(function (entry) {
+      var d = new Date((entry.date || "") + "T00:00:00");
+      var day = isNaN(d) ? "--" : ("0" + d.getDate()).slice(-2);
+      var month = isNaN(d)
+        ? ""
+        : d.toLocaleDateString(undefined, { month: "short" }).toUpperCase();
+
+      var tags = (entry.tags || []).slice(0, 3).map(function (t) {
+        return '<span class="chip-mini">' + RE.esc(t) + "</span>";
+      }).join("");
+
+      var el = document.createElement("button");
+      el.type = "button";
+      el.className = "news-row";
+      el.setAttribute("aria-label",
+        "News: " + entry.title +
+        (entry.organization ? ", " + entry.organization : "") +
+        (entry.date ? ", " + RE.fmtDate(entry.date) : "") + " — open details");
+
+      el.innerHTML =
+        '<span class="news-day" aria-hidden="true"><b>' + day + "</b><i>" + month + "</i></span>" +
+        '<span class="news-main">' +
+        '<span class="news-title">' + RE.esc(entry.title) + "</span>" +
+        '<span class="news-org">' +
+        (entry.organization ? RE.esc(entry.organization) : "") + "</span>" +
+        "</span>" +
+        '<span class="news-tags" aria-hidden="true">' + tags + "</span>" +
+        '<span class="news-go" aria-hidden="true">→</span>';
+
+      el.addEventListener("click", function () { RE.openDetail(entry.id); });
+      frag.appendChild(el);
+    });
+
+    container.appendChild(frag);
+  }
+
+  /* ---------- 3 · techniques by category ---------- */
+
+  // The four facets of the tag vocabulary (see README). Order inside a group
+  // is by entry count, not by this list; anything outside the vocabulary
+  // collects in "Other". Each group carries its own hue for the bars.
+  var TAG_GROUPS = [
+    {
+      name: "Models & methods",
+      grp: "#22d3ee", grp2: "#8b5cf6",
+      tags: ["vla", "world-model", "foundation-model", "reinforcement-learning",
+             "imitation-learning", "diffusion-policy", "planning"]
+    },
+    {
+      name: "Capabilities",
+      grp: "#a78bfa", grp2: "#e879f9",
+      tags: ["manipulation", "locomotion", "navigation", "perception", "multi-robot"]
+    },
+    {
+      name: "Systems & resources",
+      grp: "#34d399", grp2: "#22d3ee",
+      tags: ["simulation", "dataset", "benchmark", "efficiency", "hardware"]
+    },
+    {
+      name: "Embodiment & industry",
+      grp: "#fbbf24", grp2: "#fb923c",
+      tags: ["humanoid", "industry", "funding", "deployment"]
+    }
+  ];
+  var OTHER_GROUP = { name: "Other", grp: "#94a3b8", grp2: "#64748b", tags: [] };
+
+  // tag -> [entry, ...] newest first
+  function aggregateTags(entries) {
+    var byTag = new Map();
+    entries.forEach(function (e) {
+      (e.tags || []).forEach(function (t) {
+        if (!byTag.has(t)) byTag.set(t, []);
+        byTag.get(t).push(e);
+      });
+    });
+    byTag.forEach(function (list) { list.sort(byDateDesc); });
+    return byTag;
+  }
+
+  // "All 20 technology entries · Apr 7 – Aug 5, 2026" — this board counts the
+  // whole history, unlike the two weekly streams above it, and says so.
+  function renderCoverage(el, entries) {
+    if (!el) return;
+    var stamps = entries.map(dateMs).filter(Boolean).sort();
+    if (!stamps.length) return;
+
+    function day(ms, opts) { return new Date(ms).toLocaleDateString(undefined, opts); }
+    var oldest = stamps[0];
+    var newest = stamps[stamps.length - 1];
+    var span = oldest === newest
+      ? day(newest, { year: "numeric", month: "short", day: "numeric" })
+      : day(oldest, { month: "short", day: "numeric" }) + " – " +
+        day(newest, { year: "numeric", month: "short", day: "numeric" });
+
+    el.textContent = "All " + entries.length + " technology entries · " + span;
+    el.hidden = false;
+  }
+
+  function renderCategories(board, entries) {
+    var byTag = aggregateTags(entries);
+    if (!byTag.size) return;
+
+    renderCoverage(document.getElementById("cat-range"), entries);
+
+    // Bars are normalized against the busiest technique overall, so a bar in
+    // one card is directly comparable with a bar in another.
+    var max = 1;
+    byTag.forEach(function (list) { max = Math.max(max, list.length); });
+
+    var claimed = new Set();
+    TAG_GROUPS.forEach(function (group) {
+      group.tags.forEach(function (t) { claimed.add(t); });
+    });
+    var leftovers = Array.from(byTag.keys()).filter(function (t) {
+      return !claimed.has(t);
+    });
+
+    var groups = TAG_GROUPS.concat(
+      leftovers.length ? [{ name: OTHER_GROUP.name, grp: OTHER_GROUP.grp,
+                            grp2: OTHER_GROUP.grp2, tags: leftovers }] : []);
+
+    var frag = document.createDocumentFragment();
+    var rowId = 0;
+
+    groups.forEach(function (group) {
+      var rows = group.tags
+        .filter(function (t) { return byTag.has(t); })
+        .map(function (t) { return { tag: t, entries: byTag.get(t) }; })
+        .sort(function (a, b) {
+          return b.entries.length - a.entries.length || a.tag.localeCompare(b.tag);
+        });
+      if (!rows.length) return;   // a facet with nothing tracked stays off the board
+
+      // An entry tagged twice inside one facet is one entry, not two.
+      var members = new Set();
+      rows.forEach(function (row) {
+        row.entries.forEach(function (e) { members.add(e.id); });
+      });
+
+      var card = document.createElement("section");
+      card.className = "cat-card";
+      card.style.setProperty("--grp", group.grp);
+      card.style.setProperty("--grp-2", group.grp2);
+      card.innerHTML =
+        '<h3 class="cat-title"><span class="cat-name">' + RE.esc(group.name) + "</span>" +
+        '<span class="cat-total">' + members.size +
+        (members.size === 1 ? " entry" : " entries") + "</span></h3>";
+
+      var list = document.createElement("div");
+      list.className = "cat-rows";
+
+      rows.forEach(function (row) {
+        var panelId = "tagpanel-" + (rowId++);
+        var lead = row.entries[0];
+
+        var item = document.createElement("div");
+        item.className = "tag-item";
+
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "tag-row";
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-controls", panelId);
+        btn.setAttribute("aria-label",
+          row.tag + ": " + row.entries.length +
+          (row.entries.length === 1 ? " entry" : " entries") +
+          ", latest " + lead.title + " — show the list");
+        btn.innerHTML =
+          '<span class="tag-line">' +
+          '<span class="tag-name">' + RE.esc(row.tag) + "</span>" +
+          '<span class="tag-lead">' + RE.esc(lead.title) + "</span>" +
+          '<span class="tag-val">' + row.entries.length + "</span>" +
+          "</span>" +
+          '<span class="tag-track"><span class="tag-fill" style="--w:' +
+          ((row.entries.length / max) * 100).toFixed(1) + '%"></span></span>';
+
+        var panel = document.createElement("div");
+        panel.className = "tag-panel";
+        panel.id = panelId;
+        panel.hidden = true;
+
+        row.entries.slice(0, MAX_TAG_ENTRIES).forEach(function (e) {
+          var link = document.createElement("button");
+          link.type = "button";
+          link.className = "tag-entry";
+          link.setAttribute("aria-label", e.title + " — open details");
+          link.innerHTML =
+            "<span>" + RE.esc(e.title) + "</span>" +
+            "<b>" + RE.esc(RE.fmtDate(e.date)) + "</b>";
+          link.addEventListener("click", function () { RE.openDetail(e.id); });
+          panel.appendChild(link);
+        });
+
+        var hidden = row.entries.length - MAX_TAG_ENTRIES;
+        if (hidden > 0) {
+          var more = document.createElement("p");
+          more.className = "tag-more";
+          more.textContent = "+ " + hidden + " more";
+          panel.appendChild(more);
+        }
+
+        btn.addEventListener("click", function () {
+          var open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!open));
+          panel.hidden = open;
+        });
+
+        item.appendChild(btn);
+        item.appendChild(panel);
+        list.appendChild(item);
+      });
+
+      card.appendChild(list);
+      frag.appendChild(card);
+    });
+
+    board.appendChild(frag);
+    // The board was empty when the page-load pass ran, so an observer that
+    // saw a zero-height target never fired; re-observe now that it has size.
+    observeReveals([board]);
+  }
+
+  /* ---------- load ---------- */
+
+  var techStatus = document.getElementById("tech-status");
+  var newsStatus = document.getElementById("news-status");
 
   RE.fetchJSON(SOURCE).then(function (entries) {
     RE.markSourceLoaded(SOURCE);
@@ -134,167 +453,39 @@
       }
     });
 
-    allEntries = all;
-    anchorMs = anchorFor(all);
-    oldestMs = all.reduce(function (m, e) {
-      var t = dateMs(e);
-      return t && (!m || t < m) ? t : m;
-    }, 0);
+    // RE.category falls back to "tech", so news is the explicit set and
+    // technology is everything else — an unlabelled entry is never lost.
+    var news = all.filter(function (e) { return RE.category(e) === "news"; });
+    var tech = all.filter(function (e) { return RE.category(e) !== "news"; });
 
-    var week = weekEntries(0);
+    createStream({
+      entries: tech,
+      container: document.getElementById("tech-sky"),
+      status: techStatus,
+      loadMore: document.getElementById("techMore"),
+      render: renderTechCards,
+      emptyText: "No technology entries yet."
+    });
 
-    if (week.length) {
-      weeksShown = 1;
-      renderSky(week);
-      updateLoadMore();
-    } else {
-      skyStatus.textContent =
-        "Recent signals could not be loaded. Please refresh in a moment.";
-      skyStatus.hidden = false;
-    }
+    createStream({
+      entries: news,
+      container: document.getElementById("news-list"),
+      status: newsStatus,
+      loadMore: document.getElementById("newsMore"),
+      render: renderNewsList,
+      emptyText: "No news entries yet."
+    });
 
-    if (all.length) renderTopics(all);
+    var board = document.getElementById("cat-board");
+    if (board && tech.length) renderCategories(board, tech);
   }).catch(function (err) {
     console.warn("RobotEvolve: could not load " + SOURCE, err);
-    skyStatus.textContent =
-      "Recent signals could not be loaded. Please refresh in a moment.";
-    skyStatus.hidden = false;
+    [techStatus, newsStatus].forEach(function (el) {
+      if (!el) return;
+      el.textContent = "This section could not be loaded. Please refresh in a moment.";
+      el.hidden = false;
+    });
   });
-
-  // Full-width rule naming the week a freshly loaded batch belongs to, e.g.
-  // "Jul 19 – Jul 25, 2026", so appended history stays readable as weeks.
-  function renderWeekLabel(weeksBack) {
-    function day(ms, opts) { return new Date(ms).toLocaleDateString(undefined, opts); }
-    var label =
-      day(windowStart(weeksBack), { month: "short", day: "numeric" }) + " – " +
-      day(windowEnd(weeksBack), { year: "numeric", month: "short", day: "numeric" });
-
-    var el = document.createElement("p");
-    el.className = "sky-divider";
-    el.innerHTML = "<span>" + RE.esc(label) + "</span>";
-    sky.appendChild(el);
-  }
-
-  function renderSky(entries) {
-    // Entries arrive newest-first and flow left-to-right, wrapping down,
-    // so the latest news reads first; the browser decides how many fit
-    // per row from the display width.
-    var frag = document.createDocumentFragment();
-
-    entries.forEach(function (entry) {
-      // news/tech + date on one line above the title, organization below it.
-      var cat = RE.category(entry);
-
-      var el = document.createElement("button");
-      el.type = "button";
-      el.className = "sky-card cat-" + cat;
-      // Randomized 6–10s bob, negative delay so cards start desynchronized.
-      el.style.setProperty("--bob-dur", (6 + Math.random() * 4).toFixed(2) + "s");
-      el.style.setProperty("--bob-delay", (-Math.random() * 6).toFixed(2) + "s");
-      el.setAttribute("aria-label",
-        cat + ": " + entry.title +
-        (entry.organization ? ", " + entry.organization : "") + " — open details");
-
-      el.innerHTML =
-        '<span class="sky-meta">' +
-        '<span class="cat-pill cat-' + cat + '">' + cat + "</span>" +
-        '<span class="sky-date">' +
-        (entry.date ? RE.esc(RE.fmtDate(entry.date)) : "") + "</span>" +
-        "</span>" +
-        '<span class="sky-label">' + RE.esc(entry.title) + "</span>" +
-        '<span class="sky-org">' +
-        (entry.organization ? RE.esc(entry.organization) : "") + "</span>";
-
-      el.addEventListener("click", function () { RE.openDetail(entry.id); });
-      frag.appendChild(el);
-    });
-
-    sky.appendChild(frag);
-  }
-
-  /* ---------- shared tag aggregation ---------- */
-
-  // tag -> { entries: [entry, ...] (newest first) }
-  function aggregateTags(entries) {
-    var byTag = new Map();
-    entries.forEach(function (e) {
-      (e.tags || []).forEach(function (t) {
-        if (!byTag.has(t)) byTag.set(t, { entries: [] });
-        byTag.get(t).entries.push(e);
-      });
-    });
-    byTag.forEach(function (agg) { agg.entries.sort(byDateDesc); });
-    return byTag;
-  }
-
-  /* ---------- trend: hottest topics bar chart ---------- */
-
-  // Topics ranked by how many tracked entries carry the tag.
-  function renderTopics(entries) {
-    var byTag = aggregateTags(entries);
-    var topics = Array.from(byTag.keys())
-      .map(function (t) { return { tag: t, entries: byTag.get(t).entries }; })
-      .sort(function (a, b) {
-        return b.entries.length - a.entries.length || a.tag.localeCompare(b.tag);
-      })
-      .slice(0, MAX_TOPICS);
-    if (!topics.length) return;
-
-    var max = topics[0].entries.length || 1;
-    var tip = document.createElement("div");
-    tip.className = "chart-tip";
-    tip.hidden = true;
-
-    var frag = document.createDocumentFragment();
-    topics.forEach(function (topic) {
-      var lead = topic.entries[0];
-      var row = document.createElement("button");
-      row.type = "button";
-      row.className = "topic-row";
-      row.setAttribute("aria-label",
-        topic.tag + ": " + topic.entries.length +
-        (topic.entries.length === 1 ? " entry" : " entries") +
-        ", led by " + lead.title + " — open details");
-
-      row.innerHTML =
-        '<span class="topic-head">' +
-        '<span class="topic-name">' + RE.esc(topic.tag) + "</span>" +
-        '<span class="topic-rep">' + RE.esc(lead.title) + "</span>" +
-        '<span class="topic-val">' + topic.entries.length + "</span>" +
-        "</span>" +
-        '<span class="topic-track"><span class="topic-fill" style="--w:' +
-        ((topic.entries.length / max) * 100).toFixed(1) + '%"></span></span>';
-
-      row.addEventListener("click", function () { RE.openDetail(lead.id); });
-      row.addEventListener("mouseenter", function () { showTip(row, topic); });
-      row.addEventListener("focus", function () { showTip(row, topic); });
-      row.addEventListener("mouseleave", hideTip);
-      row.addEventListener("blur", hideTip);
-      frag.appendChild(row);
-    });
-
-    topicChart.appendChild(frag);
-    topicChart.appendChild(tip);
-
-    function showTip(row, topic) {
-      var items = topic.entries.slice(0, 3).map(function (e) {
-        return '<span class="tip-item">' + RE.esc(e.title) +
-          '<b>' + RE.esc(RE.fmtDate(e.date)) + "</b></span>";
-      }).join("");
-      var more = topic.entries.length - 3;
-      tip.innerHTML =
-        '<span class="tip-title">' + RE.esc(topic.tag) + " · " +
-        topic.entries.length + (topic.entries.length === 1 ? " entry" : " entries") + "</span>" +
-        items +
-        (more > 0 ? '<span class="tip-more">+ ' + more + " more</span>" : "");
-      tip.hidden = false;
-      var top = row.offsetTop - tip.offsetHeight - 6;
-      tip.style.top = Math.max(0, top) + "px";
-      tip.style.left = Math.min(row.offsetLeft + 20, topicChart.clientWidth - tip.offsetWidth - 4) + "px";
-    }
-
-    function hideTip() { tip.hidden = true; }
-  }
 
   /* ---------- scroll reveal ---------- */
 
@@ -311,9 +502,15 @@
   }
 
   function observeReveals(nodes) {
-    nodes.forEach(function (el) {
-      if (revealObserver) revealObserver.observe(el);
-      else el.classList.add("visible");
+    Array.prototype.forEach.call(nodes, function (el) {
+      if (!revealObserver) {
+        el.classList.add("visible");
+        return;
+      }
+      // observe() is a no-op on an already-watched target, so drop the old
+      // observation first: that is what re-arms a target rendered after load.
+      revealObserver.unobserve(el);
+      revealObserver.observe(el);
     });
   }
 

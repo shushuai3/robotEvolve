@@ -1,0 +1,18 @@
+{
+  "id": "20260705BDA",
+  "title": "Boston Dynamics' Atlas Performs at FIFA World Cup Halftime",
+  "date": "2026-07-05",
+  "organization": "Boston Dynamics",
+  "summary": "On July 5, 2026, Boston Dynamics' Atlas humanoid robot walked onto the field at halftime of the FIFA World Cup 2026 Round of 16 match between Brazil and Norway at New York/New Jersey Stadium, marking the first public appearance of the production Atlas and the first-ever robotics-powered halftime activation in World Cup history. As part of Hyundai Motor's 'Next Starts Now' campaign, Atlas performed goal celebrations inspired by players including Harry Kane, Erling Haaland, Matheus Cunha and Son Heung-min, then delivered the ceremonial match ball to the referee to start the second half. Boston Dynamics trained the behaviors using a reinforcement learning pipeline for whole-body control combined with motion retargeting from human demonstrations, testing them in the lab and on an outdoor soccer field before the live event. The activation followed Atlas' first industrial deployment at Hyundai's Metaplant in 2025 and used the same mobility and control stack Boston Dynamics is adapting for factory work.",
+  "whyItMatters": "The World Cup halftime show doubled as a stress test: performing reliably in a bright, loud, unpredictable stadium in front of a global TV audience demonstrates the same robustness Boston Dynamics needs for Atlas to work reliably on real factory floors. It also signals a shift in how humanoid robotics companies market capability, pairing a major automaker's brand reach with a live, unscripted-feeling demonstration rather than a controlled lab video, and reinforces Hyundai's positioning as Boston Dynamics' owner and primary industrial partner as Atlas moves from research robot toward commercial deployment.",
+  "links": {
+    "news": "https://www.hyundaimotorgroup.com/en/news/hyundai-motor-brings-atlas-humanoid-robot-to-fifa-world-cup-2026-in-first-ever-live-match-environment-robotics-integration",
+    "project": "https://bostondynamics.com/blog/deploying-robots-into-and-onto-the-field/"
+  },
+  "tags": [
+    "humanoid",
+    "locomotion",
+    "industry",
+    "reinforcement-learning"
+  ]
+}

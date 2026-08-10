@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RobotEvolve — Tracking the evolution of robots &amp; AI</title>
-  <meta name="description" content="RobotEvolve tracks the evolution of robots and AI: recent signals with organization and date, plus the hottest topics with their representative technologies.">
+  <meta name="description" content="RobotEvolve tracks the evolution of robots and AI: recent technology from the major labs and companies, recent industry news, and every tracked technique grouped by category.">
   <link rel="canonical" href="https://www.robotevolve.com/">
   <meta property="og:site_name" content="RobotEvolve">
   <meta property="og:type" content="website">
   <meta property="og:title" content="RobotEvolve — Tracking the evolution of robots &amp; AI">
-  <meta property="og:description" content="Recent robotics &amp; AI signals, plus the hottest topics with their representative technologies.">
+  <meta property="og:description" content="Recent robotics &amp; AI technology, recent industry news, and every tracked technique grouped by category.">
   <meta property="og:url" content="https://www.robotevolve.com/">
   <meta property="og:image" content="https://www.robotevolve.com/assets/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -111,31 +111,45 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-      <a href="#news">Recent signals</a>
-      <a href="#trend">Trend</a>
+      <a href="#tech">Technology</a>
+      <a href="#news">News</a>
+      <a href="#trend">Categories</a>
     </nav>
   </header>
 
   <main>
-    <!-- ===== WEEKLY NEWS: the floating sky ===== -->
-    <section class="section section-first" id="news">
+    <!-- ===== 1 · RECENT TECHNOLOGY: the floating sky ===== -->
+    <section class="section section-first" id="tech">
       <div class="section-head">
-        <h1>Recent <span class="gradient-text">Signals</span></h1>
+        <h1>Recent <span class="gradient-text">Technology</span></h1>
       </div>
-      <p id="sky-status" class="status" hidden></p>
-      <div id="sky" class="sky" aria-label="Recent signals, newest first"></div>
-      <button type="button" id="loadMore" class="load-more" aria-controls="sky" hidden>
+      <p id="tech-status" class="status" hidden></p>
+      <div id="tech-sky" class="sky" aria-label="Recent technology releases, newest first"></div>
+      <button type="button" id="techMore" class="load-more" aria-controls="tech-sky" hidden>
         Load one more week
       </button>
     </section>
 
-    <!-- ===== TREND: hottest topics ===== -->
+    <!-- ===== 2 · RECENT NEWS: the dated list ===== -->
+    <section class="section" id="news">
+      <div class="section-head reveal">
+        <h2>Recent <span class="gradient-text">News</span></h2>
+      </div>
+      <p id="news-status" class="status" hidden></p>
+      <div id="news-list" class="news-list" aria-label="Recent news, newest first"></div>
+      <button type="button" id="newsMore" class="load-more" aria-controls="news-list" hidden>
+        Load one more week
+      </button>
+    </section>
+
+    <!-- ===== 3 · TECHNIQUES BY CATEGORY ===== -->
     <section class="section" id="trend">
       <div class="section-head reveal">
-        <h2>Where the Heat <span class="gradient-text">Concentrates</span></h2>
+        <h2>Techniques by <span class="gradient-text">Category</span></h2>
+        <p class="section-meta" id="cat-range" hidden></p>
       </div>
-      <div id="topic-chart" class="topic-chart reveal"
-           aria-label="Bar chart: tracked entries per topic, with the leading technology of each"></div>
+      <div id="cat-board" class="cat-board reveal"
+           aria-label="Technology entries grouped by category, with entry counts per technique"></div>
 
       <div class="evo-wrap reveal" aria-label="Illustration: robot evolution from industrial arm to AI-driven humanoid, in the style of the human evolution march">
         <div class="evo-scroll">
