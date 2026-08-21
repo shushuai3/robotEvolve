@@ -1,0 +1,17 @@
+{
+  "id": "20260819XHR",
+  "title": "Xiaomi Humanoid Robot Debuts at World Robot Conference",
+  "date": "2026-08-19",
+  "organization": "Xiaomi Robotics",
+  "summary": "Xiaomi's full-size humanoid robot made its first public appearance at the 2026 World Robot Conference in Beijing (August 19-23), after President Lu Weibing confirmed the debut during the company's August 18 earnings call. The robot stands approximately 1.7 meters tall and is built around a universal humanoid platform spanning both hardware and Xiaomi's own foundation models. In a four-month internal trial at an automobile factory disclosed by CEO Lei Jun in July, the robot's success rate on a dual-sided self-tapping nut installation task rose from 90.2% to 98%, and it later reached roughly 90% success on final-assembly tasks such as folding center-console side covers and handling material boxes. Xiaomi says the robot will integrate with its broader \"people, cars, and home\" ecosystem, with smart-manufacturing production lines as its first priority application.",
+  "whyItMatters": "The debut marks Xiaomi's entry into the crowded Chinese humanoid robot field alongside Unitree, AgiBot, and UBTech, leveraging its consumer electronics and EV manufacturing base to test robots on its own factory floors before a public rollout. The disclosed jump from 90% to 98% success on a real assembly task is a rare quantitative deployment figure rather than a staged demo, signaling that a major Chinese hardware manufacturer is treating humanoid robots as a near-term production tool rather than a long-term research bet.",
+  "links": {
+    "news": "https://www.gizmochina.com/2026/08/18/xiaomi-robot-set-to-make-public-debut-at-2026-world-robot-conference-on-august-19/"
+  },
+  "tags": [
+    "humanoid",
+    "deployment",
+    "manipulation",
+    "industry"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "20260610NRR",
+  "title": "Neura Robotics Raises Record $1.4B Series C",
+  "date": "2026-06-10",
+  "organization": "Neura Robotics",
+  "summary": "Germany's Neura Robotics announced a Series C round of up to $1.4 billion on June 10, 2026, which the company and multiple outlets describe as the largest single fundraise in robotics history. Investors include Amazon, NVIDIA, Qualcomm Technologies, Tether, Bosch, Schaeffler, the European Investment Bank, imec.xpand, Lingotto Horizon and InterAlpen Partners. The round values Neura at roughly $7 billion, the highest of any European humanoid or cognitive-robotics company. Neura says the funds will scale serial production toward millions of robots by 2030 and expand its Neura Gyms real-world training-data infrastructure, on top of an existing deployment pipeline the company values at more than $1 billion.",
+  "whyItMatters": "This is one of the largest single capital events in robotics history and a rare case of NVIDIA, Amazon and Qualcomm co-investing directly in one humanoid platform alongside industrial incumbents Bosch and Schaeffler, signaling that major U.S. tech and European industrial players are converging on a single bet for physical AI infrastructure outside the U.S. and Chinese ecosystems.",
+  "links": {
+    "news": "https://neura-robotics.com/record-series-c/"
+  },
+  "tags": [
+    "funding",
+    "humanoid",
+    "industry"
+  ]
+}

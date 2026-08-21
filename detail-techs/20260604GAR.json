@@ -1,0 +1,16 @@
+{
+  "id": "20260604GAR",
+  "title": "Generalist AI Raises $400M to Scale Physical AI",
+  "date": "2026-06-04",
+  "organization": "Generalist AI",
+  "summary": "Generalist AI announced on June 4, 2026 that it raised $400 million in new funding, bringing its total capital raised to more than half a billion dollars just two months after releasing its GEN-1 robot foundation model. Radical Ventures led the round, joined by new investors 8VC, Union Square Ventures, Hanabi Capital and Norwest, alongside existing backers NVIDIA, Boldstart Ventures, Spark Capital, and Bezos Expeditions. The company said GEN-1 reaches 99% average success rates on dexterous manipulation tasks where prior models scored 64%, executes tasks up to 3x faster, and needs only about an hour of robot data per task. Generalist said the funding will scale its next-generation models, its physical training-data engine, and its compute and training infrastructure.",
+  "whyItMatters": "The round is one of the largest single robotics-foundation-model raises of 2026 and signals investor conviction that one model can generalize across robot embodiments -- arms, humanoids, and mobile platforms -- rather than requiring bespoke training per hardware. Coming days after NVIDIA's own Cosmos 3 launch, and with NVIDIA itself among the backers, it underscores how concentrated the capital and compute behind general-purpose physical AI has become.",
+  "links": {
+    "news": "https://generalistai.com/blog/accelerating-the-next-phase-of-physical-ai"
+  },
+  "tags": [
+    "funding",
+    "foundation-model",
+    "manipulation"
+  ]
+}

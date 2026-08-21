@@ -1,0 +1,18 @@
+{
+  "id": "20260707HFR",
+  "title": "Hugging Face Releases LeRobot v0.6.0",
+  "date": "2026-07-07",
+  "organization": "Hugging Face",
+  "summary": "Hugging Face shipped LeRobot v0.6.0 on July 7, 2026, its largest update yet to the open-source robot-learning toolkit, organized around the themes \"imagine, evaluate, improve.\" The release adds three world-model policies (VLA-JEPA, FastWAM, LingBot-VA), five new VLA integrations (GR00T N1.7, MolmoAct2, EO-1, EVO1, Multitask DiT), and a new reward-model API (Robometer, TOPReward, SARM). It unifies six simulation benchmarks (LIBERO-plus, RoboTwin 2.0, RoboCasa365, RoboCerebra, RoboMME, VLABench) behind a single lerobot-eval CLI, and adds a lerobot-rollout deployment CLI supporting DAgger-style correction workflows. It also adds end-to-end depth-sensing support for Intel RealSense cameras and roughly 2x faster multi-camera video data loading.",
+  "whyItMatters": "LeRobot is the de facto open-source standard toolkit for robot-learning research, so consolidating new world-model policies, a growing set of VLA integrations, and six benchmarks behind one evaluation and deployment CLI meaningfully lowers the friction of reproducing and comparing robot-learning methods across labs, likely accelerating adoption of world-model-based approaches across the field.",
+  "links": {
+    "news": "https://huggingface.co/blog/lerobot-release-v060",
+    "code": "https://github.com/huggingface/lerobot"
+  },
+  "tags": [
+    "world-model",
+    "vla",
+    "benchmark",
+    "simulation"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "20260718AUF",
+  "title": "AgiBot Unveils Four New Products at WAIC 2026",
+  "date": "2026-07-18",
+  "organization": "AgiBot",
+  "summary": "AgiBot unveiled four new products at the World Artificial Intelligence Conference 2026 in Shanghai on July 18: the A3 Ultra full-size humanoid, the X2 EDU education platform, the G2 Max industrial task robot, and the OmniHand 3 Ultra-M dexterous hand. The A3 Ultra stands 1.74 meters tall, weighs 60 kg, has 51 active degrees of freedom, a 5 kg per-arm payload, and up to eight hours of runtime, powered by NVIDIA Thor for onboard embodied-AI processing. The OmniHand 3 Ultra-M packs 20 active degrees of freedom and integrated tactile sensing into a 630-gram direct-drive hand with +/-0.2 mm repeatability and a 5 kg whole-hand grip load. AgiBot also disclosed an industrial deployment with Longcheer Technology, where G2 robots run a closed-loop tablet quality-inspection line supporting roughly 3,000 units per shift with downtime kept below 4%.",
+  "whyItMatters": "AgiBot is one of China's highest-volume humanoid manufacturers, having passed 15,000 cumulative robots produced by June 2026, so a coordinated four-product launch spanning a full-size humanoid, an education platform, an industrial task robot, and a dexterous hand signals a push to cover the full stack from research to factory floor. The Longcheer production-line figures, sustained multi-thousand-unit shifts with low downtime, are a more concrete measure of real-world readiness than typical demo videos, positioning AgiBot alongside Unitree as a leading indicator of how fast embodied AI is moving from lab to production line in China.",
+  "links": {
+    "news": "https://www.agibot.com/article/231/detail/85.html"
+  },
+  "tags": [
+    "humanoid",
+    "hardware",
+    "manipulation",
+    "industry"
+  ]
+}

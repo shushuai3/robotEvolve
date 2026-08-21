@@ -1,0 +1,16 @@
+{
+  "id": "20260720HCF",
+  "title": "Hyundai Completes Full Acquisition of Boston Dynamics",
+  "date": "2026-07-20",
+  "organization": "Hyundai Motor Group",
+  "summary": "Hyundai Motor Group completed its acquisition of SoftBank's remaining stake in Boston Dynamics on July 20, 2026, after SoftBank exercised a put option embedded in their 2021 agreement, making the robotics company a wholly owned Hyundai subsidiary. The deal valued SoftBank's roughly 9.65% stake at about $325 million, implying a Boston Dynamics valuation of around $3.3 billion, consistent with the price Hyundai paid for its original 80% stake in 2021. Hyundai's four affiliated shareholders -- Hyundai Motor, Kia, Hyundai Mobis and Hyundai Glovis -- each completed board approvals ahead of the deadline. The close came the same week Hyundai reiterated plans to deploy more than 25,000 Atlas humanoid robots across its Hyundai and Kia plants, targeting 30,000 units of annual production capacity by 2028.",
+  "whyItMatters": "Full ownership removes SoftBank's board seat and minority-shareholder friction, giving Hyundai unencumbered control to fold Boston Dynamics' Atlas platform directly into its manufacturing strategy, and clears a path for a potential future IPO or outside strategic investment. It is one of the largest completed ownership changes in humanoid robotics this year, closing the same week Hyundai's own Ulsan workforce began striking over consent rights ahead of Atlas's planned factory deployment.",
+  "links": {
+    "news": "https://www.hyundai.com/worldwide/en/newsroom/detail/0000001225"
+  },
+  "tags": [
+    "industry",
+    "humanoid",
+    "deployment"
+  ]
+}

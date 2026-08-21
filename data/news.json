@@ -1,5 +1,126 @@
 [
   {
+    "id": "20260820TOD",
+    "title": "Tiangong Omni Debuts as Open Humanoid Platform",
+    "date": "2026-08-20",
+    "organization": "X-Humanoid",
+    "category": "tech",
+    "tags": [
+      "humanoid",
+      "locomotion",
+      "hardware",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260820TOD.json"
+  },
+  {
+    "id": "20260819USS",
+    "title": "Unitree Shares Soar 629% in Shanghai Trading Debut",
+    "date": "2026-08-19",
+    "organization": "Unitree Robotics",
+    "category": "news",
+    "tags": [
+      "industry",
+      "humanoid",
+      "funding"
+    ],
+    "detailPath": "detail-techs/20260819USS.json"
+  },
+  {
+    "id": "20260819XHR",
+    "title": "Xiaomi Humanoid Robot Debuts at World Robot Conference",
+    "date": "2026-08-19",
+    "organization": "Xiaomi Robotics",
+    "category": "news",
+    "tags": [
+      "humanoid",
+      "deployment",
+      "manipulation",
+      "industry"
+    ],
+    "detailPath": "detail-techs/20260819XHR.json"
+  },
+  {
+    "id": "20260819GAU",
+    "title": "Generalist AI Unveils GEN-1.5 Foundation Model",
+    "date": "2026-08-19",
+    "organization": "Generalist AI",
+    "category": "tech",
+    "tags": [
+      "foundation-model",
+      "imitation-learning",
+      "manipulation",
+      "efficiency"
+    ],
+    "detailPath": "detail-techs/20260819GAU.json"
+  },
+  {
+    "id": "20260817GRR",
+    "title": "Gravis Robotics Raises $200M Series A From SoftBank",
+    "date": "2026-08-17",
+    "organization": "Gravis Robotics",
+    "category": "news",
+    "tags": [
+      "funding",
+      "industry",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260817GRR.json"
+  },
+  {
+    "id": "20260813WNL",
+    "title": "Waymo Named Las Vegas Raiders' Ride Partner",
+    "date": "2026-08-13",
+    "organization": "Waymo",
+    "category": "news",
+    "tags": [
+      "deployment",
+      "industry",
+      "navigation"
+    ],
+    "detailPath": "detail-techs/20260813WNL.json"
+  },
+  {
+    "id": "20260813LNE",
+    "title": "LG, NVIDIA Expand Robotics Partnership",
+    "date": "2026-08-13",
+    "organization": "LG & NVIDIA",
+    "category": "news",
+    "tags": [
+      "industry",
+      "humanoid",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260813LNE.json"
+  },
+  {
+    "id": "20260811TNR",
+    "title": "TUM, NEURA Robotics Launch World's Largest AI Robotics Training Center",
+    "date": "2026-08-11",
+    "organization": "TUM & NEURA Robotics",
+    "category": "news",
+    "tags": [
+      "industry",
+      "humanoid",
+      "funding"
+    ],
+    "detailPath": "detail-techs/20260811TNR.json"
+  },
+  {
+    "id": "20260810DRU",
+    "title": "Dyna Robotics Unveils DYNA-2 World-Action Model",
+    "date": "2026-08-10",
+    "organization": "Dyna Robotics",
+    "category": "tech",
+    "tags": [
+      "world-model",
+      "imitation-learning",
+      "manipulation",
+      "dataset"
+    ],
+    "detailPath": "detail-techs/20260810DRU.json"
+  },
+  {
     "id": "20260807BCS",
     "title": "Brain Corp Surpasses 50,000 Autonomous Robots Worldwide",
     "date": "2026-08-07",
@@ -12,20 +133,6 @@
       "perception"
     ],
     "detailPath": "detail-techs/20260807BCS.json"
-  },
-  {
-    "id": "20260806HSS",
-    "title": "HII Signs Shipbuilding Robotics Deal Worth $900M",
-    "date": "2026-08-06",
-    "organization": "Huntington Ingalls",
-    "category": "news",
-    "tags": [
-      "industry",
-      "deployment",
-      "manipulation",
-      "hardware"
-    ],
-    "detailPath": "detail-techs/20260806HSS.json"
   },
   {
     "id": "20260806UPS",
@@ -54,17 +161,18 @@
     "detailPath": "detail-techs/20260806SRG.json"
   },
   {
-    "id": "20260805MRS",
-    "title": "Moove Raises Series C for AV Infrastructure",
-    "date": "2026-08-05",
-    "organization": "Moove",
+    "id": "20260806HSS",
+    "title": "HII Signs Shipbuilding Robotics Deal Worth $900M",
+    "date": "2026-08-06",
+    "organization": "Huntington Ingalls",
     "category": "news",
     "tags": [
-      "funding",
       "industry",
-      "deployment"
+      "deployment",
+      "manipulation",
+      "hardware"
     ],
-    "detailPath": "detail-techs/20260805MRS.json"
+    "detailPath": "detail-techs/20260806HSS.json"
   },
   {
     "id": "20260805ZSC",
@@ -78,6 +186,47 @@
       "navigation"
     ],
     "detailPath": "detail-techs/20260805ZSC.json"
+  },
+  {
+    "id": "20260805XOR",
+    "title": "Xiaomi Open-Sources Robotics Foundation Model",
+    "date": "2026-08-05",
+    "organization": "Xiaomi Robotics",
+    "category": "tech",
+    "tags": [
+      "foundation-model",
+      "vla",
+      "manipulation",
+      "dataset"
+    ],
+    "detailPath": "detail-techs/20260805XOR.json"
+  },
+  {
+    "id": "20260805MRS",
+    "title": "Moove Raises Series C for AV Infrastructure",
+    "date": "2026-08-05",
+    "organization": "Moove",
+    "category": "news",
+    "tags": [
+      "funding",
+      "industry",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260805MRS.json"
+  },
+  {
+    "id": "20260805BAS",
+    "title": "BridgeVLA++ Adds Spatio-Temporal Memory to 3D VLA Manipulation",
+    "date": "2026-08-05",
+    "organization": "CASIA & ByteDance Seed",
+    "category": "tech",
+    "tags": [
+      "vla",
+      "manipulation",
+      "planning",
+      "benchmark"
+    ],
+    "detailPath": "detail-techs/20260805BAS.json"
   },
   {
     "id": "20260805ARR",
@@ -107,18 +256,17 @@
     "detailPath": "detail-techs/20260805APW.json"
   },
   {
-    "id": "20260805BAS",
-    "title": "BridgeVLA++ Adds Spatio-Temporal Memory to 3D VLA Manipulation",
-    "date": "2026-08-05",
-    "organization": "CASIA & ByteDance Seed",
-    "category": "tech",
+    "id": "20260804UNP",
+    "title": "U.S. Navy Picks Blue Water Autonomy for Deep-Ocean Survey Ships",
+    "date": "2026-08-04",
+    "organization": "Blue Water Autonomy",
+    "category": "news",
     "tags": [
-      "vla",
-      "manipulation",
-      "planning",
-      "benchmark"
+      "industry",
+      "deployment",
+      "navigation"
     ],
-    "detailPath": "detail-techs/20260805BAS.json"
+    "detailPath": "detail-techs/20260804UNP.json"
   },
   {
     "id": "20260804ERE",
@@ -134,19 +282,6 @@
     "detailPath": "detail-techs/20260804ERE.json"
   },
   {
-    "id": "20260804UNP",
-    "title": "U.S. Navy Picks Blue Water Autonomy for Deep-Ocean Survey Ships",
-    "date": "2026-08-04",
-    "organization": "Blue Water Autonomy",
-    "category": "news",
-    "tags": [
-      "industry",
-      "deployment",
-      "navigation"
-    ],
-    "detailPath": "detail-techs/20260804UNP.json"
-  },
-  {
     "id": "20260803WRP",
     "title": "Walden Robotics Partners with Toyota on Practical Humanoids",
     "date": "2026-08-03",
@@ -158,6 +293,19 @@
       "deployment"
     ],
     "detailPath": "detail-techs/20260803WRP.json"
+  },
+  {
+    "id": "20260803TTA",
+    "title": "Teleopit Teleoperates a Full Humanoid Body from VR",
+    "date": "2026-08-03",
+    "organization": "Westlake University",
+    "category": "tech",
+    "tags": [
+      "humanoid",
+      "imitation-learning",
+      "hardware"
+    ],
+    "detailPath": "detail-techs/20260803TTA.json"
   },
   {
     "id": "20260803RRE",
@@ -186,19 +334,6 @@
     "detailPath": "detail-techs/20260803ESR.json"
   },
   {
-    "id": "20260803TTA",
-    "title": "Teleopit Teleoperates a Full Humanoid Body from VR",
-    "date": "2026-08-03",
-    "organization": "Westlake University",
-    "category": "tech",
-    "tags": [
-      "humanoid",
-      "imitation-learning",
-      "hardware"
-    ],
-    "detailPath": "detail-techs/20260803TTA.json"
-  },
-  {
     "id": "20260802FDW",
     "title": "FACT Diagnoses Why VLAs Fail at Contact-Rich Manipulation",
     "date": "2026-08-02",
@@ -223,19 +358,6 @@
       "humanoid"
     ],
     "detailPath": "detail-techs/20260801LGA.json"
-  },
-  {
-    "id": "20260731CTG",
-    "title": "CLIFT Turns Gemini Robotics On-Device into a Humanoid Specialist",
-    "date": "2026-07-31",
-    "organization": "UC Berkeley & DeepMind",
-    "category": "tech",
-    "tags": [
-      "vla",
-      "reinforcement-learning",
-      "humanoid"
-    ],
-    "detailPath": "detail-techs/20260731CTG.json"
   },
   {
     "id": "20260731WAA",
@@ -264,18 +386,17 @@
     "detailPath": "detail-techs/20260731PAD.json"
   },
   {
-    "id": "20260730GRE",
-    "title": "Gemini Robotics ER 2 Adds Multi-Robot Tool Orchestration",
-    "date": "2026-07-30",
-    "organization": "Google DeepMind",
+    "id": "20260731CTG",
+    "title": "CLIFT Turns Gemini Robotics On-Device into a Humanoid Specialist",
+    "date": "2026-07-31",
+    "organization": "UC Berkeley & DeepMind",
     "category": "tech",
     "tags": [
-      "foundation-model",
-      "planning",
-      "multi-robot",
-      "perception"
+      "vla",
+      "reinforcement-learning",
+      "humanoid"
     ],
-    "detailPath": "detail-techs/20260730GRE.json"
+    "detailPath": "detail-techs/20260731CTG.json"
   },
   {
     "id": "20260730XND",
@@ -302,6 +423,20 @@
       "manipulation"
     ],
     "detailPath": "detail-techs/20260730WAP.json"
+  },
+  {
+    "id": "20260730GRE",
+    "title": "Gemini Robotics ER 2 Adds Multi-Robot Tool Orchestration",
+    "date": "2026-07-30",
+    "organization": "Google DeepMind",
+    "category": "tech",
+    "tags": [
+      "foundation-model",
+      "planning",
+      "multi-robot",
+      "perception"
+    ],
+    "detailPath": "detail-techs/20260730GRE.json"
   },
   {
     "id": "20260730GR2",
@@ -449,6 +584,33 @@
     "detailPath": "detail-techs/20260725HDP.json"
   },
   {
+    "id": "20260720HCF",
+    "title": "Hyundai Completes Full Acquisition of Boston Dynamics",
+    "date": "2026-07-20",
+    "organization": "Hyundai Motor Group",
+    "category": "news",
+    "tags": [
+      "industry",
+      "humanoid",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260720HCF.json"
+  },
+  {
+    "id": "20260718AUF",
+    "title": "AgiBot Unveils Four New Products at WAIC 2026",
+    "date": "2026-07-18",
+    "organization": "AgiBot",
+    "category": "tech",
+    "tags": [
+      "humanoid",
+      "hardware",
+      "manipulation",
+      "industry"
+    ],
+    "detailPath": "detail-techs/20260718AUF.json"
+  },
+  {
     "id": "20260716XOR",
     "title": "Xiaomi Open-Sources Robot Foundation Model XR-1",
     "date": "2026-07-16",
@@ -463,6 +625,20 @@
     "detailPath": "detail-techs/20260716XOR.json"
   },
   {
+    "id": "20260707HFR",
+    "title": "Hugging Face Releases LeRobot v0.6.0",
+    "date": "2026-07-07",
+    "organization": "Hugging Face",
+    "category": "tech",
+    "tags": [
+      "world-model",
+      "vla",
+      "benchmark",
+      "simulation"
+    ],
+    "detailPath": "detail-techs/20260707HFR.json"
+  },
+  {
     "id": "20260705BDA",
     "title": "Boston Dynamics' Atlas Performs at FIFA World Cup Halftime",
     "date": "2026-07-05",
@@ -475,6 +651,99 @@
       "reinforcement-learning"
     ],
     "detailPath": "detail-techs/20260705BDA.json"
+  },
+  {
+    "id": "20260630AOR",
+    "title": "Apptronik Opens Robot Park to Scale Humanoid Data",
+    "date": "2026-06-30",
+    "organization": "Apptronik",
+    "category": "news",
+    "tags": [
+      "deployment",
+      "humanoid",
+      "industry",
+      "dataset"
+    ],
+    "detailPath": "detail-techs/20260630AOR.json"
+  },
+  {
+    "id": "20260624ART",
+    "title": "Agility Robotics to Go Public via SPAC",
+    "date": "2026-06-24",
+    "organization": "Agility Robotics",
+    "category": "news",
+    "tags": [
+      "funding",
+      "industry",
+      "humanoid"
+    ],
+    "detailPath": "detail-techs/20260624ART.json"
+  },
+  {
+    "id": "20260610NRR",
+    "title": "Neura Robotics Raises Record $1.4B Series C",
+    "date": "2026-06-10",
+    "organization": "Neura Robotics",
+    "category": "news",
+    "tags": [
+      "funding",
+      "humanoid",
+      "industry"
+    ],
+    "detailPath": "detail-techs/20260610NRR.json"
+  },
+  {
+    "id": "20260604GAR",
+    "title": "Generalist AI Raises $400M to Scale Physical AI",
+    "date": "2026-06-04",
+    "organization": "Generalist AI",
+    "category": "news",
+    "tags": [
+      "funding",
+      "foundation-model",
+      "manipulation"
+    ],
+    "detailPath": "detail-techs/20260604GAR.json"
+  },
+  {
+    "id": "20260531OLD",
+    "title": "OpenAI Launches Dedicated Robotics Hardware Division",
+    "date": "2026-05-31",
+    "organization": "OpenAI",
+    "category": "news",
+    "tags": [
+      "industry",
+      "hardware",
+      "deployment"
+    ],
+    "detailPath": "detail-techs/20260531OLD.json"
+  },
+  {
+    "id": "20260531NUO",
+    "title": "NVIDIA Unveils Open Humanoid Robot Reference Design",
+    "date": "2026-05-31",
+    "organization": "NVIDIA",
+    "category": "tech",
+    "tags": [
+      "hardware",
+      "humanoid",
+      "foundation-model",
+      "manipulation"
+    ],
+    "detailPath": "detail-techs/20260531NUO.json"
+  },
+  {
+    "id": "20260531NLC",
+    "title": "NVIDIA Launches Cosmos 3, Open Foundation Model for Physical AI",
+    "date": "2026-05-31",
+    "organization": "NVIDIA",
+    "category": "tech",
+    "tags": [
+      "world-model",
+      "foundation-model",
+      "simulation"
+    ],
+    "detailPath": "detail-techs/20260531NLC.json"
   },
   {
     "id": "20260407ARA",

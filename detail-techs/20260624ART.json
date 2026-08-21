@@ -1,0 +1,16 @@
+{
+  "id": "20260624ART",
+  "title": "Agility Robotics to Go Public via SPAC",
+  "date": "2026-06-24",
+  "organization": "Agility Robotics",
+  "summary": "Agility Robotics, maker of the bipedal humanoid robot Digit, announced on June 24, 2026 a definitive business combination agreement to go public via merger with special purpose acquisition company Churchill Capital Corp XI at a $2.5 billion pre-money equity value. The deal is expected to generate more than $620 million in gross proceeds, including roughly $200 million from a PIPE led by Foxconn, and the combined company will list on a major North American exchange under the ticker \"AGLT.\" Digit is commercially deployed across nine customer facilities including Schaeffler, GXO, Toyota Motor Manufacturing Canada, and Mercado Libre, with more than 65,000 cumulative operating hours and over $300 million in multi-year orders secured for the next-generation Digit v5. Strategic backers include NVIDIA, Amazon, SoftBank Vision Fund 2, DCVC, Schaeffler, and Foxconn.",
+  "whyItMatters": "The deal would make Agility one of the first US humanoid-robotics makers to pursue a public listing with proven commercial deployments rather than research demos, arriving in the same window as Unitree's Shanghai IPO pricing and signaling that public markets are beginning to price standalone humanoid-robot companies on real deployment data rather than prototypes.",
+  "links": {
+    "news": "https://www.agilityrobotics.com/content/agility-robotics-to-go-public-through-merger-with-churchill-capital-corp-xi"
+  },
+  "tags": [
+    "funding",
+    "industry",
+    "humanoid"
+  ]
+}

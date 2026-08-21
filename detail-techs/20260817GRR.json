@@ -1,0 +1,17 @@
+{
+  "id": "20260817GRR",
+  "title": "Gravis Robotics Raises $200M Series A From SoftBank",
+  "date": "2026-08-17",
+  "organization": "Gravis Robotics",
+  "summary": "Gravis Robotics, an ETH Zurich spinout founded in 2022, raised a $200 million Series A led by SoftBank Group, announced August 17, 2026 and described by the company as the largest Series A in construction-robotics history. Its Gravis Rack retrofit kit trains on simulated earthmoving physics to bridge the sim-to-real gap and has been installed across excavators and other heavy equipment from Caterpillar, John Deere, JCB, Hitachi, Case, Develon and other manufacturers, delivering what the company says is up to a 30% productivity gain over manual operation. Gravis is live across seven countries in the UK, EU, US, Latin America and Asia, and recently won an $8 million UK government-backed CAM Pathfinder contract with Flannery Plant Hire to retrofit excavator fleets.",
+  "whyItMatters": "Construction is one of the least automated major industries, and Gravis is betting that retrofitting existing mixed-brand excavator fleets, rather than building new autonomous hardware from scratch, is the fastest path to scale. SoftBank's record-setting check signals that investors see heavy-equipment autonomy as a distinct, fundable category within physical AI, separate from humanoids and warehouse robots, and sets a funding benchmark other construction-robotics startups will be measured against.",
+  "links": {
+    "news": "https://siliconangle.com/2026/08/17/gravis-robotics-gets-200m-funding-softbank-retrofit-excavators-self-driving-ai-systems/",
+    "project": "https://www.gravisrobotics.com/series-a"
+  },
+  "tags": [
+    "funding",
+    "industry",
+    "deployment"
+  ]
+}

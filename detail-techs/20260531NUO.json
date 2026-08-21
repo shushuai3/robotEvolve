@@ -1,0 +1,17 @@
+{
+  "id": "20260531NUO",
+  "title": "NVIDIA Unveils Open Humanoid Robot Reference Design",
+  "date": "2026-05-31",
+  "organization": "NVIDIA",
+  "summary": "NVIDIA announced the Isaac GR00T Reference Humanoid Robot on May 31, 2026 at GTC Taipei, the first open, fully integrated humanoid hardware-and-software reference design. It pairs a Unitree H2 Plus chassis (6 feet tall, 31 degrees of freedom) with dual Sharpa Wave tactile five-finger hands (22 degrees of freedom each), a Jetson AGX Thor T5000 onboard compute module, and NVIDIA's open Isaac GR00T software stack spanning Isaac Teleop, GR00T foundation models, Isaac Sim/Lab, and Isaac ROS. Research partners adopting the platform include Ai2, ETH Zurich, Stanford Robotics Center, and UC San Diego's Advanced Robotics and Controls Laboratory. Unitree plans to make the platform commercially available in late 2026.",
+  "whyItMatters": "This is NVIDIA's first fully open hardware-plus-software humanoid reference platform, aimed at standardizing humanoid research the way Jetson standardized embedded AI; by combining a commodity chassis, capable tactile hands, and an open software stack, it lowers the barrier for academic labs to run reproducible humanoid manipulation research and could establish a common baseline platform across the field.",
+  "links": {
+    "news": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design"
+  },
+  "tags": [
+    "hardware",
+    "humanoid",
+    "foundation-model",
+    "manipulation"
+  ]
+}

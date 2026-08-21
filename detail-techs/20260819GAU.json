@@ -1,0 +1,17 @@
+{
+  "id": "20260819GAU",
+  "title": "Generalist AI Unveils GEN-1.5 Foundation Model",
+  "date": "2026-08-19",
+  "organization": "Generalist AI",
+  "summary": "Generalist AI published GEN-1.5 on August 19, 2026, a robot foundation model the company says is the first it knows of to show broad one-shot and few-shot learning of physical skills at scale. The model processes video, other sensor data, language, and proprioceptive input with a 30-second context window and outputs 100 Hz action trajectories. Given 3 to 12 seconds of a single demonstration inserted into that context as a \"physical prompt,\" GEN-1.5 performs the new task immediately with zero gradient updates, averaging 59% success across 10 diverse manipulation tasks such as unzipping a pouch, twisting a jar lid, and retrieving money from a wallet; fine-tuning with just 1-10 gradient steps on about 5 minutes of data lifts that to 83%. The model also chains two physical prompts into one longer behavior, transfers demonstrations recorded purely in simulation to real-world execution despite no simulation data in pretraining, and can copy a task demonstrated by a human's bare hands. Generalist says these behaviors emerged from over 8 months of continuous pretraining following its earlier GEN-0 and GEN-1 models, with no architecture changes or meta-learning objectives added to induce them.",
+  "whyItMatters": "GEN-1.5 draws an explicit analogy to GPT-3's emergence of in-context few-shot learning in language models, and argues the same phenomenon is now showing up in embodied foundation models purely from pretraining scale rather than deliberate meta-learning tricks. If the result holds up, teaching a robot a new skill could shrink from months of task-specific programming or hours of teleoperated data collection to a single few-second demonstration, which would materially lower the cost of deploying general-purpose robots across new tasks and environments.",
+  "links": {
+    "news": "https://generalistai.com/blog/gen-1.5"
+  },
+  "tags": [
+    "foundation-model",
+    "imitation-learning",
+    "manipulation",
+    "efficiency"
+  ]
+}

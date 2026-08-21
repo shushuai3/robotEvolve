@@ -1,0 +1,16 @@
+{
+  "id": "20260813WNL",
+  "title": "Waymo Named Las Vegas Raiders' Ride Partner",
+  "date": "2026-08-13",
+  "organization": "Waymo",
+  "summary": "Waymo announced on August 13, 2026 that it is the Official Autonomous Ride-Hailing Partner of the Las Vegas Raiders and Allegiant Stadium, the first partnership between a professional football team and an autonomous vehicle company. Starting this season, riders traveling to Raiders games, concerts, and other stadium events will have access to a dedicated Waymo pickup and drop-off zone with dedicated wayfinding signage. The deal includes a VIP fan upgrade at every home game and a \"Kickoff Kid\" program for local youth. It builds on Waymo's existing robotaxi service, which as of August 2026 runs roughly 4,000 driverless vehicles across 15 U.S. cities.",
+  "whyItMatters": "Stadium and event-venue partnerships put a robotaxi service in front of tens of thousands of riders on a predictable schedule at low cost, and a professional sports league lending its brand to a driverless car company is itself a marker of how mainstream robotaxis have become -- particularly in Las Vegas, where Waymo already competes with Zoox for market share. For Waymo, it also hedges against the event-night surge demand that has historically been hard for ride-hailing services to handle well.",
+  "links": {
+    "news": "https://waymo.com/blog/shorts/allegiant-partnership/"
+  },
+  "tags": [
+    "deployment",
+    "industry",
+    "navigation"
+  ]
+}
