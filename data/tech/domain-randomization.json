@@ -1,0 +1,31 @@
+{
+  "id": "domain-randomization",
+  "name": "Domain Randomization",
+  "summary": "Rather than trying to make simulation photorealistic, randomize textures, lighting, camera pose, object properties and physical parameters so widely that the policy must become invariant to them — at which point the real world falls inside the training distribution. This single idea underlies most successful sim-to-real transfer in manipulation.",
+  "innovation": [
+    "Reframed the sim-to-real gap as a generalization problem solvable by variation rather than by fidelity.",
+    "Automatic curricula that expand randomization ranges as the policy improves."
+  ],
+  "matters": [
+    "The enabling technique behind Dactyl, DeXtreme and most sim-trained dexterity."
+  ],
+  "limits": [
+    "Excessive randomization yields conservative, low-performance policies; the ranges need careful tuning."
+  ],
+  "lineage": "The methodological root of sim-to-real transfer.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1703.06907",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Domain+Randomization+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "43b59ba2e441d7b0"
+}

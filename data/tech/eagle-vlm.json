@@ -1,0 +1,30 @@
+{
+  "id": "eagle-vlm",
+  "name": "Eagle VLM backbones",
+  "summary": "The Eagle line studies mixing multiple vision encoders (semantic, segmentation-oriented, high-resolution tiling) inside one VLM, finding complementary encoders substantially improve fine-grained spatial understanding, which is exactly what manipulation needs and what single-encoder VLMs lack. Eagle-family backbones underpin GR00T N1's System 2.",
+  "innovation": [
+    "Mixture-of-vision-encoders design preserving spatial detail alongside semantics."
+  ],
+  "matters": [
+    "Backbone choice is a large and under-discussed driver of VLA performance."
+  ],
+  "limits": [
+    "General-purpose VLM work whose robot-specific benefit is indirect."
+  ],
+  "lineage": "CLIP-style vision-language pretraining specialized for spatially detailed perception.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2408.15998",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Eagle+VLM+backbones+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "a0bfb7b26d761eea"
+}

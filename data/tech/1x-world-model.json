@@ -1,0 +1,31 @@
+{
+  "id": "1x-world-model",
+  "name": "1X World Model",
+  "summary": "1X trained an action-conditioned video world model on data from its humanoid fleet, aimed less at generating training data than at evaluating policies. Because real-robot evaluation is slow, dangerous and non-reproducible, simulating candidate policies inside a learned model of the robot's own environment gives a fast comparison signal. The team released data and ran a public challenge around the model.",
+  "innovation": [
+    "Framed world models primarily as an evaluation instrument for robot policies.",
+    "Trained on proprietary humanoid interaction data rather than generic internet video."
+  ],
+  "matters": [
+    "Addresses evaluation, arguably the field's worst bottleneck, from an unusual angle."
+  ],
+  "limits": [
+    "A learned evaluator inherits its own model bias; agreement with real-world ranking is unproven."
+  ],
+  "lineage": "Genie-style action-conditioned video models applied to humanoid policy evaluation.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.1x.tech/discover/1x-world-model",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=1X+World+Model+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "d8535ed5baf1e47f"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "simpler",
+  "name": "SIMPLER",
+  "summary": "Real-robot evaluation is slow, hazardous and impossible to reproduce across labs, which is why manipulation results are so hard to compare. SIMPLER builds simulated replicas of common real setups and tunes the visual and dynamics gap until policy rankings in simulation correlate strongly with rankings measured on the real hardware — letting a lab approximate a real evaluation without owning that robot.",
+  "innovation": [
+    "Takes rank correlation with real-world evaluation as the explicit design target, rather than visual or physical realism for its own sake.",
+    "Green-screening and targeted system identification to close only the specific gaps that actually shift policy ranking."
+  ],
+  "matters": [
+    "Attacks evaluation, arguably the field's worst bottleneck and the reason most cross-paper comparisons are meaningless."
+  ],
+  "limits": [
+    "Correlation is established for a handful of setups and policy families, and may not hold for new ones.",
+    "A policy can still be tuned against the simulated proxy, which reintroduces the problem it solves."
+  ],
+  "lineage": "Simulation repurposed as a measuring instrument for real-world policies rather than a training environment.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2405.05941",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/simpler-env/SimplerEnv",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Simulated+Manipulation+Policy+Evaluation+for+Real+Robot+Setups+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "1bf298dcaf21da31"
+}

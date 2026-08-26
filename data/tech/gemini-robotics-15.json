@@ -1,0 +1,32 @@
+{
+  "id": "gemini-robotics-15",
+  "name": "Gemini Robotics 1.5 / ER 1.5",
+  "summary": "An upgrade adding an explicit internal reasoning trace before action generation, and a motion-transfer mechanism letting skills learned on one embodiment (a bimanual ALOHA rig, say) run on another (a humanoid) with little or no new data. ER 1.5 was exposed to developers as an embodied-reasoning API able to call tools such as web search mid-task.",
+  "innovation": [
+    "Explicit think-then-act traces in a production VLA.",
+    "Cross-embodiment motion transfer as a first-class capability rather than an emergent side effect.",
+    "Agentic tool use inside the embodied reasoning loop."
+  ],
+  "matters": [
+    "Points toward one model serving a fleet of heterogeneous robots."
+  ],
+  "limits": [
+    "Closed; capability claims rest on vendor-run evaluations. Verify specifics before citing."
+  ],
+  "lineage": "Iteration on Gemini Robotics with reasoning traces and embodiment transfer added.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://deepmind.google/discover/blog/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Gemini+Robotics+1.5+/+ER+1.5+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "a876576ab370ce77"
+}

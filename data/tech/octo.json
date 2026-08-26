@@ -1,0 +1,37 @@
+{
+  "id": "octo",
+  "name": "Octo",
+  "summary": "Octo is a small transformer (27M and 93M variants) trained on 800k trajectories from Open X-Embodiment, with a diffusion action head producing continuous action chunks. Its defining property is a modular tokenizer layout: new observation streams (wrist cameras, joint states) or new action spaces attach at fine-tune time without touching pretrained weights, so a lab can adapt it on a single GPU in hours.",
+  "innovation": [
+    "Block-wise attention layout letting input and output modules be added or removed after pretraining.",
+    "Diffusion head for continuous, multimodal action chunks instead of discretized tokens.",
+    "Fully open weights, data mixture and training code."
+  ],
+  "matters": [
+    "Made generalist-policy research reproducible outside large industry labs."
+  ],
+  "limits": [
+    "No language-model backbone, so semantic generalization is far below RT-2 or OpenVLA."
+  ],
+  "lineage": "Open X-Embodiment data plus Diffusion Policy's action head in a compact, adaptable transformer.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2405.12213",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/octo-models/octo",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Octo+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c64d656372f9422b"
+}

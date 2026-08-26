@@ -1,0 +1,36 @@
+{
+  "id": "robocasa",
+  "name": "RoboCasa",
+  "summary": "RoboCasa provides 120 kitchen scenes and thousands of objects, many produced with generative models, together with 100+ tasks and large volumes of machine-generated demonstrations. It targets the environmental diversity that real data collection cannot reach, and reports that adding its synthetic data improves policies including on real-world transfer.",
+  "innovation": [
+    "Generative models used to author simulation assets and scene layouts at scale.",
+    "Automated demonstration generation across a wide distribution of household layouts."
+  ],
+  "matters": [
+    "A central piece of the argument that synthetic diversity can partly substitute for expensive real collection."
+  ],
+  "limits": [
+    "Sim-to-real transfer for contact-rich kitchen tasks remains partial."
+  ],
+  "lineage": "The robomimic and robosuite lineage scaled up with generative scene authoring and MimicGen-style demo synthesis.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2406.02523",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/robocasa/robocasa",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RoboCasa+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "7f41e5d480909167"
+}

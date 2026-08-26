@@ -1,0 +1,3195 @@
+{
+  "schema_version": 2,
+  "generated": "2026-08-25",
+  "last_changed": "2026-08-25",
+  "counts": {
+    "technologies": 108,
+    "labs": 44,
+    "categories": 10
+  },
+  "categories": [
+    {
+      "id": "vla",
+      "name": "Vision-Language-Action",
+      "short": "VLA",
+      "color": "#00e5ff",
+      "blurb": "End-to-end models that map camera images + a language instruction directly to robot actions, usually built on a pretrained VLM backbone."
+    },
+    {
+      "id": "il",
+      "name": "Imitation Learning & Policies",
+      "short": "IL",
+      "color": "#7c5cff",
+      "blurb": "Learning manipulation from human demonstrations: behavior cloning, action chunking, diffusion and flow-matching policies."
+    },
+    {
+      "id": "rl",
+      "name": "Reinforcement Learning",
+      "short": "RL",
+      "color": "#ff4d8d",
+      "blurb": "Policies improved from reward and interaction — online, offline, sim-to-real, and human-in-the-loop."
+    },
+    {
+      "id": "world-model",
+      "name": "World Models & Dreaming",
+      "short": "WM",
+      "color": "#ffb300",
+      "blurb": "Learned predictive models of the environment used for planning or for training policies inside imagination."
+    },
+    {
+      "id": "vlm",
+      "name": "VLM / LLM Planning & Grounding",
+      "short": "VLM",
+      "color": "#3dffab",
+      "blurb": "Using foundation models as the high-level reasoner: task decomposition, affordance grounding, code generation, keypoint selection."
+    },
+    {
+      "id": "rep",
+      "name": "Representations & Architectures",
+      "short": "REP",
+      "color": "#ff7a45",
+      "blurb": "The substrate: backbone architectures, visual pretraining, 3D scene representations and action tokenizers."
+    },
+    {
+      "id": "data",
+      "name": "Robot Datasets & Collection",
+      "short": "DATA",
+      "color": "#00b3ff",
+      "blurb": "The fuel: large-scale real robot trajectory corpora, the interfaces used to collect them, and the methods that multiply a few demonstrations into many."
+    },
+    {
+      "id": "bench",
+      "name": "Benchmarks & Evaluation",
+      "short": "BENCH",
+      "color": "#f0abfc",
+      "blurb": "The yardstick: simulated task suites, evaluation protocols, and the studies that check whether reported gains survive contact with statistics."
+    },
+    {
+      "id": "human-data",
+      "name": "Human Data & Egocentric Video",
+      "short": "HUMAN",
+      "color": "#a3e635",
+      "blurb": "Learning manipulation from people rather than robots: egocentric video, wearable capture, hand tracking, and the latent-action and co-training methods that convert action-free human footage into robot supervision."
+    },
+    {
+      "id": "sim",
+      "name": "Simulation & Sim2Real",
+      "short": "SIM",
+      "color": "#a0a8c0",
+      "blurb": "Physics engines, massively parallel simulation, and the randomization tricks that let sim-trained policies survive reality."
+    }
+  ],
+  "technologies": [
+    {
+      "id": "pi-06",
+      "name": "pi-*0.6 / RECAP",
+      "cat": "vla",
+      "year": 2025,
+      "month": 11,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-05"
+      ],
+      "influences": [
+        "hil-serl",
+        "cql"
+      ],
+      "license": "closed",
+      "tags": [
+        "RL from experience",
+        "advantage-conditioned",
+        "self-improvement"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Let the VLA practice: RL on its own on-robot experience plus expert corrections roughly doubles throughput.",
+      "site": "https://www.physicalintelligence.company/blog",
+      "detailPath": "data/tech/pi-06.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dreamer4",
+      "name": "Dreamer 4",
+      "cat": "world-model",
+      "year": 2025,
+      "month": 9,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "dreamerv3",
+        "genie"
+      ],
+      "license": "closed",
+      "tags": [
+        "offline",
+        "scalable world model",
+        "Minecraft diamonds"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Train the agent entirely inside a scalable world model learned from offline data, with no environment interaction at all.",
+      "paper": "https://arxiv.org/abs/2509.24527",
+      "influences": [],
+      "detailPath": "data/tech/dreamer4.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "gemini-robotics-15",
+      "name": "Gemini Robotics 1.5 / ER 1.5",
+      "cat": "vla",
+      "year": 2025,
+      "month": 9,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "gemini-robotics"
+      ],
+      "license": "closed",
+      "tags": [
+        "motion transfer",
+        "thinking",
+        "agentic tool use"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Thinks before acting, and moves skills between different robot bodies without retraining.",
+      "site": "https://deepmind.google/discover/blog/",
+      "influences": [],
+      "detailPath": "data/tech/gemini-robotics-15.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "lbm",
+      "name": "Large Behavior Models",
+      "cat": "il",
+      "year": 2025,
+      "month": 7,
+      "orgs": [
+        "tri",
+        "boston-dynamics"
+      ],
+      "parents": [
+        "diffusion-policy"
+      ],
+      "license": "closed",
+      "tags": [
+        "statistical rigor",
+        "blind A/B",
+        "pretraining value"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "The field's most rigorous evaluation study: does multitask pretraining actually help? Yes, but less than headlines claim.",
+      "paper": "https://arxiv.org/abs/2507.05331",
+      "influences": [],
+      "detailPath": "data/tech/lbm.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "smolvla",
+      "name": "SmolVLA",
+      "cat": "vla",
+      "year": 2025,
+      "month": 6,
+      "orgs": [
+        "huggingface"
+      ],
+      "parents": [
+        "pi-0"
+      ],
+      "influences": [
+        "lerobot"
+      ],
+      "license": "open",
+      "tags": [
+        "450M",
+        "community data",
+        "consumer GPU",
+        "async inference"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "A 450M VLA trained only on community-contributed datasets that runs on a laptop.",
+      "paper": "https://arxiv.org/abs/2506.01844",
+      "code": "https://github.com/huggingface/lerobot",
+      "detailPath": "data/tech/smolvla.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "v-jepa-2",
+      "name": "V-JEPA 2",
+      "cat": "world-model",
+      "year": 2025,
+      "month": 6,
+      "orgs": [
+        "meta-fair"
+      ],
+      "parents": [
+        "muzero"
+      ],
+      "license": "open",
+      "tags": [
+        "JEPA",
+        "latent prediction",
+        "62 hours robot data"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Predict in representation space, not pixels, then plan with the result using only tens of hours of robot data.",
+      "paper": "https://arxiv.org/abs/2506.09985",
+      "code": "https://github.com/facebookresearch/vjepa2",
+      "influences": [],
+      "detailPath": "data/tech/v-jepa-2.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "egodex",
+      "name": "EgoDex",
+      "cat": "human-data",
+      "year": 2025,
+      "month": 5,
+      "orgs": [
+        "apple"
+      ],
+      "parents": [
+        "ego4d"
+      ],
+      "influences": [
+        "project-aria"
+      ],
+      "license": "open",
+      "tags": [
+        "829 hours",
+        "paired 3D hand pose",
+        "194 tasks"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Hundreds of hours of egocentric dexterous manipulation with 3D hand and finger tracking already attached.",
+      "paper": "https://arxiv.org/abs/2505.11709",
+      "detailPath": "data/tech/egodex.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "egozero",
+      "name": "EgoZero",
+      "cat": "human-data",
+      "year": 2025,
+      "month": 5,
+      "orgs": [
+        "nyu-grail"
+      ],
+      "parents": [
+        "egomimic"
+      ],
+      "influences": [
+        "umi"
+      ],
+      "license": "open",
+      "tags": [
+        "zero robot data",
+        "Aria glasses",
+        "point representation"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Train a manipulation policy from human demonstrations only — zero robot data — and deploy it.",
+      "paper": "https://arxiv.org/abs/2505.20290",
+      "detailPath": "data/tech/egozero.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "groot-n15",
+      "name": "GR00T N1.5",
+      "cat": "vla",
+      "year": 2025,
+      "month": 5,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "groot-n1"
+      ],
+      "influences": [
+        "cosmos"
+      ],
+      "license": "open",
+      "tags": [
+        "frozen VLM",
+        "DreamGen"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Freeze the VLM to protect grounding, and let world-model-generated dream data carry new skills.",
+      "code": "https://github.com/NVIDIA/Isaac-GR00T",
+      "detailPath": "data/tech/groot-n15.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "pi-05",
+      "name": "pi-0.5",
+      "full_name": "A VLA with Open-World Generalization",
+      "cat": "vla",
+      "year": 2025,
+      "month": 4,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-0",
+        "hi-robot"
+      ],
+      "license": "weights",
+      "tags": [
+        "open-world",
+        "hierarchical",
+        "heterogeneous co-training"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Cleaning entire kitchens and bedrooms it has never seen: generalization moved from new objects to new buildings.",
+      "paper": "https://arxiv.org/abs/2504.16054",
+      "code": "https://github.com/Physical-Intelligence/openpi",
+      "influences": [],
+      "detailPath": "data/tech/pi-05.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "agibot-world",
+      "name": "AgiBot World",
+      "cat": "data",
+      "year": 2025,
+      "month": 3,
+      "orgs": [
+        "agibot",
+        "shanghai-ai-lab"
+      ],
+      "parents": [
+        "open-x-embodiment"
+      ],
+      "license": "open",
+      "tags": [
+        "1M+ trajectories",
+        "bimanual",
+        "dexterous hands"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "A million-plus bimanual trajectories collected on a purpose-built humanoid fleet in staged real environments.",
+      "paper": "https://arxiv.org/abs/2503.06669",
+      "code": "https://github.com/OpenDriveLab/AgiBot-World",
+      "influences": [],
+      "detailPath": "data/tech/agibot-world.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "gemini-robotics",
+      "name": "Gemini Robotics / Robotics-ER",
+      "cat": "vla",
+      "year": 2025,
+      "month": 3,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "rt-2"
+      ],
+      "influences": [
+        "palm-e"
+      ],
+      "license": "closed",
+      "tags": [
+        "Gemini 2.0",
+        "embodied reasoning",
+        "dexterity"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Gemini itself, taught to act, plus a sibling model whose only job is spatial and physical reasoning.",
+      "paper": "https://arxiv.org/abs/2503.20020",
+      "detailPath": "data/tech/gemini-robotics.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "groot-n1",
+      "name": "GR00T N1",
+      "cat": "vla",
+      "year": 2025,
+      "month": 3,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "pi-0",
+        "eagle-vlm"
+      ],
+      "influences": [
+        "open-x-embodiment",
+        "lapa",
+        "ego4d"
+      ],
+      "license": "open",
+      "tags": [
+        "2B",
+        "dual-system",
+        "humanoid",
+        "synthetic data"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "An openly released humanoid foundation model trained on a data pyramid of real, synthetic and human video.",
+      "paper": "https://arxiv.org/abs/2503.14734",
+      "code": "https://github.com/NVIDIA/Isaac-GR00T",
+      "detailPath": "data/tech/groot-n1.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "human-policy",
+      "name": "Humanoid Policy ~ Human Policy (PH2D)",
+      "cat": "human-data",
+      "year": 2025,
+      "month": 3,
+      "orgs": [
+        "ucsd-su",
+        "mit-csail"
+      ],
+      "parents": [
+        "egomimic"
+      ],
+      "license": "open",
+      "tags": [
+        "PH2D dataset",
+        "humanoid",
+        "co-training"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Collect human and humanoid data in one shared format and train a single policy over both — human data turns out to be nearly as valuable as robot data.",
+      "paper": "https://arxiv.org/abs/2503.13441",
+      "influences": [],
+      "detailPath": "data/tech/human-policy.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "helix",
+      "name": "Helix",
+      "cat": "vla",
+      "year": 2025,
+      "month": 2,
+      "orgs": [
+        "figure-ai"
+      ],
+      "parents": [
+        "rt-2"
+      ],
+      "influences": [
+        "pi-0"
+      ],
+      "license": "closed",
+      "tags": [
+        "S1/S2",
+        "35 DoF",
+        "onboard",
+        "multi-robot"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Full upper-body humanoid control at 200 Hz from onboard GPUs, with two robots collaborating under one model.",
+      "site": "https://www.figure.ai/news/helix",
+      "detailPath": "data/tech/helix.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "hi-robot",
+      "name": "Hi Robot",
+      "cat": "vla",
+      "year": 2025,
+      "month": 2,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-0",
+        "saycan"
+      ],
+      "license": "closed",
+      "tags": [
+        "hierarchical",
+        "interactive",
+        "System 1/2"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "A VLM inner monologue on top of a VLA, so you can interrupt the robot mid-task and it listens.",
+      "paper": "https://arxiv.org/abs/2502.19417",
+      "influences": [],
+      "detailPath": "data/tech/hi-robot.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "openvla-oft",
+      "name": "OpenVLA-OFT",
+      "full_name": "Optimized Fine-Tuning for Vision-Language-Action Models",
+      "cat": "vla",
+      "year": 2025,
+      "month": 2,
+      "orgs": [
+        "stanford-iris"
+      ],
+      "parents": [
+        "openvla"
+      ],
+      "license": "open",
+      "tags": [
+        "parallel decoding",
+        "~26x faster",
+        "bimanual"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Three orthogonal fixes make OpenVLA roughly 26x faster and good enough for bimanual ALOHA.",
+      "paper": "https://arxiv.org/abs/2502.19645",
+      "code": "https://github.com/moojink/openvla-oft",
+      "influences": [],
+      "detailPath": "data/tech/openvla-oft.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "fast-tokenizer",
+      "name": "FAST action tokenizer",
+      "full_name": "Frequency-space Action Sequence Tokenization",
+      "cat": "rep",
+      "year": 2025,
+      "month": 1,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-0"
+      ],
+      "license": "open",
+      "tags": [
+        "DCT",
+        "compression",
+        "universal tokenizer"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Compress action chunks with a DCT before tokenizing, which makes autoregressive VLAs viable at high control rates.",
+      "paper": "https://arxiv.org/abs/2501.09747",
+      "code": "https://huggingface.co/physical-intelligence/fast",
+      "influences": [],
+      "detailPath": "data/tech/fast-tokenizer.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "cosmos",
+      "name": "NVIDIA Cosmos",
+      "full_name": "World Foundation Model Platform for Physical AI",
+      "cat": "world-model",
+      "year": 2025,
+      "month": 1,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "unipi",
+        "genie"
+      ],
+      "license": "open",
+      "tags": [
+        "20M hours video",
+        "open weights",
+        "synthetic data engine"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Open world foundation models trained on tens of millions of hours of physical-world video, built as a data engine for robots.",
+      "paper": "https://arxiv.org/abs/2501.03575",
+      "code": "https://github.com/NVIDIA/Cosmos",
+      "influences": [],
+      "detailPath": "data/tech/cosmos.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "spatialvla",
+      "name": "SpatialVLA",
+      "cat": "vla",
+      "year": 2025,
+      "month": 1,
+      "orgs": [
+        "shanghai-ai-lab"
+      ],
+      "parents": [
+        "openvla"
+      ],
+      "license": "open",
+      "tags": [
+        "3D position encoding",
+        "adaptive action grids"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Injects explicit 3D structure into a VLA, because flat image tokens throw away the geometry manipulation needs.",
+      "paper": "https://arxiv.org/abs/2501.15830",
+      "code": "https://github.com/SpatialVLA/SpatialVLA",
+      "influences": [],
+      "detailPath": "data/tech/spatialvla.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "1x-world-model",
+      "name": "1X World Model",
+      "cat": "world-model",
+      "year": 2024,
+      "month": 11,
+      "orgs": [
+        "1x-technologies"
+      ],
+      "parents": [
+        "genie"
+      ],
+      "license": "weights",
+      "tags": [
+        "policy evaluation",
+        "humanoid",
+        "challenge"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Use the world model as a test harness: evaluate humanoid policies in imagination instead of on hardware.",
+      "site": "https://www.1x.tech/discover/1x-world-model",
+      "influences": [],
+      "detailPath": "data/tech/1x-world-model.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "cogact",
+      "name": "CogACT",
+      "cat": "vla",
+      "year": 2024,
+      "month": 11,
+      "orgs": [
+        "microsoft-research",
+        "tsinghua-air"
+      ],
+      "parents": [
+        "openvla",
+        "diffusion-policy"
+      ],
+      "license": "open",
+      "tags": [
+        "componentized",
+        "diffusion action module"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Argues the VLM should cognize and a separate diffusion module should act, then measures what that split buys.",
+      "paper": "https://arxiv.org/abs/2411.19650",
+      "code": "https://github.com/microsoft/CogACT",
+      "influences": [],
+      "detailPath": "data/tech/cogact.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "aloha-unleashed",
+      "name": "ALOHA Unleashed",
+      "cat": "il",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "act",
+        "diffusion-policy"
+      ],
+      "license": "closed",
+      "tags": [
+        "large demo counts",
+        "shoelace tying",
+        "diffusion"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Scale ALOHA-style collection far enough and diffusion policies learn to tie shoelaces and hang shirts.",
+      "paper": "https://arxiv.org/abs/2410.13126",
+      "influences": [],
+      "detailPath": "data/tech/aloha-unleashed.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "egomimic",
+      "name": "EgoMimic",
+      "cat": "human-data",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "georgia-tech"
+      ],
+      "parents": [
+        "project-aria",
+        "act"
+      ],
+      "influences": [
+        "mimicplay"
+      ],
+      "license": "open",
+      "tags": [
+        "Aria glasses",
+        "co-training",
+        "human as embodiment"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Treat human data as just another embodiment and co-train on it — no retargeting stage, no separate planner.",
+      "paper": "https://arxiv.org/abs/2410.24221",
+      "code": "https://github.com/SimarKareer/EgoMimic",
+      "detailPath": "data/tech/egomimic.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "gr-2",
+      "name": "GR-2",
+      "cat": "vla",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "bytedance-seed"
+      ],
+      "parents": [
+        "gr-1"
+      ],
+      "license": "closed",
+      "tags": [
+        "internet-scale video",
+        "generalist"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "GR-1's recipe scaled to tens of millions of internet videos and 100+ real tasks.",
+      "site": "https://gr2-manipulation.github.io/",
+      "influences": [],
+      "detailPath": "data/tech/gr-2.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "hil-serl",
+      "name": "HIL-SERL",
+      "full_name": "Human-in-the-Loop Sample-Efficient RL",
+      "cat": "rl",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "serl",
+        "dagger"
+      ],
+      "license": "open",
+      "tags": [
+        "100% success",
+        "1-2.5 hours",
+        "dynamic tasks"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Add a human who takes over when things go wrong, and RL reaches essentially perfect success on hard real tasks in a couple of hours.",
+      "paper": "https://arxiv.org/abs/2410.21845",
+      "code": "https://github.com/rail-berkeley/hil-serl",
+      "influences": [],
+      "detailPath": "data/tech/hil-serl.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "lapa",
+      "name": "LAPA",
+      "full_name": "Latent Action Pretraining from Videos",
+      "cat": "human-data",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "uw",
+        "microsoft-research",
+        "nvidia-gear"
+      ],
+      "parents": [
+        "genie"
+      ],
+      "influences": [
+        "openvla"
+      ],
+      "license": "open",
+      "tags": [
+        "latent actions",
+        "action-free video",
+        "VQ-VAE",
+        "3-stage"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Invent an action space from video that has no action labels, pretrain a VLA in it, then map it onto real robot actions.",
+      "paper": "https://arxiv.org/abs/2410.11758",
+      "code": "https://github.com/LatentActionPretraining/LAPA",
+      "detailPath": "data/tech/lapa.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "pi-0",
+      "name": "pi-0 (pi-zero)",
+      "full_name": "A Vision-Language-Action Flow Model for General Robot Control",
+      "cat": "vla",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "rt-2",
+        "diffusion-policy"
+      ],
+      "influences": [
+        "open-x-embodiment"
+      ],
+      "license": "weights",
+      "tags": [
+        "3B",
+        "flow matching",
+        "50 Hz",
+        "PaliGemma"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "A flow-matching action expert bolted onto a VLM, running at 50 Hz. The first VLA that could fold laundry end to end.",
+      "paper": "https://arxiv.org/abs/2410.24164",
+      "code": "https://github.com/Physical-Intelligence/openpi",
+      "detailPath": "data/tech/pi-0.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rdt-1b",
+      "name": "RDT-1B",
+      "full_name": "Robotics Diffusion Transformer",
+      "cat": "vla",
+      "year": 2024,
+      "month": 10,
+      "orgs": [
+        "tsinghua-air"
+      ],
+      "parents": [
+        "diffusion-policy",
+        "open-x-embodiment"
+      ],
+      "license": "open",
+      "tags": [
+        "1.2B",
+        "bimanual",
+        "unified action space"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "The largest open diffusion policy for bimanual manipulation, with an action space built to unify incompatible robots.",
+      "paper": "https://arxiv.org/abs/2410.07864",
+      "code": "https://github.com/thu-ml/RoboticsDiffusionTransformer",
+      "influences": [],
+      "detailPath": "data/tech/rdt-1b.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "molmo",
+      "name": "Molmo (pointing)",
+      "cat": "vlm",
+      "year": 2024,
+      "month": 9,
+      "orgs": [
+        "ai2"
+      ],
+      "parents": [
+        "clip"
+      ],
+      "license": "open",
+      "tags": [
+        "pointing supervision",
+        "open weights",
+        "grounding"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "An open VLM trained to point at things, which turns out to be the interface robots needed.",
+      "paper": "https://arxiv.org/abs/2409.17146",
+      "code": "https://github.com/allenai/molmo",
+      "influences": [],
+      "detailPath": "data/tech/molmo.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rekep",
+      "name": "ReKep",
+      "full_name": "Relational Keypoint Constraints",
+      "cat": "vlm",
+      "year": 2024,
+      "month": 9,
+      "orgs": [
+        "stanford-svl"
+      ],
+      "parents": [
+        "voxposer"
+      ],
+      "license": "open",
+      "tags": [
+        "keypoint constraints",
+        "bimanual",
+        "real-time optimization"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Express manipulation as Python constraint functions over semantic keypoints, written by a VLM and solved in real time.",
+      "paper": "https://arxiv.org/abs/2409.01652",
+      "code": "https://github.com/huangwl18/ReKep",
+      "influences": [],
+      "detailPath": "data/tech/rekep.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "eagle-vlm",
+      "name": "Eagle VLM backbones",
+      "cat": "rep",
+      "year": 2024,
+      "month": 8,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "clip"
+      ],
+      "license": "open",
+      "tags": [
+        "mixture of encoders",
+        "backbone"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "The VLM backbones NVIDIA's robot models sit on: mixtures of vision encoders tuned for spatial detail.",
+      "paper": "https://arxiv.org/abs/2408.15998",
+      "influences": [],
+      "detailPath": "data/tech/eagle-vlm.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "ecot",
+      "name": "Embodied Chain-of-Thought",
+      "cat": "vla",
+      "year": 2024,
+      "month": 7,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "openvla"
+      ],
+      "influences": [
+        "rt-2"
+      ],
+      "license": "open",
+      "tags": [
+        "reasoning",
+        "interpretable",
+        "+28%"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Make the VLA write out plan, sub-task, object locations and gripper targets before acting; success jumps sharply.",
+      "paper": "https://arxiv.org/abs/2407.08693",
+      "code": "https://github.com/MichalZawalski/embodied-CoT",
+      "detailPath": "data/tech/ecot.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "openvla",
+      "name": "OpenVLA",
+      "cat": "vla",
+      "year": 2024,
+      "month": 6,
+      "orgs": [
+        "stanford-iris",
+        "berkeley-rail",
+        "tri",
+        "google-deepmind",
+        "mit-csail"
+      ],
+      "parents": [
+        "rt-2",
+        "open-x-embodiment"
+      ],
+      "influences": [
+        "octo"
+      ],
+      "license": "open",
+      "tags": [
+        "7B",
+        "LoRA",
+        "DINOv2+SigLIP",
+        "Llama 2"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "An open 7B VLA that beat the 55B RT-2-X and fine-tunes on a single consumer GPU.",
+      "paper": "https://arxiv.org/abs/2406.09246",
+      "code": "https://github.com/openvla/openvla",
+      "detailPath": "data/tech/openvla.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "robocasa",
+      "name": "RoboCasa",
+      "cat": "bench",
+      "year": 2024,
+      "month": 6,
+      "orgs": [
+        "ut-austin-rpl",
+        "nvidia-gear"
+      ],
+      "parents": [
+        "robomimic"
+      ],
+      "influences": [
+        "mimicgen"
+      ],
+      "license": "open",
+      "tags": [
+        "120 kitchens",
+        "generative assets",
+        "100+ tasks"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Large-scale simulated household kitchens with generatively authored scenes and thousands of objects.",
+      "paper": "https://arxiv.org/abs/2406.02523",
+      "code": "https://github.com/robocasa/robocasa",
+      "detailPath": "data/tech/robocasa.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "robopoint",
+      "name": "RoboPoint",
+      "cat": "vlm",
+      "year": 2024,
+      "month": 6,
+      "orgs": [
+        "uw",
+        "nvidia-gear"
+      ],
+      "parents": [
+        "molmo"
+      ],
+      "license": "open",
+      "tags": [
+        "spatial affordance",
+        "synthetic instruction data"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Fine-tune a VLM on synthetic spatial instruction data so it predicts exactly where to place or grasp.",
+      "paper": "https://arxiv.org/abs/2406.10721",
+      "code": "https://github.com/wentaoyuan/RoboPoint",
+      "influences": [],
+      "detailPath": "data/tech/robopoint.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "lerobot",
+      "name": "LeRobot",
+      "cat": "data",
+      "year": 2024,
+      "month": 5,
+      "orgs": [
+        "huggingface"
+      ],
+      "parents": [
+        "open-x-embodiment"
+      ],
+      "license": "open",
+      "tags": [
+        "framework",
+        "dataset format",
+        "cheap hardware"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The Hugging Face of robotics: one dataset format, reference policy implementations, and arms that cost a few hundred dollars.",
+      "code": "https://github.com/huggingface/lerobot",
+      "site": "https://huggingface.co/lerobot",
+      "influences": [],
+      "detailPath": "data/tech/lerobot.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "octo",
+      "name": "Octo",
+      "cat": "vla",
+      "year": 2024,
+      "month": 5,
+      "orgs": [
+        "berkeley-rail",
+        "stanford-iris",
+        "cmu-ri"
+      ],
+      "parents": [
+        "open-x-embodiment",
+        "diffusion-policy"
+      ],
+      "license": "open",
+      "tags": [
+        "27M / 93M",
+        "diffusion head",
+        "flexible I/O"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The first genuinely open generalist policy designed to be fine-tuned: swap cameras, add proprioception, change the arm.",
+      "paper": "https://arxiv.org/abs/2405.12213",
+      "code": "https://github.com/octo-models/octo",
+      "influences": [],
+      "detailPath": "data/tech/octo.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "simpler",
+      "name": "SIMPLER",
+      "full_name": "Simulated Manipulation Policy Evaluation for Real Robot Setups",
+      "cat": "bench",
+      "year": 2024,
+      "month": 5,
+      "orgs": [
+        "berkeley-rail",
+        "google-deepmind",
+        "ucsd-su"
+      ],
+      "parents": [
+        "maniskill"
+      ],
+      "influences": [
+        "open-x-embodiment",
+        "octo"
+      ],
+      "license": "open",
+      "tags": [
+        "real-to-sim eval",
+        "rank correlation",
+        "RT-1 / Octo"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Evaluate real-robot policies in simulation, with the simulator tuned until its rankings match reality's.",
+      "paper": "https://arxiv.org/abs/2405.05941",
+      "code": "https://github.com/simpler-env/SimplerEnv",
+      "detailPath": "data/tech/simpler.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dp3",
+      "name": "3D Diffusion Policy (DP3)",
+      "cat": "il",
+      "year": 2024,
+      "month": 3,
+      "orgs": [
+        "tsinghua-air",
+        "stanford-svl"
+      ],
+      "parents": [
+        "diffusion-policy"
+      ],
+      "license": "open",
+      "tags": [
+        "point cloud",
+        "~10 demos",
+        "dexterous hand"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Swap images for a sparse point cloud and diffusion policies learn dexterous tasks from about ten demonstrations.",
+      "paper": "https://arxiv.org/abs/2403.03954",
+      "code": "https://github.com/YanjieZe/3D-Diffusion-Policy",
+      "influences": [],
+      "detailPath": "data/tech/dp3.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "behavior-1k",
+      "name": "BEHAVIOR-1K",
+      "cat": "bench",
+      "year": 2024,
+      "month": 3,
+      "orgs": [
+        "stanford-svl"
+      ],
+      "influences": [
+        "isaac-gym"
+      ],
+      "license": "open",
+      "tags": [
+        "1000 activities",
+        "survey-driven",
+        "fluids + deformables"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "A thousand household activities chosen by surveying what people actually want robots to do, not what is convenient to simulate.",
+      "paper": "https://arxiv.org/abs/2403.09227",
+      "site": "https://behavior.stanford.edu/",
+      "parents": [],
+      "detailPath": "data/tech/behavior-1k.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "droid",
+      "name": "DROID",
+      "full_name": "Distributed Robot Interaction Dataset",
+      "cat": "data",
+      "year": 2024,
+      "month": 3,
+      "orgs": [
+        "stanford-iris",
+        "berkeley-rail",
+        "tri"
+      ],
+      "parents": [
+        "bridgedata-v2"
+      ],
+      "license": "open",
+      "tags": [
+        "76k trajectories",
+        "564 scenes",
+        "13 institutions"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "One hardware setup, thirteen institutions, 564 real scenes: diversity by construction rather than by aggregation.",
+      "paper": "https://arxiv.org/abs/2403.12945",
+      "code": "https://droid-dataset.github.io/",
+      "influences": [],
+      "detailPath": "data/tech/droid.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "moka",
+      "name": "MOKA",
+      "full_name": "Marking Open-vocabulary Keypoint Affordances",
+      "cat": "vlm",
+      "year": 2024,
+      "month": 3,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "code-as-policies"
+      ],
+      "license": "open",
+      "tags": [
+        "visual prompting",
+        "affordance",
+        "mark-based"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Draw candidate points on the image and ask the VLM to pick: turns motion generation into visual question answering.",
+      "paper": "https://arxiv.org/abs/2403.03174",
+      "influences": [],
+      "detailPath": "data/tech/moka.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rt-h",
+      "name": "RT-H",
+      "full_name": "Action Hierarchies Using Language",
+      "cat": "vla",
+      "year": 2024,
+      "month": 3,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "rt-2"
+      ],
+      "license": "closed",
+      "tags": [
+        "language motions",
+        "correctable"
+      ],
+      "impact": 2,
+      "confidence": "high",
+      "tagline": "Insert a layer of language motions ('move arm left', 'close gripper') between the task and the actuators.",
+      "paper": "https://arxiv.org/abs/2403.01823",
+      "influences": [],
+      "detailPath": "data/tech/rt-h.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "vq-bet",
+      "name": "VQ-BeT / Behavior Transformer",
+      "cat": "il",
+      "year": 2024,
+      "month": 3,
+      "orgs": [
+        "nyu-grail"
+      ],
+      "parents": [
+        "transformer"
+      ],
+      "influences": [
+        "implicit-bc"
+      ],
+      "license": "open",
+      "tags": [
+        "residual VQ",
+        "faster than diffusion"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Tokenize continuous actions with residual vector quantization: multimodality without diffusion's inference cost.",
+      "paper": "https://arxiv.org/abs/2403.03181",
+      "code": "https://github.com/jayLEE0301/vq_bet_official",
+      "detailPath": "data/tech/vq-bet.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "3d-diffuser-actor",
+      "name": "3D Diffuser Actor",
+      "cat": "rep",
+      "year": 2024,
+      "month": 2,
+      "orgs": [
+        "cmu-ri"
+      ],
+      "parents": [
+        "diffusion-policy",
+        "peract"
+      ],
+      "license": "open",
+      "tags": [
+        "3D tokens",
+        "SE(3) diffusion"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Marries 3D scene tokens with diffusion action generation, topping both RLBench and CALVIN.",
+      "paper": "https://arxiv.org/abs/2402.10885",
+      "code": "https://github.com/nickgkan/3d_diffuser_actor",
+      "influences": [],
+      "detailPath": "data/tech/3d-diffuser-actor.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "genie",
+      "name": "Genie / Genie 3",
+      "full_name": "Generative Interactive Environments",
+      "cat": "world-model",
+      "year": 2024,
+      "month": 2,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "world-models"
+      ],
+      "license": "closed",
+      "tags": [
+        "latent actions",
+        "playable worlds",
+        "unlabeled video"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Learns a latent action space from unlabeled internet video, producing worlds you can actually step through.",
+      "paper": "https://arxiv.org/abs/2402.15391",
+      "influences": [],
+      "detailPath": "data/tech/genie.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "umi",
+      "name": "UMI",
+      "full_name": "Universal Manipulation Interface",
+      "cat": "il",
+      "year": 2024,
+      "month": 2,
+      "orgs": [
+        "stanford-realab",
+        "columbia-crl",
+        "tri"
+      ],
+      "parents": [
+        "diffusion-policy"
+      ],
+      "license": "open",
+      "tags": [
+        "handheld gripper",
+        "in-the-wild data",
+        "action-cam"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "A cheap handheld gripper with an action camera: collect robot training data anywhere, with no robot.",
+      "paper": "https://arxiv.org/abs/2402.10329",
+      "code": "https://github.com/real-stanford/universal_manipulation_interface",
+      "influences": [],
+      "detailPath": "data/tech/umi.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "mobile-aloha",
+      "name": "Mobile ALOHA",
+      "cat": "il",
+      "year": 2024,
+      "month": 1,
+      "orgs": [
+        "stanford-iris"
+      ],
+      "parents": [
+        "act"
+      ],
+      "license": "open",
+      "tags": [
+        "whole-body teleop",
+        "mobile manipulation",
+        "co-training"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Put ALOHA on a wheeled base, teleoperate the whole body, co-train with static data, get mobile manipulation from 50 demos.",
+      "paper": "https://arxiv.org/abs/2401.02117",
+      "code": "https://github.com/MarkFzp/mobile-aloha",
+      "influences": [],
+      "detailPath": "data/tech/mobile-aloha.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "serl",
+      "name": "SERL",
+      "full_name": "Sample-Efficient Robotic Reinforcement Learning",
+      "cat": "rl",
+      "year": 2024,
+      "month": 1,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "rlpd"
+      ],
+      "license": "open",
+      "tags": [
+        "real-world RL",
+        "25-50 min training",
+        "PCB insertion"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "A packaged software stack that trains real-robot manipulation policies from scratch in under an hour.",
+      "paper": "https://arxiv.org/abs/2401.16013",
+      "code": "https://github.com/rail-berkeley/serl",
+      "influences": [],
+      "detailPath": "data/tech/serl.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "gr-1",
+      "name": "GR-1",
+      "cat": "vla",
+      "year": 2023,
+      "month": 12,
+      "orgs": [
+        "bytedance-seed"
+      ],
+      "parents": [
+        "transformer",
+        "ego4d"
+      ],
+      "influences": [
+        "unipi",
+        "r3m",
+        "calvin"
+      ],
+      "license": "code",
+      "tags": [
+        "video pretraining",
+        "GPT-style"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Pretrain on large-scale human video prediction, then fine-tune the same transformer to predict actions.",
+      "paper": "https://arxiv.org/abs/2312.13139",
+      "code": "https://github.com/bytedance/GR-1",
+      "detailPath": "data/tech/gr-1.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "ego-exo4d",
+      "name": "Ego-Exo4D",
+      "cat": "human-data",
+      "year": 2023,
+      "month": 11,
+      "orgs": [
+        "meta-fair"
+      ],
+      "parents": [
+        "ego4d"
+      ],
+      "license": "open",
+      "tags": [
+        "paired ego + exo",
+        "skilled activity",
+        "3D pose"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Films the same skilled activity from the wearer's eyes and from outside simultaneously, so a model can learn to translate between the two.",
+      "paper": "https://arxiv.org/abs/2311.18259",
+      "site": "https://ego-exo4d-data.org/",
+      "influences": [],
+      "detailPath": "data/tech/ego-exo4d.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "eureka",
+      "name": "Eureka",
+      "cat": "rl",
+      "year": 2023,
+      "month": 10,
+      "orgs": [
+        "nvidia-gear",
+        "ut-austin-rpl"
+      ],
+      "parents": [
+        "ppo"
+      ],
+      "influences": [
+        "code-as-policies"
+      ],
+      "license": "open",
+      "tags": [
+        "LLM reward design",
+        "pen spinning",
+        "evolutionary"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "An LLM writes the reward function, evaluates how training went, and rewrites it: superhuman reward engineering.",
+      "paper": "https://arxiv.org/abs/2310.12931",
+      "code": "https://github.com/eureka-research/Eureka",
+      "detailPath": "data/tech/eureka.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "mimicgen",
+      "name": "MimicGen",
+      "cat": "data",
+      "year": 2023,
+      "month": 10,
+      "orgs": [
+        "nvidia-gear",
+        "ut-austin-rpl"
+      ],
+      "parents": [
+        "robomimic"
+      ],
+      "license": "open",
+      "tags": [
+        "200 demos to 50k",
+        "object-centric",
+        "synthetic"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Turn 200 human demonstrations into 50,000 by replaying object-centric segments at new object poses.",
+      "paper": "https://arxiv.org/abs/2310.17596",
+      "code": "https://github.com/NVlabs/mimicgen",
+      "influences": [],
+      "detailPath": "data/tech/mimicgen.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "open-x-embodiment",
+      "name": "Open X-Embodiment",
+      "cat": "data",
+      "year": 2023,
+      "month": 10,
+      "orgs": [
+        "google-deepmind",
+        "berkeley-rail",
+        "stanford-iris"
+      ],
+      "parents": [
+        "rt-1",
+        "bridgedata-v2"
+      ],
+      "license": "open",
+      "tags": [
+        "1M+ episodes",
+        "22 embodiments",
+        "34 labs"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Thirty-four labs pooled their robot data into one corpus, and cross-embodiment pretraining became possible.",
+      "paper": "https://arxiv.org/abs/2310.08864",
+      "code": "https://robotics-transformer-x.github.io/",
+      "influences": [],
+      "detailPath": "data/tech/open-x-embodiment.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rt-x",
+      "name": "RT-X (RT-1-X / RT-2-X)",
+      "cat": "vla",
+      "year": 2023,
+      "month": 10,
+      "orgs": [
+        "google-deepmind",
+        "berkeley-rail",
+        "stanford-iris"
+      ],
+      "parents": [
+        "rt-1",
+        "rt-2",
+        "open-x-embodiment"
+      ],
+      "license": "weights",
+      "tags": [
+        "cross-embodiment",
+        "22 robots"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Train one policy on 22 different robots at once and each robot beats its own specialist.",
+      "paper": "https://arxiv.org/abs/2310.08864",
+      "code": "https://github.com/google-deepmind/open_x_embodiment",
+      "influences": [],
+      "detailPath": "data/tech/rt-x.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "susie",
+      "name": "SuSIE",
+      "full_name": "Subgoal Synthesis via Image Editing",
+      "cat": "world-model",
+      "year": 2023,
+      "month": 10,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "unipi"
+      ],
+      "license": "open",
+      "tags": [
+        "image subgoals",
+        "InstructPix2Pix"
+      ],
+      "impact": 2,
+      "confidence": "high",
+      "tagline": "Have an image-editing model hallucinate the next subgoal image, then let a cheap policy chase it.",
+      "paper": "https://arxiv.org/abs/2310.10639",
+      "code": "https://github.com/kvablack/susie",
+      "influences": [],
+      "detailPath": "data/tech/susie.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "td-mpc2",
+      "name": "TD-MPC2",
+      "cat": "world-model",
+      "year": 2023,
+      "month": 10,
+      "orgs": [
+        "ucsd-su",
+        "meta-fair"
+      ],
+      "parents": [
+        "muzero",
+        "planet"
+      ],
+      "license": "open",
+      "tags": [
+        "implicit model",
+        "104 tasks",
+        "single agent"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Decoder-free latent model predictive control that scales to a single agent solving 104 continuous-control tasks.",
+      "paper": "https://arxiv.org/abs/2310.16828",
+      "code": "https://github.com/nicklashansen/tdmpc2",
+      "influences": [],
+      "detailPath": "data/tech/td-mpc2.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "q-transformer",
+      "name": "Q-Transformer",
+      "cat": "rl",
+      "year": 2023,
+      "month": 9,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "qt-opt",
+        "rt-1"
+      ],
+      "license": "closed",
+      "tags": [
+        "per-dimension Q",
+        "offline RL at scale"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Autoregressive Q-learning: treat each action dimension as a token and let a transformer do value-based RL at VLA scale.",
+      "paper": "https://arxiv.org/abs/2309.10150",
+      "influences": [],
+      "detailPath": "data/tech/q-transformer.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "bridgedata-v2",
+      "name": "BridgeData V2",
+      "cat": "data",
+      "year": 2023,
+      "month": 8,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "roboturk"
+      ],
+      "license": "open",
+      "tags": [
+        "60k trajectories",
+        "24 environments",
+        "WidowX"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The scrappy, diverse, low-cost dataset most open-policy research actually evaluates on.",
+      "paper": "https://arxiv.org/abs/2308.12952",
+      "code": "https://rail-berkeley.github.io/bridgedata/",
+      "influences": [],
+      "detailPath": "data/tech/bridgedata-v2.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "project-aria",
+      "name": "Project Aria",
+      "cat": "human-data",
+      "year": 2023,
+      "month": 7,
+      "orgs": [
+        "meta-fair"
+      ],
+      "parents": [
+        "ego4d"
+      ],
+      "license": "code",
+      "tags": [
+        "research glasses",
+        "SLAM pose",
+        "hand tracking",
+        "eye tracking"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Research glasses that turn anyone wearing them into a calibrated robot-data collector.",
+      "code": "https://github.com/facebookresearch/projectaria_tools",
+      "site": "https://www.projectaria.com/",
+      "influences": [],
+      "detailPath": "data/tech/project-aria.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rt-2",
+      "name": "RT-2",
+      "full_name": "Vision-Language-Action Models Transfer Web Knowledge to Robotic Control",
+      "cat": "vla",
+      "year": 2023,
+      "month": 7,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "rt-1",
+        "palm-e"
+      ],
+      "influences": [
+        "clip"
+      ],
+      "license": "closed",
+      "tags": [
+        "5B / 55B",
+        "web co-training",
+        "emergent semantics"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Coined 'VLA': fine-tune a web-scale vision-language model to emit robot actions as text tokens, and semantic knowledge transfers to control.",
+      "paper": "https://arxiv.org/abs/2307.15818",
+      "detailPath": "data/tech/rt-2.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "voxposer",
+      "name": "VoxPoser",
+      "cat": "vlm",
+      "year": 2023,
+      "month": 7,
+      "orgs": [
+        "stanford-svl"
+      ],
+      "parents": [
+        "code-as-policies"
+      ],
+      "license": "open",
+      "tags": [
+        "3D value maps",
+        "zero-shot",
+        "no training"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The LLM writes code that paints 3D affordance and constraint maps, and a motion planner does the rest. No robot training data.",
+      "paper": "https://arxiv.org/abs/2307.05973",
+      "code": "https://github.com/huangwl18/VoxPoser",
+      "influences": [],
+      "detailPath": "data/tech/voxposer.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "libero",
+      "name": "LIBERO",
+      "cat": "bench",
+      "year": 2023,
+      "month": 6,
+      "orgs": [
+        "ut-austin-rpl"
+      ],
+      "parents": [
+        "robomimic"
+      ],
+      "license": "open",
+      "tags": [
+        "130 tasks",
+        "lifelong learning",
+        "the VLA standard"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The 130-task suite that became the default number every VLA paper reports.",
+      "paper": "https://arxiv.org/abs/2306.03310",
+      "code": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "influences": [],
+      "detailPath": "data/tech/libero.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rvt",
+      "name": "RVT / RVT-2",
+      "full_name": "Robotic View Transformer",
+      "cat": "rep",
+      "year": 2023,
+      "month": 6,
+      "orgs": [
+        "nvidia-gear",
+        "uw"
+      ],
+      "parents": [
+        "peract"
+      ],
+      "license": "open",
+      "tags": [
+        "multi-view",
+        "much faster training",
+        "mm precision"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Replace the expensive voxel grid with re-rendered virtual views: far faster to train and more accurate.",
+      "paper": "https://arxiv.org/abs/2306.14896",
+      "code": "https://github.com/nvlabs/rvt",
+      "influences": [],
+      "detailPath": "data/tech/rvt.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "act",
+      "name": "ACT / ALOHA",
+      "full_name": "Action Chunking with Transformers",
+      "cat": "il",
+      "year": 2023,
+      "month": 4,
+      "orgs": [
+        "stanford-iris"
+      ],
+      "parents": [
+        "transformer"
+      ],
+      "influences": [
+        "implicit-bc"
+      ],
+      "license": "open",
+      "tags": [
+        "action chunking",
+        "CVAE",
+        "low-cost bimanual",
+        "50 demos"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "A cheap bimanual teleop rig plus action chunking: fine manipulation from 50 demonstrations.",
+      "paper": "https://arxiv.org/abs/2304.13705",
+      "code": "https://github.com/tonyzhaozh/aloha",
+      "detailPath": "data/tech/act.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "diffusion-policy",
+      "name": "Diffusion Policy",
+      "cat": "il",
+      "year": 2023,
+      "month": 3,
+      "orgs": [
+        "columbia-crl",
+        "tri",
+        "mit-csail"
+      ],
+      "parents": [
+        "implicit-bc"
+      ],
+      "influences": [
+        "act"
+      ],
+      "license": "open",
+      "tags": [
+        "denoising",
+        "action chunk",
+        "receding horizon",
+        "+46%"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Generate action sequences by denoising. The single most reused idea in modern manipulation.",
+      "paper": "https://arxiv.org/abs/2303.04137",
+      "code": "https://github.com/real-stanford/diffusion_policy",
+      "detailPath": "data/tech/diffusion-policy.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "palm-e",
+      "name": "PaLM-E",
+      "full_name": "An Embodied Multimodal Language Model",
+      "cat": "vlm",
+      "year": 2023,
+      "month": 3,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "saycan",
+        "clip"
+      ],
+      "license": "closed",
+      "tags": [
+        "562B",
+        "multimodal tokens",
+        "positive transfer"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Inject images and robot states directly into an LLM's token stream, and web-scale reasoning transfers to embodied tasks.",
+      "paper": "https://arxiv.org/abs/2303.03378",
+      "influences": [],
+      "detailPath": "data/tech/palm-e.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "mimicplay",
+      "name": "MimicPlay",
+      "cat": "human-data",
+      "year": 2023,
+      "month": 2,
+      "orgs": [
+        "stanford-svl",
+        "nvidia-gear",
+        "ut-austin-rpl"
+      ],
+      "influences": [
+        "whirl"
+      ],
+      "license": "open",
+      "tags": [
+        "human play data",
+        "latent plans",
+        "hierarchical"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Cheap human play video trains the high-level planner; a small amount of teleoperation trains the low-level controller.",
+      "paper": "https://arxiv.org/abs/2302.12422",
+      "code": "https://github.com/j96w/MimicPlay",
+      "parents": [],
+      "detailPath": "data/tech/mimicplay.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rlpd",
+      "name": "RLPD",
+      "full_name": "RL with Prior Data",
+      "cat": "rl",
+      "year": 2023,
+      "month": 2,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "sac",
+        "cql"
+      ],
+      "license": "open",
+      "tags": [
+        "sample efficiency",
+        "50/50 sampling"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Skip offline pretraining entirely: just sample half your batch from prior data and half from online experience.",
+      "paper": "https://arxiv.org/abs/2302.02948",
+      "code": "https://github.com/ikostrikov/rlpd",
+      "influences": [],
+      "detailPath": "data/tech/rlpd.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "unipi",
+      "name": "UniPi",
+      "full_name": "Learning Universal Policies via Text-Guided Video Generation",
+      "cat": "world-model",
+      "year": 2023,
+      "month": 2,
+      "orgs": [
+        "google-deepmind",
+        "mit-csail"
+      ],
+      "parents": [
+        "world-models"
+      ],
+      "license": "closed",
+      "tags": [
+        "video as plan",
+        "inverse dynamics"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Generate a video of the task being done, then infer the actions that produce it.",
+      "paper": "https://arxiv.org/abs/2302.00111",
+      "influences": [],
+      "detailPath": "data/tech/unipi.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dreamerv3",
+      "name": "DreamerV3",
+      "cat": "world-model",
+      "year": 2023,
+      "month": 1,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "dreamer"
+      ],
+      "license": "open",
+      "tags": [
+        "one hyperparameter set",
+        "150+ tasks",
+        "Minecraft diamonds"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "One algorithm, one set of hyperparameters, more than 150 tasks, and the first agent to mine diamonds in Minecraft from scratch.",
+      "paper": "https://arxiv.org/abs/2301.04104",
+      "code": "https://github.com/danijar/dreamerv3",
+      "influences": [],
+      "detailPath": "data/tech/dreamerv3.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rt-1",
+      "name": "RT-1",
+      "full_name": "Robotics Transformer 1",
+      "cat": "vla",
+      "year": 2022,
+      "month": 12,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "transformer"
+      ],
+      "influences": [
+        "bc-z"
+      ],
+      "license": "open",
+      "tags": [
+        "35M",
+        "single-arm",
+        "discrete tokens",
+        "700 tasks"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "The first convincing demonstration that one transformer, given enough real robot data, absorbs hundreds of manipulation tasks.",
+      "paper": "https://arxiv.org/abs/2212.06817",
+      "code": "https://github.com/google-research/robotics_transformer",
+      "detailPath": "data/tech/rt-1.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dextreme",
+      "name": "DeXtreme",
+      "cat": "rl",
+      "year": 2022,
+      "month": 10,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "dactyl",
+        "isaac-gym"
+      ],
+      "license": "open",
+      "tags": [
+        "GPU sim",
+        "ADR",
+        "reproducible"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Dactyl-class in-hand dexterity reproduced on a single GPU workstation instead of a compute cluster.",
+      "paper": "https://arxiv.org/abs/2210.13702",
+      "code": "https://github.com/NVlabs/DeXtreme",
+      "influences": [],
+      "detailPath": "data/tech/dextreme.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "code-as-policies",
+      "name": "Code as Policies",
+      "cat": "vlm",
+      "year": 2022,
+      "month": 9,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "saycan"
+      ],
+      "license": "open",
+      "tags": [
+        "program synthesis",
+        "recursive",
+        "perception APIs"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Let the LLM write the policy as Python: loops, conditionals and arithmetic over perception APIs.",
+      "paper": "https://arxiv.org/abs/2209.07753",
+      "code": "https://github.com/google-research/google-research/tree/master/code_as_policies",
+      "influences": [],
+      "detailPath": "data/tech/code-as-policies.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "peract",
+      "name": "PerAct",
+      "full_name": "Perceiver-Actor",
+      "cat": "rep",
+      "year": 2022,
+      "month": 9,
+      "orgs": [
+        "uw",
+        "nvidia-gear"
+      ],
+      "parents": [
+        "transformer"
+      ],
+      "influences": [
+        "rlbench"
+      ],
+      "license": "open",
+      "tags": [
+        "voxel",
+        "keyframe actions",
+        "6-DoF"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Predict where to put the gripper in a 3D voxel grid instead of predicting joint deltas: a large sample-efficiency win.",
+      "paper": "https://arxiv.org/abs/2209.05451",
+      "code": "https://github.com/peract/peract",
+      "detailPath": "data/tech/peract.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "inner-monologue",
+      "name": "Inner Monologue",
+      "cat": "vlm",
+      "year": 2022,
+      "month": 7,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "saycan"
+      ],
+      "license": "closed",
+      "tags": [
+        "closed-loop feedback",
+        "replanning"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Feed success detectors, scene descriptions and human replies back into the LLM so it can notice failure and replan.",
+      "paper": "https://arxiv.org/abs/2207.05608",
+      "influences": [],
+      "detailPath": "data/tech/inner-monologue.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "whirl",
+      "name": "WHIRL",
+      "full_name": "Human-to-Robot Imitation in the Wild",
+      "cat": "human-data",
+      "year": 2022,
+      "month": 7,
+      "orgs": [
+        "cmu-ri"
+      ],
+      "influences": [
+        "ego4d"
+      ],
+      "license": "closed",
+      "tags": [
+        "one human video",
+        "in the wild",
+        "real-world practice"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Watch a person do the task once, extract a rough prior, then let the robot practise in the real world until it works.",
+      "paper": "https://arxiv.org/abs/2207.09450",
+      "parents": [],
+      "detailPath": "data/tech/whirl.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "daydreamer",
+      "name": "DayDreamer",
+      "cat": "world-model",
+      "year": 2022,
+      "month": 6,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "dreamer"
+      ],
+      "license": "open",
+      "tags": [
+        "real robots",
+        "no simulator",
+        "1 hour walking"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "World models on physical robots with no simulator: a quadruped learns to walk from scratch in one hour.",
+      "paper": "https://arxiv.org/abs/2206.14176",
+      "code": "https://github.com/danijar/daydreamer",
+      "influences": [],
+      "detailPath": "data/tech/daydreamer.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "saycan",
+      "name": "SayCan",
+      "full_name": "Do As I Can, Not As I Say",
+      "cat": "vlm",
+      "year": 2022,
+      "month": 4,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "bc-z"
+      ],
+      "license": "code",
+      "tags": [
+        "affordance grounding",
+        "LLM planner",
+        "value functions"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "An LLM proposes what would help; learned value functions veto what the robot cannot actually do.",
+      "paper": "https://arxiv.org/abs/2204.01691",
+      "code": "https://github.com/google-research/google-research/tree/master/saycan",
+      "influences": [],
+      "detailPath": "data/tech/saycan.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "r3m",
+      "name": "R3M",
+      "full_name": "A Universal Visual Representation for Robot Manipulation",
+      "cat": "rep",
+      "year": 2022,
+      "month": 3,
+      "orgs": [
+        "meta-fair",
+        "stanford-svl"
+      ],
+      "parents": [
+        "ego4d"
+      ],
+      "influences": [
+        "clip"
+      ],
+      "license": "open",
+      "tags": [
+        "human video",
+        "frozen encoder",
+        "time-contrastive"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Pretrain a visual encoder on human video with time-contrastive objectives, then freeze it for robot policies.",
+      "paper": "https://arxiv.org/abs/2203.12601",
+      "code": "https://github.com/facebookresearch/r3m",
+      "detailPath": "data/tech/r3m.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "bc-z",
+      "name": "BC-Z",
+      "cat": "il",
+      "year": 2021,
+      "month": 12,
+      "orgs": [
+        "google-deepmind",
+        "stanford-iris"
+      ],
+      "parents": [
+        "dagger"
+      ],
+      "license": "code",
+      "tags": [
+        "zero-shot task",
+        "language or video conditioning",
+        "100 tasks"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Task-conditioned behavior cloning at scale: 100 tasks, and generalization to tasks never demonstrated.",
+      "paper": "https://arxiv.org/abs/2202.02005",
+      "influences": [],
+      "detailPath": "data/tech/bc-z.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "calvin",
+      "name": "CALVIN",
+      "cat": "bench",
+      "year": 2021,
+      "month": 12,
+      "orgs": [
+        "freiburg"
+      ],
+      "influences": [
+        "rlbench"
+      ],
+      "license": "open",
+      "tags": [
+        "long-horizon",
+        "language",
+        "zero-shot split"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Long-horizon language-conditioned manipulation with an explicit unseen-environment split.",
+      "paper": "https://arxiv.org/abs/2112.03227",
+      "code": "https://github.com/mees/calvin",
+      "parents": [],
+      "detailPath": "data/tech/calvin.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "ego4d",
+      "name": "Ego4D",
+      "cat": "human-data",
+      "year": 2021,
+      "month": 10,
+      "orgs": [
+        "meta-fair",
+        "cmu-ri"
+      ],
+      "license": "open",
+      "tags": [
+        "3670 hours",
+        "9 countries",
+        "dense narration",
+        "no action labels"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Thousands of hours of daily life filmed from the wearer's own eyes — the corpus that made 'learn manipulation from human video' a real option.",
+      "paper": "https://arxiv.org/abs/2110.07058",
+      "site": "https://ego4d-data.org/",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/ego4d.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "implicit-bc",
+      "name": "Implicit BC",
+      "full_name": "Implicit Behavioral Cloning",
+      "cat": "il",
+      "year": 2021,
+      "month": 9,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "alvinn"
+      ],
+      "license": "code",
+      "tags": [
+        "energy-based",
+        "multimodal actions"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Stop regressing the action and start scoring it. Energy-based policies express discontinuity that MSE cannot.",
+      "paper": "https://arxiv.org/abs/2109.00137",
+      "influences": [],
+      "detailPath": "data/tech/implicit-bc.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "isaac-gym",
+      "name": "Isaac Gym / Isaac Lab",
+      "cat": "sim",
+      "year": 2021,
+      "month": 8,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "mujoco"
+      ],
+      "license": "open",
+      "tags": [
+        "GPU physics",
+        "thousands of parallel envs"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Run physics and the neural network on the same GPU with thousands of environments in parallel; training times fell by orders of magnitude.",
+      "paper": "https://arxiv.org/abs/2108.10470",
+      "code": "https://github.com/isaac-sim/IsaacLab",
+      "influences": [],
+      "detailPath": "data/tech/isaac-gym.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "robomimic",
+      "name": "robomimic",
+      "cat": "bench",
+      "year": 2021,
+      "month": 8,
+      "orgs": [
+        "ut-austin-rpl",
+        "stanford-svl"
+      ],
+      "parents": [
+        "robosuite"
+      ],
+      "license": "open",
+      "tags": [
+        "controlled study",
+        "offline RL",
+        "reproducibility"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "The study that showed most reported gains in offline robot learning were implementation details.",
+      "paper": "https://arxiv.org/abs/2108.03298",
+      "code": "https://github.com/ARISE-Initiative/robomimic",
+      "influences": [],
+      "detailPath": "data/tech/robomimic.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "maniskill",
+      "name": "ManiSkill / SAPIEN",
+      "cat": "sim",
+      "year": 2021,
+      "month": 7,
+      "orgs": [
+        "ucsd-su"
+      ],
+      "parents": [
+        "mujoco"
+      ],
+      "license": "open",
+      "tags": [
+        "GPU parallel",
+        "articulated objects",
+        "open challenge"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Open GPU-parallel manipulation simulation with strong articulated-object support and a long-running benchmark challenge.",
+      "paper": "https://arxiv.org/abs/2410.00425",
+      "code": "https://github.com/haosulab/ManiSkill",
+      "influences": [],
+      "detailPath": "data/tech/maniskill.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "clip",
+      "name": "CLIP",
+      "full_name": "Contrastive Language-Image Pretraining",
+      "cat": "rep",
+      "year": 2021,
+      "month": 2,
+      "orgs": [
+        "openai"
+      ],
+      "parents": [
+        "transformer"
+      ],
+      "license": "open",
+      "tags": [
+        "open vocabulary",
+        "image-text alignment"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Aligned images and text in one embedding space, which is how robots got open-vocabulary perception.",
+      "paper": "https://arxiv.org/abs/2103.00020",
+      "code": "https://github.com/openai/CLIP",
+      "influences": [],
+      "detailPath": "data/tech/clip.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "robosuite",
+      "name": "robosuite",
+      "cat": "sim",
+      "year": 2020,
+      "month": 9,
+      "orgs": [
+        "ut-austin-rpl",
+        "stanford-svl"
+      ],
+      "parents": [
+        "mujoco"
+      ],
+      "license": "open",
+      "tags": [
+        "modular",
+        "standard controllers",
+        "MuJoCo-based"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "The modular MuJoCo framework most academic manipulation benchmarks are built on top of.",
+      "paper": "https://arxiv.org/abs/2009.12293",
+      "code": "https://github.com/ARISE-Initiative/robosuite",
+      "influences": [],
+      "detailPath": "data/tech/robosuite.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "cql",
+      "name": "CQL",
+      "full_name": "Conservative Q-Learning",
+      "cat": "rl",
+      "year": 2020,
+      "month": 6,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "parents": [
+        "sac"
+      ],
+      "license": "code",
+      "tags": [
+        "offline RL",
+        "pessimism"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Learn from a fixed dataset without the Q-function hallucinating value for actions nobody ever tried.",
+      "paper": "https://arxiv.org/abs/2006.04779",
+      "influences": [],
+      "detailPath": "data/tech/cql.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dreamer",
+      "name": "Dreamer",
+      "cat": "world-model",
+      "year": 2019,
+      "month": 12,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "planet"
+      ],
+      "license": "code",
+      "tags": [
+        "latent imagination",
+        "actor-critic",
+        "backprop through dynamics"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Stop planning at run time. Learn an actor and critic by backpropagating through thousands of imagined latent rollouts.",
+      "paper": "https://arxiv.org/abs/1912.01603",
+      "influences": [],
+      "detailPath": "data/tech/dreamer.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "muzero",
+      "name": "MuZero",
+      "cat": "world-model",
+      "year": 2019,
+      "month": 11,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "world-models"
+      ],
+      "license": "code",
+      "tags": [
+        "value-equivalent model",
+        "MCTS",
+        "no rules given"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Learn only the parts of the world that matter for predicting value, then plan with tree search over that abstraction.",
+      "paper": "https://arxiv.org/abs/1911.08265",
+      "influences": [],
+      "detailPath": "data/tech/muzero.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "meta-world",
+      "name": "Meta-World",
+      "cat": "bench",
+      "year": 2019,
+      "month": 10,
+      "orgs": [
+        "stanford-iris",
+        "berkeley-rail"
+      ],
+      "influences": [
+        "mujoco"
+      ],
+      "license": "open",
+      "tags": [
+        "50 tasks",
+        "meta-RL",
+        "ML10 / ML45 splits"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Fifty manipulation tasks in one shared action space, built to ask whether multi-task learning actually transfers.",
+      "paper": "https://arxiv.org/abs/1910.10897",
+      "code": "https://github.com/Farama-Foundation/Metaworld",
+      "parents": [],
+      "detailPath": "data/tech/meta-world.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "rlbench",
+      "name": "RLBench",
+      "cat": "bench",
+      "year": 2019,
+      "month": 9,
+      "orgs": [
+        "imperial-robot-learning"
+      ],
+      "influences": [
+        "mujoco"
+      ],
+      "license": "open",
+      "tags": [
+        "100 tasks",
+        "keyframe policies",
+        "unlimited demos"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "The 100-task simulated suite the 3D keyframe-policy line lives on.",
+      "paper": "https://arxiv.org/abs/1909.12271",
+      "code": "https://github.com/stepjam/RLBench",
+      "parents": [],
+      "detailPath": "data/tech/rlbench.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "planet",
+      "name": "PlaNet",
+      "full_name": "Deep Planning Network",
+      "cat": "world-model",
+      "year": 2018,
+      "month": 11,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "world-models"
+      ],
+      "license": "code",
+      "tags": [
+        "RSSM",
+        "latent planning",
+        "pixels"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Plan in a learned latent space instead of in pixels, with the recurrent state-space model that everything after it uses.",
+      "paper": "https://arxiv.org/abs/1811.04551",
+      "influences": [],
+      "detailPath": "data/tech/planet.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "roboturk",
+      "name": "RoboTurk",
+      "cat": "data",
+      "year": 2018,
+      "month": 11,
+      "orgs": [
+        "stanford-svl"
+      ],
+      "license": "open",
+      "tags": [
+        "crowdsourced teleop",
+        "smartphone controller"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "Crowdsource teleoperation through a phone browser and collect in days what a lab collects in months.",
+      "paper": "https://arxiv.org/abs/1811.02790",
+      "site": "https://roboturk.stanford.edu/",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/roboturk.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dactyl",
+      "name": "Dactyl",
+      "full_name": "Learning Dexterous In-Hand Manipulation",
+      "cat": "rl",
+      "year": 2018,
+      "month": 8,
+      "orgs": [
+        "openai"
+      ],
+      "parents": [
+        "ppo",
+        "domain-randomization"
+      ],
+      "license": "closed",
+      "tags": [
+        "Shadow Hand",
+        "sim2real",
+        "24 DoF"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "A 24-DoF hand reorienting a block, trained entirely in simulation and transferred with zero real-world data.",
+      "paper": "https://arxiv.org/abs/1808.00177",
+      "influences": [],
+      "detailPath": "data/tech/dactyl.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "qt-opt",
+      "name": "QT-Opt",
+      "cat": "rl",
+      "year": 2018,
+      "month": 6,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "license": "closed",
+      "tags": [
+        "580k grasps",
+        "7 robots",
+        "closed-loop grasping"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "580,000 real grasp attempts across a robot farm, producing closed-loop grasping that learned to reposition and retry.",
+      "paper": "https://arxiv.org/abs/1806.10293",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/qt-opt.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "world-models",
+      "name": "World Models",
+      "full_name": "World Models (Ha & Schmidhuber)",
+      "cat": "world-model",
+      "year": 2018,
+      "month": 3,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "license": "code",
+      "tags": [
+        "VAE + RNN",
+        "training in dreams",
+        "origin"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The paper that named the idea: compress the world into a latent model, then train the policy entirely inside it.",
+      "paper": "https://arxiv.org/abs/1803.10122",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/world-models.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "sac",
+      "name": "SAC",
+      "full_name": "Soft Actor-Critic",
+      "cat": "rl",
+      "year": 2018,
+      "month": 1,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "license": "code",
+      "tags": [
+        "off-policy",
+        "maximum entropy",
+        "sample-efficient"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Maximum-entropy off-policy RL: sample-efficient enough to run on a real robot.",
+      "paper": "https://arxiv.org/abs/1801.01290",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/sac.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "ppo",
+      "name": "PPO",
+      "full_name": "Proximal Policy Optimization",
+      "cat": "rl",
+      "year": 2017,
+      "month": 7,
+      "orgs": [
+        "openai"
+      ],
+      "license": "code",
+      "tags": [
+        "on-policy",
+        "clipped objective",
+        "workhorse"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "The clipped-objective policy gradient that made deep RL boring enough to actually use.",
+      "paper": "https://arxiv.org/abs/1707.06347",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/ppo.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "transformer",
+      "name": "Transformer",
+      "full_name": "Attention Is All You Need",
+      "cat": "rep",
+      "year": 2017,
+      "month": 6,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "license": "code",
+      "tags": [
+        "attention",
+        "foundation"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "The architecture underneath essentially every robot brain on this map.",
+      "paper": "https://arxiv.org/abs/1706.03762",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/transformer.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "domain-randomization",
+      "name": "Domain Randomization",
+      "cat": "sim",
+      "year": 2017,
+      "month": 3,
+      "orgs": [
+        "openai",
+        "uw"
+      ],
+      "license": "code",
+      "tags": [
+        "sim2real",
+        "randomize textures and physics",
+        "ADR"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "If the simulator is varied enough, reality looks like just another random sample.",
+      "paper": "https://arxiv.org/abs/1703.06907",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/domain-randomization.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "gail",
+      "name": "GAIL",
+      "full_name": "Generative Adversarial Imitation Learning",
+      "cat": "il",
+      "year": 2016,
+      "month": 6,
+      "orgs": [
+        "stanford-iris"
+      ],
+      "parents": [
+        "dagger"
+      ],
+      "license": "code",
+      "tags": [
+        "adversarial",
+        "inverse RL"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Match the expert's state-action distribution with a discriminator instead of recovering a reward function.",
+      "paper": "https://arxiv.org/abs/1606.03476",
+      "influences": [],
+      "detailPath": "data/tech/gail.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "mujoco",
+      "name": "MuJoCo",
+      "full_name": "Multi-Joint dynamics with Contact",
+      "cat": "sim",
+      "year": 2012,
+      "month": 10,
+      "orgs": [
+        "uw",
+        "google-deepmind"
+      ],
+      "license": "open",
+      "tags": [
+        "contact dynamics",
+        "open-sourced 2021"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The contact simulator that made continuous-control research possible, later acquired by DeepMind and released free.",
+      "code": "https://github.com/google-deepmind/mujoco",
+      "site": "https://mujoco.org/",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/mujoco.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "dagger",
+      "name": "DAgger",
+      "full_name": "Dataset Aggregation",
+      "cat": "il",
+      "year": 2011,
+      "orgs": [
+        "cmu-ri"
+      ],
+      "parents": [
+        "alvinn"
+      ],
+      "license": "code",
+      "tags": [
+        "covariate shift",
+        "interactive expert",
+        "no-regret"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "The formal diagnosis and cure for imitation learning's compounding-error problem.",
+      "paper": "https://arxiv.org/abs/1011.0686",
+      "influences": [],
+      "detailPath": "data/tech/dagger.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    },
+    {
+      "id": "alvinn",
+      "name": "ALVINN",
+      "full_name": "Autonomous Land Vehicle In a Neural Network",
+      "cat": "il",
+      "year": 1989,
+      "orgs": [
+        "cmu-ri"
+      ],
+      "license": "closed",
+      "tags": [
+        "origin",
+        "behavior cloning"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "The original end-to-end sensorimotor neural network: pixels in, steering out, 1989.",
+      "paper": "https://proceedings.neurips.cc/paper/1988/hash/812b4ba287f5ee0bc9d43bbf5bbe87fb-Abstract.html",
+      "parents": [],
+      "influences": [],
+      "detailPath": "data/tech/alvinn.json",
+      "added": "2026-08-25",
+      "updated": "2026-08-25"
+    }
+  ]
+}

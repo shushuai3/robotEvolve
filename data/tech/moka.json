@@ -1,0 +1,31 @@
+{
+  "id": "moka",
+  "name": "MOKA",
+  "summary": "MOKA overlays candidate keypoints and waypoint marks onto the observation and prompts a VLM to select grasp points, target points and intermediate waypoints, converting continuous motion synthesis into a multiple-choice visual question the VLM is actually good at. The selected marks parameterize simple motion primitives, and successful rollouts can be distilled back into a policy.",
+  "innovation": [
+    "Visual mark-based prompting that sidesteps VLMs' weakness at emitting precise continuous coordinates.",
+    "Uses successful zero-shot rollouts as demonstrations for subsequent policy distillation."
+  ],
+  "matters": [
+    "A widely copied trick for extracting spatial precision from models trained mostly on text."
+  ],
+  "limits": [
+    "Restricted to tasks decomposable into a few waypoints and primitives."
+  ],
+  "lineage": "Foundation-model grounding via visual prompting rather than generated code.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2403.03174",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Marking+Open-vocabulary+Keypoint+Affordances+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "fe34c7fc3a42192f"
+}

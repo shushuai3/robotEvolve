@@ -1,0 +1,36 @@
+{
+  "id": "rlbench",
+  "name": "RLBench",
+  "summary": "RLBench offers 100 hand-designed manipulation tasks with unlimited demonstration generation via motion planning, plus multi-view RGB-D observations. Its keyframe-friendly structure made it the standard proving ground for PerAct, RVT and 3D Diffuser Actor, though its scripted demonstrations differ in character from human teleoperation.",
+  "innovation": [
+    "Unlimited procedurally generated demonstrations, removing data collection as a confound when comparing methods.",
+    "A multi-view RGB-D setup that enabled the entire 3D policy research line."
+  ],
+  "matters": [
+    "The shared yardstick for spatial and 3D manipulation architectures."
+  ],
+  "limits": [
+    "Motion-planner demonstrations lack the multimodality of human data; simulation only."
+  ],
+  "lineage": "An early standardized simulation benchmark underpinning the 3D policy branch.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1909.12271",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/stepjam/RLBench",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RLBench+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "cfc2c084c6c50401"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "calvin",
+  "name": "CALVIN",
+  "summary": "CALVIN evaluates chains of up to five language-specified subtasks executed consecutively from unstructured play data, across four environments with a held-out split testing transfer to an environment never seen in training. Its long-horizon structure and the notorious difficulty of that zero-shot split made it the benchmark of choice for video-pretrained policies such as GR-1.",
+  "innovation": [
+    "Sequential multi-subtask evaluation, which exposes the error compounding that single-task metrics hide.",
+    "An explicit unseen-environment split that forces generalization claims to be earned."
+  ],
+  "matters": [
+    "One of the few benchmarks measuring long-horizon language grounding rather than isolated skills."
+  ],
+  "limits": [
+    "Simulation only, with a single fixed arm and a small object set."
+  ],
+  "lineage": "The language-conditioned long-horizon branch of manipulation benchmarking.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2112.03227",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/mees/calvin",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=CALVIN+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "16d14aa57e5f36d3"
+}

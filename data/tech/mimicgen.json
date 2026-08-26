@@ -1,0 +1,37 @@
+{
+  "id": "mimicgen",
+  "name": "MimicGen",
+  "summary": "MimicGen decomposes a small set of human demonstrations into object-centric motion segments, then transforms and stitches those segments to synthesize demonstrations for new object placements, new objects and new scene configurations, keeping only replays that actually succeed. Roughly 200 source demonstrations expand into 50,000 usable ones, and policies trained on the synthetic set approach those trained on equivalent volumes of human data.",
+  "innovation": [
+    "Object-centric segmentation and spatial transformation of demonstrations as a data multiplier.",
+    "Success-filtered replay, so only physically valid synthetic trajectories survive into the dataset."
+  ],
+  "matters": [
+    "A third answer to the data bottleneck, needing neither human video nor more teleoperation hours."
+  ],
+  "limits": [
+    "Generalizes over spatial arrangement, not over strategy — it cannot invent a new way to do the task.",
+    "Requires known object poses and a simulator to validate the replays."
+  ],
+  "lineage": "robomimic's demonstration infrastructure turned into a generative data engine.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2310.17596",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/NVlabs/mimicgen",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=MimicGen+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "79c4605edbee4b0a"
+}

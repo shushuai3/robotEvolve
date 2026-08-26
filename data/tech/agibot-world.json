@@ -1,0 +1,36 @@
+{
+  "id": "agibot-world",
+  "name": "AgiBot World",
+  "summary": "AgiBot World is a large-scale dataset collected on AgiBot's own hardware with dual arms, dexterous hands and whole-body mobility, recorded in purpose-built domestic and retail environments. Unlike aggregated corpora it is uniform in embodiment and rich in long-horizon bimanual tasks, addressing the thin dexterity coverage of most open datasets.",
+  "innovation": [
+    "Industrial-scale collection on a uniform bimanual humanoid platform, with tactile and dexterous-hand data.",
+    "Staged realistic environments rather than lab benches."
+  ],
+  "matters": [
+    "One of the largest open sources of the bimanual dexterous data the field most lacks."
+  ],
+  "limits": [
+    "Tied to one proprietary embodiment, and scripted staging may limit true environmental variety."
+  ],
+  "lineage": "The Open X-Embodiment pooling idea replaced by single-platform industrial-scale collection.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2503.06669",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/OpenDriveLab/AgiBot-World",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=AgiBot+World+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "d402efbeb34fcc9b"
+}

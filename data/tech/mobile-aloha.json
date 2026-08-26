@@ -1,0 +1,36 @@
+{
+  "id": "mobile-aloha",
+  "name": "Mobile ALOHA",
+  "summary": "Mobile ALOHA adds a mobile base with whole-body teleoperation, letting one operator command base and both arms simultaneously. The headline result is empirical: co-training the mobile policy with the existing static ALOHA dataset lifts success by up to 90% on tasks with only 50 mobile demonstrations, covering cooking shrimp, calling and riding an elevator, and wiping spills.",
+  "innovation": [
+    "Whole-body teleoperation interface making mobile bimanual collection practical for one person.",
+    "Static/mobile co-training as a data-efficiency multiplier."
+  ],
+  "matters": [
+    "Its widely shared demos shifted public and investor expectations of home robots."
+  ],
+  "limits": [
+    "Task-specific policies; each new task still needs its own demonstrations."
+  ],
+  "lineage": "ACT extended to a mobile base with whole-body teleoperation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2401.02117",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/MarkFzp/mobile-aloha",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Mobile+ALOHA+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "663a68ed01bcbd7a"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "voxposer",
+  "name": "VoxPoser",
+  "summary": "VoxPoser has an LLM generate code that queries a vision-language model to compose 3D voxel value maps encoding where to go and what to avoid, then runs model predictive control against those maps to synthesize trajectories. The whole system is zero-shot: no robot demonstrations, no policy training, and it handles free-form instructions and open-set objects.",
+  "innovation": [
+    "3D value maps as the intermediate representation between language reasoning and motion planning.",
+    "Composable, LLM-authored cost functions replacing learned policies entirely."
+  ],
+  "matters": [
+    "The strongest demonstration that foundation models plus classical planning can bypass robot data collection."
+  ],
+  "limits": [
+    "Limited to tasks expressible as trajectory optimization; no contact-rich or dexterous behavior."
+  ],
+  "lineage": "Code as Policies extended so generated code composes spatial cost maps rather than calling fixed skills.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2307.05973",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/huangwl18/VoxPoser",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=VoxPoser+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "9fe6135562ff2503"
+}

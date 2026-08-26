@@ -1,0 +1,31 @@
+{
+  "id": "cql",
+  "name": "CQL",
+  "summary": "Offline RL fails because bootstrapped Q-values are wildly overestimated for out-of-distribution actions the dataset never contains. CQL adds a regularizer that pushes down Q-values for unseen actions while pushing up values for dataset actions, yielding a conservative lower bound on true value. It became the reference algorithm for extracting policies from logged robot data.",
+  "innovation": [
+    "Explicit pessimism about out-of-distribution actions as a principled fix for offline value overestimation.",
+    "Made large static robot datasets usable for RL rather than only for imitation."
+  ],
+  "matters": [
+    "The bridge between the field's growing demonstration datasets and reward-driven improvement."
+  ],
+  "limits": [
+    "Conservatism costs performance when the dataset is broad; tuning the penalty is delicate."
+  ],
+  "lineage": "A pessimistic variant of the off-policy actor-critic family SAC established.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2006.04779",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Conservative+Q-Learning+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "4c9fbfb27f90a4c3"
+}

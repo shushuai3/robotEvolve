@@ -1,0 +1,36 @@
+{
+  "id": "gr-1",
+  "name": "GR-1",
+  "summary": "GR-1 is a GPT-style transformer first pretrained on a large egocentric human video corpus to predict future frames given language, then fine-tuned on robot data to jointly predict future frames and actions. Video prediction acts as a physically grounded pretraining task, giving large gains on CALVIN's zero-shot generalization splits and on real-robot data efficiency.",
+  "innovation": [
+    "Video prediction as the pretraining objective for a manipulation policy, absorbing dynamics from human video.",
+    "Joint frame-and-action prediction during fine-tuning, keeping the predictive signal alive."
+  ],
+  "matters": [
+    "A clean demonstration that human video, not only robot data, carries manipulation-relevant knowledge."
+  ],
+  "limits": [
+    "Video prediction is expensive and only loosely aligned with what control actually needs."
+  ],
+  "lineage": "Transformer sequence modeling applied to video-then-action, anticipating world-model-based VLAs.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2312.13139",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/bytedance/GR-1",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GR-1+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "292f7ddee271a8f9"
+}

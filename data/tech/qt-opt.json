@@ -1,0 +1,31 @@
+{
+  "id": "qt-opt",
+  "name": "QT-Opt",
+  "summary": "QT-Opt is a scalable distributed Q-learning method using the cross-entropy method for continuous action selection, trained on 580k real grasp attempts collected over months by seven robots. It reached 96% success on unseen objects and, more interestingly, produced emergent behaviors nobody scripted: singulating cluttered objects, repositioning for a better grip, and retrying after failure.",
+  "innovation": [
+    "Distributed off-policy Q-learning at a data scale nobody had attempted on real hardware.",
+    "Showed closed-loop RL grasping beats open-loop predict-then-execute pipelines."
+  ],
+  "matters": [
+    "The proof that real-robot RL scales with data, and the ancestor of Google's whole robot-learning program."
+  ],
+  "limits": [
+    "Enormous data cost for one task family; the robot farm was not reproducible outside Google."
+  ],
+  "lineage": "Large-scale value-based RL, later fused with transformers in Q-Transformer.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1806.10293",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=QT-Opt+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "8a645426e0252650"
+}

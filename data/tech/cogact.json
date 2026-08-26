@@ -1,0 +1,36 @@
+{
+  "id": "cogact",
+  "name": "CogACT",
+  "summary": "CogACT componentizes a VLA into a VLM cognition module and a specialized diffusion transformer action module conditioned on the VLM's output token, rather than making the VLM emit actions itself. The paper studies how action-module capacity scales given a fixed backbone and reports large gains over OpenVLA in both simulation and real manipulation with modest fine-tuning.",
+  "innovation": [
+    "Systematic study of action-module architecture and scaling with the VLM held fixed.",
+    "Adaptive action ensembling across predicted chunks to smooth execution."
+  ],
+  "matters": [
+    "Gave empirical backing to the now-standard VLM-plus-action-expert factorization."
+  ],
+  "limits": [
+    "Evaluation leans on simulation benchmarks; real-robot breadth is narrow."
+  ],
+  "lineage": "OpenVLA's backbone with Diffusion Policy's generative head, formalized as separate modules.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2411.19650",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/microsoft/CogACT",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=CogACT+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "8b9fd089643959c4"
+}

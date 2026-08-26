@@ -1,0 +1,36 @@
+{
+  "id": "droid",
+  "name": "DROID",
+  "summary": "DROID standardizes on a single Franka-based platform with identical cameras and deploys it across 13 institutions, collecting 76,000 trajectories in 564 distinct real scenes including homes, offices and kitchens. Fixing the hardware while varying the environment isolates scene diversity as the experimental variable, and policies co-trained with DROID show markedly better generalization.",
+  "innovation": [
+    "Standardized hardware across many institutions, removing embodiment confounds from a diverse dataset.",
+    "Deliberate collection in real everyday environments rather than on lab benches."
+  ],
+  "matters": [
+    "Supplied the environmental diversity that later work identified as the key generalization driver."
+  ],
+  "limits": [
+    "Single-arm Franka only, and teleoperation quality varies across sites."
+  ],
+  "lineage": "BridgeData's diversity philosophy executed with standardized hardware at multi-institution scale.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2403.12945",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://droid-dataset.github.io/",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Distributed+Robot+Interaction+Dataset+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "4f961b4940fa0aa5"
+}

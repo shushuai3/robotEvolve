@@ -1,0 +1,36 @@
+{
+  "id": "clip",
+  "name": "CLIP",
+  "summary": "CLIP trained image and text encoders contrastively on 400M web pairs, producing a shared embedding where arbitrary language can retrieve or classify visual content zero-shot. For manipulation this was the unlock for open-vocabulary object grounding: a robot could suddenly be told to pick up a noun it had never seen in robot data, and the perception stack would still find it.",
+  "innovation": [
+    "Contrastive image-text pretraining at web scale, yielding zero-shot transfer to unseen categories.",
+    "A reusable joint embedding that downstream systems could condition on with no fine-tuning."
+  ],
+  "matters": [
+    "The visual-semantic substrate under SayCan, VoxPoser and most VLA vision encoders."
+  ],
+  "limits": [
+    "Weak at spatial relations, counting and fine-grained geometry, which is exactly what manipulation needs."
+  ],
+  "lineage": "Transformer encoders trained contrastively; the semantic half of nearly every robot perception stack.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2103.00020",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/openai/CLIP",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Contrastive+Language-Image+Pretraining+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "fddb16376da97e8a"
+}

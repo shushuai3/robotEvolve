@@ -1,0 +1,36 @@
+{
+  "id": "isaac-gym",
+  "name": "Isaac Gym / Isaac Lab",
+  "summary": "Isaac Gym keeps simulation state entirely on the GPU, eliminating CPU-GPU transfer and enabling thousands of parallel environments on a single card. Tasks that previously needed a CPU cluster train in minutes to hours on one workstation. Isaac Lab is the current successor built on Isaac Sim, and it underpins NVIDIA's humanoid and manipulation model training.",
+  "innovation": [
+    "An end-to-end GPU pipeline for physics, observation and policy update with no host round-trip.",
+    "Made massively parallel PPO the standard recipe for sim-trained robot control."
+  ],
+  "matters": [
+    "The compute substrate behind most modern sim-to-real dexterity and humanoid work."
+  ],
+  "limits": [
+    "Contact fidelity trades off against speed, and it is tightly coupled to NVIDIA hardware."
+  ],
+  "lineage": "MuJoCo-era simulation reimplemented for massively parallel GPU execution.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2108.10470",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/isaac-sim/IsaacLab",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Isaac+Gym+/+Isaac+Lab+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "b7978e728325ba9c"
+}

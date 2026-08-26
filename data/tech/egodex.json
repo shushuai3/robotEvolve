@@ -1,0 +1,31 @@
+{
+  "id": "egodex",
+  "name": "EgoDex",
+  "summary": "EgoDex is a large egocentric dataset recorded on head-mounted consumer hardware with paired, automatically annotated 3D hand and finger poses across a wide range of everyday dexterous tasks. The annotation is the whole point: raw egocentric video has to pass through a hand-pose estimator before it can supervise anything, and bundling accurate poses at capture time removes the noisiest, most error-prone step in the human-to-robot pipeline.",
+  "innovation": [
+    "Pairing large-scale egocentric video with reliable 3D hand pose captured at recording time rather than estimated afterwards.",
+    "Coverage of genuinely dexterous multi-finger tasks, not just parallel-jaw-style pick and place."
+  ],
+  "matters": [
+    "Dexterous hand data is the scarcest category in robot learning, and this is one of the largest open sources of it."
+  ],
+  "limits": [
+    "Human hand kinematics do not map cleanly onto most robot hands, and there is no force or tactile channel."
+  ],
+  "lineage": "Ego4D-style capture carrying the hand-pose supervision that manipulation actually needs.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2505.11709",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=EgoDex+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "5fa41d7e39b10ed7"
+}

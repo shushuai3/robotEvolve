@@ -1,0 +1,31 @@
+{
+  "id": "ppo",
+  "name": "PPO",
+  "summary": "PPO constrains each policy update with a clipped surrogate objective, capturing most of the stability of trust-region methods at a fraction of the implementation complexity. In robotics it became the default algorithm for massively parallel simulation training: locomotion, in-hand manipulation and sim-to-real dexterity pipelines almost all run PPO over thousands of parallel environments.",
+  "innovation": [
+    "Clipped surrogate objective giving trust-region-like stability with first-order optimization.",
+    "Robust to hyperparameters across wildly different tasks, which is why it survived."
+  ],
+  "matters": [
+    "The algorithm actually running inside Isaac Lab, sim-to-real dexterity, and RLHF alike."
+  ],
+  "limits": [
+    "On-policy and therefore sample-hungry: impractical to run directly on real hardware."
+  ],
+  "lineage": "Root of the on-policy branch used for sim-trained manipulation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1707.06347",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Proximal+Policy+Optimization+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "b75c634b917bcb9a"
+}

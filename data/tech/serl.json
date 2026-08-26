@@ -1,0 +1,37 @@
+{
+  "id": "serl",
+  "name": "SERL",
+  "summary": "SERL bundles an efficient off-policy learner, reward classifiers learned from a handful of images, automated resets and impedance control into one library. It trains policies for PCB insertion, cable routing and object relocation directly on hardware in 25 to 50 minutes, reaching near-perfect success and outperforming imitation baselines trained on comparable human time.",
+  "innovation": [
+    "Treated real-world RL as an engineering problem and solved the surrounding infrastructure, not just the algorithm.",
+    "Learned image-based reward classifiers removing the need for hand-designed reward functions.",
+    "Forward-backward controller pairs for automatic resets during unattended training."
+  ],
+  "matters": [
+    "Reframed real-world RL from research curiosity to something a lab can run before lunch."
+  ],
+  "limits": [
+    "Task-specific; each new task needs its own reward classifier and reset scheme."
+  ],
+  "lineage": "RLPD's sample efficiency wrapped in production-grade real-robot infrastructure.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2401.16013",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/rail-berkeley/serl",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Sample-Efficient+Robotic+Reinforcement+Learning+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "2193a9f9f2121301"
+}

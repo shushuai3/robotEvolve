@@ -1,0 +1,31 @@
+{
+  "id": "palm-e",
+  "name": "PaLM-E",
+  "summary": "PaLM-E embeds continuous sensor modalities, images, 3D scene representations and robot states, into the same latent space as language tokens and trains a 562B model jointly across embodied and internet-scale vision-language tasks. Joint training produced positive transfer in both directions, and the resulting model plans robot behavior while remaining a strong general vision-language model.",
+  "innovation": [
+    "Continuous multimodal observations as first-class tokens inside a language model.",
+    "Demonstrated positive transfer between internet-scale VL data and robot tasks in a single model."
+  ],
+  "matters": [
+    "The direct precursor to RT-2 and thus to the entire VLA architecture."
+  ],
+  "limits": [
+    "Enormous and closed; outputs high-level plans rather than actions."
+  ],
+  "lineage": "SayCan's grounding problem solved by absorbing perception into the language model itself.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2303.03378",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=An+Embodied+Multimodal+Language+Model+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "795832821502408b"
+}

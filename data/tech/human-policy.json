@@ -1,0 +1,31 @@
+{
+  "id": "human-policy",
+  "name": "Humanoid Policy ~ Human Policy (PH2D)",
+  "summary": "This work collects a paired human-and-humanoid manipulation dataset (PH2D) through a shared capture protocol, then trains one human-humanoid action model across both. Because a humanoid's morphology is close to a human's, the alignment is far tighter than for arm-and-gripper platforms, and the paper reports that adding human data improves humanoid policies about as much as adding an equivalent quantity of teleoperated robot data.",
+  "innovation": [
+    "Exploits humanoid morphology to make human data near-substitutable for robot data, rather than merely a weak prior.",
+    "A capture protocol producing directly comparable human and robot recordings, removing the alignment step."
+  ],
+  "matters": [
+    "The strongest data-side argument for humanoids: the form factor is what makes the world's human video usable as training data."
+  ],
+  "limits": [
+    "Hand and finger mismatch remains even when arms align, and the dataset is modest next to Ego4D-scale corpora."
+  ],
+  "lineage": "EgoMimic's co-training applied where the embodiment gap is smallest — a body shaped like ours.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2503.13441",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Humanoid+Policy+~+Human+Policy+(PH2D)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "631199a71ad546c5"
+}

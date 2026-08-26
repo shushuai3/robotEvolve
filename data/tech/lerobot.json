@@ -1,0 +1,36 @@
+{
+  "id": "lerobot",
+  "name": "LeRobot",
+  "summary": "LeRobot provides a standard dataset format with streaming and versioning, clean reimplementations of ACT, Diffusion Policy, pi-0, SmolVLA and others, a simulation and evaluation harness, and open hardware designs for very low-cost arms. It functions as the community's shared infrastructure layer and hosts thousands of user-contributed datasets.",
+  "innovation": [
+    "A versioned, streamable dataset format that made robot data as shareable as NLP datasets.",
+    "Coupled cheap open hardware with the software stack, closing the loop for small-lab and hobbyist contribution."
+  ],
+  "matters": [
+    "The main on-ramp into the field, and the source of the community data SmolVLA trained on."
+  ],
+  "limits": [
+    "Community data quality is highly variable, and reimplementations can drift from the original papers."
+  ],
+  "lineage": "Open X-Embodiment's standardization impulse turned into maintained community infrastructure.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/huggingface/lerobot",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://huggingface.co/lerobot",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=LeRobot+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "f3636502eabf739a"
+}

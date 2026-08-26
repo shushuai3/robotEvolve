@@ -1,0 +1,36 @@
+{
+  "id": "robomimic",
+  "name": "robomimic",
+  "summary": "robomimic ran a large, carefully controlled comparison of imitation and offline RL algorithms on standardized demonstration datasets, finding that hyperparameters, observation choices and demonstration quality dominated algorithmic differences. It shipped the datasets and reference implementations alongside the study, and remains a standard framework for demonstration-based manipulation research.",
+  "innovation": [
+    "A rigorous controlled study isolating algorithm from implementation in offline robot learning.",
+    "Characterized how demonstration quality, not merely quantity, determines outcomes."
+  ],
+  "matters": [
+    "An early corrective on evaluation rigor — the same theme the LBM study revisited four years later."
+  ],
+  "limits": [
+    "Simulation-based, and it predates the generative-policy era it is still used to benchmark."
+  ],
+  "lineage": "The benchmarking and reproducibility branch, built on robosuite.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2108.03298",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/ARISE-Initiative/robomimic",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=robomimic+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c995c688bbf6fa91"
+}

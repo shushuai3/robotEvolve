@@ -1,0 +1,37 @@
+{
+  "id": "openvla-oft",
+  "name": "OpenVLA-OFT",
+  "summary": "A systematic study of VLA fine-tuning design choices. Replacing autoregressive token-by-token decoding with a single parallel forward pass, predicting a whole action chunk at once, and regressing continuous actions with an L1 objective instead of classifying bins lifted throughput from ~5 Hz to over 100 Hz while raising success rates, including on bimanual tasks the original model could not perform.",
+  "innovation": [
+    "Parallel decoding of an entire action chunk in one forward pass, removing the autoregressive bottleneck.",
+    "Continuous L1 regression head shown to match diffusion heads at a fraction of inference cost.",
+    "FiLM language conditioning to stop the model ignoring instructions in multi-task settings."
+  ],
+  "matters": [
+    "Turned VLAs from demo-speed into control-rate systems; the recipe was widely adopted."
+  ],
+  "limits": [
+    "An adaptation recipe, not a new pretrained model, so it inherits OpenVLA's pretraining ceiling."
+  ],
+  "lineage": "A direct engineering upgrade of OpenVLA's decoding and action representation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2502.19645",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/moojink/openvla-oft",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Optimized+Fine-Tuning+for+Vision-Language-Action+Models+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "ac4ee7e6e2d82584"
+}

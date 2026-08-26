@@ -1,0 +1,36 @@
+{
+  "id": "molmo",
+  "name": "Molmo (pointing)",
+  "summary": "Molmo is trained on human-collected pointing annotations alongside dense captions, giving it the ability to answer spatial questions by emitting image coordinates rather than prose. That single capability makes it directly useful as a manipulation front-end: 'point at the handle you would grasp' is a query a robot can consume, and the weights and data are fully open.",
+  "innovation": [
+    "Pointing as a trained output modality, producing grounded coordinates instead of ambiguous text.",
+    "Fully open model, data and training recipe at a time when competitive VLMs were closed."
+  ],
+  "matters": [
+    "Became a common open grounding module inside robot systems needing 'where', not just 'what'."
+  ],
+  "limits": [
+    "2D image points only, so depth and 3D pose must come from elsewhere."
+  ],
+  "lineage": "CLIP-lineage vision-language modeling specialized toward spatial grounding for embodied use.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2409.17146",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/allenai/molmo",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Molmo+(pointing)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "cd7dc517661e7d38"
+}

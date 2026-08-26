@@ -1,0 +1,36 @@
+{
+  "id": "spatialvla",
+  "name": "SpatialVLA",
+  "summary": "SpatialVLA adds Ego3D position encoding, fusing monocular depth estimates into the visual tokens, and replaces uniform action discretization with adaptive action grids fitted to the data distribution that can be re-fitted when transferring to a new robot. Trained on 1.1M real episodes, it reports better spatial generalization and faster cross-embodiment adaptation than uniformly tokenized VLAs.",
+  "innovation": [
+    "Ego3D position encoding gives 2D VLM tokens a 3D frame without extra sensors.",
+    "Adaptive, re-fittable action grids as a transferable action representation across embodiments."
+  ],
+  "matters": [
+    "A leading example of the 3D-aware VLA direction addressing a core weakness of image-token policies."
+  ],
+  "limits": [
+    "Depends on monocular depth quality; gains are task-dependent."
+  ],
+  "lineage": "OpenVLA-style architecture with 3D-aware inputs and a learned action discretization.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2501.15830",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/SpatialVLA/SpatialVLA",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=SpatialVLA+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "83a38aeee53f0582"
+}

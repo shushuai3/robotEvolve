@@ -1,0 +1,36 @@
+{
+  "id": "rvt",
+  "name": "RVT / RVT-2",
+  "summary": "RVT reprojects the point cloud into several orthographic virtual camera views, runs a multi-view transformer attending across them, and back-projects predicted 2D heatmaps into a 3D action, avoiding voxel-grid cost entirely. RVT-2 adds a coarse-to-fine zoom stage reaching millimeter precision on tasks like plug insertion while training in a fraction of PerAct's time.",
+  "innovation": [
+    "Virtual multi-view rendering as a cheap substitute for explicit 3D voxel reasoning.",
+    "Coarse-to-fine spatial refinement reaching millimeter precision."
+  ],
+  "matters": [
+    "Made 3D keyframe policies practical to train and a standard high-precision baseline."
+  ],
+  "limits": [
+    "Depends on good depth and calibration, and inherits PerAct's keyframe abstraction."
+  ],
+  "lineage": "PerAct's spatial action prediction made efficient via multi-view rendering.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2306.14896",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/nvlabs/rvt",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Robotic+View+Transformer+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "1210c20aa1f5e377"
+}

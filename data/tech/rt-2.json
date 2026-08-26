@@ -1,0 +1,34 @@
+{
+  "id": "rt-2",
+  "name": "RT-2",
+  "summary": "RT-2 takes PaLI-X / PaLM-E backbones (5B to 55B) and co-fine-tunes them on internet vision-language data together with RT-1's robot trajectories, writing actions as strings of numbers that occupy otherwise-unused tokens in the text vocabulary. Because the same weights still answer visual questions, semantic knowledge leaks into control: the robot can pick 'the extinct animal' or 'something to use as a hammer' without ever having seen those instructions in robot data.",
+  "innovation": [
+    "Actions-as-text: no new output head, so web pretraining and robot fine-tuning share one objective.",
+    "Co-fine-tuning (mixing web data into robot training) rather than sequential fine-tuning, which prevents forgetting semantics.",
+    "A chain-of-thought variant that writes a plan in natural language before the action tokens."
+  ],
+  "matters": [
+    "Named and defined the VLA category that now dominates manipulation research.",
+    "First robot policy that clearly knew things nobody had taught it on a robot."
+  ],
+  "limits": [
+    "Fully closed; the 55B model needed cloud inference at 1-3 Hz.",
+    "New physical skills did not emerge, only new semantic recombinations of existing motions."
+  ],
+  "lineage": "RT-1's data and action tokenization poured into a web-pretrained VLM backbone.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2307.15818",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Vision-Language-Action+Models+Transfer+Web+Knowledge+to+Robotic+Control+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "a696aef52b09b80e"
+}

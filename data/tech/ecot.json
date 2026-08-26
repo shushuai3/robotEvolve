@@ -1,0 +1,37 @@
+{
+  "id": "ecot",
+  "name": "Embodied Chain-of-Thought",
+  "summary": "ECoT trains a VLA to emit a structured reasoning chain grounded in the scene (task restatement, sub-task, motion primitive, visible object bounding boxes, predicted gripper pixel position) before producing action tokens. Reasoning supervision is generated automatically by pipelines of off-the-shelf detectors and LLMs, and the resulting policy improves absolute success by roughly 28% over OpenVLA while exposing an inspectable trace a human can correct.",
+  "innovation": [
+    "Reasoning steps grounded in spatial predictions such as boxes and gripper pixels, not just free text.",
+    "Fully automatic generation of reasoning supervision from existing robot data.",
+    "Interpretability as a control surface: humans can read and edit the chain to fix behavior."
+  ],
+  "matters": [
+    "Imported chain-of-thought, the biggest LLM capability gain, into embodied control with real grounding."
+  ],
+  "limits": [
+    "Generating the chain costs inference time, cutting control rate substantially."
+  ],
+  "lineage": "OpenVLA trained with automatically generated, spatially grounded reasoning traces.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2407.08693",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/MichalZawalski/embodied-CoT",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Embodied+Chain-of-Thought+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "1be8d165d1f2e9eb"
+}

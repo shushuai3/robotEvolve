@@ -1,0 +1,31 @@
+{
+  "id": "bc-z",
+  "name": "BC-Z",
+  "summary": "BC-Z collected over 25k demonstrations across 100 manipulation tasks using an interactive DAgger-style correction loop, and conditioned a single policy on either a language embedding or a human video of the task. It achieved meaningful zero-shot success on held-out tasks, establishing that task conditioning plus data diversity, rather than architecture, was the lever for generalization.",
+  "innovation": [
+    "Task embeddings from language or video as the conditioning interface for a multi-task policy.",
+    "Shared-autonomy collection where humans correct the policy live, scaling data cheaply."
+  ],
+  "matters": [
+    "The immediate methodological ancestor of RT-1 and the language-conditioned policy line."
+  ],
+  "limits": [
+    "Zero-shot success rates were modest; generalization was narrow semantic interpolation."
+  ],
+  "lineage": "Scaled, task-conditioned behavior cloning with DAgger-style corrections.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2202.02005",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=BC-Z+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "58d208370009371a"
+}

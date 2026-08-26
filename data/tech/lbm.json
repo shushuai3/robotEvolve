@@ -1,0 +1,31 @@
+{
+  "id": "lbm",
+  "name": "Large Behavior Models",
+  "summary": "TRI ran roughly 1,800 real-robot rollouts plus thousands of simulated ones under blind, randomized A/B protocols with proper statistical treatment, testing whether large multitask diffusion pretraining beats single-task baselines. It does: pretrained models need several times less task-specific data and improve steadily with pretraining scale. The study also documents how easily sloppy evaluation manufactures illusory gains.",
+  "innovation": [
+    "Blind, randomized, statistically powered real-robot evaluation methodology for manipulation.",
+    "Separated the true value of multitask pretraining from evaluation noise."
+  ],
+  "matters": [
+    "A needed corrective in a field where most claims rest on a few dozen unblinded trials."
+  ],
+  "limits": [
+    "Closed models; the contribution is methodological rather than a released artifact."
+  ],
+  "lineage": "Diffusion-policy-based multitask models, evaluated with unusual statistical discipline.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2507.05331",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Large+Behavior+Models+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "b12104ecfdc2133c"
+}

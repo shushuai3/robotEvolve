@@ -1,0 +1,31 @@
+{
+  "id": "pi-06",
+  "name": "pi-*0.6 / RECAP",
+  "summary": "RECAP (RL with Experience and Corrections via Advantage-conditioned Policies) post-trains a pi-0.6 VLA on its own deployment data. A value function trained on real rollouts scores each action's advantage, the policy is conditioned on that advantage so it can be steered toward high-value behavior at inference, and teleoperators intervene on failures to supply corrective data. Reported results include multi-hour espresso-machine operation and box assembly at around double the baseline throughput.",
+  "innovation": [
+    "Advantage-conditioned training folds RL value estimates into a generative VLA without unstable actor-critic loops.",
+    "Treats teleoperator interventions as a first-class supervision channel, closing a deploy-correct-retrain loop."
+  ],
+  "matters": [
+    "A concrete answer to 'what comes after imitation' for large VLAs: learning from the robot's own experience."
+  ],
+  "limits": [
+    "Announced mainly via company blog and report; independent reproduction is limited. Verify before citing."
+  ],
+  "lineage": "pi-0.6 post-trained with an RL procedure descended from offline RL and human-in-the-loop RL.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.physicalintelligence.company/blog",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=pi-*0.6+/+RECAP+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "66d214b05ecd8e2f"
+}

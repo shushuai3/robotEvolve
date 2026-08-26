@@ -1,0 +1,36 @@
+{
+  "id": "hil-serl",
+  "name": "HIL-SERL",
+  "summary": "HIL-SERL combines vision-based RL with a human operator who intervenes via teleoperation when the policy is about to fail, feeding both demonstrations and corrections into the same off-policy learner. Across dynamic manipulation, precise assembly and dual-arm coordination it reports near-100% success within 1 to 2.5 hours of real training, with cycle times roughly twice as fast as the human demonstrations it learned from.",
+  "innovation": [
+    "Human interventions as an on-policy corrective data source inside an RL loop, uniting DAgger and RL.",
+    "Demonstrated RL policies exceeding human teleoperation speed on real assembly tasks."
+  ],
+  "matters": [
+    "The strongest existing evidence that real-world RL, not just imitation, is deployable today."
+  ],
+  "limits": [
+    "Requires a skilled human present throughout training; scales poorly across many tasks."
+  ],
+  "lineage": "SERL's stack with DAgger-style human corrections folded into the replay buffer.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.21845",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/rail-berkeley/hil-serl",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Human-in-the-Loop+Sample-Efficient+RL+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "ba49d1c3e71ea28c"
+}

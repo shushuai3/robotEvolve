@@ -1,0 +1,31 @@
+{
+  "id": "gr-2",
+  "name": "GR-2",
+  "summary": "GR-2 scales video-generative pretraining to tens of millions of internet clips before robot fine-tuning, and adds a trajectory-conditioned video-prediction stage that effectively plans in pixel space before acting. Reported results span more than 100 tasks with strong multi-task and unseen-scene success rates.",
+  "innovation": [
+    "Internet-scale video generative pretraining directly serving a manipulation policy.",
+    "Predict the video of the task first, then derive the actions that realize it."
+  ],
+  "matters": [
+    "Bridges video generation and control, the idea now central to world-model robotics."
+  ],
+  "limits": [
+    "Closed; results are author-reported only."
+  ],
+  "lineage": "GR-1 scaled up with generative video planning added.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://gr2-manipulation.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GR-2+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "bfdd6b983a86cec2"
+}

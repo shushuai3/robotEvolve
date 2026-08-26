@@ -1,0 +1,31 @@
+{
+  "id": "transformer",
+  "name": "Transformer",
+  "summary": "Self-attention replaced recurrence and convolution as the default sequence model. For robotics its properties matter twice over: it scales predictably with data and compute, it consumes heterogeneous token streams (images, language, proprioception, actions) in one sequence, and it enabled the language and vision foundation models that VLAs are built on.",
+  "innovation": [
+    "Self-attention as a general, parallelizable mechanism for modeling sequences of anything.",
+    "Empirical scaling behavior that made 'more data plus more compute' a reliable strategy."
+  ],
+  "matters": [
+    "Robotics inherited the whole foundation-model stack because of this architecture."
+  ],
+  "limits": [
+    "Quadratic attention cost constrains long-horizon, high-frequency robot context windows."
+  ],
+  "lineage": "The common root of the VLA, world-model and representation branches.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Attention+Is+All+You+Need+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c1f75575d4a468f1"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "groot-n15",
+  "name": "GR00T N1.5",
+  "summary": "An iteration on GR00T N1 that freezes the vision-language backbone during robot training to preserve grounding, improves the adapter between language and action, and folds in DreamGen: synthetic trajectories produced by video world models, teaching behaviors never demonstrated on hardware. Reported gains are largest in language following and few-shot adaptation to new embodiments.",
+  "innovation": [
+    "Freezing the VLM during post-training so robot data does not erode semantic grounding.",
+    "Using video-world-model rollouts as a source of novel training trajectories."
+  ],
+  "matters": [
+    "An early production example of world-model-generated data training a deployed policy."
+  ],
+  "limits": [
+    "Incremental, and documented mostly through release notes rather than a standalone paper."
+  ],
+  "lineage": "GR00T N1 with a frozen backbone and world-model-generated training data.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/NVIDIA/Isaac-GR00T",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GR00T+N1.5+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "e797bea71a22ed0f"
+}

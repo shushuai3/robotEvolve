@@ -1,0 +1,36 @@
+{
+  "id": "rlpd",
+  "name": "RLPD",
+  "summary": "RLPD showed that elaborate offline-to-online pipelines are largely unnecessary. Train off-policy from scratch, sample 50% of each minibatch from the prior dataset and 50% from fresh online interaction, add layer normalization and ensembling for stability, and you get faster and better results than pretrain-then-finetune schemes. Its simplicity made it the practical default for real-robot RL.",
+  "innovation": [
+    "Symmetric sampling between offline and online buffers as a complete substitute for offline pretraining.",
+    "Identified layer normalization as the key stabilizer against value divergence."
+  ],
+  "matters": [
+    "The efficiency backbone under SERL and much subsequent real-world manipulation RL."
+  ],
+  "limits": [
+    "Assumes prior data is at least somewhat relevant to the target task."
+  ],
+  "lineage": "A pragmatic simplification of offline-to-online RL built on SAC-style off-policy learning.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2302.02948",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/ikostrikov/rlpd",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RL+with+Prior+Data+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "23224605433ffa7d"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ego4d",
+  "name": "Ego4D",
+  "summary": "Ego4D is a massive-scale egocentric video dataset assembled by a consortium spanning nine countries: roughly 3,670 hours of unscripted daily activity recorded from head-mounted cameras by hundreds of unique participants, with dense timestamped narration and a suite of benchmark tasks. For robotics its value is not the benchmarks but the raw distribution it captures: human hands manipulating real objects in real homes and workplaces, at a scale no teleoperation fleet will ever reach.",
+  "innovation": [
+    "Scale and diversity of first-person manipulation footage, gathered by a coordinated multi-institution capture effort with a consent and de-identification protocol.",
+    "Dense natural-language narration aligned to timestamps, giving the video language grounding for free."
+  ],
+  "matters": [
+    "The pretraining corpus behind R3M, GR-1 and most of the human-video branch.",
+    "Reframed the data bottleneck as something potentially solvable without robot hardware."
+  ],
+  "limits": [
+    "No action labels, no robot embodiment, no force or tactile signal — closing that gap is the entire research problem.",
+    "Passive observation only: no failures deliberately explored, no counterfactuals, no interventions."
+  ],
+  "lineage": "The root of the human-data branch: the first corpus large enough to make action-free human video a credible pretraining source.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2110.07058",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://ego4d-data.org/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Ego4D+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "583fd9c5b86088bc"
+}

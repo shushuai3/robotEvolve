@@ -1,0 +1,36 @@
+{
+  "id": "susie",
+  "name": "SuSIE",
+  "summary": "SuSIE fine-tunes an instruction-guided image-editing diffusion model to produce a plausible near-future observation given the current image and a language command, then runs a low-level goal-reaching policy toward that image. Generating one subgoal image is far cheaper than a full video, and the image editor inherits broad semantic knowledge from internet pretraining.",
+  "innovation": [
+    "Single-image subgoal generation as a lightweight substitute for full video planning.",
+    "Repurposes internet-pretrained image editors as high-level robot planners."
+  ],
+  "matters": [
+    "A practical middle ground between LLM planning and expensive generative video models."
+  ],
+  "limits": [
+    "Subgoal images can be physically impossible, and errors compound over long horizons."
+  ],
+  "lineage": "UniPi's generative planning compressed from video to single-frame subgoals.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2310.10639",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/kvablack/susie",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Subgoal+Synthesis+via+Image+Editing+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "51cb7c4a872b5bf8"
+}

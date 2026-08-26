@@ -1,0 +1,36 @@
+{
+  "id": "rekep",
+  "name": "ReKep",
+  "summary": "ReKep represents a task as a sequence of relational constraints among 3D semantic keypoints, each a small Python function returning a cost. A VLM proposes the keypoints and writes the constraints from an image and instruction; a hierarchical solver then optimizes robot actions against them at roughly 10 Hz, supporting multi-stage, bimanual and reactive behaviors without task-specific training.",
+  "innovation": [
+    "Keypoint-relational constraints as a compact, optimizable and VLM-writable task specification.",
+    "Real-time constrained optimization closing the loop against a foundation-model-authored objective."
+  ],
+  "matters": [
+    "Among the most capable training-free manipulation systems, and readable enough to debug."
+  ],
+  "limits": [
+    "Keypoint proposal quality bounds everything; fine force-controlled tasks remain out of reach."
+  ],
+  "lineage": "VoxPoser's value maps replaced by sparser, more structured keypoint constraints.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2409.01652",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/huangwl18/ReKep",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Relational+Keypoint+Constraints+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c92db7fb4c8ac3f2"
+}

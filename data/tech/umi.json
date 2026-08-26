@@ -1,0 +1,37 @@
+{
+  "id": "umi",
+  "name": "UMI",
+  "summary": "UMI is a hand-held parallel gripper with a wrist camera, fisheye side mirrors for implicit stereo, and IMU-aided visual-inertial odometry, letting anyone record demonstrations in any environment. Careful interface design plus latency matching between recording and policy inference means hand-collected data transfers to a real arm, enabling dynamic (tossing), bimanual, precise and long-horizon skills with zero robot time during collection.",
+  "innovation": [
+    "Decoupled data collection from robot hardware entirely: the demonstrator is the gripper.",
+    "Explicit latency matching between human recording and robot execution so dynamic skills transfer.",
+    "Side mirrors providing implicit stereo from one cheap camera."
+  ],
+  "matters": [
+    "Opened a path to in-the-wild manipulation data at internet scale; widely copied and extended."
+  ],
+  "limits": [
+    "Limited to one parallel-jaw morphology, with no force or torque sensing."
+  ],
+  "lineage": "Data-collection hardware designed specifically to feed Diffusion Policy training.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2402.10329",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/real-stanford/universal_manipulation_interface",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Universal+Manipulation+Interface+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "9a0ccc55b3124af2"
+}

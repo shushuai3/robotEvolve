@@ -1,0 +1,36 @@
+{
+  "id": "td-mpc2",
+  "name": "TD-MPC2",
+  "summary": "TD-MPC2 learns an implicit, decoder-free latent world model trained via temporal-difference losses, and plans with short-horizon model predictive control bootstrapped by a learned value function. A single 317M-parameter agent handles 104 tasks across four domains with multiple embodiments and action spaces, using one hyperparameter set.",
+  "innovation": [
+    "Decoder-free latent dynamics avoiding pixel reconstruction entirely.",
+    "Hybrid short-horizon planning with terminal value bootstrapping, combining model-based and model-free strengths."
+  ],
+  "matters": [
+    "Shows value-equivalent world models scale to massively multitask continuous control."
+  ],
+  "limits": [
+    "Proprioceptive and simulation-centric; visual real-world manipulation is not its strong suit."
+  ],
+  "lineage": "MuZero's value-equivalence idea adapted to continuous control with MPC instead of tree search.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2310.16828",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/nicklashansen/tdmpc2",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=TD-MPC2+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "418539aba03f0c42"
+}

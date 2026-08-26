@@ -1,0 +1,721 @@
+{
+  "schema_version": 2,
+  "generated": "2026-08-25",
+  "note": "priority 1 = check weekly, 2 = monthly, 3 = quarterly. Used by tools/update_queue.py to order the update crawl.",
+  "labs": [
+    {
+      "id": "cmu-ri",
+      "name": "CMU Robotics Institute",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "il",
+        "rep",
+        "rl",
+        "human-data"
+      ],
+      "notes": "DAgger and the imitation-learning theory lineage; 3D Diffuser Actor; Pathak/Gupta labs on scalable embodied learning and the WHIRL/VideoDex human-video-to-robot line.",
+      "sources": {
+        "site": "https://www.ri.cmu.edu/",
+        "github": "https://github.com/cmu-mld"
+      }
+    },
+    {
+      "id": "figure-ai",
+      "name": "Figure AI",
+      "type": "industry",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "vla"
+      ],
+      "notes": "Helix dual-system (S1/S2) humanoid VLA. Closed-source; announcements come via blog/video rather than papers.",
+      "sources": {
+        "blog": "https://www.figure.ai/news",
+        "site": "https://www.figure.ai/"
+      }
+    },
+    {
+      "id": "google-deepmind",
+      "name": "Google DeepMind — Robotics",
+      "type": "industry",
+      "country": "US / UK",
+      "priority": 1,
+      "focus": [
+        "vla",
+        "world-model",
+        "vlm",
+        "rl"
+      ],
+      "notes": "Absorbed Google Brain Robotics & Everyday Robots. Origin of the RT-* line, SayCan, PaLM-E, Gemini Robotics, the Dreamer and Genie lines.",
+      "sources": {
+        "blog": "https://deepmind.google/discover/blog/",
+        "site": "https://deepmind.google/",
+        "github": "https://github.com/google-deepmind"
+      }
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face — LeRobot",
+      "type": "industry",
+      "country": "FR / US",
+      "priority": 1,
+      "focus": [
+        "data",
+        "il",
+        "vla"
+      ],
+      "notes": "De-facto open-source hub: reimplementations of ACT/Diffusion Policy/π0, SmolVLA, standardized dataset format, cheap SO-100/SO-101 arms.",
+      "sources": {
+        "github": "https://github.com/huggingface/lerobot",
+        "site": "https://huggingface.co/lerobot",
+        "blog": "https://huggingface.co/blog"
+      }
+    },
+    {
+      "id": "mit-csail",
+      "name": "MIT CSAIL / Improbable AI",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "il",
+        "rl",
+        "sim"
+      ],
+      "notes": "Tedrake's group (Diffusion Policy co-author, Drake) and Pulkit Agrawal's Improbable AI on sim-to-real dexterity.",
+      "sources": {
+        "site": "https://www.csail.mit.edu/",
+        "github": "https://github.com/Improbable-AI"
+      }
+    },
+    {
+      "id": "nvidia-gear",
+      "name": "NVIDIA GEAR Lab / Robotics",
+      "type": "industry",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "vla",
+        "sim",
+        "rl",
+        "world-model"
+      ],
+      "notes": "GR00T humanoid foundation models, Isaac Lab / Isaac Sim, Cosmos world foundation models, Eureka reward design.",
+      "sources": {
+        "blog": "https://blogs.nvidia.com/blog/category/robotics/",
+        "site": "https://research.nvidia.com/labs/gear/",
+        "github": "https://github.com/NVIDIA/Isaac-GR00T"
+      }
+    },
+    {
+      "id": "physical-intelligence",
+      "name": "Physical Intelligence (π)",
+      "type": "industry",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "vla",
+        "il",
+        "rl"
+      ],
+      "notes": "Founded 2024 by Levine, Hausman, Finn et al. Flow-matching VLAs (π0 line), the openpi release, FAST action tokenizer.",
+      "sources": {
+        "blog": "https://www.physicalintelligence.company/blog",
+        "site": "https://www.physicalintelligence.company/",
+        "github": "https://github.com/Physical-Intelligence/openpi"
+      }
+    },
+    {
+      "id": "stanford-iris",
+      "name": "Stanford IRIS (Chelsea Finn)",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "il",
+        "vla"
+      ],
+      "notes": "ALOHA / ACT, Mobile ALOHA, OpenVLA co-author, meta-learning roots. Tightly coupled to Physical Intelligence.",
+      "sources": {
+        "site": "https://irislab.stanford.edu/",
+        "github": "https://github.com/tonyzhaozh"
+      }
+    },
+    {
+      "id": "stanford-realab",
+      "name": "Stanford REALab (Shuran Song)",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "il",
+        "data"
+      ],
+      "notes": "Diffusion Policy and UMI originated with this group (formerly Columbia CAIR). Focus on scalable data collection hardware.",
+      "sources": {
+        "site": "https://real.stanford.edu/",
+        "github": "https://github.com/real-stanford"
+      }
+    },
+    {
+      "id": "stanford-svl",
+      "name": "Stanford Vision & Learning Lab (Fei-Fei Li, Jiajun Wu)",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "vlm",
+        "bench",
+        "data",
+        "sim"
+      ],
+      "notes": "VoxPoser, ReKep, BEHAVIOR benchmark suite. Zero-shot manipulation via foundation-model grounding.",
+      "sources": {
+        "site": "https://svl.stanford.edu/",
+        "github": "https://github.com/StanfordVL"
+      }
+    },
+    {
+      "id": "tri",
+      "name": "Toyota Research Institute — Robotics",
+      "type": "industry",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "il",
+        "vla"
+      ],
+      "notes": "Co-developer of Diffusion Policy; Large Behavior Models (LBM) program with rigorous statistical evaluation.",
+      "sources": {
+        "blog": "https://www.tri.global/news",
+        "site": "https://www.tri.global/research/robotics",
+        "github": "https://github.com/ToyotaResearchInstitute"
+      }
+    },
+    {
+      "id": "berkeley-rail",
+      "name": "UC Berkeley — RAIL (Sergey Levine)",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "rl",
+        "vla",
+        "il",
+        "world-model"
+      ],
+      "notes": "SAC, Octo, BridgeData, SERL/HIL-SERL, DayDreamer, embodied chain-of-thought. The single densest source of robot-RL methodology.",
+      "sources": {
+        "site": "https://rail.eecs.berkeley.edu/",
+        "blog": "https://bair.berkeley.edu/blog/",
+        "github": "https://github.com/rail-berkeley"
+      }
+    },
+    {
+      "id": "ut-austin-rpl",
+      "name": "UT Austin — Robot Perception & Learning (Yuke Zhu)",
+      "type": "academic",
+      "country": "US",
+      "priority": 1,
+      "focus": [
+        "bench",
+        "data",
+        "il",
+        "sim"
+      ],
+      "notes": "robomimic, RoboCasa, LIBERO — the benchmark backbone of the field. Joint appointment with NVIDIA GEAR.",
+      "sources": {
+        "site": "https://rpl.cs.utexas.edu/",
+        "github": "https://github.com/ARISE-Initiative"
+      }
+    },
+    {
+      "id": "1x-technologies",
+      "name": "1X Technologies",
+      "type": "industry",
+      "country": "NO / US",
+      "priority": 2,
+      "focus": [
+        "world-model",
+        "vla"
+      ],
+      "notes": "NEO humanoid; published a learned world model used as an evaluator for policies.",
+      "sources": {
+        "blog": "https://www.1x.tech/discover",
+        "site": "https://www.1x.tech/"
+      }
+    },
+    {
+      "id": "agibot",
+      "name": "AgiBot / 智元机器人",
+      "type": "industry",
+      "country": "CN",
+      "priority": 2,
+      "focus": [
+        "data",
+        "vla"
+      ],
+      "notes": "AgiBot World — one of the largest open real-robot manipulation datasets; GO-1 policy family.",
+      "sources": {
+        "site": "https://www.agibot.com/",
+        "github": "https://github.com/OpenDriveLab/AgiBot-World"
+      }
+    },
+    {
+      "id": "ai2",
+      "name": "Allen Institute for AI (PRIOR)",
+      "type": "nonprofit",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "vlm",
+        "sim"
+      ],
+      "notes": "Molmo VLM with pointing supervision — a common grounding front-end for manipulation. THOR/ProcTHOR simulators.",
+      "sources": {
+        "site": "https://prior.allenai.org/",
+        "github": "https://github.com/allenai"
+      }
+    },
+    {
+      "id": "amazon-far",
+      "name": "Amazon FAR (Frontier AI & Robotics)",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "il"
+      ],
+      "notes": "Absorbed Covariant's founders and much of its team in 2024; warehouse-scale manipulation data.",
+      "sources": {
+        "site": "https://www.amazon.science/research-areas/robotics"
+      }
+    },
+    {
+      "id": "boston-dynamics",
+      "name": "Boston Dynamics",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "il",
+        "rl"
+      ],
+      "notes": "Electric Atlas manipulation; partnership with Toyota Research Institute on large behavior models.",
+      "sources": {
+        "blog": "https://bostondynamics.com/blog/",
+        "site": "https://bostondynamics.com/"
+      }
+    },
+    {
+      "id": "bytedance-seed",
+      "name": "ByteDance Seed / Research",
+      "type": "industry",
+      "country": "CN",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "world-model"
+      ],
+      "notes": "GR-1 / GR-2 video-pretrained manipulation policies; strong video-generation crossover.",
+      "sources": {
+        "site": "https://seed.bytedance.com/",
+        "github": "https://github.com/bytedance"
+      }
+    },
+    {
+      "id": "columbia-crl",
+      "name": "Columbia — Creative Machines / CAIR",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "il"
+      ],
+      "notes": "Birthplace of Diffusion Policy (Shuran Song's group before the Stanford move).",
+      "sources": {
+        "site": "https://www.cs.columbia.edu/robotics/"
+      }
+    },
+    {
+      "id": "dyna-robotics",
+      "name": "Dyna Robotics",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "rl",
+        "human-data"
+      ],
+      "notes": "DYNA-1 model targeting long-duration autonomous dexterous tasks at commercial reliability. Also pursuing large-scale egocentric human-video data collection — confirm any scale claims against their own posts before citing them.",
+      "sources": {
+        "blog": "https://www.dyna.co/research",
+        "site": "https://www.dyna.co/"
+      }
+    },
+    {
+      "id": "generalist-ai",
+      "name": "Generalist AI",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "vla"
+      ],
+      "notes": "Founded by Pete Florence (ex-Google DeepMind); general-purpose dexterous manipulation foundation models.",
+      "sources": {
+        "site": "https://generalistai.com/"
+      }
+    },
+    {
+      "id": "georgia-tech",
+      "name": "Georgia Tech (Danfei Xu, RIPL)",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "human-data",
+        "il"
+      ],
+      "notes": "EgoMimic and the wearable-capture line: treating human egocentric data as another embodiment to co-train with, rather than something to retarget.",
+      "sources": {
+        "site": "https://faculty.cc.gatech.edu/~danfei/",
+        "github": "https://github.com/SimarKareer"
+      }
+    },
+    {
+      "id": "meta-fair",
+      "name": "Meta FAIR — Embodied AI",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "world-model",
+        "rep",
+        "sim",
+        "human-data"
+      ],
+      "notes": "V-JEPA line, Habitat simulator, DINOv2/v3 backbones widely reused as robot visual encoders. Also the origin of Ego4D, Ego-Exo4D and Project Aria — the capture stack most human-data robotics runs on.",
+      "sources": {
+        "blog": "https://ai.meta.com/blog/",
+        "github": "https://github.com/facebookresearch"
+      }
+    },
+    {
+      "id": "nyu-grail",
+      "name": "NYU — GRAIL (Lerrel Pinto)",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "il",
+        "rl",
+        "human-data"
+      ],
+      "notes": "Behavior Transformers / VQ-BeT, cheap in-the-wild data collection rigs, on-robot fine-tuning, and the EgoZero line on training policies from human recordings with no robot data at all.",
+      "sources": {
+        "site": "https://www.lerrelpinto.com/",
+        "github": "https://github.com/notmahi"
+      }
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "rl",
+        "rep"
+      ],
+      "notes": "Dactyl / ADR era defined sim-to-real dexterity; robotics team disbanded 2021 and restarted ~2024. PPO and CLIP remain load-bearing everywhere.",
+      "sources": {
+        "blog": "https://openai.com/news/",
+        "github": "https://github.com/openai"
+      }
+    },
+    {
+      "id": "rai-institute",
+      "name": "RAI Institute (ex-Boston Dynamics AI Institute)",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "rl",
+        "il"
+      ],
+      "notes": "Marc Raibert's research institute; athletic intelligence and model-based + learned control.",
+      "sources": {
+        "site": "https://rai-inst.com/"
+      }
+    },
+    {
+      "id": "shanghai-ai-lab",
+      "name": "Shanghai AI Laboratory",
+      "type": "academic",
+      "country": "CN",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "data"
+      ],
+      "notes": "SpatialVLA, InternVL backbones, OpenDriveLab collaboration on AgiBot World.",
+      "sources": {
+        "site": "https://www.shlab.org.cn/",
+        "github": "https://github.com/OpenGVLab"
+      }
+    },
+    {
+      "id": "skild-ai",
+      "name": "Skild AI",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "rl"
+      ],
+      "notes": "CMU spinout (Deepak Pathak, Abhinav Gupta) pursuing an omni-bodied 'robot brain' across embodiments.",
+      "sources": {
+        "site": "https://www.skild.ai/"
+      }
+    },
+    {
+      "id": "tesla-optimus",
+      "name": "Tesla — Optimus",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "il",
+        "vla"
+      ],
+      "notes": "End-to-end video-to-action policies reusing FSD infrastructure. No papers; track AI Day / earnings demos.",
+      "sources": {
+        "site": "https://www.tesla.com/AI"
+      }
+    },
+    {
+      "id": "tsinghua-air",
+      "name": "Tsinghua University (AIR / TSAIL)",
+      "type": "academic",
+      "country": "CN",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "il"
+      ],
+      "notes": "RDT-1B bimanual diffusion transformer; strong diffusion-model theory group feeding robot policies.",
+      "sources": {
+        "site": "https://air.tsinghua.edu.cn/en/",
+        "github": "https://github.com/thu-ml"
+      }
+    },
+    {
+      "id": "berkeley-autolab",
+      "name": "UC Berkeley AUTOLab (Ken Goldberg)",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "il",
+        "data"
+      ],
+      "notes": "Dex-Net grasping lineage; long-running work on reliable industrial-grade manipulation and data-driven grasping.",
+      "sources": {
+        "site": "https://autolab.berkeley.edu/",
+        "github": "https://github.com/BerkeleyAutomation"
+      }
+    },
+    {
+      "id": "ucsd-su",
+      "name": "UC San Diego (Hao Su, Xiaolong Wang)",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "sim",
+        "rl",
+        "bench"
+      ],
+      "notes": "ManiSkill / SAPIEN simulation stack; TD-MPC line; dexterous hand teleoperation and RL.",
+      "sources": {
+        "site": "https://cseweb.ucsd.edu/~haosu/",
+        "github": "https://github.com/haosulab"
+      }
+    },
+    {
+      "id": "uw",
+      "name": "University of Washington (Dieter Fox, Personal Robotics)",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "rep",
+        "vlm",
+        "sim"
+      ],
+      "notes": "PerAct, RoboPoint, MuJoCo's origin (Todorov). Deep two-way traffic with NVIDIA Seattle robotics.",
+      "sources": {
+        "site": "https://robotics.cs.washington.edu/"
+      }
+    },
+    {
+      "id": "apple",
+      "name": "Apple — Machine Learning Research",
+      "type": "industry",
+      "country": "US",
+      "priority": 3,
+      "focus": [
+        "human-data",
+        "rep"
+      ],
+      "notes": "EgoDex and related egocentric dexterous-manipulation datasets captured on head-mounted consumer hardware with paired 3D hand pose.",
+      "sources": {
+        "site": "https://machinelearning.apple.com/",
+        "github": "https://github.com/apple"
+      }
+    },
+    {
+      "id": "eth-rsl",
+      "name": "ETH Zurich — Robotic Systems Lab",
+      "type": "academic",
+      "country": "CH",
+      "priority": 3,
+      "focus": [
+        "rl",
+        "sim"
+      ],
+      "notes": "Massively-parallel RL and sim-to-real methodology (ANYmal); the techniques transfer directly to arms and hands.",
+      "sources": {
+        "site": "https://rsl.ethz.ch/",
+        "github": "https://github.com/leggedrobotics"
+      }
+    },
+    {
+      "id": "galbot",
+      "name": "Galbot / 银河通用",
+      "type": "industry",
+      "country": "CN",
+      "priority": 3,
+      "focus": [
+        "vla",
+        "sim"
+      ],
+      "notes": "PKU-affiliated; synthetic-data-heavy grasping and mobile manipulation (GraspVLA, GroceryVLM).",
+      "sources": {
+        "site": "https://www.galbot.com/"
+      }
+    },
+    {
+      "id": "imperial-robot-learning",
+      "name": "Imperial College London (Edward Johns)",
+      "type": "academic",
+      "country": "UK",
+      "priority": 3,
+      "focus": [
+        "il",
+        "bench"
+      ],
+      "notes": "RLBench benchmark; one-shot imitation and coarse-to-fine manipulation.",
+      "sources": {
+        "site": "https://www.robot-learning.uk/"
+      }
+    },
+    {
+      "id": "microsoft-research",
+      "name": "Microsoft Research",
+      "type": "industry",
+      "country": "US / CN",
+      "priority": 3,
+      "focus": [
+        "vla",
+        "vlm"
+      ],
+      "notes": "CogACT and Magma lines; strong VLM pretraining feeding into embodied agents.",
+      "sources": {
+        "site": "https://www.microsoft.com/en-us/research/",
+        "github": "https://github.com/microsoft"
+      }
+    },
+    {
+      "id": "pku",
+      "name": "Peking University (CoRe / Hao Dong)",
+      "type": "academic",
+      "country": "CN",
+      "priority": 3,
+      "focus": [
+        "vla",
+        "sim"
+      ],
+      "notes": "Embodied perception and dexterous manipulation; closely tied to Galbot.",
+      "sources": {
+        "site": "https://zsdonghao.github.io/"
+      }
+    },
+    {
+      "id": "tud-ias",
+      "name": "TU Darmstadt — Intelligent Autonomous Systems (Jan Peters)",
+      "type": "academic",
+      "country": "DE",
+      "priority": 3,
+      "focus": [
+        "rl",
+        "il"
+      ],
+      "notes": "Movement primitives, policy search, and the classical robot-learning foundations much of modern IL rests on.",
+      "sources": {
+        "site": "https://www.ias.informatik.tu-darmstadt.de/"
+      }
+    },
+    {
+      "id": "unitree",
+      "name": "Unitree Robotics",
+      "type": "industry",
+      "country": "CN",
+      "priority": 3,
+      "focus": [
+        "rl",
+        "sim"
+      ],
+      "notes": "Hardware-first (G1/H1 humanoids, arms). Matters mainly as the cheap platform much open manipulation research now runs on.",
+      "sources": {
+        "site": "https://www.unitree.com/",
+        "github": "https://github.com/unitreerobotics"
+      }
+    },
+    {
+      "id": "freiburg",
+      "name": "University of Freiburg (Abhinav Valada, Wolfram Burgard legacy)",
+      "type": "academic",
+      "country": "DE",
+      "priority": 3,
+      "focus": [
+        "bench",
+        "vla"
+      ],
+      "notes": "CALVIN long-horizon language benchmark; HULC policies.",
+      "sources": {
+        "site": "http://rl.uni-freiburg.de/"
+      }
+    },
+    {
+      "id": "x-square",
+      "name": "X Square Robot / 自变量机器人",
+      "type": "industry",
+      "country": "CN",
+      "priority": 3,
+      "focus": [
+        "vla"
+      ],
+      "notes": "WALL-A / Wall-OSS end-to-end manipulation models with partial open-source releases.",
+      "sources": {
+        "site": "https://www.x2robot.com/"
+      }
+    }
+  ]
+}

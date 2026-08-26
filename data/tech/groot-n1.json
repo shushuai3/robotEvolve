@@ -1,0 +1,37 @@
+{
+  "id": "groot-n1",
+  "name": "GR00T N1",
+  "summary": "GR00T N1 couples a vision-language module (System 2, ~10 Hz) with a diffusion-transformer action module (System 1, up to 120 Hz), trained jointly end to end. Its distinguishing bet is the data pyramid: a small base of real teleoperation, a large layer of simulation and neurally generated trajectories, and a huge layer of egocentric human video, unified through learned latent actions so unlabeled video can still supervise the policy.",
+  "innovation": [
+    "Latent-action learning lets human video without action labels train a robot policy.",
+    "Explicit dual-system architecture with different clock rates, trained end to end rather than stitched together.",
+    "Open weights plus the synthetic-data pipeline and simulator that produced the training set."
+  ],
+  "matters": [
+    "The most complete open humanoid manipulation stack: model, data engine and simulator together."
+  ],
+  "limits": [
+    "Heavily tied to NVIDIA's simulation ecosystem; real-world evaluation breadth is narrower than pi-0's."
+  ],
+  "lineage": "A pi-0-style VLM plus action expert, extended with latent actions and a synthetic data pipeline.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2503.14734",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/NVIDIA/Isaac-GR00T",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GR00T+N1+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "180be7dff5c18c72"
+}

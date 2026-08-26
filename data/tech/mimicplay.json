@@ -1,0 +1,36 @@
+{
+  "id": "mimicplay",
+  "name": "MimicPlay",
+  "summary": "MimicPlay splits the problem by level. A high-level latent planner is learned from unstructured human play video — cheap, no robot, no action labels — to predict future hand trajectories, and a low-level policy conditioned on those plans is learned from a small number of robot teleoperation demonstrations. The split matches where each data source is actually strong: humans supply what to do next, the robot supplies how to do it.",
+  "innovation": [
+    "Assigns human video to the planning level and robot data to the control level, so the embodiment gap only has to be crossed once, coarsely.",
+    "Latent plans over future hand trajectories as the interface between the two levels."
+  ],
+  "matters": [
+    "An influential template for the human/robot data division of labour that hierarchical VLAs later adopted."
+  ],
+  "limits": [
+    "Hand-trajectory plans carry no force or fine contact information, so precision tasks stay with the robot data."
+  ],
+  "lineage": "WHIRL's human prior formalized as a learned high-level planner sitting over a robot low-level policy.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2302.12422",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/j96w/MimicPlay",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=MimicPlay+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "6a6fb38c1b110d3e"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "r3m",
+  "name": "R3M",
+  "summary": "R3M pretrains a ResNet on large egocentric human video using time-contrastive learning (frames nearer in time embed nearer), video-language alignment and sparsity regularization. Frozen and handed to a behavior-cloning policy it beat ImageNet and CLIP features on manipulation, showing robot-relevant visual features should encode temporal progress and affordance rather than object category.",
+  "innovation": [
+    "Time-contrastive objective capturing task progress rather than static semantics.",
+    "Established the frozen-pretrained-encoder paradigm for data-scarce robot learning."
+  ],
+  "matters": [
+    "Made human video a usable pretraining corpus for manipulation before VLAs existed."
+  ],
+  "limits": [
+    "Frozen features cap performance; end-to-end VLA training has largely superseded the recipe."
+  ],
+  "lineage": "Visual pretraining for control, informing encoder choices in later policies.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2203.12601",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/facebookresearch/r3m",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=A+Universal+Visual+Representation+for+Robot+Manipulation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "eca10fa62da8008e"
+}

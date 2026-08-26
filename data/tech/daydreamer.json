@@ -1,0 +1,36 @@
+{
+  "id": "daydreamer",
+  "name": "DayDreamer",
+  "summary": "DayDreamer runs Dreamer directly on four physical robots, learning a world model online from real experience and training the policy inside imagination so that real interaction is used with maximum efficiency. A quadruped learned to walk in about an hour of real time, and robot arms learned visual pick-and-place, all without simulators or resets engineered per task.",
+  "innovation": [
+    "Demonstrated online world-model learning is fast enough for real hardware timescales.",
+    "Removed the simulator from the loop entirely, and with it the sim-to-real gap."
+  ],
+  "matters": [
+    "The strongest evidence that dreaming is a practical real-robot method rather than a benchmark artifact."
+  ],
+  "limits": [
+    "Single-task, low-dimensional settings; nothing like VLA-level semantic generality."
+  ],
+  "lineage": "Dreamer deployed directly on physical robots with online model learning.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2206.14176",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/danijar/daydreamer",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=DayDreamer+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "5f92eb6c91dba211"
+}

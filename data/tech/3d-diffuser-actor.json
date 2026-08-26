@@ -1,0 +1,36 @@
+{
+  "id": "3d-diffuser-actor",
+  "name": "3D Diffuser Actor",
+  "summary": "The model lifts 2D visual features into 3D scene tokens using depth, then runs a 3D relative-attention denoising transformer that diffuses end-effector poses in SE(3). Combining 3D grounding with the multimodality of diffusion, it set state of the art on RLBench and CALVIN at release.",
+  "innovation": [
+    "3D relative attention between scene tokens and the noisy action, giving translation-equivariant reasoning.",
+    "Diffusion over SE(3) poses rather than joint-space deltas."
+  ],
+  "matters": [
+    "Showed the 3D-policy and generative-policy branches are complementary rather than competing."
+  ],
+  "limits": [
+    "Requires depth and is heavier than 2D policies at inference."
+  ],
+  "lineage": "PerAct's 3D grounding fused with Diffusion Policy's generative action head.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2402.10885",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/nickgkan/3d_diffuser_actor",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=3D+Diffuser+Actor+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "5518bd983a578ff7"
+}

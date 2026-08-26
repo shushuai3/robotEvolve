@@ -1,0 +1,31 @@
+{
+  "id": "aloha-unleashed",
+  "name": "ALOHA Unleashed",
+  "summary": "DeepMind scaled bimanual demonstration collection across a fleet of ALOHA 2 rigs and trained large transformer diffusion policies on tens of thousands of demonstrations per task family. The resulting policies handle deformables and high-precision dexterity, including tying shoelaces, hanging a shirt on a hanger and replacing a robot gear, that had resisted prior methods.",
+  "innovation": [
+    "Mapped the data-scaling curve for bimanual dexterity: hard deformable tasks become tractable with enough demos.",
+    "Fleet-scale teleoperation infrastructure as the actual enabling technology."
+  ],
+  "matters": [
+    "Set the empirical bar for what pure imitation achieves given industrial-scale data."
+  ],
+  "limits": [
+    "Per-task data requirements are far beyond what most labs can collect."
+  ],
+  "lineage": "ALOHA hardware plus diffusion policies at DeepMind data scale.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.13126",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=ALOHA+Unleashed+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "7fb814efa34bd147"
+}

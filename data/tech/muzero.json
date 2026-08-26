@@ -1,0 +1,31 @@
+{
+  "id": "muzero",
+  "name": "MuZero",
+  "summary": "MuZero learns a latent dynamics model trained purely to predict reward, value and policy, never to reconstruct observations, and plans with Monte Carlo tree search over that abstract model. It matched AlphaZero in Go, chess and shogi without being told the rules, and exceeded model-free methods on Atari. The value-equivalence principle it introduced is a direct answer to reconstruction-based world models wasting capacity.",
+  "innovation": [
+    "Value-equivalent model learning: model only what affects decisions, not what appears on screen.",
+    "Unified learned models with tree search in high-dimensional visual domains."
+  ],
+  "matters": [
+    "The main intellectual alternative to reconstruction-based world models, echoed later by JEPA."
+  ],
+  "limits": [
+    "Tree search assumes discrete actions and cheap model queries, both awkward for continuous manipulation."
+  ],
+  "lineage": "A decision-focused branch of world modeling, diverging from generative reconstruction.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1911.08265",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=MuZero+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "99048901bb8c30fe"
+}

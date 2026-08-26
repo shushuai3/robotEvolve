@@ -1,0 +1,31 @@
+{
+  "id": "unipi",
+  "name": "UniPi",
+  "summary": "UniPi reframes policy learning as text-conditioned video generation: a diffusion model synthesizes a video of the robot completing the instruction, and a small inverse-dynamics model extracts the actions that realize those frames. Because video is a universal interface, the planner can absorb internet video and transfer across embodiments, with the action decoder being the only embodiment-specific part.",
+  "innovation": [
+    "Video as an embodiment-agnostic planning representation, decoupled from action decoding.",
+    "Lets internet-scale video pretraining serve control directly."
+  ],
+  "matters": [
+    "Founded the video-generation-as-planning line running through GR-2, Genie and Cosmos-style systems."
+  ],
+  "limits": [
+    "Video generation is slow and physically inconsistent; hallucinated frames yield unexecutable plans."
+  ],
+  "lineage": "World modeling in pixel space, with planning done by generation rather than search.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2302.00111",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Learning+Universal+Policies+via+Text-Guided+Video+Generation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "4ee21df6704e91c5"
+}

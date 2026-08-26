@@ -1,0 +1,37 @@
+{
+  "id": "meta-world",
+  "name": "Meta-World",
+  "summary": "Meta-World provides 50 simulated tabletop manipulation tasks sharing a single robot, action space and observation format, grouped into explicit train/test splits designed to measure generalization to unseen tasks rather than mastery of seen ones. It became the standard testbed for multi-task and meta-reinforcement learning, and its ML10 and ML45 splits are still the reference numbers in that literature.",
+  "innovation": [
+    "A shared action and observation space across 50 tasks, so transfer is measurable instead of confounded by differing interfaces.",
+    "Explicit held-out task splits, which made 'does multi-task training generalize' a testable question."
+  ],
+  "matters": [
+    "Forced multi-task claims to be evaluated on held-out tasks, changing what counted as evidence of generalization."
+  ],
+  "limits": [
+    "Simulated, single-arm, with hand-shaped reward functions.",
+    "Later shown to be quite sensitive to implementation and reward details, which muddied cross-paper comparison."
+  ],
+  "lineage": "An early standardized MuJoCo suite that defined how multi-task manipulation gets measured.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1910.10897",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/Farama-Foundation/Metaworld",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Meta-World+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c1f8a5fa4651d7fd"
+}

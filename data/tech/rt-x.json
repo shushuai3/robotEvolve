@@ -1,0 +1,36 @@
+{
+  "id": "rt-x",
+  "name": "RT-X (RT-1-X / RT-2-X)",
+  "summary": "Retraining the RT architectures on the pooled Open X-Embodiment corpus (60 datasets, 22 embodiments, 30+ labs) produced RT-1-X and RT-2-X. RT-1-X outperformed the original single-dataset specialist policies on 5 of 6 evaluated lab setups by roughly 50% on average, and RT-2-X showed skills that only appeared once other robots' data was in the mix.",
+  "innovation": [
+    "Demonstrated positive cross-embodiment transfer at scale: pooled training beat per-robot specialists.",
+    "A shared end-effector action space that made wildly different arms trainable in one batch."
+  ],
+  "matters": [
+    "Justified the open-data pooling effort every open VLA now trains on."
+  ],
+  "limits": [
+    "Transfer benefits concentrated in low-data regimes; large in-domain datasets still won."
+  ],
+  "lineage": "The RT architectures re-trained on the Open X-Embodiment pool.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2310.08864",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/google-deepmind/open_x_embodiment",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RT-X+(RT-1-X+/+RT-2-X)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "7b7018636c6c8e59"
+}

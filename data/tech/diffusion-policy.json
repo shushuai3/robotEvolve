@@ -1,0 +1,39 @@
+{
+  "id": "diffusion-policy",
+  "name": "Diffusion Policy",
+  "summary": "Diffusion Policy represents the visuomotor policy as a conditional denoising diffusion process over action sequences, reporting an average 46.9% improvement over prior methods across 15 tasks from 4 benchmarks. It expresses multimodal behavior gracefully, scales to high-dimensional action chunks, and trains stably, sidestepping both mode-averaging and Implicit BC's inference-time optimization.",
+  "innovation": [
+    "Diffusion over action chunks rather than single actions, giving temporal consistency and multimodality.",
+    "Receding-horizon execution: predict a chunk, execute part of it, replan, closing the loop without jitter.",
+    "Visual conditioning via FiLM with an end-to-end trained encoder, making it drop-in for real robots."
+  ],
+  "matters": [
+    "Became the default manipulation baseline worldwide, and the action head inside Octo, RDT-1B, GR00T and (as flow matching) pi-0.",
+    "Made contact-rich, precise tasks learnable from roughly 50 to 200 demonstrations."
+  ],
+  "limits": [
+    "Iterative denoising costs inference time, later mitigated by flow matching and consistency distillation.",
+    "Pure imitation, with no mechanism to exceed demonstration quality."
+  ],
+  "lineage": "Achieves Implicit BC's multimodality goal with a generative diffusion model instead of energy minimization.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2303.04137",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/real-stanford/diffusion_policy",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Diffusion+Policy+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "5144e001d6a25afb"
+}

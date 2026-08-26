@@ -1,0 +1,31 @@
+{
+  "id": "genie",
+  "name": "Genie / Genie 3",
+  "summary": "Genie trains on 200,000+ hours of unlabeled internet gameplay video and infers a discrete latent action space with no action labels whatsoever, yielding a controllable generative environment where each latent action produces a consistent effect. Later generations extended this to real-time, longer-horizon interactive world generation with persistent scene memory.",
+  "innovation": [
+    "Unsupervised latent action discovery from pure video, removing the need for action-labeled data.",
+    "Generated environments that are interactive and controllable rather than passive video."
+  ],
+  "matters": [
+    "The latent-action trick directly enabled robot models such as GR00T N1 to learn from unlabeled human video."
+  ],
+  "limits": [
+    "Closed; physical fidelity is far below what contact-rich manipulation requires. Verify version details."
+  ],
+  "lineage": "World models trained from unlabeled video with self-discovered actions.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2402.15391",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Generative+Interactive+Environments+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "a65c4759f6d2b149"
+}

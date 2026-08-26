@@ -1,0 +1,36 @@
+{
+  "id": "ego-exo4d",
+  "name": "Ego-Exo4D",
+  "summary": "Ego-Exo4D captures synchronized egocentric and multiple exocentric camera views of people performing skilled activities — cooking, repair, sports, music — across many sites, with expert commentary and 3D body and hand annotation. The pairing matters for robots because a robot typically observes a scene from a third-person or wrist camera while human demonstration data is first-person, and the viewpoint mismatch quietly breaks naive transfer.",
+  "innovation": [
+    "Time-synchronized egocentric and exocentric capture at scale, giving direct supervision for cross-view translation.",
+    "Expert commentary tracks as a supervision signal about how a task is being done well or badly."
+  ],
+  "matters": [
+    "Attacks the viewpoint mismatch that blocks direct reuse of human video by robot-mounted cameras."
+  ],
+  "limits": [
+    "Skilled-activity focus is narrower than everyday manipulation, and there are still no action labels."
+  ],
+  "lineage": "Ego4D extended with paired third-person views and finer 3D annotation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2311.18259",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://ego-exo4d-data.org/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Ego-Exo4D+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "ef4b35a02bfd642e"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "lapa",
+  "name": "LAPA",
+  "summary": "LAPA learns a discrete latent action vocabulary by training a VQ-VAE to explain the transition between consecutive video frames, pretrains a VLA to predict those latent actions from large-scale action-free video, then fine-tunes on a small amount of real robot data to map latents onto true actions. It reported matching or beating models pretrained on action-labelled robot data at a fraction of the pretraining cost.",
+  "innovation": [
+    "Quantized latent actions inferred from frame transitions as a direct substitute for missing action labels.",
+    "The three-stage pipeline — latent action inference, latent pretraining, action fine-tuning — that has since become the standard shape of this approach."
+  ],
+  "matters": [
+    "The clearest demonstration that the action-label gap is bridgeable, which is what makes human video usable as VLA pretraining at all.",
+    "The mechanism underneath GR00T N1's human-video layer and similar industrial data pyramids."
+  ],
+  "limits": [
+    "Latent actions encode visible change, so they capture nothing about force or stiffness.",
+    "Quality degrades when the camera itself moves, which is exactly the egocentric case."
+  ],
+  "lineage": "Genie's unsupervised latent action discovery redirected from generated worlds to robot policy pretraining.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.11758",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/LatentActionPretraining/LAPA",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Latent+Action+Pretraining+from+Videos+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "6bd2f2e4472795ae"
+}

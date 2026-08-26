@@ -1,0 +1,36 @@
+{
+  "id": "dp3",
+  "name": "3D Diffusion Policy (DP3)",
+  "summary": "DP3 conditions a diffusion policy on a compact 3D point-cloud representation from an efficient encoder rather than on RGB images. Across 72 simulated and several real dexterous tasks it reports large gains in sample efficiency and much better generalization to novel viewpoints, objects and spatial arrangements, since geometry is invariant to the appearance changes that break image policies.",
+  "innovation": [
+    "Compact 3D visual representation as the conditioning signal for diffusion policies.",
+    "Demonstrated dramatic sample-efficiency gains from geometry over appearance."
+  ],
+  "matters": [
+    "A leading argument for 3D-centric policies as image-based VLAs hit spatial generalization limits."
+  ],
+  "limits": [
+    "Needs calibrated depth; point clouds degrade badly on transparent and reflective objects."
+  ],
+  "lineage": "Diffusion Policy with the image encoder replaced by a 3D point-cloud encoder.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2403.03954",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/YanjieZe/3D-Diffusion-Policy",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=3D+Diffusion+Policy+(DP3)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "f7f0a66012c50da0"
+}

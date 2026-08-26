@@ -1,0 +1,36 @@
+{
+  "id": "fast-tokenizer",
+  "name": "FAST action tokenizer",
+  "summary": "Naive per-dimension binning of high-frequency actions produces long, highly redundant token sequences that autoregressive VLAs learn poorly. FAST applies a discrete cosine transform to the action chunk and byte-pair-encodes the coefficients, yielding much shorter token strings. A universal tokenizer trained on a million trajectories works across robots off the shelf, letting an autoregressive pi-0-FAST match diffusion-based pi-0 with substantially less training compute.",
+  "innovation": [
+    "Frequency-domain compression of action sequences before discretization.",
+    "A universal, robot-agnostic action tokenizer released for reuse."
+  ],
+  "matters": [
+    "Removed the main technical objection to autoregressive rather than diffusion VLAs."
+  ],
+  "limits": [
+    "Autoregressive decoding remains slower at inference than a single flow-matching pass."
+  ],
+  "lineage": "An action representation designed for pi-0-class models, replacing uniform binning.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2501.09747",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://huggingface.co/physical-intelligence/fast",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Frequency-space+Action+Sequence+Tokenization+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "e42d5d48b6f41a62"
+}

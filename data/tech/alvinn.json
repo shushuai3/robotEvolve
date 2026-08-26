@@ -1,0 +1,31 @@
+{
+  "id": "alvinn",
+  "name": "ALVINN",
+  "summary": "Dean Pomerleau trained a three-layer network to map 30x32 camera images to steering direction, driving a vehicle on public roads. Every modern end-to-end policy descends from this, as does the field's oldest known failure mode: covariate shift, which Pomerleau already patched by synthetically generating off-center views, the ancestor of today's augmentation and DAgger.",
+  "innovation": [
+    "End-to-end learning from raw sensor input to control, with no hand-designed perception stack.",
+    "Synthetic view generation to cover states the human demonstrator never visited."
+  ],
+  "matters": [
+    "Defines behavior cloning, the substrate under every VLA on this map."
+  ],
+  "limits": [
+    "Tiny capacity, no language, no generalization beyond the demonstrated conditions."
+  ],
+  "lineage": "The root of the imitation-learning branch.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://proceedings.neurips.cc/paper/1988/hash/812b4ba287f5ee0bc9d43bbf5bbe87fb-Abstract.html",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Autonomous+Land+Vehicle+In+a+Neural+Network+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "123740d79c4dd578"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "open-x-embodiment",
+  "name": "Open X-Embodiment",
+  "summary": "Open X-Embodiment aggregates 60 existing datasets from 34 research labs into a single standardized format covering more than a million real robot trajectories across 22 embodiments and 500+ skills. The unglamorous work of format unification is what made every subsequent open generalist policy — Octo, OpenVLA, RDT-1B — trainable at all.",
+  "innovation": [
+    "A shared data schema that made heterogeneous robot datasets mutually trainable in one batch.",
+    "Community coordination at a scale robotics had never previously achieved."
+  ],
+  "matters": [
+    "The ImageNet moment for manipulation: the common substrate the open field trains on."
+  ],
+  "limits": [
+    "Severely imbalanced across labs and robots, with inconsistent camera setups and language annotation quality.",
+    "Overwhelmingly single-arm tabletop data, so bimanual and dexterous coverage is thin."
+  ],
+  "lineage": "The pooling of RT-1, BridgeData and dozens of other lab datasets into one corpus.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2310.08864",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://robotics-transformer-x.github.io/",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Open+X-Embodiment+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "8e2434747c84fe22"
+}

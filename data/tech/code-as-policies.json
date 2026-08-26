@@ -1,0 +1,36 @@
+{
+  "id": "code-as-policies",
+  "name": "Code as Policies",
+  "summary": "Rather than selecting from a skill list, the LLM writes executable code that calls perception and control APIs, recursively defining helper functions as needed. This gives the planner real expressive power: feedback loops, conditional logic, spatial arithmetic ('put the block 10 cm to the left'), and generalization to instructions no skill vocabulary anticipated.",
+  "innovation": [
+    "Programs as the policy representation, providing composition and control flow for free.",
+    "Recursive function generation letting the model define undefined helpers on demand."
+  ],
+  "matters": [
+    "The template for LLM-as-orchestrator systems, including reward writers such as Eureka."
+  ],
+  "limits": [
+    "Only as good as the underlying perception and control APIs; generated code fails silently and unsafely."
+  ],
+  "lineage": "SayCan's LLM planner upgraded from skill selection to program synthesis.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2209.07753",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/google-research/google-research/tree/master/code_as_policies",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Code+as+Policies+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "e3e39ddff4ef8976"
+}

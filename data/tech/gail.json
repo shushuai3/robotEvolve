@@ -1,0 +1,31 @@
+{
+  "id": "gail",
+  "name": "GAIL",
+  "summary": "Ho and Ermon showed that inverse reinforcement learning followed by RL is equivalent to a distribution-matching problem, then solved it directly: a discriminator learns to separate agent from expert trajectories while the policy is trained by RL to fool it. This removed the expensive inner RL loop of classical IRL and scaled imitation to high-dimensional continuous control.",
+  "innovation": [
+    "Recast imitation as occupancy-measure matching, bypassing explicit reward recovery.",
+    "Brought GAN machinery into robot learning."
+  ],
+  "matters": [
+    "Underpins reward-free imitation and many sim-to-real style-matching approaches."
+  ],
+  "limits": [
+    "Adversarial training is unstable and sample-hungry; largely displaced by direct generative policies."
+  ],
+  "lineage": "A distribution-matching answer to the covariate-shift problem DAgger framed.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1606.03476",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Generative+Adversarial+Imitation+Learning+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "1923c1417c44aaa8"
+}

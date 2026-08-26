@@ -1,0 +1,31 @@
+{
+  "id": "dreamer4",
+  "name": "Dreamer 4",
+  "summary": "Dreamer 4 learns a fast, accurate world model from a fixed offline dataset and trains the policy purely inside it, reporting the first agent to obtain diamonds in Minecraft without any environment interaction during learning. The emphasis is on world-model quality and inference speed sufficient for real-time imagination, which is the precondition for applying dreaming to robots where interaction is expensive.",
+  "innovation": [
+    "Offline-only agent training inside a learned model, removing environment interaction from the loop.",
+    "Architectural work on making imagination fast enough for interactive-rate rollouts."
+  ],
+  "matters": [
+    "The most direct current answer to how robots might learn from logged data without hardware time."
+  ],
+  "limits": [
+    "Demonstrated in simulation and games; robot manipulation results are limited. Verify before citing."
+  ],
+  "lineage": "The Dreamer line pushed toward fully offline training in scalable learned worlds.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2509.24527",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Dreamer+4+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "6004089ee9287b8c"
+}

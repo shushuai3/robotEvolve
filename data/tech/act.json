@@ -1,0 +1,38 @@
+{
+  "id": "act",
+  "name": "ACT / ALOHA",
+  "summary": "ALOHA is an open-source low-cost bimanual puppeteering setup; ACT is the policy trained on it. ACT predicts a chunk of about 100 future actions at once with a transformer CVAE, shortening the effective horizon and suppressing compounding error, while temporal ensembling across overlapping chunks smooths execution. Together they learn tasks like inserting a battery or opening a translucent condiment cup from roughly 50 demos at 80-90% success.",
+  "innovation": [
+    "Action chunking: predict k steps at once to cut the compounding-error horizon by a factor of k.",
+    "Temporal ensembling of overlapping chunks for smooth, jitter-free real-time execution.",
+    "Open, affordable bimanual hardware that democratized dexterous data collection."
+  ],
+  "matters": [
+    "Action chunking is now near-universal: pi-0, OpenVLA-OFT, GR00T and Diffusion Policy all use it.",
+    "ALOHA hardware and its clones became the standard bimanual research platform."
+  ],
+  "limits": [
+    "Pure imitation from a fixed setup, with no language generalization and limited robustness to scene change."
+  ],
+  "lineage": "Transformer sequence prediction applied to action chunks, on purpose-built cheap bimanual hardware.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2304.13705",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/tonyzhaozh/aloha",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Action+Chunking+with+Transformers+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "9629a4824306bdd0"
+}

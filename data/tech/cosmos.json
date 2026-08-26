@@ -1,0 +1,36 @@
+{
+  "id": "cosmos",
+  "name": "NVIDIA Cosmos",
+  "summary": "Cosmos packages diffusion and autoregressive world foundation models trained on roughly 20 million hours of driving and robotics video, plus tokenizers and a curation pipeline, under a permissive license. Its purpose is explicitly industrial: generate photorealistic, physically plausible synthetic trajectories to augment scarce real robot data, and provide a policy evaluator that does not require hardware.",
+  "innovation": [
+    "Open-weight world foundation models specifically targeted at physical AI rather than entertainment video.",
+    "Positioned the world model as a synthetic-data factory and evaluation environment for policies."
+  ],
+  "matters": [
+    "Made world-model-generated training data a mainstream part of the robot-learning pipeline."
+  ],
+  "limits": [
+    "Visual plausibility outruns physical accuracy, especially for contact and deformation."
+  ],
+  "lineage": "Video-generation world models industrialized as a data and evaluation platform.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2501.03575",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/NVIDIA/Cosmos",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=World+Foundation+Model+Platform+for+Physical+AI+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "dbab61469a30bf30"
+}

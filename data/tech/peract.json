@@ -1,0 +1,36 @@
+{
+  "id": "peract",
+  "name": "PerAct",
+  "summary": "PerAct voxelizes the workspace and uses a Perceiver transformer to classify which voxel the gripper should move to next, along with rotation and gripper state. Because the action space is spatially grounded and the representation is 3D, the policy generalizes across viewpoints and learns multi-task behavior from a handful of demonstrations per task, in sharp contrast to dense continuous control.",
+  "innovation": [
+    "Manipulation as 3D spatial classification: detect the next keyframe pose.",
+    "Perceiver latent bottleneck making high-resolution voxel input tractable."
+  ],
+  "matters": [
+    "Defined the 3D keyframe-policy branch that dominates RLBench-style benchmarks."
+  ],
+  "limits": [
+    "Keyframe abstraction cannot express continuous contact-rich or dynamic motion."
+  ],
+  "lineage": "Transformer perception applied to a voxelized 3D action space.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2209.05451",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/peract/peract",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Perceiver-Actor+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "2cfe1bd31b999345"
+}

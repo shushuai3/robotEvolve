@@ -1,0 +1,31 @@
+{
+  "id": "dagger",
+  "name": "DAgger",
+  "summary": "Ross, Gordon and Bagnell showed that naive behavior cloning suffers errors compounding quadratically in the horizon, because the policy's own mistakes carry it to states the expert never demonstrated. DAgger fixes this by iteratively rolling out the learner, querying the expert for correct actions at the states the learner actually visits, and aggregating those labels, with no-regret guarantees that make error linear in horizon.",
+  "innovation": [
+    "Reduced imitation learning to online learning, yielding the first strong theoretical guarantee.",
+    "Train on the learner's own state distribution, not the expert's: the field's most reused fix."
+  ],
+  "matters": [
+    "Every human-in-the-loop correction scheme, HIL-SERL and RECAP interventions included, is DAgger's descendant."
+  ],
+  "limits": [
+    "Requires an interactive expert able to label arbitrary states, which is expensive and often impossible."
+  ],
+  "lineage": "The theoretical correction to naive behavior cloning as practiced since ALVINN.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1011.0686",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Dataset+Aggregation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "7461b34d3c77d948"
+}

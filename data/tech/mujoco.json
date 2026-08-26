@@ -1,0 +1,36 @@
+{
+  "id": "mujoco",
+  "name": "MuJoCo",
+  "summary": "Emo Todorov's MuJoCo solved soft contact dynamics accurately and fast enough for optimization-based control and reinforcement learning, becoming the substrate for essentially all continuous-control benchmarks. DeepMind acquired it and open-sourced it in 2021, later adding a GPU-accelerated version for massively parallel training.",
+  "innovation": [
+    "A convex contact formulation that is both physically reasonable and fast enough to sit inside a learning loop.",
+    "Analytically tractable dynamics enabling gradient-based and optimal-control methods."
+  ],
+  "matters": [
+    "Nearly every RL manipulation result of the last decade was developed on it."
+  ],
+  "limits": [
+    "The contact model is an approximation, and deformables and fluids remain weak."
+  ],
+  "lineage": "The root of the modern manipulation simulation stack.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://mujoco.org/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Multi-Joint+dynamics+with+Contact+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "e1614c627a190def"
+}

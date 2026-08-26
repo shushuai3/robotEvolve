@@ -1,0 +1,36 @@
+{
+  "id": "vq-bet",
+  "name": "VQ-BeT / Behavior Transformer",
+  "summary": "Behavior Transformer (2022) first showed a transformer with clustered action bins plus residual offsets could capture multimodal behavior. VQ-BeT replaces the clustering with hierarchical residual VQ-VAE action tokenization, giving a discrete latent action vocabulary a transformer predicts autoregressively then decodes to continuous actions, matching diffusion policy quality at several times faster inference.",
+  "innovation": [
+    "Residual vector quantization of action chunks into a hierarchical discrete vocabulary.",
+    "Recovers multimodality in a single forward pass instead of an iterative denoising loop."
+  ],
+  "matters": [
+    "Anticipated the learned-action-tokenizer direction that FAST later pushed into large VLAs."
+  ],
+  "limits": [
+    "Quantization error caps precision, and the tokenizer must be retrained per action space."
+  ],
+  "lineage": "Transformer policies with a learned discrete action codebook, as an alternative to diffusion.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2403.03181",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/jayLEE0301/vq_bet_official",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=VQ-BeT+/+Behavior+Transformer+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "52c980a46cb9c3c4"
+}

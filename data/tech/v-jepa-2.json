@@ -1,0 +1,36 @@
+{
+  "id": "v-jepa-2",
+  "name": "V-JEPA 2",
+  "summary": "V-JEPA 2 pretrains on over a million hours of internet video by predicting masked latent representations rather than reconstructing pixels. An action-conditioned variant is then fine-tuned on a relatively small amount of unlabeled robot interaction and used for zero-shot planning: given a goal image, it searches action sequences whose predicted latent outcome matches the goal, enabling pick-and-place with new objects in new environments without task-specific training.",
+  "innovation": [
+    "Joint-embedding predictive architecture applied to video, avoiding pixel reconstruction entirely.",
+    "Zero-shot goal-conditioned planning from a world model trained mostly on passive internet video."
+  ],
+  "matters": [
+    "The leading non-generative alternative to video-diffusion world models, and far cheaper to run."
+  ],
+  "limits": [
+    "Demonstrated on short-horizon tasks; goal specification by image is restrictive. Verify current results."
+  ],
+  "lineage": "Value-equivalent and latent-prediction thinking applied to large-scale video pretraining.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2506.09985",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/facebookresearch/vjepa2",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=V-JEPA+2+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "510b5a7770e38b00"
+}

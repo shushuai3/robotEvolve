@@ -1,0 +1,31 @@
+{
+  "id": "egozero",
+  "name": "EgoZero",
+  "summary": "EgoZero takes the human-data idea to its limit: collect demonstrations with Aria glasses, extract a morphology-agnostic state and action representation built from 3D points rather than images or joint angles, train a policy on that alone, and deploy on a gripper robot that contributed nothing to training. Reported results cover several everyday manipulation tasks from a few minutes of human recording each.",
+  "innovation": [
+    "A point-based, morphology-agnostic state and action representation that erases the embodiment gap by construction rather than by learning around it.",
+    "Transfer to a real robot with literally no robot training data."
+  ],
+  "matters": [
+    "If this scales it removes teleoperation from the pipeline entirely, which is the single largest cost in the field."
+  ],
+  "limits": [
+    "Small task set, short horizons and coarse precision; wholly dependent on accurate hand and object tracking."
+  ],
+  "lineage": "EgoMimic's alignment idea pushed until robot data is no longer required at all.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2505.20290",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=EgoZero+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "a4e735f3e4726315"
+}

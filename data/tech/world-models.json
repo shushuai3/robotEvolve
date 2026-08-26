@@ -1,0 +1,31 @@
+{
+  "id": "world-models",
+  "name": "World Models",
+  "summary": "A VAE compresses observations into a latent code, an RNN with a mixture-density head predicts the next latent given an action, and a tiny controller is evolved on top. The striking result was that the controller could be trained purely inside the learned dream, never touching the real environment, and still transfer back. This is the conceptual seed of every dreaming approach that followed.",
+  "innovation": [
+    "Explicit separation of vision (V), memory/dynamics (M) and controller (C) as trainable components.",
+    "Training a policy entirely inside a learned generative model and transferring it to the real environment."
+  ],
+  "matters": [
+    "Defined 'dreaming' as a concrete engineering strategy rather than a metaphor."
+  ],
+  "limits": [
+    "Tiny scale, pixel-reconstruction bottleneck, and an evolutionary controller that does not scale."
+  ],
+  "lineage": "The root of the world-model branch of robot learning.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1803.10122",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=World+Models+(Ha+&+Schmidhuber)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "7e941b69267ad31a"
+}

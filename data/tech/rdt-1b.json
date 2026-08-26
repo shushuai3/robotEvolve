@@ -1,0 +1,36 @@
+{
+  "id": "rdt-1b",
+  "name": "RDT-1B",
+  "summary": "RDT-1B scales diffusion transformers to 1.2B parameters, pretrains on over a million multi-robot episodes, and fine-tunes on a purpose-collected bimanual dataset. Its key device is a 128-dimensional physically interpretable unified action space where each slot has fixed physical meaning across robots, so one model can absorb single-arm, bimanual and differently configured platforms without discarding structure.",
+  "innovation": [
+    "Unified 128-D action space with fixed physical semantics per dimension for cross-embodiment pretraining.",
+    "Scaling diffusion rather than autoregressive policies into the billion-parameter range."
+  ],
+  "matters": [
+    "One of the strongest fully open bimanual models, widely used as a base in Chinese robotics labs."
+  ],
+  "limits": [
+    "No language-model backbone at RT-2 scale, so semantic generalization is limited."
+  ],
+  "lineage": "Diffusion Policy scaled up and given a cross-embodiment action representation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.07864",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/thu-ml/RoboticsDiffusionTransformer",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Robotics+Diffusion+Transformer+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "22ade5d45f24ea0e"
+}

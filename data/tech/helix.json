@@ -1,0 +1,32 @@
+{
+  "id": "helix",
+  "name": "Helix",
+  "summary": "Helix runs a 7B internet-pretrained VLM (S2) at 7-9 Hz producing a single latent vector, consumed by an 80M visuomotor transformer (S1) at 200 Hz that drives 35 upper-body degrees of freedom including individual fingers, wrists, head and torso. Both run on embedded GPUs in the robot. Figure demonstrated two Helix robots collaborating on grocery put-away with one set of weights and no task-specific fine-tuning.",
+  "innovation": [
+    "Decoupled S1/S2 running at different rates, communicating through one learned latent vector.",
+    "Entirely onboard inference with no cloud dependency, at true servo rates.",
+    "A single weight set controlling multiple cooperating robots."
+  ],
+  "matters": [
+    "Showed frontier-scale VLA behavior can fit inside a humanoid's power and latency budget."
+  ],
+  "limits": [
+    "No paper, no weights, no external evaluation; claims rest on company demonstrations."
+  ],
+  "lineage": "The VLA concept restructured for embedded real-time humanoid control.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.figure.ai/news/helix",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Helix+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "01b0db696f59e4e5"
+}

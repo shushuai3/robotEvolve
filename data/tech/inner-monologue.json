@@ -1,0 +1,31 @@
+{
+  "id": "inner-monologue",
+  "name": "Inner Monologue",
+  "summary": "Inner Monologue closes the loop around LLM planning by injecting textual feedback into the prompt: whether the last skill succeeded, what objects are currently visible, and what a human just said. The model then continues its chain of reasoning and revises the plan, producing retry behavior and adaptation to interruptions that open-loop planners cannot express.",
+  "innovation": [
+    "Textual feedback as the universal interface between perception, humans and the planner.",
+    "Emergent replanning and retrying from prompting alone, with no additional training."
+  ],
+  "matters": [
+    "Established closed-loop LLM planning, the pattern later internalized by Hi Robot and pi-0.5."
+  ],
+  "limits": [
+    "Depends on reliable success detection, which remains an unsolved problem in itself."
+  ],
+  "lineage": "SayCan made closed-loop by returning execution feedback to the language model.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2207.05608",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Inner+Monologue+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "7d46144599892be9"
+}

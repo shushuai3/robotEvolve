@@ -1,0 +1,36 @@
+{
+  "id": "eureka",
+  "name": "Eureka",
+  "summary": "Eureka has a coding LLM read the simulation environment source, generate candidate reward functions, train policies with them, and then mutate the rewards based on training statistics in an evolutionary loop. Across 29 environments it outperformed expert human-written rewards on 83% of tasks, and produced the first policy able to perform rapid pen-spinning tricks with a dexterous hand.",
+  "innovation": [
+    "Closed the loop between LLM code generation and RL training feedback for automated reward search.",
+    "Reward reflection: feeding numeric training diagnostics back to the LLM as the mutation signal."
+  ],
+  "matters": [
+    "Attacks reward design, the most labor-intensive bottleneck in applying RL to manipulation."
+  ],
+  "limits": [
+    "Requires a simulator with readable source and cheap rollouts; does not transfer to real-world reward design."
+  ],
+  "lineage": "LLM code generation applied to the reward-engineering step of a PPO training pipeline.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2310.12931",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/eureka-research/Eureka",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Eureka+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "bd90ce266aa1eef9"
+}

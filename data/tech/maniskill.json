@@ -1,0 +1,36 @@
+{
+  "id": "maniskill",
+  "name": "ManiSkill / SAPIEN",
+  "summary": "Built on the SAPIEN engine, ManiSkill provides GPU-parallelized simulation and rendering for manipulation, with particular emphasis on articulated objects — drawers, cabinets, faucets — and generalizable object-level skills. Its successive versions have run public challenges that shaped how the community measures generalization to unseen object instances.",
+  "innovation": [
+    "GPU-parallel rendering as well as physics, allowing vision-based RL at high throughput.",
+    "A focus on articulated and category-level object generalization rather than fixed rigid objects."
+  ],
+  "matters": [
+    "The main fully open alternative to NVIDIA's stack for large-scale manipulation training, and the base SIMPLER builds on."
+  ],
+  "limits": [
+    "A smaller asset ecosystem than commercial simulators, and less established sim-to-real evidence."
+  ],
+  "lineage": "Open academic GPU simulation for manipulation, developed in parallel with the Isaac line.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.00425",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/haosulab/ManiSkill",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=ManiSkill+/+SAPIEN+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "fe7c83d68cc74ffe"
+}

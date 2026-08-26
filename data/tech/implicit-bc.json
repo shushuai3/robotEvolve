@@ -1,0 +1,31 @@
+{
+  "id": "implicit-bc",
+  "name": "Implicit BC",
+  "summary": "Florence et al. replaced explicit action regression with an energy-based model that scores state-action pairs, selecting actions by optimization at inference. This addresses the core pathology of mean-squared-error behavior cloning: when expert behavior is multimodal, averaging the modes yields an action correct nowhere. Implicit BC solved precise contact-rich tasks that explicit policies failed outright.",
+  "innovation": [
+    "Energy-based policy formulation making multimodal and discontinuous behavior representable.",
+    "Demonstrated the loss function, not capacity, was blocking precise manipulation."
+  ],
+  "matters": [
+    "Framed the multimodality problem that Diffusion Policy would later solve more practically."
+  ],
+  "limits": [
+    "Inference requires an optimization step over actions: slow and finicky to tune."
+  ],
+  "lineage": "A direct critique and repair of the regression objective inherited from ALVINN-style cloning.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2109.00137",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Implicit+Behavioral+Cloning+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "674d18860629479b"
+}

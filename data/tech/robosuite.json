@@ -1,0 +1,36 @@
+{
+  "id": "robosuite",
+  "name": "robosuite",
+  "summary": "robosuite provides standardized robot models, controllers, task definitions and teleoperation interfaces over MuJoCo, designed so environments, robots and controllers can be recombined freely. Its real influence is as infrastructure: robomimic, RoboCasa and many other benchmarks are built on it.",
+  "innovation": [
+    "Clean separation of robot, controller, task and observation modality, enabling genuinely controlled comparisons.",
+    "Standard controller implementations — operational space, joint impedance — that removed a common hidden confound."
+  ],
+  "matters": [
+    "The quiet foundation under a large share of academic manipulation research."
+  ],
+  "limits": [
+    "Inherits MuJoCo's contact approximations, and is not designed for photorealism."
+  ],
+  "lineage": "A modular research framework layered on MuJoCo, feeding the benchmark lineage.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2009.12293",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/ARISE-Initiative/robosuite",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=robosuite+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c6e815715baa98d2"
+}

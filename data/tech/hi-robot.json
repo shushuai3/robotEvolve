@@ -1,0 +1,31 @@
+{
+  "id": "hi-robot",
+  "name": "Hi Robot",
+  "summary": "Hi Robot places a high-level VLM reasoner above a pi-0 low-level policy. The reasoner decomposes complex prompts and real-time human feedback ('no, use the other one', 'that is not trash') into atomic language commands the VLA executes. Both levels are trained on robot data rather than hand-scripted, letting the system handle open-ended instructions and mid-execution corrections.",
+  "innovation": [
+    "Trains the high-level reasoner on robot-grounded data instead of using an off-the-shelf LLM planner.",
+    "Handles real-time verbal interruption and correction during execution."
+  ],
+  "matters": [
+    "Made the System-1 / System-2 split concrete and learnable for manipulation."
+  ],
+  "limits": [
+    "Closed; latency between levels constrains how fast corrections take effect."
+  ],
+  "lineage": "SayCan's hierarchical decomposition with both levels learned and grounded in robot data.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2502.19417",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Hi+Robot+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "ac9dcc19ff75778d"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "rt-1",
+  "name": "RT-1",
+  "summary": "RT-1 trained a 35M-parameter transformer on ~130k teleoperated episodes covering 700+ tasks, collected over 17 months with a fleet of 13 Everyday Robots mobile manipulators. Images pass through an EfficientNet conditioned on the instruction via FiLM, a TokenLearner compresses each frame to 8 tokens, and the transformer emits discretized arm and base actions. It ran at 3 Hz on real hardware and kept improving as data scaled rather than saturating.",
+  "innovation": [
+    "Discretize continuous actions into 256 bins per dimension and predict them as tokens, turning control into next-token prediction.",
+    "TokenLearner compression made a transformer policy fast enough (3 Hz) to close the loop on real hardware.",
+    "Showed positive transfer from heterogeneous data: adding simulation and other robots' data raised real-world success instead of diluting it."
+  ],
+  "matters": [
+    "Established the 'scale real robot data + one transformer' recipe every later VLA inherits.",
+    "Its 130k-episode dataset became a cornerstone of Open X-Embodiment."
+  ],
+  "limits": [
+    "No web-scale pretraining, so generalization to genuinely novel objects and phrasings was weak.",
+    "Locked to one embodiment and a fixed low-frequency action space."
+  ],
+  "lineage": "Applies the vanilla Transformer to robot control at fleet scale; directly extended by RT-2.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2212.06817",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/google-research/robotics_transformer",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Robotics+Transformer+1+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "592f7d2461cd2519"
+}

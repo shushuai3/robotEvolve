@@ -1,0 +1,36 @@
+{
+  "id": "dextreme",
+  "name": "DeXtreme",
+  "summary": "DeXtreme retrained cube reorientation on an Allegro Hand entirely inside GPU-accelerated Isaac Gym with automatic domain randomization, cutting the compute requirement from a large cluster to a handful of GPUs and open-sourcing the stack. It showed the sim-to-real dexterity result was a general recipe, not a one-off feat of OpenAI-scale engineering.",
+  "innovation": [
+    "End-to-end GPU simulation and training loop that made high-DoF dexterity affordable.",
+    "Careful analysis of which randomizations actually matter for transfer."
+  ],
+  "matters": [
+    "Democratized sim-to-real dexterity research and validated GPU-parallel simulation as the standard tool."
+  ],
+  "limits": [
+    "Still a single narrow task, with reward shaping doing considerable hidden work."
+  ],
+  "lineage": "Dactyl's approach re-implemented on Isaac Gym's massively parallel GPU simulator.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2210.13702",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/NVlabs/DeXtreme",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=DeXtreme+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "cfbce12fc1bbfdc8"
+}

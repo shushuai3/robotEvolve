@@ -1,0 +1,37 @@
+{
+  "id": "libero",
+  "name": "LIBERO",
+  "summary": "LIBERO provides 130 language-conditioned manipulation tasks organized into suites that isolate different distribution shifts — spatial, object, goal and long-horizon. Designed for lifelong and transfer learning research, it was adopted almost universally as the standard simulated evaluation for VLA fine-tuning, which at least makes results across papers roughly comparable.",
+  "innovation": [
+    "Task suites deliberately factored by type of generalization rather than lumped into one average.",
+    "Procedural task and scene generation supporting controlled distribution shift."
+  ],
+  "matters": [
+    "The most cited comparison point in VLA papers, for better and for worse."
+  ],
+  "limits": [
+    "Simulation only, with a well-documented gap to real-robot performance.",
+    "Increasingly saturated — top methods cluster tightly enough that the ranking is mostly noise."
+  ],
+  "lineage": "Descends from robomimic's benchmarking tradition, adapted to language-conditioned multitask evaluation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2306.03310",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=LIBERO+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "cdf2f87e1e8d0909"
+}

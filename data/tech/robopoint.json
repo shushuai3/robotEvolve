@@ -1,0 +1,36 @@
+{
+  "id": "robopoint",
+  "name": "RoboPoint",
+  "summary": "RoboPoint generates synthetic instruction-following data with ground-truth spatial affordances from simulated scenes, then fine-tunes a VLM to output image keypoints satisfying relational instructions such as 'the free space to the left of the plate'. The result outperforms general VLMs on spatial affordance prediction and plugs directly into downstream motion planning.",
+  "innovation": [
+    "Automatic synthetic generation of spatial affordance supervision, avoiding manual annotation.",
+    "Relational spatial language grounded to precise image coordinates."
+  ],
+  "matters": [
+    "Part of the shift toward VLMs that answer 'where exactly', which manipulation requires."
+  ],
+  "limits": [
+    "Synthetic-to-real gap in scene composition; predicts points, not full 6-DoF poses."
+  ],
+  "lineage": "Pointing-style spatial grounding trained through targeted synthetic data.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2406.10721",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/wentaoyuan/RoboPoint",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RoboPoint+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "57ec8631f98502c0"
+}

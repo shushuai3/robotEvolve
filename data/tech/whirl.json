@@ -1,0 +1,31 @@
+{
+  "id": "whirl",
+  "name": "WHIRL",
+  "summary": "WHIRL observes a single human demonstration in an unstructured environment, uses hand and object tracking to build a prior over how the task should go, and then improves that prior through the robot's own real-world exploration. It ran across dozens of everyday tasks in real homes and offices — opening drawers, doors and fridges, taking out trash — with no task-specific robot demonstrations.",
+  "innovation": [
+    "Human video used as a prior for exploration rather than as a direct supervision target, which sidesteps exact retargeting.",
+    "An agent that improves on hardware after watching, instead of requiring the human demonstration to be precisely imitable."
+  ],
+  "matters": [
+    "Showed one-shot human observation plus practice can beat large teleoperation datasets on in-the-wild tasks."
+  ],
+  "limits": [
+    "Needs real-world practice time for each new task, and the extracted priors are coarse."
+  ],
+  "lineage": "The first practical human-video-to-robot pipeline that ran outside a lab.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2207.09450",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Human-to-Robot+Imitation+in+the+Wild+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "3eefb38c285b2271"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "q-transformer",
+  "name": "Q-Transformer",
+  "summary": "Q-Transformer discretizes each action dimension and predicts Q-values autoregressively per dimension, sidestepping the intractable maximization over high-dimensional continuous actions. Combined with a conservative regularizer and Monte Carlo returns, it trains on large mixed-quality robot datasets containing both expert demonstrations and failed autonomous rollouts, outperforming imitation baselines that must discard the failures.",
+  "innovation": [
+    "Per-dimension autoregressive Q-value prediction, making value-based RL compatible with transformer policies.",
+    "Learns from failed data that imitation learning has to throw away."
+  ],
+  "matters": [
+    "Points at how large robot datasets full of mediocre trajectories can still improve a policy."
+  ],
+  "limits": [
+    "Closed; discretization and autoregressive value decoding are expensive at inference."
+  ],
+  "lineage": "QT-Opt's value-based scaling re-expressed in RT-1's transformer token framework.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2309.10150",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Q-Transformer+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "3983359367bd3c7d"
+}

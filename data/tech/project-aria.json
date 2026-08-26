@@ -1,0 +1,36 @@
+{
+  "id": "project-aria",
+  "name": "Project Aria",
+  "summary": "Project Aria is Meta's research eyewear platform: sensor-rich glasses with calibrated multi-camera capture, SLAM-grade 6-DoF pose, eye tracking and hand tracking, distributed to academic partners alongside open tooling and datasets. Its significance for manipulation is that it produces metric egocentric data — 3D hand trajectories in a known world frame — rather than raw pixels, and that is what makes a human recording convertible into a robot action target. A second-generation device followed in 2025.",
+  "innovation": [
+    "Calibrated, pose-grounded egocentric capture: hand trajectories arrive in metric 3D rather than needing to be estimated from video afterwards.",
+    "Open tooling and data format, which made it the shared substrate for academic human-data robotics."
+  ],
+  "matters": [
+    "Turned human video from something you scrape into something you deliberately collect in a geometrically usable form. EgoMimic, EgoZero and much of the 2025 human-data work runs on it."
+  ],
+  "limits": [
+    "Limited hardware distribution; captures kinematics but no forces, and hand pose degrades under occlusion."
+  ],
+  "lineage": "The capture instrument that made Ego4D's premise actionable for robot learning.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/facebookresearch/projectaria_tools",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://www.projectaria.com/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Project+Aria+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "0e1812f0a8473b0f"
+}

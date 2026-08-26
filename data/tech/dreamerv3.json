@@ -1,0 +1,36 @@
+{
+  "id": "dreamerv3",
+  "name": "DreamerV3",
+  "summary": "DreamerV3 applies symlog prediction, two-hot value encoding, free bits and normalized returns to make the Dreamer recipe robust across radically different domains without per-task tuning. It masters continuous control, Atari, and open-world Minecraft with identical settings, and shows monotonically better performance and data efficiency as model size grows.",
+  "innovation": [
+    "A set of normalization and transformation tricks that make one hyperparameter configuration work everywhere.",
+    "Demonstrated favorable scaling laws for world models: bigger model, better and more data-efficient."
+  ],
+  "matters": [
+    "Established world models as a general-purpose learning substrate, not a benchmark-specific trick."
+  ],
+  "limits": [
+    "Still reconstruction-based, which spends capacity modeling visually salient but task-irrelevant detail."
+  ],
+  "lineage": "The Dreamer line hardened for robustness and scale.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2301.04104",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/danijar/dreamerv3",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=DreamerV3+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "45b1711037cd950f"
+}

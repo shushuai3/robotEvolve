@@ -1,0 +1,36 @@
+{
+  "id": "roboturk",
+  "name": "RoboTurk",
+  "summary": "RoboTurk let remote users teleoperate robots through a smartphone acting as a 6-DoF controller, with low-latency video streamed back, gathering thousands of demonstrations across tasks in a matter of days from non-expert crowds. It was the first serious attempt to treat manipulation demonstrations as a crowdsourceable resource rather than something only a lab's own operators could produce.",
+  "innovation": [
+    "Phone-as-6-DoF-controller with a latency-tolerant streaming design, removing the specialized-hardware requirement.",
+    "A crowdsourcing pipeline with quality filtering for demonstration data."
+  ],
+  "matters": [
+    "Established demonstration collection as a scaling problem to be engineered — the idea running through UMI, DROID and LeRobot."
+  ],
+  "limits": [
+    "Largely simulation-based, and non-expert demonstrations are noisy and uneven in quality."
+  ],
+  "lineage": "The earliest attempt to scale demonstration collection beyond one lab's operators.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1811.02790",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://roboturk.stanford.edu/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RoboTurk+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "f150d06b2b2e513e"
+}

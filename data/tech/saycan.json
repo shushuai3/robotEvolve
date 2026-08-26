@@ -1,0 +1,36 @@
+{
+  "id": "saycan",
+  "name": "SayCan",
+  "summary": "SayCan scores each candidate skill by multiplying the LLM's likelihood that the skill is useful for the instruction (say) with a learned affordance value estimating whether it will succeed from the current state (can). The product selects the next skill, which grounds an ungrounded language model in the robot's real capabilities without any joint training. It executed long-horizon kitchen instructions like 'I spilled my drink, can you help?'.",
+  "innovation": [
+    "Multiplicative combination of semantic usefulness and learned physical feasibility.",
+    "Made an off-the-shelf LLM usable as a robot planner with no robot-specific fine-tuning."
+  ],
+  "matters": [
+    "The founding work of LLM-driven robot planning; the ancestor of every hierarchical VLA."
+  ],
+  "limits": [
+    "Requires a fixed library of pretrained skills with value functions; cannot invent new behavior."
+  ],
+  "lineage": "Language-model reasoning grounded through the learned skills of BC-Z-style policies.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2204.01691",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/google-research/google-research/tree/master/saycan",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Do+As+I+Can,+Not+As+I+Say+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "af4fc8c247e0426d"
+}

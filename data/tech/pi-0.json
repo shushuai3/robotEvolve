@@ -1,0 +1,38 @@
+{
+  "id": "pi-0",
+  "name": "pi-0 (pi-zero)",
+  "summary": "pi-0 pairs a PaliGemma 3B VLM with a separate ~300M action expert that generates action chunks via conditional flow matching, trained on roughly 10k hours across 7 robot configurations plus Open X-Embodiment. Continuous, high-frequency output unlocked genuinely dexterous long-horizon tasks (folding laundry from a dryer, bussing tables, assembling boxes) that token-based VLAs could not touch. Weights were released as openpi in early 2025.",
+  "innovation": [
+    "Flow matching for action generation: continuous, multimodal and high-frequency rather than discretized.",
+    "A dedicated action expert with its own weights attending to VLM features, separating semantics from motor control.",
+    "An explicit pretrain-then-post-train recipe borrowed from LLM practice, with curated post-training data."
+  ],
+  "matters": [
+    "Set the current architectural template: VLM backbone plus flow or diffusion action expert.",
+    "openpi made a frontier-quality VLA openly available and is now a standard starting point."
+  ],
+  "limits": [
+    "Post-training data quality dominates results, and that data remains proprietary and expensive."
+  ],
+  "lineage": "RT-2's VLM backbone idea with Diffusion Policy's continuous action generation, upgraded to flow matching.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.24164",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/Physical-Intelligence/openpi",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=A+Vision-Language-Action+Flow+Model+for+General+Robot+Control+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "ff589125f6cda59c"
+}

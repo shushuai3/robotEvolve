@@ -1,0 +1,37 @@
+{
+  "id": "pi-05",
+  "name": "pi-0.5",
+  "summary": "pi-0.5 attacks open-world generalization by co-training on a deliberately heterogeneous mixture of multi-robot manipulation, high-level subtask annotations, web image-caption and VQA data, and verbal instructions from humans. At inference it first predicts a language subtask, then conditions the flow-matching action expert on it. The result cleans real, previously unseen homes for extended stretches.",
+  "innovation": [
+    "Discrete-then-continuous inference: predict the next subtask in language, then generate actions conditioned on it.",
+    "Co-training across robot data, web data and human verbal coaching under one objective.",
+    "Evidence that generalization scales with the number of distinct training environments, not just hours of data."
+  ],
+  "matters": [
+    "Reframed the bottleneck from motor skill to environmental diversity in the data."
+  ],
+  "limits": [
+    "Still brittle on tasks needing precise force control; recovery from bad states remains weak."
+  ],
+  "lineage": "pi-0's architecture plus Hi Robot's hierarchical language decomposition, trained on far broader data.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2504.16054",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/Physical-Intelligence/openpi",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=A+VLA+with+Open-World+Generalization+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "1885883721485d55"
+}

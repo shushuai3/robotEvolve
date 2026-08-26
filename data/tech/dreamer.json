@@ -1,0 +1,31 @@
+{
+  "id": "dreamer",
+  "name": "Dreamer",
+  "summary": "Dreamer replaces PlaNet's expensive online search with policy learning inside the model: it rolls out imagined latent trajectories, computes value estimates along them, and backpropagates analytic gradients through the learned dynamics into the actor. This is far cheaper at deployment, handles long horizons, and set the template for all subsequent Dreamer versions.",
+  "innovation": [
+    "Analytic value gradients propagated through learned latent dynamics.",
+    "Imagination as a training-time data amplifier rather than a run-time search procedure."
+  ],
+  "matters": [
+    "The dominant formulation of 'training in dreams' used across robotics and RL benchmarks."
+  ],
+  "limits": [
+    "Model bias compounds over imagined horizons; sensitive to reconstruction-based representation learning."
+  ],
+  "lineage": "PlaNet's RSSM with actor-critic learning inside imagination replacing online planning.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1912.01603",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Dreamer+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "e2c6e6d6f3250169"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "rt-h",
+  "name": "RT-H",
+  "summary": "RT-H predicts an intermediate vocabulary of short language motions from the task and image, then predicts actions from that motion. Because the motions are shared across very different tasks, data transfers between them; and because they are human-readable, an operator can correct the motion in natural language and fold that correction back into training.",
+  "innovation": [
+    "A shared, human-readable mid-level action vocabulary enabling data sharing across dissimilar tasks.",
+    "Language corrections as a cheap, natural interface for online policy repair."
+  ],
+  "matters": [
+    "An influential template for the hierarchical VLAs that followed, including pi-0.5 and Hi Robot."
+  ],
+  "limits": [
+    "The motion vocabulary is coarse; fine dexterous behavior does not decompose cleanly."
+  ],
+  "lineage": "RT-2 with an explicit language-motion layer inserted into the action hierarchy.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2403.01823",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Action+Hierarchies+Using+Language+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "ef6b7a4b57c7279f"
+}

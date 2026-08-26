@@ -1,0 +1,31 @@
+{
+  "id": "planet",
+  "name": "PlaNet",
+  "summary": "PlaNet introduced the Recurrent State-Space Model, which splits latent state into a deterministic recurrent path and a stochastic path, capturing both reliable dynamics and genuine uncertainty. Planning runs entirely in latent space with the cross-entropy method, achieving performance comparable to model-free agents while using around 50 times less environment interaction.",
+  "innovation": [
+    "The RSSM latent dynamics architecture, still the backbone of the Dreamer line.",
+    "Latent-space online planning that never renders a predicted image during control."
+  ],
+  "matters": [
+    "Made model-based RL from pixels competitive, which is the precondition for robot world models."
+  ],
+  "limits": [
+    "Online CEM planning at every step is computationally expensive and myopic beyond short horizons."
+  ],
+  "lineage": "The World Models idea rebuilt with a principled latent dynamics model and planning instead of evolution.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1811.04551",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Deep+Planning+Network+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "a520c2a6a081e2a0"
+}

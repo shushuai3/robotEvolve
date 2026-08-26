@@ -1,0 +1,36 @@
+{
+  "id": "bridgedata-v2",
+  "name": "BridgeData V2",
+  "summary": "BridgeData V2 contains over 60,000 trajectories across 24 environments on inexpensive WidowX arms, deliberately emphasizing environmental and object diversity rather than a single polished setup. Because the hardware is cheap and widely replicated, it became the de facto shared evaluation platform for open generalist policies.",
+  "innovation": [
+    "Prioritized breadth of scenes and objects over demonstration polish or task count.",
+    "Built on affordable hardware other labs could reproduce, enabling genuinely comparable evaluation."
+  ],
+  "matters": [
+    "One of the few settings where different labs' policies can be compared on a common physical platform."
+  ],
+  "limits": [
+    "Low-cost arms have limited precision and payload, and it is single-arm only."
+  ],
+  "lineage": "A foundational component dataset of Open X-Embodiment.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2308.12952",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://rail-berkeley.github.io/bridgedata/",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=BridgeData+V2+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "2c70b453df15ee26"
+}

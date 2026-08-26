@@ -1,0 +1,36 @@
+{
+  "id": "egomimic",
+  "name": "EgoMimic",
+  "summary": "EgoMimic collects egocentric human demonstrations with Aria glasses, normalizes them into the same observation and action representation the robot uses (3D hand pose standing in for end-effector pose, with the human arm visually masked out), and simply co-trains one policy over both streams. Reported gains over robot-only training are large, and the human data is collected roughly an order of magnitude faster than teleoperation.",
+  "innovation": [
+    "Aligning human and robot data into a single shared action space so plain co-training works, with no explicit retargeting pipeline.",
+    "Visual masking of the human arm to remove the morphology gap the policy would otherwise have to model."
+  ],
+  "matters": [
+    "The simplest recipe that works for mixing human and robot data, and it scales with cheap wearable capture rather than robot hours."
+  ],
+  "limits": [
+    "Requires the robot action space to be expressible as end-effector poses; in practice parallel-jaw grippers only."
+  ],
+  "lineage": "MimicPlay's human/robot split collapsed into one co-trained policy over Aria-captured data.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2410.24221",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/SimarKareer/EgoMimic",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=EgoMimic+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "697e32e240cb2305"
+}

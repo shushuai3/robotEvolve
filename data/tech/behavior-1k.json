@@ -1,0 +1,36 @@
+{
+  "id": "behavior-1k",
+  "name": "BEHAVIOR-1K",
+  "summary": "BEHAVIOR-1K defines 1,000 everyday household activities grounded in a survey of human time use and stated preferences, realized across 50 scenes and thousands of objects on the OmniGibson simulator, which supports fluids, deformables and heat. The design inverts the usual process: task selection comes from what people want done, and the simulator is then stretched to support it rather than the reverse.",
+  "innovation": [
+    "Survey-driven task selection, so the benchmark tracks real demand instead of simulator convenience.",
+    "Physics coverage — fluids, deformables, thermal state — that most manipulation simulators simply omit."
+  ],
+  "matters": [
+    "Exposes how narrow the standard pick-and-place benchmark distribution is next to actual household work."
+  ],
+  "limits": [
+    "Extremely hard: success rates on the full suite remain very low, which limits its usefulness as a progress signal."
+  ],
+  "lineage": "A benchmark defined from human need first and simulator capability second.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2403.09227",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://behavior.stanford.edu/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=BEHAVIOR-1K+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "0038e9046c4f81f3"
+}

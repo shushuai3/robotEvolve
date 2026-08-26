@@ -1,0 +1,31 @@
+{
+  "id": "dactyl",
+  "name": "Dactyl",
+  "summary": "Dactyl trained an LSTM policy with PPO across a massively randomized simulation, then deployed it on a Shadow Dexterous Hand to reorient a cube using vision and touch. It never saw the real world during training. The policy rediscovered human-recognizable grasp strategies such as finger pivoting and sliding, and the follow-up work solved a Rubik's cube one-handed with automatic domain randomization.",
+  "innovation": [
+    "Domain randomization at extreme scale as the sole sim-to-real mechanism.",
+    "Recurrent policies that infer unobserved physical parameters online, an implicit system identification."
+  ],
+  "matters": [
+    "The canonical demonstration that dexterity can be learned in simulation and shipped to hardware."
+  ],
+  "limits": [
+    "Thousands of years of simulated experience for one narrow task; brittle outside the randomization distribution."
+  ],
+  "lineage": "PPO plus domain randomization pushed to its limit on a high-DoF hand.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1808.00177",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Learning+Dexterous+In-Hand+Manipulation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "706ae1a3c3387bd7"
+}

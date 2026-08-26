@@ -1,0 +1,36 @@
+{
+  "id": "smolvla",
+  "name": "SmolVLA",
+  "summary": "SmolVLA deliberately targets the low-resource end: a compact VLM backbone with a flow-matching action expert, trained exclusively on tens of thousands of public LeRobot community episodes rather than proprietary fleets. It skips layers in the backbone, interleaves attention, and ships an asynchronous inference stack that decouples perception from action execution to raise effective control rate on weak hardware.",
+  "innovation": [
+    "Showed a VLA trained purely on crowd-sourced, heterogeneous community data can be competitive at small scale.",
+    "Asynchronous inference decoupling the perception and action loops for cheap hardware."
+  ],
+  "matters": [
+    "Radically lowered the entry cost for VLA experimentation, pairing with sub-$500 open-source arms."
+  ],
+  "limits": [
+    "Small capacity limits semantic generalization, and community data quality is uneven."
+  ],
+  "lineage": "pi-0's flow-matching design compressed for consumer hardware inside the LeRobot ecosystem.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2506.01844",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/huggingface/lerobot",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=SmolVLA+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "c9dca36595388e29"
+}

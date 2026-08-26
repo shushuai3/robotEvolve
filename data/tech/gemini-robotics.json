@@ -1,0 +1,32 @@
+{
+  "id": "gemini-robotics",
+  "name": "Gemini Robotics / Robotics-ER",
+  "summary": "Two coupled releases: Gemini Robotics-ER, a Gemini variant specialized for embodied reasoning (3D detection, pointing, grasp proposal, trajectory prediction), and Gemini Robotics, a VLA that adds action output on top. The pair demonstrated notably dexterous behaviors such as origami folding, card dealing and snack packing, with a cloud-hosted large model paired to an on-robot fast model to meet latency budgets.",
+  "innovation": [
+    "Separating embodied reasoning into its own callable model rather than baking it into one policy.",
+    "Pointing and 3D-aware spatial prediction trained directly into a frontier VLM.",
+    "Hybrid cloud/on-device inference split to reconcile model size with control rate."
+  ],
+  "matters": [
+    "Signals that frontier general-purpose models, not robotics-specific ones, may become the default robot brain."
+  ],
+  "limits": [
+    "Closed weights and restricted partner access; independent evaluation is not possible."
+  ],
+  "lineage": "The RT-2 concept rebuilt on the Gemini family with a dedicated reasoning sibling.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2503.20020",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Gemini+Robotics+/+Robotics-ER+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "cea016d226fa896b"
+}

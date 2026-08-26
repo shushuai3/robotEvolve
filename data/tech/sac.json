@@ -1,0 +1,31 @@
+{
+  "id": "sac",
+  "name": "SAC",
+  "summary": "SAC augments the reward with a policy-entropy term and learns off-policy from a replay buffer, giving both strong exploration and much better sample efficiency than on-policy methods. That combination made it the standard choice whenever RL has to touch physical hardware, and it remains the backbone of real-world manipulation RL systems such as SERL.",
+  "innovation": [
+    "Maximum-entropy objective producing robust, exploratory policies without hand-tuned noise schedules.",
+    "Off-policy replay making real-robot training feasible in hours rather than weeks."
+  ],
+  "matters": [
+    "The algorithmic core of nearly every real-world robot RL result of the last several years."
+  ],
+  "limits": [
+    "Still needs a reward function and a reset mechanism, both hard to arrange in the real world."
+  ],
+  "lineage": "Root of the off-policy branch used for real-robot manipulation RL.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/1801.01290",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Soft+Actor-Critic+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-25",
+  "updated": "2026-08-25",
+  "content_hash": "57e22db0eacfff3a"
+}
