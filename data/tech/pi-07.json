@@ -1,0 +1,32 @@
+{
+  "id": "pi-07",
+  "name": "pi-0.7",
+  "summary": "pi-0.7 is trained with deliberately heterogeneous conditioning: plain language instructions, metadata describing execution strategy such as speed-versus-care tradeoffs, control-modality tags, and visual subgoals synthesised by a world model. Because each prompt type explains how a trajectory was produced, data that would otherwise conflict — expert teleoperation, autonomous rollouts, human video — can be trained on jointly instead of being filtered or reweighted. At inference the same channels become steering handles: a user can redirect behaviour through language or push the model toward a different execution style. Physical Intelligence reports compositional generalization as an emergent result, with the model recombining learned skills for tasks it never saw, including operating unfamiliar kitchen appliances and folding laundry on a robot platform with no task-specific data. It matches or beats pi-*0.6 on the tasks that model needed per-task RL fine-tuning for, as a single unified model.",
+  "innovation": [
+    "Prompt diversity as a data-mixing mechanism: conditioning on how a trajectory was generated lets conflicting data sources coexist in one training run.",
+    "World-model-generated visual subgoals used as a training-time conditioning signal rather than an inference-time planner."
+  ],
+  "matters": [
+    "Argues the gains of RECAP's per-task reinforcement learning can be recovered from better conditioning on diverse data — a much cheaper path to the same place."
+  ],
+  "limits": [
+    "Company blog only; no paper, no benchmark numbers, and open-source status unstated.",
+    "'Emergent' compositional generalization is demonstrated by example rather than measured against a controlled baseline."
+  ],
+  "lineage": "The pi-0 flow-matching line after RECAP, trading per-task RL for multimodal prompt conditioning.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.pi.website/blog",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=pi-0.7:+a+Steerable+Model+with+Emergent+Capabilities+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "043ff2c12f846dd4"
+}

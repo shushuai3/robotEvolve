@@ -1,16 +1,19 @@
 {
   "id": "lerobot",
   "name": "LeRobot",
-  "summary": "LeRobot provides a standard dataset format with streaming and versioning, clean reimplementations of ACT, Diffusion Policy, pi-0, SmolVLA and others, a simulation and evaluation harness, and open hardware designs for very low-cost arms. It functions as the community's shared infrastructure layer and hosts thousands of user-contributed datasets.",
+  "summary": "LeRobot provides a standard dataset format with streaming and versioning, clean reimplementations of ACT, Diffusion Policy, pi-0, SmolVLA and others, a simulation and evaluation harness, and open hardware designs for very low-cost arms. It functions as the community's shared infrastructure layer and hosts thousands of user-contributed datasets. Version 0.6 (July 2026) widened it from a training library into a full evaluate-correct-train loop: world-model policies including VLA-JEPA, FastWAM and LingBot-VA alongside the VLAs, reward-model support, six simulation benchmarks under lerobot-eval, rollout tooling that captures human corrections, FSDP training and cloud training through HF Jobs. NVIDIA ships Isaac GR00T N1.7 and its Isaac Teleop framework into LeRobot, with the Cosmos 3 world foundation model announced as following. A companion LeRobot Humanoid reference design puts a 3D-printed bipedal platform at roughly $2,500 in parts.",
   "innovation": [
     "A versioned, streamable dataset format that made robot data as shareable as NLP datasets.",
-    "Coupled cheap open hardware with the software stack, closing the loop for small-lab and hobbyist contribution."
+    "Coupled cheap open hardware with the software stack, closing the loop for small-lab and hobbyist contribution.",
+    "From 0.6, carries world-action and world-model policy classes as first-class citizens beside VLAs, making the new architecture reproducible outside the labs that invented it."
   ],
   "matters": [
-    "The main on-ramp into the field, and the source of the community data SmolVLA trained on."
+    "The main on-ramp into the field, and the source of the community data SmolVLA trained on.",
+    "Where a new architecture lands in LeRobot is a decent leading indicator of whether it becomes standard practice."
   ],
   "limits": [
-    "Community data quality is highly variable, and reimplementations can drift from the original papers."
+    "Community data quality is highly variable, and reimplementations can drift from the original papers.",
+    "The 0.6 evaluation suites are simulation-only; real-robot comparison still needs RoboArena or RoboDojo."
   ],
   "lineage": "Open X-Embodiment's standardization impulse turned into maintained community infrastructure.",
   "links": [
@@ -31,6 +34,6 @@
     }
   ],
   "added": "2026-08-25",
-  "updated": "2026-08-25",
-  "content_hash": "f3636502eabf739a"
+  "updated": "2026-08-31",
+  "content_hash": "f40ef6e47763438a"
 }

@@ -1,0 +1,37 @@
+{
+  "id": "roboarena",
+  "name": "RoboArena",
+  "summary": "RoboArena replaces centralized robot benchmarking with a distributed evaluation network. Evaluators at seven academic institutions, all using DROID hardware, pick whatever tasks and scenes they like, but must run double-blind A/B comparisons between two policies rather than scoring one in isolation. Pairwise outcomes are aggregated into an Elo-style ranking. Across more than 600 pairwise real-robot episodes over seven generalist policies, the crowd-sourced ranking tracked true policy quality better than conventional centralized protocols, while being cheaper to scale and far harder to game. By 2026 it had become the field's de facto scoreboard — the number labs quote when they claim a lead.",
+  "innovation": [
+    "Decouples evaluation diversity from protocol rigor: evaluators choose their own tasks, but blinding and pairwise comparison keep the comparison honest.",
+    "Aggregates incommensurable local evaluations into one global ranking, so no central lab has to own the benchmark."
+  ],
+  "matters": [
+    "Real-robot evaluation was the field's weakest link — every paper scored itself on its own tasks. This is the first protocol that made cross-lab claims comparable."
+  ],
+  "limits": [
+    "Bound to the DROID platform and its arm, so it measures tabletop manipulation rather than whole-body or mobile skill.",
+    "Elo needs many duels per policy; new entrants have wide error bars until the network gets around to them."
+  ],
+  "lineage": "DROID's shared hardware standard plus robomimic's insistence that reported gains survive statistics, turned into a live ranking.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2506.18123",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://robo-arena.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RoboArena:+Distributed+Real-World+Evaluation+of+Generalist+Robot+Policies+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "3dcc44dca87f6d01"
+}

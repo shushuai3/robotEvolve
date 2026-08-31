@@ -1,0 +1,38 @@
+{
+  "id": "dreamzero",
+  "name": "DreamZero",
+  "summary": "DreamZero takes a 14B video diffusion backbone (Wan 2.1-I2V-14B-480P) and turns it into a joint world-action model, denoising video tokens and action tokens together inside a single monolithic DiT rather than generating a visual plan and inverting it afterwards. Because the same weights that predict pixels also predict actions, the model inherits the internet-scale physical priors of video pretraining, and can be supervised by action-free video. It reports 39.5% average task progress on unseen tasks and a 42% relative gain in cross-embodiment transfer from video-only demonstrations, and it runs closed-loop at 7 Hz — a 38x system-level speedup on Blackwell GB200 that is what makes a 14B diffusion model usable as a controller at all. It scored 1750 Elo on the April 2026 RoboArena leaderboard.",
+  "innovation": [
+    "One objective, one backbone: joint video-and-action denoising in a single DiT, rather than a world model bolted onto a separate action head.",
+    "Action-free video becomes first-class training data, so cross-embodiment transfer needs no teleoperation on the target robot.",
+    "38x inference optimization turning a 14B video diffusion model into a 7 Hz real-time controller."
+  ],
+  "matters": [
+    "The clearest evidence that generative world modelling can replace the VLA recipe outright instead of supplementing it — NVIDIA productized the architecture as GR00T N2 and began marketing 'WAM' as a category."
+  ],
+  "limits": [
+    "7 Hz is real-time only for slow manipulation; contact-rich or dynamic tasks want an order of magnitude more.",
+    "Inference cost is far above a comparable VLA, and the reported speedup assumes current NVIDIA silicon."
+  ],
+  "lineage": "UniPi's generate-video-then-act idea collapsed into a single model, on a Cosmos-era video foundation backbone.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2602.15922",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/dreamzero0/dreamzero",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=World+Action+Models+are+Zero-shot+Policies+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "51829e4098c9ccee"
+}

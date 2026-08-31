@@ -1,0 +1,32 @@
+{
+  "id": "skild-s1",
+  "name": "Skild S1",
+  "summary": "S1 is Skild's foundation model built explicitly as an in-context learner. A single video demonstration — seen or unseen during training, short or long — is supplied at inference and the model performs the task without any weight update. Skild reports unseen ten-minute tasks executed from one human video at 66% success against a 9% baseline. It is the deployment vehicle for Skild Brain, the company's omni-bodied policy intended to run across robot morphologies rather than one embodiment, and it follows a year in which Skild raised a $1.4B Series C and acquired Zebra's robotics arm to put the model into warehouses.",
+  "innovation": [
+    "In-context task specification from human video, removing both fine-tuning and on-robot teleoperation from the loop of teaching a new task.",
+    "Ten-minute horizons from a single demonstration, where prior one-shot work operated on single skills."
+  ],
+  "matters": [
+    "If a new task costs one video instead of a data collection campaign, the economics of deploying robots change more than any accuracy gain would."
+  ],
+  "limits": [
+    "Company blog only, with headline numbers and no paper, task list or independent evaluation.",
+    "Announcement date is reported inconsistently across sources (18 vs 25 August 2026); the 66%-vs-9% comparison baseline is unspecified."
+  ],
+  "lineage": "Latent-action pretraining from human video, recast as inference-time in-context conditioning.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.skild.ai/blogs",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=S1:+In-Context+Learning+for+Robotics+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "eadc7ba9b56e432b"
+}

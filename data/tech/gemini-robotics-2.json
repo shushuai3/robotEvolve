@@ -1,0 +1,32 @@
+{
+  "id": "gemini-robotics-2",
+  "name": "Gemini Robotics 2",
+  "summary": "Gemini Robotics 2 extends DeepMind's VLA line from tabletop bimanual manipulation to whole-body humanoid control, issuing coordinated commands for locomotion and manipulation from one model — walking to a table, picking up a watering can, stepping to a shelf and placing it, from a single natural-language instruction. It ships in three variants: the Gemini Robotics 2 VLA for control, Gemini Robotics ER 2 for embodied reasoning, task planning and multi-robot coordination, and Gemini Robotics On-Device 2 for local deployment. The release adds multi-finger dexterity, multi-robot collaboration, and adaptation to a new embodiment in a few hours. DeepMind reports 45.7-76.3% success on whole-body manipulation tasks, 74.2-89.6% on gripper dexterity and 32-92% on multi-finger tasks depending on complexity. The whole-body demonstrations run on Apptronik's Apollo 2.",
+  "innovation": [
+    "Locomotion and manipulation emitted by one policy rather than a manipulation model riding on a separate walking controller.",
+    "The ER variant graduates from single-robot planning to coordinating several robots on one task."
+  ],
+  "matters": [
+    "Removes the tabletop assumption that has bounded the VLA literature since RT-1, and does it on a commercial humanoid."
+  ],
+  "limits": [
+    "Closed: early-access partners and private preview only, with no weights, code or independent reproduction.",
+    "Multi-finger success spans 32-92%, so the dexterity claim rests heavily on which task you look at."
+  ],
+  "lineage": "Gemini Robotics 1.5's embodied reasoning plus action, extended to the whole body.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Gemini+Robotics+2+/+ER+2+/+On-Device+2+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "f419bf332a59f2ce"
+}

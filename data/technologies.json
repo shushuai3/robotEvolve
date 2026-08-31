@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "generated": "2026-08-25",
-  "last_changed": "2026-08-25",
+  "generated": "2026-08-31",
+  "last_changed": "2026-08-31",
   "counts": {
-    "technologies": 108,
-    "labs": 44,
-    "categories": 10
+    "technologies": 123,
+    "labs": 48,
+    "categories": 11
   },
   "categories": [
     {
@@ -35,6 +35,13 @@
       "short": "WM",
       "color": "#ffb300",
       "blurb": "Learned predictive models of the environment used for planning or for training policies inside imagination."
+    },
+    {
+      "id": "wam",
+      "name": "World Action Models",
+      "short": "WAM",
+      "color": "#ff5252",
+      "blurb": "Policies whose backbone is a generative model of the future: video or latent prediction and action decoding trained under one objective, so the dynamics model *is* the policy rather than a module beside it."
     },
     {
       "id": "vlm",
@@ -80,6 +87,445 @@
     }
   ],
   "technologies": [
+    {
+      "id": "gen-15",
+      "name": "GEN-1.5",
+      "full_name": "GEN-1.5",
+      "cat": "vla",
+      "year": 2026,
+      "month": 8,
+      "orgs": [
+        "generalist-ai"
+      ],
+      "influences": [
+        "transformer",
+        "pi-0"
+      ],
+      "license": "closed",
+      "tags": [
+        "physical prompting",
+        "one-shot",
+        "in-context learning",
+        "emergent"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "A 3-second clip in the context window is the whole training procedure.",
+      "site": "https://generalistai.com/",
+      "parents": [],
+      "detailPath": "data/tech/gen-15.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "skild-s1",
+      "name": "Skild S1",
+      "full_name": "S1: In-Context Learning for Robotics",
+      "cat": "vla",
+      "year": 2026,
+      "month": 8,
+      "orgs": [
+        "skild-ai"
+      ],
+      "influences": [
+        "transformer",
+        "lapa",
+        "human-policy"
+      ],
+      "license": "closed",
+      "tags": [
+        "in-context learning",
+        "one-shot",
+        "human video",
+        "omni-bodied"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Show it one human video and it does the task — no fine-tuning, no demonstrations on the robot.",
+      "site": "https://www.skild.ai/blogs",
+      "parents": [],
+      "detailPath": "data/tech/skild-s1.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "spirit-v16",
+      "name": "Spirit v1.5 / v1.6",
+      "full_name": "Spirit v1.5 / v1.6: A Robotic Foundation Model by Spirit AI",
+      "cat": "vla",
+      "year": 2026,
+      "month": 8,
+      "orgs": [
+        "spirit-ai"
+      ],
+      "influences": [
+        "openvla",
+        "act",
+        "roboarena"
+      ],
+      "license": "weights",
+      "tags": [
+        "action chunking",
+        "RoboArena",
+        "open weights"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "First Chinese model to top RoboArena, beating both of NVIDIA's entries on their own leaderboard.",
+      "code": "https://huggingface.co/Spirit-AI-robotics/Spirit-v1.5",
+      "site": "https://www.spirit-ai.com/en/blog/spirit-v1-5",
+      "parents": [],
+      "detailPath": "data/tech/spirit-v16.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "gemini-robotics-2",
+      "name": "Gemini Robotics 2",
+      "full_name": "Gemini Robotics 2 / ER 2 / On-Device 2",
+      "cat": "vla",
+      "year": 2026,
+      "month": 7,
+      "orgs": [
+        "google-deepmind"
+      ],
+      "parents": [
+        "gemini-robotics-15"
+      ],
+      "influences": [
+        "helix"
+      ],
+      "license": "closed",
+      "tags": [
+        "whole-body control",
+        "humanoid",
+        "multi-robot",
+        "embodied reasoning"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Gemini stops being a pair of arms: one VLA that walks, crouches and manipulates as a single coordinated body.",
+      "site": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+      "detailPath": "data/tech/gemini-robotics-2.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "robodojo",
+      "name": "RoboDojo",
+      "full_name": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "cat": "bench",
+      "year": 2026,
+      "month": 7,
+      "orgs": [
+        "hku-mmlab"
+      ],
+      "influences": [
+        "roboarena",
+        "libero",
+        "simpler"
+      ],
+      "license": "open",
+      "tags": [
+        "sim-and-real",
+        "leaderboard",
+        "long horizon",
+        "memory"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "One evaluation layer spanning 42 simulated and 18 real tasks, with the real robots rented out so results reproduce.",
+      "paper": "https://arxiv.org/abs/2607.04434",
+      "code": "https://github.com/robodojo-benchmark/RoboDojo",
+      "site": "https://robodojo-benchmark.com",
+      "parents": [],
+      "detailPath": "data/tech/robodojo.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "agibot-go2",
+      "name": "AgiBot GO-2",
+      "full_name": "GO-2: ViLLA Embodied Foundation Model",
+      "cat": "vla",
+      "year": 2026,
+      "month": 4,
+      "orgs": [
+        "agibot"
+      ],
+      "influences": [
+        "agibot-world",
+        "ecot"
+      ],
+      "license": "closed",
+      "tags": [
+        "ViLLA",
+        "action chain-of-thought",
+        "long horizon"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Chain-of-thought over actions, not words, to keep long-horizon plans from drifting apart from execution.",
+      "site": "https://www.agibot.com/",
+      "parents": [],
+      "detailPath": "data/tech/agibot-go2.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "pi-07",
+      "name": "pi-0.7",
+      "full_name": "pi-0.7: a Steerable Model with Emergent Capabilities",
+      "cat": "vla",
+      "year": 2026,
+      "month": 4,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-06"
+      ],
+      "influences": [
+        "susie",
+        "hi-robot"
+      ],
+      "license": "closed",
+      "tags": [
+        "steerable",
+        "multimodal prompting",
+        "compositional generalization",
+        "visual subgoals"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Train on prompts that say how, not just what — and per-task RL fine-tuning stops being necessary.",
+      "site": "https://www.pi.website/blog",
+      "detailPath": "data/tech/pi-07.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "pi-mem",
+      "name": "Multi-Scale Embodied Memory (MEM)",
+      "full_name": "VLAs with Long and Short-Term Memory",
+      "cat": "vla",
+      "year": 2026,
+      "month": 3,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-06"
+      ],
+      "influences": [
+        "hi-robot"
+      ],
+      "license": "closed",
+      "tags": [
+        "memory",
+        "long horizon",
+        "state tracking"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "A VLA that remembers what it already did, so tasks can run past ten minutes without losing the thread.",
+      "site": "https://www.pi.website/blog",
+      "detailPath": "data/tech/pi-mem.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "pi-online-rl",
+      "name": "RL Token / efficient online RL",
+      "full_name": "Precise Manipulation with Efficient Online RL",
+      "cat": "rl",
+      "year": 2026,
+      "month": 3,
+      "orgs": [
+        "physical-intelligence"
+      ],
+      "parents": [
+        "pi-06"
+      ],
+      "influences": [
+        "hil-serl",
+        "serl"
+      ],
+      "license": "closed",
+      "tags": [
+        "online RL",
+        "precise manipulation",
+        "fine-tuning"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "Extract one RL token from a frozen VLA and you can run online reinforcement learning on it in hours, not weeks.",
+      "site": "https://www.pi.website/blog",
+      "detailPath": "data/tech/pi-online-rl.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "dreamzero",
+      "name": "DreamZero",
+      "full_name": "World Action Models are Zero-shot Policies",
+      "cat": "wam",
+      "year": 2026,
+      "month": 2,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "unipi"
+      ],
+      "influences": [
+        "cosmos",
+        "genie",
+        "pi-0"
+      ],
+      "license": "open",
+      "tags": [
+        "world action model",
+        "video diffusion",
+        "zero-shot",
+        "cross-embodiment"
+      ],
+      "impact": 5,
+      "confidence": "high",
+      "tagline": "Make the video model the policy: denoise future frames and actions in one transformer, and control comes out zero-shot.",
+      "paper": "https://arxiv.org/abs/2602.15922",
+      "code": "https://github.com/dreamzero0/dreamzero",
+      "detailPath": "data/tech/dreamzero.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "molmospaces",
+      "name": "MolmoSpaces",
+      "full_name": "MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation",
+      "cat": "bench",
+      "year": 2026,
+      "month": 2,
+      "orgs": [
+        "ai2",
+        "uw"
+      ],
+      "influences": [
+        "behavior-1k",
+        "robocasa",
+        "molmo"
+      ],
+      "license": "open",
+      "tags": [
+        "simulation ecosystem",
+        "sim-to-real correlation",
+        "controlled variation"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "230k environments built so you can vary one thing at a time — and a sim score that actually predicts the real one.",
+      "paper": "https://arxiv.org/abs/2602.11337",
+      "code": "https://github.com/allenai/molmospaces",
+      "site": "https://allenai.org/blog/molmospaces",
+      "parents": [],
+      "detailPath": "data/tech/molmospaces.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "vla-jepa",
+      "name": "VLA-JEPA",
+      "full_name": "VLA-JEPA: Enhancing Vision-Language-Action Model with Latent World Model",
+      "cat": "wam",
+      "year": 2026,
+      "month": 2,
+      "orgs": [
+        "ustc"
+      ],
+      "parents": [
+        "v-jepa-2"
+      ],
+      "influences": [
+        "openvla",
+        "lapa"
+      ],
+      "license": "open",
+      "tags": [
+        "JEPA",
+        "latent world model",
+        "leakage-free prediction",
+        "ECCV 2026"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Predict the next state in latent space, not pixel space, so the policy learns dynamics instead of wallpaper.",
+      "paper": "https://arxiv.org/abs/2602.10098",
+      "code": "https://github.com/ginwind/VLA-JEPA",
+      "detailPath": "data/tech/vla-jepa.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "helix-02",
+      "name": "Helix 02",
+      "full_name": "Helix 02: Full-Body Autonomy",
+      "cat": "vla",
+      "year": 2026,
+      "month": 1,
+      "orgs": [
+        "figure-ai"
+      ],
+      "parents": [
+        "helix"
+      ],
+      "influences": [
+        "human-policy"
+      ],
+      "license": "closed",
+      "tags": [
+        "whole-body control",
+        "learned controller",
+        "loco-manipulation",
+        "long horizon"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Deleted the walking controller: 109,504 lines of hand-written C++ replaced by a 10M-parameter learned motion prior.",
+      "site": "https://www.figure.ai/news/helix-02",
+      "detailPath": "data/tech/helix-02.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
+    {
+      "id": "groot-n2",
+      "name": "GR00T N2",
+      "full_name": "NVIDIA Isaac GR00T N2",
+      "cat": "wam",
+      "year": 2026,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "dreamzero",
+        "groot-n15"
+      ],
+      "influences": [
+        "cosmos"
+      ],
+      "license": "closed",
+      "tags": [
+        "world action model",
+        "humanoid",
+        "foundation model"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "The DreamZero architecture productized: NVIDIA's humanoid foundation model stops being a VLA and becomes a world-action model.",
+      "site": "https://developer.nvidia.com/isaac/gr00t",
+      "detailPath": "data/tech/groot-n2.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
+    },
     {
       "id": "pi-06",
       "name": "pi-*0.6 / RECAP",
@@ -192,6 +638,37 @@
       "detailPath": "data/tech/lbm.json",
       "added": "2026-08-25",
       "updated": "2026-08-25"
+    },
+    {
+      "id": "roboarena",
+      "name": "RoboArena",
+      "full_name": "RoboArena: Distributed Real-World Evaluation of Generalist Robot Policies",
+      "cat": "bench",
+      "year": 2025,
+      "month": 6,
+      "orgs": [
+        "berkeley-rail"
+      ],
+      "influences": [
+        "droid",
+        "robomimic"
+      ],
+      "license": "open",
+      "tags": [
+        "real-robot evaluation",
+        "double-blind",
+        "crowd-sourced",
+        "Elo"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Stop arguing about cherry-picked demos: rank policies by double-blind pairwise duels run on other people's robots.",
+      "paper": "https://arxiv.org/abs/2506.18123",
+      "site": "https://robo-arena.github.io/",
+      "parents": [],
+      "detailPath": "data/tech/roboarena.json",
+      "added": "2026-08-31",
+      "updated": "2026-08-31"
     },
     {
       "id": "smolvla",
@@ -1153,7 +1630,8 @@
       "tags": [
         "framework",
         "dataset format",
-        "cheap hardware"
+        "cheap hardware",
+        "evaluation harness"
       ],
       "impact": 4,
       "confidence": "high",
@@ -1163,7 +1641,7 @@
       "influences": [],
       "detailPath": "data/tech/lerobot.json",
       "added": "2026-08-25",
-      "updated": "2026-08-25"
+      "updated": "2026-08-31"
     },
     {
       "id": "octo",

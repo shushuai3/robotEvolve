@@ -1,0 +1,32 @@
+{
+  "id": "gen-15",
+  "name": "GEN-1.5",
+  "summary": "GEN-1.5 loads a 3-to-12-second demonstration into the model's context window as a physical prompt, and the robot then performs the task with no gradient steps at all. Generalist emphasises that nothing in the architecture was built for this: no meta-learning loop, no auxiliary objective, no architectural change — the capability appeared out of more than eight months of continuous pretraining on physical interaction data, the way in-context learning appeared in language models. Across ten evaluation tasks including opening a jar and pulling money from a wallet, the company reports 59% average success one-shot, rising to 83% after ten training steps on five minutes of data. Generalist describes it as the first demonstration of one-shot and few-shot physical skill acquisition at scale.",
+  "innovation": [
+    "Physical prompting: demonstrations as context rather than as training data, making task specification a runtime operation.",
+    "Presents in-context skill acquisition as an emergent property of pretraining scale rather than an engineered mechanism."
+  ],
+  "matters": [
+    "Together with Skild S1, announced days apart, it marks the point where the field's unit of teaching shifts from a dataset to a prompt."
+  ],
+  "limits": [
+    "Company announcement only; no paper, no released weights, no third-party evaluation.",
+    "Ten tasks is a narrow base for an emergence claim, and reported announcement dates vary (19-24 August 2026)."
+  ],
+  "lineage": "Large-scale robot pretraining carried far enough that in-context learning appears, as it did in language models.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://generalistai.com/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GEN-1.5+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "2217536bd632b784"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "robodojo",
+  "name": "RoboDojo",
+  "summary": "RoboDojo argues that existing benchmarks are either simulation-only or real-only and mostly short-horizon and skill-narrow, so they cannot say much about a generalist policy. It bundles 42 simulation tasks scored along five explicit dimensions — generalization, memory, precision, long-horizon execution and open-vocabulary instruction following — with 18 real-world tasks, behind an integration layer that runs a policy in both with minimal modification. The distinguishing piece is RoboDojo-RealEval: standardized hardware offered through cloud access with fixed protocols, so a real-robot number can be reproduced by someone who does not own the robot. Led by HKU's MMLab with roughly twenty institutions including Berkeley and Tsinghua, it launched with a public leaderboard and 30 integrated policies.",
+  "innovation": [
+    "Real-robot evaluation as a hosted service on standardized hardware, removing the lab-specific setup that makes real numbers incomparable.",
+    "Scores decomposed into five capability axes rather than one success rate, so memory and precision failures are visible separately."
+  ],
+  "matters": [
+    "Complements RoboArena's crowd-sourced ranking with a reproducible fixed-protocol counterpart — between them, real-robot claims finally have somewhere to be checked."
+  ],
+  "limits": [
+    "Cloud real-robot access is a queue and a fixed hardware choice, which bounds throughput and generality.",
+    "New enough that leaderboard coverage is uneven across the policies that matter."
+  ],
+  "lineage": "LIBERO and SimplerEnv's simulated suites joined to RoboArena's insistence on real-robot evidence.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2607.04434",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/robodojo-benchmark/RoboDojo",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://robodojo-benchmark.com",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RoboDojo:+A+Unified+Sim-and-Real+Benchmark+for+Comprehensive+Evaluation+of+Generalist+Robot+Manipulation+Policies+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "3afc0c5ccbba23bb"
+}

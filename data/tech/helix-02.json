@@ -1,0 +1,32 @@
+{
+  "id": "helix-02",
+  "name": "Helix 02",
+  "summary": "Helix 02 extends Figure's VLA from upper-body control to the whole robot by adding System 0, a 10-million-parameter network running at 1 kHz that handles balance and coordination and was trained on over a thousand hours of human motion capture. Figure reports it replaces 109,504 lines of hand-engineered C++ with a single learned prior. It sits under System 1, a 200 Hz visuomotor policy that now maps every onboard sensor — vision, touch and proprioception — to every actuator, and System 2, the semantic reasoning layer. The demonstration is a four-minute autonomous dishwasher load-and-unload across a full-sized kitchen: 61 sequential loco-manipulation actions with no resets and no human intervention. An April 2026 update added perception-conditioned whole-body control, letting the robot handle stairs, ramps and uneven terrain from RGB alone.",
+  "innovation": [
+    "A learned low-level whole-body controller at 1 kHz, displacing the model-predictive control stack humanoids normally depend on.",
+    "Whole-body sensor fusion into one visuomotor policy, including touch and proprioception rather than vision alone."
+  ],
+  "matters": [
+    "The strongest public evidence that the classical control layer beneath a humanoid can itself be learned, which is where most hand-engineering in the field still lives."
+  ],
+  "limits": [
+    "Company blog only — no paper, no metrics beyond the single demonstration, no independent reproduction.",
+    "A curated four-minute run says little about the failure rate across a working day."
+  ],
+  "lineage": "Helix's System 1/System 2 split extended downward with a learned System 0 motion prior.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.figure.ai/news/helix-02",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Helix+02:+Full-Body+Autonomy+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "52667d38d81b0e91"
+}

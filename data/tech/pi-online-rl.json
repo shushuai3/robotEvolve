@@ -1,0 +1,32 @@
+{
+  "id": "pi-online-rl",
+  "name": "RL Token / efficient online RL",
+  "summary": "Precise, tight-tolerance manipulation is where imitation-trained VLAs are weakest and where reinforcement learning has always been the obvious fix — except that online RL on a multi-billion-parameter generative policy is unstable and slow. Physical Intelligence's approach extracts an RL token from the VLA and runs the reinforcement learning through that narrow interface, leaving the bulk of the policy intact. This makes online RL cheap enough to run on a real robot with a few hours of interaction, and improves throughput on precise tasks that pure imitation plateaus on.",
+  "innovation": [
+    "Confines online RL to a single learned token rather than fine-tuning the whole VLA, sidestepping the instability of actor-critic updates on a large generative policy.",
+    "Brings the hours-not-weeks data budget of HIL-SERL to VLA-scale models."
+  ],
+  "matters": [
+    "Precision is the gap between a convincing demo and useful industrial work, and this is a practical route to closing it on top of an existing foundation model."
+  ],
+  "limits": [
+    "Blog announcement only; no paper, task list or reproduction.",
+    "Reported on precise manipulation specifically — unclear whether the narrow RL interface has enough capacity for broader behaviour change."
+  ],
+  "lineage": "HIL-SERL's sample-efficient real-world RL applied through a minimal interface into the pi-0 line.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.pi.website/blog",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Precise+Manipulation+with+Efficient+Online+RL+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "ac74c5ea99dbf2b3"
+}

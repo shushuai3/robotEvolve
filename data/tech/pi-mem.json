@@ -1,0 +1,31 @@
+{
+  "id": "pi-mem",
+  "name": "Multi-Scale Embodied Memory (MEM)",
+  "summary": "Standard VLAs are close to memoryless: they condition on a short window of recent frames, which is enough for a reach-and-grasp but not for a task where the correct action depends on something that happened minutes ago and is no longer visible. Multi-Scale Embodied Memory gives Physical Intelligence's models both long-term and short-term memory at different timescales, so the policy can track what it has already completed, what it put where, and what it still owes the instruction. Physical Intelligence reports this enables coherent execution of complex tasks running longer than ten minutes.",
+  "innovation": [
+    "Memory at multiple timescales in one policy, rather than a single fixed observation window.",
+    "Targets state that has left the camera frame — the usual reason long-horizon rollouts silently repeat or skip steps."
+  ],
+  "matters": [
+    "Horizon length, not dexterity, is what stops most VLA demonstrations from becoming real work; memory is the missing piece."
+  ],
+  "limits": [
+    "Announced by blog only, with no paper, architecture detail or quantitative results released. Verify before citing."
+  ],
+  "lineage": "The pi-0 line extended with explicit multi-timescale memory.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.pi.website/blog",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=VLAs+with+Long+and+Short-Term+Memory+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "f9e0a83233f40f4c"
+}

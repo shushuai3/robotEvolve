@@ -10,7 +10,6 @@ refuse to do from file:// URLs.
 """
 import http.server
 import os
-import socketserver
 import sys
 import threading
 import webbrowser
@@ -19,6 +18,11 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    # Browsers open speculative connections and sometimes never send a request on
+    # them. Without a timeout those sockets sit in readline() forever, leaking a
+    # thread each; 10s is far longer than a real request on localhost needs.
+    timeout = 10
+
     def __init__(self, *a, **kw):
         super().__init__(*a, directory=ROOT, **kw)
 
@@ -37,9 +41,13 @@ def main():
     port = int(args[0]) if args else 8000
     launch = "--no-open" not in sys.argv
 
-    socketserver.TCPServer.allow_reuse_address = True
     try:
-        httpd = socketserver.TCPServer(("127.0.0.1", port), Handler)
+        # Threaded, and not for speed. A single-threaded server accepts a connection
+        # and then blocks in rfile.readline() until a request arrives — so one browser
+        # preconnect that never sends anything wedges the whole server inside a C-level
+        # recv(), where Ctrl-C cannot reach it and serve_forever()'s poll loop never
+        # runs again. daemon_threads also stops a stuck connection blocking exit.
+        httpd = http.server.ThreadingHTTPServer(("127.0.0.1", port), Handler)
     except OSError as e:
         print("Could not bind port %d: %s" % (port, e))
         print("Try:  python serve.py %d" % (port + 1))

@@ -1,0 +1,43 @@
+{
+  "id": "molmospaces",
+  "name": "MolmoSpaces",
+  "summary": "MolmoSpaces is AI2's open ecosystem for embodied evaluation: over 230,000 indoor environments, from handcrafted household scenes to procedurally generated multi-room houses, populated with 130,000 annotated object assets including 48,000 manipulable objects carrying 42 million precomputed stable grasps. MolmoSpaces-Bench sits on top and is built around controlled variation — object shape, size, weight and articulation; layout and clutter; task complexity from single-step to hierarchical; lighting and viewpoint; friction and mass; and instruction phrasing — so a generalization claim can be attributed to an axis instead of a vibe. It reports strong sim-to-real correlation (R = 0.96), and its evaluation surfaced policy sensitivities to prompt phrasing, initial joint configuration and camera occlusion. Assets, tooling and multiple simulator backends are open.",
+  "innovation": [
+    "Generalization measured one controlled axis at a time, rather than as a single aggregate success rate.",
+    "Scale of annotated manipulable assets — 42M precomputed stable grasps — that makes procedural task generation practical.",
+    "Reports the sim-to-real correlation instead of assuming it, which is what licenses using the sim score at all."
+  ],
+  "matters": [
+    "The strongest answer yet to why simulated benchmark numbers should be believed, and it is fully open where the leading alternatives are vendor infrastructure."
+  ],
+  "limits": [
+    "Indoor household scenes; industrial and outdoor settings are out of scope.",
+    "R = 0.96 is measured over the policies tested, and need not hold for architectures unlike them."
+  ],
+  "lineage": "BEHAVIOR-1K and RoboCasa's simulated-household lineage at an order more scale, with Molmo's grounding work behind the annotation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2602.11337",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/allenai/molmospaces",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://allenai.org/blog/molmospaces",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=MolmoSpaces:+A+Large-Scale+Open+Ecosystem+for+Robot+Navigation+and+Manipulation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "0a6e513b3b3425ac"
+}

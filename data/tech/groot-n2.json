@@ -1,0 +1,32 @@
+{
+  "id": "groot-n2",
+  "name": "GR00T N2",
+  "summary": "GR00T N2 is the next generation of NVIDIA's open humanoid foundation model line, and the point at which that line switches architecture — it is built on the world-action model design from DreamZero rather than the VLA design of GR00T N1 and N1.5. NVIDIA reports that it succeeds at new tasks in new environments more than twice as often as leading vision-language-action models, and claims the top generalist-policy position on both MolmoSpaces and RoboArena. The intermediate GR00T N1.7 release shipped first in early access with commercial licensing and dexterous control for production deployments. N2 itself was slated for availability by the end of 2026.",
+  "innovation": [
+    "First world-action model shipped as a supported product line rather than a research artifact.",
+    "Carries DreamZero's joint video-action prediction into the humanoid embodiment GR00T targets."
+  ],
+  "matters": [
+    "When the vendor that defined the open humanoid VLA baseline abandons the VLA architecture for its flagship, the category shift is no longer speculative."
+  ],
+  "limits": [
+    "Announced with benchmark claims but not yet released at the time of writing — treat the numbers as vendor-reported and unverified.",
+    "Unlike GR00T N1/N1.5, no open weights have been committed to."
+  ],
+  "lineage": "GR00T N1.5's humanoid data recipe re-founded on DreamZero's world-action backbone.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://developer.nvidia.com/isaac/gr00t",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=NVIDIA+Isaac+GR00T+N2+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "1d8350d0eb80eaee"
+}

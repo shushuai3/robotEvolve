@@ -1,0 +1,32 @@
+{
+  "id": "agibot-go2",
+  "name": "AgiBot GO-2",
+  "summary": "GO-2 is AgiBot's second-generation ViLLA (vision-language-latent-action) foundation model, announced at the company's 2026 Partner Conference. Its central mechanism is Action Chain-of-Thought: the model reasons in an intermediate action-level representation that bridges high-level planning and low-level execution, so a long-horizon task stays consistent between what was planned and what the actuators do. AgiBot reports state-of-the-art results on major benchmarks and positions GO-2 as the model for large-scale real-world deployment, backed by the AgiBot World dataset and one of the largest humanoid production runs in China.",
+  "innovation": [
+    "Action-level chain-of-thought as the interface between planner and controller, rather than language subgoals.",
+    "Trained against one of the largest open real-robot corpora, its own AgiBot World."
+  ],
+  "matters": [
+    "The clearest Chinese counterpart to the GR00T and pi-0 lines, and it ships onto hardware the company builds at volume."
+  ],
+  "limits": [
+    "Announced at a partner conference; benchmark claims are unspecified as to which benchmarks and against what.",
+    "Unlike AgiBot World, the GO-2 weights are not open."
+  ],
+  "lineage": "GO-1's ViLLA formulation plus embodied chain-of-thought reasoning, trained on AgiBot World.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.agibot.com/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GO-2:+ViLLA+Embodied+Foundation+Model+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "5c198dd82f214c43"
+}

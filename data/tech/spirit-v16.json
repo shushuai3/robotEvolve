@@ -1,0 +1,37 @@
+{
+  "id": "spirit-v16",
+  "name": "Spirit v1.5 / v1.6",
+  "summary": "Spirit AI's foundation model line is a straightforward VLA — current observation plus text instruction in, next action chunk out — that has competed unusually well on independent evaluation. Spirit v1.5 shipped with open weights on Hugging Face and took first place on the RoboChallenge Table30 physical-robot evaluation in January 2026. Spirit v1.6 then scored 1,924 on RoboArena, ahead of NVIDIA's Cosmos3-Nano-Policy at 1,881 and DreamZero at 1,763 — the first time a Chinese model led the benchmark NVIDIA co-developed with Stanford and Berkeley, and it happened two days after NVIDIA announced its own top placement. Reported strengths are flip-top articulated objects, delicate grasps and multi-step sequential tasks.",
+  "innovation": [
+    "Demonstrates that a conventional action-chunking VLA, well executed, still competes with world-action models on real-robot Elo.",
+    "Open weights at v1.5 make a leaderboard-competitive policy reproducible."
+  ],
+  "matters": [
+    "The benchmark that was supposed to settle vendor claims got its first upset, and it came from outside the US labs the map is otherwise dominated by."
+  ],
+  "limits": [
+    "v1.6 itself is not open; only v1.5 weights are published.",
+    "No paper for either version, and the RoboArena margin over Cosmos3-Nano-Policy is within plausible Elo noise."
+  ],
+  "lineage": "Standard action-chunked VLA practice, tuned hard against public real-robot evaluation.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://huggingface.co/Spirit-AI-robotics/Spirit-v1.5",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://www.spirit-ai.com/en/blog/spirit-v1-5",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Spirit+v1.5+/+v1.6:+A+Robotic+Foundation+Model+by+Spirit+AI+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "bc699b5878b34ff9"
+}

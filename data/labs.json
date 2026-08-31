@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated": "2026-08-25",
+  "generated": "2026-08-31",
   "note": "priority 1 = check weekly, 2 = monthly, 3 = quarterly. Used by tools/update_queue.py to order the update crawl.",
   "labs": [
     {
@@ -34,7 +34,8 @@
       "sources": {
         "blog": "https://www.figure.ai/news",
         "site": "https://www.figure.ai/"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "google-deepmind",
@@ -53,7 +54,8 @@
         "blog": "https://deepmind.google/discover/blog/",
         "site": "https://deepmind.google/",
         "github": "https://github.com/google-deepmind"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "huggingface",
@@ -71,7 +73,8 @@
         "github": "https://github.com/huggingface/lerobot",
         "site": "https://huggingface.co/lerobot",
         "blog": "https://huggingface.co/blog"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "mit-csail",
@@ -107,7 +110,8 @@
         "blog": "https://blogs.nvidia.com/blog/category/robotics/",
         "site": "https://research.nvidia.com/labs/gear/",
         "github": "https://github.com/NVIDIA/Isaac-GR00T"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "physical-intelligence",
@@ -122,10 +126,11 @@
       ],
       "notes": "Founded 2024 by Levine, Hausman, Finn et al. Flow-matching VLAs (π0 line), the openpi release, FAST action tokenizer.",
       "sources": {
-        "blog": "https://www.physicalintelligence.company/blog",
-        "site": "https://www.physicalintelligence.company/",
+        "blog": "https://www.pi.website/blog",
+        "site": "https://www.pi.website/",
         "github": "https://github.com/Physical-Intelligence/openpi"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "stanford-iris",
@@ -192,7 +197,8 @@
         "blog": "https://www.tri.global/news",
         "site": "https://www.tri.global/research/robotics",
         "github": "https://github.com/ToyotaResearchInstitute"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "berkeley-rail",
@@ -211,7 +217,8 @@
         "site": "https://rail.eecs.berkeley.edu/",
         "blog": "https://bair.berkeley.edu/blog/",
         "github": "https://github.com/rail-berkeley"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "ut-austin-rpl",
@@ -257,11 +264,12 @@
         "data",
         "vla"
       ],
-      "notes": "AgiBot World — one of the largest open real-robot manipulation datasets; GO-1 policy family.",
+      "notes": "AgiBot World — one of the largest open real-robot manipulation datasets; GO-1 / GO-2 ViLLA policy family.",
       "sources": {
         "site": "https://www.agibot.com/",
         "github": "https://github.com/OpenDriveLab/AgiBot-World"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "ai2",
@@ -277,7 +285,8 @@
       "sources": {
         "site": "https://prior.allenai.org/",
         "github": "https://github.com/allenai"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "amazon-far",
@@ -369,7 +378,8 @@
       "notes": "Founded by Pete Florence (ex-Google DeepMind); general-purpose dexterous manipulation foundation models.",
       "sources": {
         "site": "https://generalistai.com/"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "georgia-tech",
@@ -403,7 +413,8 @@
       "sources": {
         "blog": "https://ai.meta.com/blog/",
         "github": "https://github.com/facebookresearch"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "nyu-grail",
@@ -436,7 +447,8 @@
       "sources": {
         "blog": "https://openai.com/news/",
         "github": "https://github.com/openai"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "rai-institute",
@@ -481,8 +493,29 @@
       ],
       "notes": "CMU spinout (Deepak Pathak, Abhinav Gupta) pursuing an omni-bodied 'robot brain' across embodiments.",
       "sources": {
-        "site": "https://www.skild.ai/"
-      }
+        "site": "https://www.skild.ai/",
+        "blog": "https://www.skild.ai/blogs"
+      },
+      "last_checked": "2026-08-31"
+    },
+    {
+      "id": "spirit-ai",
+      "name": "Spirit AI",
+      "type": "industry",
+      "country": "CN",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "wam"
+      ],
+      "notes": "Beijing/Hangzhou embodied-AI company. Spirit v1.5 topped RoboChallenge Table30 in Jan 2026 and v1.6 became the first Chinese model to lead RoboArena, ahead of NVIDIA's Cosmos3-Nano-Policy and DreamZero.",
+      "sources": {
+        "blog": "https://www.spirit-ai.com/en/blog",
+        "site": "https://www.spirit-ai.com/en",
+        "github": "https://github.com/Spirit-AI-Team",
+        "huggingface": "https://huggingface.co/Spirit-AI-robotics"
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "tesla-optimus",
@@ -497,7 +530,8 @@
       "notes": "End-to-end video-to-action policies reusing FSD infrastructure. No papers; track AI Day / earnings demos.",
       "sources": {
         "site": "https://www.tesla.com/AI"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "tsinghua-air",
@@ -581,6 +615,21 @@
       }
     },
     {
+      "id": "apptronik",
+      "name": "Apptronik",
+      "type": "industry",
+      "country": "US",
+      "priority": 3,
+      "focus": [
+        "vla"
+      ],
+      "notes": "Austin humanoid builder spun out of UT Austin's Human Centered Robotics Lab. Apollo is the platform Google DeepMind uses for its whole-body Gemini Robotics demonstrations, so its releases are where that work shows up first.",
+      "sources": {
+        "news": "https://apptronik.com/news",
+        "site": "https://apptronik.com/"
+      }
+    },
+    {
       "id": "eth-rsl",
       "name": "ETH Zurich — Robotic Systems Lab",
       "type": "academic",
@@ -609,7 +658,8 @@
       "notes": "PKU-affiliated; synthetic-data-heavy grasping and mobile manipulation (GraspVLA, GroceryVLM).",
       "sources": {
         "site": "https://www.galbot.com/"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "imperial-robot-learning",
@@ -686,7 +736,8 @@
       "sources": {
         "site": "https://www.unitree.com/",
         "github": "https://github.com/unitreerobotics"
-      }
+      },
+      "last_checked": "2026-08-31"
     },
     {
       "id": "freiburg",
@@ -704,6 +755,41 @@
       }
     },
     {
+      "id": "hku-mmlab",
+      "name": "HKU MMLab (Ping Luo)",
+      "type": "academic",
+      "country": "HK",
+      "priority": 3,
+      "focus": [
+        "bench",
+        "sim",
+        "vla"
+      ],
+      "notes": "Multimedia Lab at the University of Hong Kong. Coordinates large multi-institution evaluation efforts — RoboTwin and the RoboDojo sim-and-real benchmark.",
+      "sources": {
+        "site": "https://www.mmlab-hku.com/",
+        "github": "https://github.com/robodojo-benchmark"
+      },
+      "last_checked": "2026-08-31"
+    },
+    {
+      "id": "ustc",
+      "name": "USTC (Zhibo Chen)",
+      "type": "academic",
+      "country": "CN",
+      "priority": 3,
+      "focus": [
+        "wam",
+        "rep"
+      ],
+      "notes": "University of Science and Technology of China, with the Eastern Institute of Technology. Latent world modelling inside VLA policies — VLA-JEPA.",
+      "sources": {
+        "site": "https://en.ustc.edu.cn/",
+        "github": "https://github.com/ginwind"
+      },
+      "last_checked": "2026-08-31"
+    },
+    {
       "id": "x-square",
       "name": "X Square Robot / 自变量机器人",
       "type": "industry",
@@ -715,7 +801,8 @@
       "notes": "WALL-A / Wall-OSS end-to-end manipulation models with partial open-source releases.",
       "sources": {
         "site": "https://www.x2robot.com/"
-      }
+      },
+      "last_checked": "2026-08-31"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "id": "vla-jepa",
+  "name": "VLA-JEPA",
+  "summary": "VLA-JEPA attacks a specific failure of world-model pretraining for policies: reconstruct-the-future objectives spend capacity on pixel variation — camera shake, lighting, background motion — that has nothing to do with what the action changed. It supervises the policy with a joint-embedding predictive architecture instead, using leakage-free state prediction in which a target encoder sees future frames while the student sees only the current observation, forcing the representation to encode action-relevant state change. The result collapses the multi-stage latent-action pipelines of earlier work into two stages: JEPA pretraining, then action-head fine-tuning. It reports consistent gains on LIBERO, LIBERO-Plus, SimplerEnv and real manipulation, with the largest margins under out-of-distribution camera and background shifts. Accepted at ECCV 2026.",
+  "innovation": [
+    "Leakage-free target/student split that keeps latent prediction from degenerating into copying the observation.",
+    "Reduces latent-action pretraining to two stages, removing the separate quantizer and inverse-dynamics phases earlier methods needed."
+  ],
+  "matters": [
+    "The academic-scale counterweight to DreamZero: it shows the world-action gain comes from predicting dynamics, not specifically from generating video, which is enormously cheaper."
+  ],
+  "limits": [
+    "Gains are measured mostly on simulation suites; the real-robot evaluation is small.",
+    "Latent prediction gives up the interpretability of a generated video plan — you cannot look at what the model expects to happen."
+  ],
+  "lineage": "V-JEPA 2's joint-embedding prediction moved inside a VLA's pretraining loop.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2602.10098",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/ginwind/VLA-JEPA",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=VLA-JEPA:+Enhancing+Vision-Language-Action+Model+with+Latent+World+Model+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-08-31",
+  "updated": "2026-08-31",
+  "content_hash": "75a2dee5fce11dc4"
+}

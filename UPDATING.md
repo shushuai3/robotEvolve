@@ -1,7 +1,7 @@
 # Keeping RobotEvolve current
 
 The field moves fast enough that a static list rots in weeks. `data/labs.json` exists to
-make refreshing it mechanical: it is a watchlist of the ~42 groups that actually produce
+make refreshing it mechanical: it is a watchlist of the ~48 groups that actually produce
 this work, each with a priority and the exact URLs to check.
 
 ## Priorities
@@ -9,8 +9,8 @@ this work, each with a priority and the exact URLs to check.
 | Priority | Cadence | Who |
 | --- | --- | --- |
 | **1** | weekly | Google DeepMind, Physical Intelligence, NVIDIA GEAR, Berkeley RAIL, Stanford IRIS/SVL/REALab, Figure, TRI, Hugging Face, CMU RI, MIT CSAIL, UT Austin RPL |
-| **2** | monthly | Meta FAIR, OpenAI, ByteDance Seed, Skild, 1X, Dyna, Generalist, Boston Dynamics, RAI, Amazon FAR, AI2, AgiBot, Shanghai AI Lab, Columbia, UCSD, NYU, Berkeley AUTOLab, UW, Tsinghua, Tesla |
-| **3** | quarterly | Microsoft Research, Unitree, Galbot, X Square, PKU, Imperial, Freiburg, ETH RSL, TU Darmstadt |
+| **2** | monthly | Meta FAIR, OpenAI, ByteDance Seed, Skild, Spirit AI, 1X, Dyna, Generalist, Boston Dynamics, RAI, Amazon FAR, AI2, AgiBot, Shanghai AI Lab, Columbia, UCSD, NYU, Berkeley AUTOLab, UW, Tsinghua, Tesla |
+| **3** | quarterly | Microsoft Research, Unitree, Galbot, X Square, Apptronik, HKU MMLab, USTC, PKU, Imperial, Freiburg, ETH RSL, TU Darmstadt |
 
 Priority is about *rate of output that changes the map*, not importance. Move a lab up when
 it starts shipping, down when it goes quiet — it is just a number in the JSON.
@@ -33,10 +33,10 @@ that lab — so the question at each stop is concrete: **is there anything newer
 
 ```
   [ ] Physical Intelligence (π)
-      last check: never checked    newest here: pi-*0.6 / RECAP (2025)
-      blog:    https://www.physicalintelligence.company/blog
+      last check: 2026-08-31       newest here: pi-0.7 (2026)
+      blog:    https://www.pi.website/blog
       github:  https://github.com/Physical-Intelligence/openpi
-      site:    https://www.physicalintelligence.company/
+      site:    https://www.pi.website/
 ```
 
 After sweeping a lab:

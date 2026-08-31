@@ -3,11 +3,11 @@
 **[www.robotevolve.com](https://www.robotevolve.com)**
 
 A self-contained webpage that collects, summarises and graphs the technologies behind
-robot manipulation intelligence — VLA models, imitation learning, reinforcement learning,
-world models and dreaming, VLM grounding, representations, human/egocentric data,
-robot datasets, benchmarks and simulators.
+robot manipulation intelligence — VLA models, world action models, imitation learning,
+reinforcement learning, world models and dreaming, VLM grounding, representations,
+human/egocentric data, robot datasets, benchmarks and simulators.
 
-**108 technologies · 44 labs and companies · 10 domains · 1989 → 2025**
+**123 technologies · 48 labs and companies · 11 domains · 1989 → 2026**
 
 ---
 
@@ -73,7 +73,7 @@ change to the storage layout can never look like a change to an entry's content.
   "id": "openvla",
   "name": "OpenVLA",
   "full_name": "…",              // paper title, optional
-  "cat": "vla",                  // one of the 10 category ids
+  "cat": "vla",                  // one of the 11 category ids
   "year": 2024, "month": 6,
   "orgs": ["stanford-iris", …],  // ids that must exist in labs.json
   "parents":    ["rt-2", …],     // "derives from"  → solid graph edge
@@ -112,7 +112,7 @@ change to the storage layout can never look like a change to an entry's content.
 
 `updated` is the date this entry's **content** last changed — not the date the site was
 last rebuilt. Those are different, and conflating them makes the field worthless: a naive
-generator stamps today's date on all 108 files on every run, so `updated` ends up meaning
+generator stamps today's date on all 123 files on every run, so `updated` ends up meaning
 "when did I last run the script".
 
 So the tooling hashes each entry's content (index fields plus detail fields, excluding the
@@ -154,12 +154,22 @@ machinery, since the hash was already needed for `updated`.
 
 ### Categories
 
-`vla` · `il` · `rl` · `world-model` · `vlm` · `rep` · `data` · `bench` · `human-data` ·
-`sim` — defined with their display names, colours and blurbs in `data/technologies.json`
-under `categories`.
+`vla` · `il` · `rl` · `world-model` · `wam` · `vlm` · `rep` · `data` · `bench` ·
+`human-data` · `sim` — defined with their display names, colours and blurbs in
+`data/technologies.json` under `categories`.
 
-Three of these carve up what a coarser taxonomy would lump together as "data", and the
-distinctions are load-bearing:
+**`wam`** is the newest and the one that needed an argument. World models have been in the
+map since PlaNet, but they were always *auxiliary*: you learned dynamics, then planned or
+dreamed against them with a separate policy. DreamZero collapsed that — video and action
+tokens denoised together in one backbone, so the generative model of the future *is* the
+controller. That is a different object from a VLA with a world model attached, and NVIDIA
+re-founding GR00T on it, LeRobot shipping a world-model policy class, and VLA-JEPA showing
+the same gain from latent rather than pixel prediction made it a branch rather than a
+paper. `world-model` keeps the auxiliary lineage (Dreamer, Genie, V-JEPA, Cosmos); `wam`
+holds the ones where prediction and control are one model.
+
+Three further categories carve up what a coarser taxonomy would lump together as "data",
+and the distinctions are load-bearing:
 
 - **`data`** — real robot trajectories and the means of getting them. Answers *what do we
   train on*: Open X-Embodiment, DROID, BridgeData, RoboTurk, LeRobot, MimicGen.
