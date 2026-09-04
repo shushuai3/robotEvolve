@@ -1,7 +1,7 @@
 {
   "id": "groot-n2",
   "name": "GR00T N2",
-  "summary": "GR00T N2 is the next generation of NVIDIA's open humanoid foundation model line, and the point at which that line switches architecture — it is built on the world-action model design from DreamZero rather than the VLA design of GR00T N1 and N1.5. NVIDIA reports that it succeeds at new tasks in new environments more than twice as often as leading vision-language-action models, and claims the top generalist-policy position on both MolmoSpaces and RoboArena. The intermediate GR00T N1.7 release shipped first in early access with commercial licensing and dexterous control for production deployments. N2 itself was slated for availability by the end of 2026.",
+  "summary": "GR00T N2 is the next generation of NVIDIA's open humanoid foundation model line, and the point at which that line switches architecture — it is built on the world-action model design from DreamZero rather than the VLA design of GR00T N1 and N1.5. NVIDIA reports that it succeeds at new tasks in new environments more than twice as often as leading vision-language-action models, and claims the top generalist-policy position on both MolmoSpaces and RoboArena. The intervening releases came fast: N1.6 in January 2026, an open reasoning VLA billed as unlocking full-body control, then N1.7 in early access with commercial licensing and dexterous control for production deployments. N2 itself was slated for availability by the end of 2026.",
   "innovation": [
     "First world-action model shipped as a supported product line rather than a research artifact.",
     "Carries DreamZero's joint video-action prediction into the humanoid embodiment GR00T targets."
@@ -11,9 +11,10 @@
   ],
   "limits": [
     "Announced with benchmark claims but not yet released at the time of writing — treat the numbers as vendor-reported and unverified.",
-    "Unlike GR00T N1/N1.5, no open weights have been committed to."
+    "Unlike GR00T N1/N1.5, no open weights have been committed to.",
+    "Benchmark claims are against MolmoSpaces and RoboArena, one of which NVIDIA co-developed."
   ],
-  "lineage": "GR00T N1.5's humanoid data recipe re-founded on DreamZero's world-action backbone.",
+  "lineage": "GR00T N1.5's humanoid data recipe re-founded on DreamZero's world-action backbone, via the N1.6 and N1.7 releases.",
   "links": [
     {
       "label": "Project page",
@@ -27,6 +28,6 @@
     }
   ],
   "added": "2026-08-31",
-  "updated": "2026-08-31",
-  "content_hash": "1d8350d0eb80eaee"
+  "updated": "2026-09-04",
+  "content_hash": "3c7b25d348356e7d"
 }

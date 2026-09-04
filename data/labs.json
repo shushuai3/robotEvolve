@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated": "2026-08-31",
+  "generated": "2026-09-04",
   "note": "priority 1 = check weekly, 2 = monthly, 3 = quarterly. Used by tools/update_queue.py to order the update crawl.",
   "labs": [
     {
@@ -19,7 +19,8 @@
       "sources": {
         "site": "https://www.ri.cmu.edu/",
         "github": "https://github.com/cmu-mld"
-      }
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "figure-ai",
@@ -91,7 +92,8 @@
       "sources": {
         "site": "https://www.csail.mit.edu/",
         "github": "https://github.com/Improbable-AI"
-      }
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "nvidia-gear",
@@ -146,7 +148,8 @@
       "sources": {
         "site": "https://irislab.stanford.edu/",
         "github": "https://github.com/tonyzhaozh"
-      }
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "stanford-realab",
@@ -162,7 +165,8 @@
       "sources": {
         "site": "https://real.stanford.edu/",
         "github": "https://github.com/real-stanford"
-      }
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "stanford-svl",
@@ -180,7 +184,8 @@
       "sources": {
         "site": "https://svl.stanford.edu/",
         "github": "https://github.com/StanfordVL"
-      }
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "tri",
@@ -236,7 +241,8 @@
       "sources": {
         "site": "https://rpl.cs.utexas.edu/",
         "github": "https://github.com/ARISE-Initiative"
-      }
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "1x-technologies",
@@ -566,6 +572,40 @@
       }
     },
     {
+      "id": "opendrivelab",
+      "name": "OpenDriveLab (HKU / Shanghai AI Lab)",
+      "type": "academic",
+      "country": "HK",
+      "priority": 2,
+      "focus": [
+        "vla",
+        "human-data"
+      ],
+      "notes": "Hongyang Li's group, originally autonomous driving, now whole-body humanoid loco-manipulation and latent actions from action-free video. Also stewards the AgiBot World release.",
+      "sources": {
+        "site": "https://opendrivelab.com/",
+        "github": "https://github.com/OpenDriveLab"
+      },
+      "last_checked": "2026-09-04"
+    },
+    {
+      "id": "robbyant",
+      "name": "Robbyant (Ant Group)",
+      "type": "industry",
+      "country": "CN",
+      "priority": 2,
+      "focus": [
+        "vla"
+      ],
+      "notes": "Ant Group's embodied-AI arm. LingBot-VLA line: Apache-2.0 cross-embodiment VLAs with a unified canonical action space, shipped with weights and training code.",
+      "sources": {
+        "github": "https://github.com/Robbyant",
+        "huggingface": "https://huggingface.co/Robbyant",
+        "site": "https://www.robbyant.com/"
+      },
+      "last_checked": "2026-09-04"
+    },
+    {
       "id": "ucsd-su",
       "name": "UC San Diego (Hao Su, Xiaolong Wang)",
       "type": "academic",
@@ -599,6 +639,23 @@
       }
     },
     {
+      "id": "airoa",
+      "name": "AIRoA (AI Robot Association)",
+      "type": "nonprofit",
+      "country": "JP",
+      "priority": 3,
+      "focus": [
+        "data",
+        "human-data"
+      ],
+      "notes": "Japanese robot-data consortium with Toyota's Frontier Research Center and AIST. Builds shared large-scale collection infrastructure — the YUBI bidigital interface and its 8.4k-hour bimanual corpus.",
+      "sources": {
+        "site": "https://airoa.io/",
+        "github": "https://github.com/airoa-org"
+      },
+      "last_checked": "2026-09-04"
+    },
+    {
       "id": "apple",
       "name": "Apple — Machine Learning Research",
       "type": "industry",
@@ -628,6 +685,23 @@
         "news": "https://apptronik.com/news",
         "site": "https://apptronik.com/"
       }
+    },
+    {
+      "id": "axis-robotics",
+      "name": "Axis Robotics",
+      "type": "industry",
+      "country": "US",
+      "priority": 3,
+      "focus": [
+        "data",
+        "sim"
+      ],
+      "notes": "Data infrastructure for physical AI, founded by Berkeley/CMU/Georgia Tech/SJTU researchers. Argues data quality is a property of the distribution rather than of individual expert trajectories.",
+      "sources": {
+        "site": "https://www.axisrobotics.ai/",
+        "huggingface": "https://huggingface.co/axis-robotics"
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "eth-rsl",
@@ -771,6 +845,37 @@
         "github": "https://github.com/robodojo-benchmark"
       },
       "last_checked": "2026-08-31"
+    },
+    {
+      "id": "kaist",
+      "name": "KAIST (Kimin Lee, Minjoon Seo)",
+      "type": "academic",
+      "country": "KR",
+      "priority": 3,
+      "focus": [
+        "bench",
+        "world-model"
+      ],
+      "notes": "Neural-simulator evaluation for generalist policies — video world models used as a stand-in for real-robot testing.",
+      "sources": {
+        "site": "https://www.kaist.ac.kr/en/"
+      },
+      "last_checked": "2026-09-04"
+    },
+    {
+      "id": "soochow-u",
+      "name": "Soochow University / Lumos Robotics",
+      "type": "academic",
+      "country": "CN",
+      "priority": 3,
+      "focus": [
+        "bench"
+      ],
+      "notes": "Real-world reproducibility harness for UMI-style policies (UMI-Bench), run with Lumos Robotics.",
+      "sources": {
+        "site": "https://umibenchmark.github.io/"
+      },
+      "last_checked": "2026-09-04"
     },
     {
       "id": "ustc",

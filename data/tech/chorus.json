@@ -1,0 +1,37 @@
+{
+  "id": "chorus",
+  "name": "CHORUS",
+  "summary": "CHORUS adapts one VLA backbone to control teams of heterogeneous robots. At inference each robot runs its own independent copy of the policy, conditioned only on its own observations and a prompt identifying which robot it is — there is no central coordinator and no inter-robot communication. Coordination emerges because each copy has learned what its teammates tend to do and can read their behaviour from its own camera. On real tasks including mobile tape measurement, library book handovers and laundry basket lifting it improves 64 percentage points over decentralized models trained from scratch, improves reactivity to teammate behaviour by 40 points, and beats centralized baselines.",
+  "innovation": [
+    "Multi-robot coordination as a property of a shared policy rather than of a communication protocol or a central planner.",
+    "Robot identity supplied as a prompt, so one set of weights covers a heterogeneous team."
+  ],
+  "matters": [
+    "Beating centralized baselines without any communication is the surprising result — it suggests team behaviour can be baked into weights rather than engineered at runtime."
+  ],
+  "limits": [
+    "Three task families, all with small teams; scaling behaviour is unknown.",
+    "Code and weight availability not confirmed at time of writing."
+  ],
+  "lineage": "Cross-embodiment VLA training in the RT-X line, pushed from one robot at a time to several at once.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2606.12352",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://chorus-model.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=CHORUS:+Decentralized+Multi-Embodiment+Collaboration+with+One+VLA+Policy+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "eb136f24c5db5964"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "axis-sim",
+  "name": "Axis Sim Dataset V1",
+  "summary": "Axis Sim Dataset V1 is over 50,000 human-teleoperated simulation trajectories across 207 manipulation tasks and more than 60,000 scene variants on a simulated Franka Research 3 — pick-and-place, stacking, pouring, tool use and articulated-object manipulation. The interesting part is the accompanying claim, which cuts against the field's habit of filtering hard for near-optimal expert demonstrations: Axis argues quality lives at the distribution level rather than in individual trajectories, and reports continual pretraining lifting LIBERO-Plus success from 83.9% to 88.8%, beating volume-matched baselines and not saturating as data scales. Dataset, training code and benchmarks are public, and it is the most downloaded open Franka simulation corpus on Hugging Face.",
+  "innovation": [
+    "Argues and tests a distribution-level definition of data quality, against the prevailing filter-for-expert-demonstrations practice.",
+    "Teleoperated rather than scripted simulation data, which keeps human variability that synthetic generation removes."
+  ],
+  "matters": [
+    "If quality really is distributional, the expensive curation pipelines most groups run are optimising the wrong object."
+  ],
+  "limits": [
+    "Simulation only, one arm, one gripper — LIBERO-Plus gains need not survive contact with real hardware.",
+    "Announced by press release alongside a funding round; no paper, and the scaling claim rests on a single benchmark."
+  ],
+  "lineage": "MimicGen and RoboCasa's synthetic scaling, but collected by teleoperation and argued from distribution coverage.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://huggingface.co/axis-robotics",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Axis+Sim+Dataset+V1+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "7d6166efc11f8b03"
+}

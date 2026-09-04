@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated": "2026-08-31",
-  "last_changed": "2026-08-31",
+  "generated": "2026-09-04",
+  "last_changed": "2026-09-04",
   "counts": {
-    "technologies": 123,
-    "labs": 48,
+    "technologies": 135,
+    "labs": 54,
     "categories": 11
   },
   "categories": [
@@ -87,6 +87,37 @@
     }
   ],
   "technologies": [
+    {
+      "id": "axis-sim",
+      "name": "Axis Sim Dataset V1",
+      "full_name": "Axis Sim Dataset V1",
+      "cat": "data",
+      "year": 2026,
+      "month": 9,
+      "orgs": [
+        "axis-robotics"
+      ],
+      "influences": [
+        "mimicgen",
+        "robocasa",
+        "open-x-embodiment"
+      ],
+      "license": "open",
+      "tags": [
+        "simulation data",
+        "Franka",
+        "continual pretraining",
+        "data curation"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "50k teleoperated sim trajectories released on the argument that data quality is a property of the distribution, not the trajectory.",
+      "code": "https://huggingface.co/axis-robotics",
+      "parents": [],
+      "detailPath": "data/tech/axis-sim.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
     {
       "id": "gen-15",
       "name": "GEN-1.5",
@@ -211,6 +242,36 @@
       "updated": "2026-08-31"
     },
     {
+      "id": "lingbot-vla-2",
+      "name": "LingBot-VLA 2.0",
+      "full_name": "LingBot-VLA 2.0",
+      "cat": "vla",
+      "year": 2026,
+      "month": 7,
+      "orgs": [
+        "robbyant"
+      ],
+      "influences": [
+        "fast-tokenizer",
+        "rt-x"
+      ],
+      "license": "open",
+      "tags": [
+        "cross-embodiment",
+        "MoE",
+        "canonical action space",
+        "Apache-2.0"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "One 55-dimensional action space for arms, hands and mobile bases — Apache-2.0, weights and data recipe included.",
+      "code": "https://huggingface.co/Robbyant",
+      "parents": [],
+      "detailPath": "data/tech/lingbot-vla-2.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
       "id": "robodojo",
       "name": "RoboDojo",
       "full_name": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
@@ -242,6 +303,228 @@
       "detailPath": "data/tech/robodojo.json",
       "added": "2026-08-31",
       "updated": "2026-08-31"
+    },
+    {
+      "id": "roboworld",
+      "name": "RoboWorld",
+      "full_name": "RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation",
+      "cat": "bench",
+      "year": 2026,
+      "month": 7,
+      "orgs": [
+        "kaist"
+      ],
+      "influences": [
+        "dreamzero",
+        "cosmos",
+        "roboarena"
+      ],
+      "license": "open",
+      "tags": [
+        "neural simulator",
+        "policy evaluation",
+        "video world model"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Evaluate a policy inside a video world model, and get r = 0.989 against the real robot.",
+      "paper": "https://arxiv.org/abs/2607.01060",
+      "parents": [],
+      "detailPath": "data/tech/roboworld.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "chorus",
+      "name": "CHORUS",
+      "full_name": "CHORUS: Decentralized Multi-Embodiment Collaboration with One VLA Policy",
+      "cat": "vla",
+      "year": 2026,
+      "month": 6,
+      "orgs": [
+        "stanford-iris"
+      ],
+      "influences": [
+        "rt-x",
+        "openvla"
+      ],
+      "license": "closed",
+      "tags": [
+        "multi-robot",
+        "decentralized",
+        "cross-embodiment",
+        "collaboration"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Robots that cooperate without talking: same weights on every robot, told only which robot it is.",
+      "paper": "https://arxiv.org/abs/2606.12352",
+      "site": "https://chorus-model.github.io/",
+      "parents": [],
+      "detailPath": "data/tech/chorus.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "umi-bench",
+      "name": "UMI-Bench 1.0",
+      "full_name": "UMI-Bench 1.0: An Open and Reproducible Real-World Benchmark for Tabletop Robotic Manipulation with UMI Data",
+      "cat": "bench",
+      "year": 2026,
+      "month": 6,
+      "orgs": [
+        "soochow-u"
+      ],
+      "influences": [
+        "umi",
+        "roboarena"
+      ],
+      "license": "open",
+      "tags": [
+        "real-robot evaluation",
+        "reproducibility",
+        "UMI",
+        "tabletop"
+      ],
+      "impact": 2,
+      "confidence": "high",
+      "tagline": "Standard protocol for the one thing UMI papers never agree on: how the policy was actually tested.",
+      "paper": "https://arxiv.org/abs/2606.10382",
+      "site": "https://umibenchmark.github.io/",
+      "parents": [],
+      "detailPath": "data/tech/umi-bench.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "weaver",
+      "name": "WEAVER",
+      "full_name": "WEAVER, Better, Faster, Longer: An Effective World Model for Robotic Manipulation",
+      "cat": "world-model",
+      "year": 2026,
+      "month": 6,
+      "orgs": [
+        "cmu-ri"
+      ],
+      "parents": [
+        "dreamerv3"
+      ],
+      "influences": [
+        "pi-05",
+        "diffusion-policy"
+      ],
+      "license": "open",
+      "tags": [
+        "policy evaluation",
+        "test-time planning",
+        "flow matching",
+        "multi-view"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "A world model good enough to grade a policy without running the robot — and then to improve it.",
+      "paper": "https://arxiv.org/abs/2606.13672",
+      "code": "https://github.com/arnavkj1995/WEAVER",
+      "site": "https://arnavkj1995.github.io/WEAVER/",
+      "detailPath": "data/tech/weaver.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "yubi",
+      "name": "YUBI",
+      "full_name": "YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale",
+      "cat": "data",
+      "year": 2026,
+      "month": 6,
+      "orgs": [
+        "airoa"
+      ],
+      "parents": [
+        "umi"
+      ],
+      "influences": [
+        "open-x-embodiment",
+        "mobile-aloha"
+      ],
+      "license": "open",
+      "tags": [
+        "data collection",
+        "bimanual",
+        "open hardware",
+        "8.4k hours"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "A gripper your fingers drive directly, and the 8,434-hour bimanual corpus collected with it.",
+      "paper": "https://arxiv.org/abs/2606.10244",
+      "code": "https://github.com/Toyota/yubi-hw",
+      "site": "https://yubi.airoa.io/",
+      "detailPath": "data/tech/yubi.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "expo-ft",
+      "name": "EXPO-FT",
+      "full_name": "EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models",
+      "cat": "rl",
+      "year": 2026,
+      "month": 5,
+      "orgs": [
+        "stanford-iris"
+      ],
+      "influences": [
+        "rlpd",
+        "hil-serl"
+      ],
+      "license": "closed",
+      "tags": [
+        "RL finetuning",
+        "sample efficiency",
+        "VLA post-training"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "RL post-training for VLAs at a sample budget a real robot can actually pay.",
+      "paper": "https://arxiv.org/abs/2605.25477",
+      "parents": [],
+      "detailPath": "data/tech/expo-ft.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "molmoact2",
+      "name": "MolmoAct2",
+      "full_name": "MolmoAct2: Action Reasoning Models for Real-world Deployment",
+      "cat": "vla",
+      "year": 2026,
+      "month": 5,
+      "orgs": [
+        "ai2",
+        "uw"
+      ],
+      "parents": [
+        "molmo"
+      ],
+      "influences": [
+        "fast-tokenizer",
+        "ecot"
+      ],
+      "license": "open",
+      "tags": [
+        "action reasoning",
+        "open weights",
+        "bimanual data",
+        "action tokenizer"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Fully open down to the training data, and it ships the tokenizer and the bimanual corpus with the model.",
+      "paper": "https://arxiv.org/abs/2605.02881",
+      "detailPath": "data/tech/molmoact2.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
     },
     {
       "id": "agibot-go2",
@@ -497,6 +780,36 @@
       "updated": "2026-08-31"
     },
     {
+      "id": "isaac-lab-arena",
+      "name": "Isaac Lab-Arena",
+      "full_name": "NVIDIA Isaac Lab-Arena",
+      "cat": "bench",
+      "year": 2026,
+      "month": 1,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "influences": [
+        "isaac-gym",
+        "robocasa",
+        "roboarena"
+      ],
+      "license": "open",
+      "tags": [
+        "policy evaluation",
+        "simulation harness",
+        "open source"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "NVIDIA's answer to 'how do I evaluate this policy', shipped as open infrastructure next to the models.",
+      "site": "https://developer.nvidia.com/isaac/lab",
+      "parents": [],
+      "detailPath": "data/tech/isaac-lab-arena.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
+    },
+    {
       "id": "groot-n2",
       "name": "GR00T N2",
       "full_name": "NVIDIA Isaac GR00T N2",
@@ -524,7 +837,41 @@
       "site": "https://developer.nvidia.com/isaac/gr00t",
       "detailPath": "data/tech/groot-n2.json",
       "added": "2026-08-31",
-      "updated": "2026-08-31"
+      "updated": "2026-09-04"
+    },
+    {
+      "id": "wholebody-vla",
+      "name": "WholeBodyVLA",
+      "full_name": "WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control",
+      "cat": "vla",
+      "year": 2025,
+      "month": 12,
+      "orgs": [
+        "opendrivelab",
+        "agibot"
+      ],
+      "parents": [
+        "lapa"
+      ],
+      "influences": [
+        "agibot-world",
+        "human-policy"
+      ],
+      "license": "open",
+      "tags": [
+        "latent actions",
+        "loco-manipulation",
+        "whole-body",
+        "ICLR 2026"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "Learn one latent action space covering both walking and manipulating, from egocentric video with no action labels.",
+      "paper": "https://arxiv.org/abs/2512.11047",
+      "code": "https://github.com/OpenDriveLab/WholebodyVLA",
+      "detailPath": "data/tech/wholebody-vla.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
     },
     {
       "id": "pi-06",
@@ -555,6 +902,41 @@
       "detailPath": "data/tech/pi-06.json",
       "added": "2026-08-25",
       "updated": "2026-08-25"
+    },
+    {
+      "id": "umi-on-air",
+      "name": "UMI-on-Air",
+      "full_name": "UMI-on-Air: Embodiment-Aware Guidance for Embodiment-Agnostic Visuomotor Policies",
+      "cat": "il",
+      "year": 2025,
+      "month": 10,
+      "orgs": [
+        "cmu-ri",
+        "stanford-realab"
+      ],
+      "parents": [
+        "umi",
+        "diffusion-policy"
+      ],
+      "influences": [
+        "dp3"
+      ],
+      "license": "open",
+      "tags": [
+        "embodiment transfer",
+        "classifier guidance",
+        "aerial manipulation",
+        "MPC"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Steer a handheld-collected diffusion policy with the robot's own controller cost, and it flies.",
+      "paper": "https://arxiv.org/abs/2510.02614",
+      "code": "https://github.com/LeCAR-Lab/UMI-on-Air",
+      "site": "https://umi-on-air.github.io/",
+      "detailPath": "data/tech/umi-on-air.json",
+      "added": "2026-09-04",
+      "updated": "2026-09-04"
     },
     {
       "id": "dreamer4",
@@ -1109,7 +1491,7 @@
       "influences": [],
       "detailPath": "data/tech/cosmos.json",
       "added": "2026-08-25",
-      "updated": "2026-08-25"
+      "updated": "2026-09-04"
     },
     {
       "id": "spatialvla",

@@ -1,7 +1,7 @@
 # Keeping RobotEvolve current
 
 The field moves fast enough that a static list rots in weeks. `data/labs.json` exists to
-make refreshing it mechanical: it is a watchlist of the ~48 groups that actually produce
+make refreshing it mechanical: it is a watchlist of the ~54 groups that actually produce
 this work, each with a priority and the exact URLs to check.
 
 ## Priorities
@@ -9,8 +9,8 @@ this work, each with a priority and the exact URLs to check.
 | Priority | Cadence | Who |
 | --- | --- | --- |
 | **1** | weekly | Google DeepMind, Physical Intelligence, NVIDIA GEAR, Berkeley RAIL, Stanford IRIS/SVL/REALab, Figure, TRI, Hugging Face, CMU RI, MIT CSAIL, UT Austin RPL |
-| **2** | monthly | Meta FAIR, OpenAI, ByteDance Seed, Skild, Spirit AI, 1X, Dyna, Generalist, Boston Dynamics, RAI, Amazon FAR, AI2, AgiBot, Shanghai AI Lab, Columbia, UCSD, NYU, Berkeley AUTOLab, UW, Tsinghua, Tesla |
-| **3** | quarterly | Microsoft Research, Unitree, Galbot, X Square, Apptronik, HKU MMLab, USTC, PKU, Imperial, Freiburg, ETH RSL, TU Darmstadt |
+| **2** | monthly | Meta FAIR, OpenAI, ByteDance Seed, Skild, Spirit AI, Robbyant, OpenDriveLab, 1X, Dyna, Generalist, Boston Dynamics, RAI, Amazon FAR, AI2, AgiBot, Shanghai AI Lab, Columbia, UCSD, NYU, Berkeley AUTOLab, UW, Tsinghua, Tesla |
+| **3** | quarterly | Microsoft Research, Unitree, Galbot, X Square, Apptronik, HKU MMLab, USTC, AIRoA, Axis Robotics, KAIST, Soochow, PKU, Imperial, Freiburg, ETH RSL, TU Darmstadt |
 
 Priority is about *rate of output that changes the map*, not importance. Move a lab up when
 it starts shipping, down when it goes quiet — it is just a number in the JSON.

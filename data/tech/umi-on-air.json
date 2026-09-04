@@ -1,0 +1,42 @@
+{
+  "id": "umi-on-air",
+  "name": "UMI-on-Air",
+  "summary": "UMI data is deliberately embodiment-agnostic — a human waves a handheld gripper around — which is exactly why policies trained on it emit actions a constrained robot cannot execute. UMI-on-Air's Embodiment-Aware Diffusion Policy fixes this at inference rather than by retraining: at each denoising step it adds the gradient of a low-level MPC's tracking cost to the diffusion model's output, steering sampling toward trajectories the specific embodiment can actually track, in the same way classifier guidance steers image diffusion. The demonstration is deliberately extreme — an aerial manipulator, where dynamics constraints are severe — with improved success, efficiency and disturbance robustness on long-horizon high-precision tasks versus unguided diffusion.",
+  "innovation": [
+    "Classifier-style guidance where the guide is a model-predictive controller's cost, coupling a high-level policy to a low-level controller with no retraining.",
+    "Turns embodiment mismatch into an inference-time correction rather than a data or fine-tuning problem."
+  ],
+  "matters": [
+    "The obvious objection to handheld data collection is that the resulting policy ignores the robot's dynamics. This is a general-purpose answer, demonstrated on the hardest embodiment available."
+  ],
+  "limits": [
+    "Needs a differentiable-enough controller cost for the target embodiment; not every platform has one.",
+    "Guidance costs extra computation inside an already expensive denoising loop."
+  ],
+  "lineage": "UMI's handheld data and Diffusion Policy's denoising loop, joined by guidance from the target robot's controller.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2510.02614",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/LeCAR-Lab/UMI-on-Air",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://umi-on-air.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=UMI-on-Air:+Embodiment-Aware+Guidance+for+Embodiment-Agnostic+Visuomotor+Policies+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "4901a9765b4d45ba"
+}

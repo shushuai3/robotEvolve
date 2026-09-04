@@ -1,0 +1,44 @@
+{
+  "id": "weaver",
+  "name": "WEAVER",
+  "summary": "WEAVER is a multi-view world model trained with a flow-matching loss to predict both future latents and reward, built against three requirements its authors argue prior world models never satisfied simultaneously: fidelity to real physics, consistency across long rollouts, and inference fast enough for control. It is evaluated on all three uses. As an evaluator its predicted success correlates with real-world success at rho = 0.870, so it can rank policies without robot time. As a trainer it lifts real-world success by 38% on top of the pi-0.5 foundation model. As a planner it adds 14% at test time while running 5-10x faster than prior world models.",
+  "innovation": [
+    "Predicts reward alongside latents, which is what turns a world model into a usable policy evaluator.",
+    "Multi-view latent rollouts consistent enough to stay useful over long horizons.",
+    "Fast enough that test-time planning is practical rather than a paper result."
+  ],
+  "matters": [
+    "Real-robot evaluation is the field's bottleneck; a world model correlating at 0.870 with real success is a credible way to buy some of it back cheaply.",
+    "Improving pi-0.5 by 38% shows world models paying off as training machinery, not just as demos of video prediction."
+  ],
+  "limits": [
+    "Correlation is measured over the policies and tasks tested and need not hold for very different ones.",
+    "Still a learned simulator: a policy tuned against it can learn to exploit its errors."
+  ],
+  "lineage": "DreamerV3's latent-plus-reward prediction, rebuilt multi-view with flow matching and made fast enough to use.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2606.13672",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/arnavkj1995/WEAVER",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://arnavkj1995.github.io/WEAVER/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=WEAVER,+Better,+Faster,+Longer:+An+Effective+World+Model+for+Robotic+Manipulation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "9fbf27ed1ef56e9a"
+}

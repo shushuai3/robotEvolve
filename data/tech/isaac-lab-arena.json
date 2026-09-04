@@ -1,0 +1,31 @@
+{
+  "id": "isaac-lab-arena",
+  "name": "Isaac Lab-Arena",
+  "summary": "Isaac Lab-Arena is an open-source framework for robot policy evaluation and benchmarking, released in NVIDIA's January 2026 physical-AI drop alongside Cosmos Transfer 2.5, Cosmos Predict 2.5, Cosmos Reason 2 and Isaac GR00T N1.6. It gives the Isaac Lab simulation stack a standard evaluation layer, so policies can be scored under fixed protocols rather than each group inventing its own harness. Its significance is positional as much as technical: the vendor supplying the simulator, the world models and the humanoid foundation model now also supplies the yardstick they are measured against.",
+  "innovation": [
+    "Standardized evaluation attached directly to the simulator most sim-to-real work already runs on."
+  ],
+  "matters": [
+    "Evaluation infrastructure shipped by the same vendor as the models is convenient and a conflict of interest at once — worth tracking against independent efforts like RoboArena and RoboDojo."
+  ],
+  "limits": [
+    "Simulation-based, and tied to the Isaac Lab stack.",
+    "Documented through product announcements rather than a paper; protocol details are thin."
+  ],
+  "lineage": "Isaac Gym's simulation lineage extended with an evaluation and benchmarking layer.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://developer.nvidia.com/isaac/lab",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=NVIDIA+Isaac+Lab-Arena+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "b330adc95448b674"
+}

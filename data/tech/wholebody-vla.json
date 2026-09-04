@@ -1,0 +1,37 @@
+{
+  "id": "wholebody-vla",
+  "name": "WholeBodyVLA",
+  "summary": "WholeBodyVLA argues that splitting a humanoid into a manipulation policy and a locomotion controller is what caps task range, and that the fix is a single latent action space spanning both. A Latent Action Model learns unified latent actions from action-free egocentric video of manipulation and manipulation-aware locomotion, so ordinary human video supervises whole-body behaviour without any action annotation. A loco-manipulation-oriented RL policy then decodes those latents into stable whole-body coordination under disturbance. Demonstrated behaviours include bimanual grasping, side-stepping toward objects, squatting to place items, lifting boxes and pushing loads over 50 kg. Published at ICLR 2026 by Fudan, OpenDriveLab at HKU, AgiBot and SII.",
+  "innovation": [
+    "One latent action space covering locomotion and manipulation, rather than two policies with an interface between them.",
+    "Action-free egocentric video as supervision for whole-body behaviour, not just for arm motion."
+  ],
+  "matters": [
+    "The open, academic counterpart to Helix 02 and Gemini Robotics 2 — the same whole-body thesis, with the method and code published."
+  ],
+  "limits": [
+    "Latent actions decoded through an RL policy inherit that policy's platform assumptions; transfer to other humanoids is untested.",
+    "Load and disturbance demonstrations are impressive but reported on a small task set."
+  ],
+  "lineage": "LAPA's latent actions from action-free video, extended from arms to the whole body.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2512.11047",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/OpenDriveLab/WholebodyVLA",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=WholeBodyVLA:+Towards+Unified+Latent+VLA+for+Whole-Body+Loco-Manipulation+Control+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "9830b760f6cedc0b"
+}

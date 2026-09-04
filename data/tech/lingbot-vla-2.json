@@ -1,0 +1,33 @@
+{
+  "id": "lingbot-vla-2",
+  "name": "LingBot-VLA 2.0",
+  "summary": "LingBot-VLA 2.0 is Ant Group's open cross-embodiment policy, a 6B checkpoint on a Qwen3-VL-4B backbone with a Mixture-of-Experts action expert. Its organising idea is a unified 55-dimensional canonical action space into which arms, grippers, dexterous hands and mobile bases are all projected, so one model controls all of them without per-embodiment heads. MoE routing uses the auxiliary-loss-free strategy from DeepSeek-V3, and training adds dual-query distillation supervised by two teachers, LingBot-Depth and DINO-Video, to make the policy future-aware. It was trained on roughly 60,000 hours spanning 20 robot configurations, reports 66.2/34.4 progress/success on the GM-100 generalist benchmark on AgileX Cobot Magic, and is released under Apache-2.0 with weights, code and a technical report.",
+  "innovation": [
+    "A single canonical action space wide enough to absorb grippers, dexterous hands and mobile bases, replacing per-embodiment action heads.",
+    "MoE action expert with auxiliary-loss-free routing imported from language-model practice.",
+    "Dual-query distillation from depth and video teachers to inject future-awareness without a separate world model."
+  ],
+  "matters": [
+    "The most permissively licensed cross-embodiment VLA at this scale; LeRobot 0.6 carries it as a stock policy, which is how open models become defaults."
+  ],
+  "limits": [
+    "GM-100 success rate of 34.4 shows how far generalist policies still are from reliability, whatever the progress score says.",
+    "60,000 hours across 20 configurations is heavily weighted toward the platforms Ant has access to."
+  ],
+  "lineage": "Cross-embodiment training in the RT-X tradition, rebuilt on an open VLM backbone with a canonical action space.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://huggingface.co/Robbyant",
+      "kind": "code"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=LingBot-VLA+2.0+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "a32a436acbae1360"
+}

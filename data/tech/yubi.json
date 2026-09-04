@@ -1,0 +1,43 @@
+{
+  "id": "yubi",
+  "name": "YUBI",
+  "summary": "YUBI is a finger-aligned gripper whose jaws are driven by yielding, finger-driven actuation, so the operator's finger motion maps directly onto jaw motion instead of through a trigger or a glove retargeting step. Combined with a separated 6-DoF mechanism it is built to reduce operator fatigue during long bimanual sessions, which is the practical thing that limits corpus size. The released dataset is 8,434 hours across 1.20M episodes and 119 tasks, and policies trained on it transfer across UR, Franka and ELEY platforms. Hardware CAD and BOM, software, and the dataset are all released, by AIRoA with Toyota's Frontier Research Center and AIST.",
+  "innovation": [
+    "Direct finger-to-jaw actuation, removing the retargeting layer between human hand and gripper that UMI-style rigs impose.",
+    "Ergonomics treated as the scaling variable — fatigue is what caps hours collected, so the mechanism targets fatigue.",
+    "Released as an integrated package: hardware design, software and corpus together."
+  ],
+  "matters": [
+    "At 8,434 hours it is among the largest bimanual manipulation corpora in existence, and it is open, which very few at that scale are."
+  ],
+  "limits": [
+    "A two-finger interface, so it does not reach the multi-finger dexterity that humanoid hands target.",
+    "Cross-platform transfer is shown on three arms, all fairly conventional."
+  ],
+  "lineage": "UMI's handheld in-the-wild collection premise, rebuilt around finger-driven actuation and scaled to a bimanual corpus.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2606.10244",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/Toyota/yubi-hw",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://yubi.airoa.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=YUBI:+Yielding+Universal+Bidigital+Interface+for+Bimanual+Dexterous+Manipulation+at+Scale+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "bb7b2e7c68e0ebca"
+}

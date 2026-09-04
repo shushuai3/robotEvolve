@@ -1,16 +1,19 @@
 {
   "id": "cosmos",
   "name": "NVIDIA Cosmos",
-  "summary": "Cosmos packages diffusion and autoregressive world foundation models trained on roughly 20 million hours of driving and robotics video, plus tokenizers and a curation pipeline, under a permissive license. Its purpose is explicitly industrial: generate photorealistic, physically plausible synthetic trajectories to augment scarce real robot data, and provide a policy evaluator that does not require hardware.",
+  "summary": "Cosmos packages diffusion and autoregressive world foundation models trained on roughly 20 million hours of driving and robotics video, plus tokenizers and a curation pipeline, under a permissive license. Its purpose is explicitly industrial: generate photorealistic, physically plausible synthetic trajectories to augment scarce real robot data, and provide a policy evaluator that does not require hardware. The line has since split by function: a January 2026 release shipped Cosmos Transfer 2.5 and Cosmos Predict 2.5 for synthetic data generation and prediction, and Cosmos Reason 2, an open reasoning VLM for embodied understanding, alongside Isaac GR00T N1.6 and the Isaac Lab-Arena evaluation framework. A Cosmos 3 generation has been announced for LeRobot.",
   "innovation": [
     "Open-weight world foundation models specifically targeted at physical AI rather than entertainment video.",
-    "Positioned the world model as a synthetic-data factory and evaluation environment for policies."
+    "Positioned the world model as a synthetic-data factory and evaluation environment for policies.",
+    "Split into transfer, prediction and reasoning variants, so the world model stopped being one monolithic artifact."
   ],
   "matters": [
-    "Made world-model-generated training data a mainstream part of the robot-learning pipeline."
+    "Made world-model-generated training data a mainstream part of the robot-learning pipeline.",
+    "The substrate NVIDIA's own policy work now sits on, from GR00T through to the world-action models."
   ],
   "limits": [
-    "Visual plausibility outruns physical accuracy, especially for contact and deformation."
+    "Visual plausibility outruns physical accuracy, especially for contact and deformation.",
+    "Version cadence is fast and vendor-announced; the 2.5 and Reason 2 releases are documented by product post rather than paper."
   ],
   "lineage": "Video-generation world models industrialized as a data and evaluation platform.",
   "links": [
@@ -31,6 +34,6 @@
     }
   ],
   "added": "2026-08-25",
-  "updated": "2026-08-25",
-  "content_hash": "dbab61469a30bf30"
+  "updated": "2026-09-04",
+  "content_hash": "e61a92dcc1d4b924"
 }

@@ -1,0 +1,32 @@
+{
+  "id": "roboworld",
+  "name": "RoboWorld",
+  "summary": "RoboWorld uses a video world model as the evaluation environment itself, addressing the two things that normally disqualify that idea: world-model error makes the verdict unreliable, and generation is too slow to run many rollouts. It pairs a fast autoregressive video world model with vision-language scoring that judges task progress from generated rollouts, and introduces step forcing, which combines anchored and one-step self-forwarded contexts to cut train-test mismatch while preserving action-observation dynamics. Agreement with real-robot evaluation reaches Pearson r = 0.989 and Spearman rho = 0.970 across tasks and environments.",
+  "innovation": [
+    "Step forcing, which keeps long generated rollouts on distribution without destroying the action-conditioning that makes them evaluations rather than videos.",
+    "Vision-language progress scoring, so the judge does not need a hand-written success detector per task."
+  ],
+  "matters": [
+    "The strongest correlation with real-robot results yet claimed for a purely generative evaluator, and it needs no simulator assets at all — the counterpoint to MolmoSpaces' 230k hand-built environments."
+  ],
+  "limits": [
+    "A learned evaluator can be gamed by a policy optimized against it, in the way learned reward models are.",
+    "Correlation is over the policy set tested; unusual policies may fall outside the world model's competence."
+  ],
+  "lineage": "Video world models in the DreamZero and Cosmos line, repurposed from control to evaluation.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2607.01060",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=RoboWorld:+Fast+and+Reliable+Neural+Simulators+for+Generalist+Robot+Policy+Evaluation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "10b2de2ec888f831"
+}

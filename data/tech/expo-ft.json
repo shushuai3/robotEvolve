@@ -1,0 +1,31 @@
+{
+  "id": "expo-ft",
+  "name": "EXPO-FT",
+  "summary": "Imitation-pretrained VLAs plateau at whatever their demonstrations contain, and the standard remedy — reinforcement learning finetuning — normally costs more robot interaction than anyone has. EXPO-FT targets that sample budget directly, adapting sample-efficient RL machinery to finetuning large vision-language-action policies rather than small task-specific ones. It comes out of Stanford IRIS with Dorsa Sadigh and Chelsea Finn, and lands in the same problem area as Physical Intelligence's RL-token work, which arrived a month earlier from the opposite direction.",
+  "innovation": [
+    "Treats the sample budget, rather than the RL objective, as the binding constraint for VLA post-training."
+  ],
+  "matters": [
+    "Two independent groups converging on cheap online RL over a frozen-ish VLA within a month suggests this is the field's current consensus next step after imitation."
+  ],
+  "limits": [
+    "Summarized here from the paper listing rather than a full read; method details and results are not verified. Confirm before citing.",
+    "Code and weight availability unconfirmed."
+  ],
+  "lineage": "Sample-efficient off-policy RL in the RLPD and HIL-SERL tradition, retargeted at VLA-scale policies.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2605.25477",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=EXPO-FT:+Sample-Efficient+Reinforcement+Learning+Finetuning+for+Vision-Language-Action+Models+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "1eef5efedff4eeb9"
+}

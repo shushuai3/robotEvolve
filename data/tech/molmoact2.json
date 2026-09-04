@@ -1,0 +1,33 @@
+{
+  "id": "molmoact2",
+  "name": "MolmoAct2",
+  "summary": "MolmoAct2 is an open-weight action reasoning model built on MolmoER, a vision-language backbone trained on 3.3M embodied reasoning samples. Around it AI2 released the pieces a VLA normally keeps private: three datasets including what they describe as the largest open bimanual corpus to date at 720 hours of teleoperated trajectories, and OpenFAST, an open-weight action tokenizer trained across multiple robot platforms. MolmoThink adds adaptive-depth reasoning that cuts latency by thinking less on easy steps while holding performance. Weights, training code and the complete training data are all released.",
+  "innovation": [
+    "An open counterpart to the closed FAST tokenizer, trained across platforms and released with weights.",
+    "Adaptive-depth reasoning that spends inference compute only where the step is hard.",
+    "Full-stack openness — weights, code and training data — at a scale usually reserved for closed releases."
+  ],
+  "matters": [
+    "The most completely reproducible VLA release of the year, and the largest open bimanual dataset, which is the format most dexterous work now needs."
+  ],
+  "limits": [
+    "Reasoning-model latency remains high relative to plain action-chunked policies even with adaptive depth.",
+    "Bimanual corpus is teleoperated on specific platforms, so it carries their kinematics."
+  ],
+  "lineage": "Molmo's grounding and pointing work turned into an action model, with the tokenizer and data opened alongside.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2605.02881",
+      "kind": "paper"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=MolmoAct2:+Action+Reasoning+Models+for+Real-world+Deployment+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-04",
+  "updated": "2026-09-04",
+  "content_hash": "51e3778a414775a9"
+}
