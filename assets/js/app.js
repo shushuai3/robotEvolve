@@ -250,17 +250,24 @@
         tip.style.opacity = 1;
       }
     });
+    // measure first: the layout shapes itself to the canvas, so it needs to know
+    // the canvas before the nodes are placed
+    graph.resize();
     graph.setData(DB.techs, DB.cats);
+    graph.fit();
     requestAnimationFrame(function () { graph.resize(); graph.fit(); });
-    window.addEventListener('resize', function () { graph.resize(); graph.fit(); });
+
+    var rt = null;
+    window.addEventListener('resize', function () {
+      graph.resize();
+      graph.fit();
+      // reshaping the cluster ring is only worth doing once the drag has settled
+      clearTimeout(rt);
+      rt = setTimeout(function () { graph.reflowIfNeeded(); }, 200);
+    });
 
     $('#g-fit').addEventListener('click', function () { graph.fit(); });
-    $('#g-relayout').addEventListener('click', function () {
-      graph._seedPositions();
-      graph.settle(340);
-      graph.run(70);
-      graph.fit();
-    });
+    $('#g-relayout').addEventListener('click', function () { graph.relayout(); });
     $('#g-edges').addEventListener('click', function () {
       graph.showInfluences = !graph.showInfluences;
       this.setAttribute('aria-pressed', String(graph.showInfluences));
@@ -409,7 +416,9 @@
       s.classList.toggle('active', s.id === 'view-' + v);
     });
     $('#sort-group').style.display = (v === 'graph' || v === 'labs') ? 'none' : '';
-    if (v === 'graph' && graph) { graph.resize(); }
+    // a hidden canvas measures 0, so the graph only learns about a resize that
+    // happened on another tab when it comes back into view
+    if (v === 'graph' && graph) { graph.resize(); graph.reflowIfNeeded(); }
   }
 
   function wire() {

@@ -127,7 +127,11 @@ header {
   padding: 10px 22px; border-bottom: 1px solid var(--line);
   background: var(--bg-2); flex-wrap: wrap; font-size: 12px;
 }
-.fgroup { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.fgroup { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
+/* sized by its chips, not by a share of the row — a growable basis made the
+   group narrower than its contents and wrapped them for no reason */
+.catgroup { flex: 0 1 auto; }
+.chips { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
 .flabel {
   font-family: var(--mono); font-size: 10px; letter-spacing: .12em;
   text-transform: uppercase; color: var(--txt-faint); margin-right: 2px;
@@ -148,6 +152,23 @@ header {
 }
 .chip[aria-pressed="true"] { color: var(--c, var(--accent)); border-color: currentColor; background: color-mix(in srgb, var(--c, var(--accent)) 12%, transparent); }
 .chip[aria-pressed="true"] .dot { box-shadow: 0 0 9px var(--c, var(--accent)); }
+
+/* Eleven domains wrap onto two or three lines well before the phone breakpoint,
+   which pushes the graph down the screen. Below this width the row keeps its
+   label in place and becomes a single swipeable strip instead; the fade at the
+   right edge is the affordance that says it continues. */
+@media (max-width: 900px) {
+  .catgroup { flex: 1 0 100%; }
+  .chips {
+    flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    padding: 2px 22px 2px 0;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 22px), transparent);
+    mask-image: linear-gradient(90deg, #000 calc(100% - 22px), transparent);
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips .chip { flex: 0 0 auto; }
+}
 
 select, .btn {
   background: rgba(8,12,22,.9); border: 1px solid var(--line); color: var(--txt-dim);
@@ -180,7 +201,13 @@ main { flex: 1 1 auto; position: relative; overflow: hidden; }
 
 /* ------------------------------------------------------------- graph view */
 #view-graph { overflow: hidden; }
-#graph-canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+/* touch-action:none hands pan and pinch to the canvas. Without it the browser
+   claims both gestures for the page, and on a phone the graph cannot be zoomed
+   at all — only the document around it. */
+#graph-canvas {
+  display: block; width: 100%; height: 100%; cursor: grab;
+  touch-action: none; -webkit-user-select: none; user-select: none;
+}
 #graph-canvas.dragging { cursor: grabbing; }
 .graph-tools { position: absolute; right: 16px; top: 16px; display: flex; flex-direction: column; gap: 6px; }
 .graph-tools .btn { text-align: center; min-width: 104px; }
@@ -358,6 +385,13 @@ main { flex: 1 1 auto; position: relative; overflow: hidden; }
   .stats { display: none; }
   .grid { grid-template-columns: 1fr; padding: 14px; }
   .tl-year-label { flex-basis: 52px; font-size: 16px; }
-  .filters { padding: 8px 14px; gap: 10px; }
+  .filters { padding: 8px 14px; gap: 8px 12px; }
   header { padding: 12px 14px 0; }
+  /* a column of buttons in the corner covers the part of the map a phone can
+     least spare — move them to one row along the bottom edge */
+  .graph-tools {
+    top: auto; bottom: 10px; left: 10px; right: 10px;
+    flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px;
+  }
+  .graph-tools .btn { min-width: 0; padding: 6px 10px; background: rgba(8,12,22,.94); }
 }
