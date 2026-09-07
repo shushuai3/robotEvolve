@@ -1,0 +1,34 @@
+{
+  "id": "world-labs-r2s2r",
+  "name": "World Labs Real-to-Sim-to-Real",
+  "summary": "World Labs' R2S2R engine reconstructs a physical manipulation task into an interactive simulation that preserves the observations and dynamics the task actually depends on, then multiplies it — systematically varying appearance, object configuration, clutter, physics, robot state and camera viewpoint to turn one recorded task into many reusable training worlds. Policies trained entirely in those worlds, with zero real-world training data, transferred directly to hardware across ALOHA (bimanual box packing, cube handover), YAM (cable manipulation), Flexiv (test-tube transfer), xArm (marker and pencil singulation) and RB-Y1 (power-cord manipulation), running autonomously for up to an hour without failure. Simulated evaluation also predicted real-world performance and surfaced failure conditions. Announced 28 July 2026, a week after World Labs acquired the robotics-simulation startup SceniX.",
+  "innovation": [
+    "Reconstruction targeted at task-relevant dynamics, not just appearance — which is what lets the resulting sim carry contact behaviour rather than only looking right.",
+    "One real recording amplified into a randomized family of worlds, replacing hand-built scene variation.",
+    "Policy- and embodiment-agnostic, demonstrated across five distinct robot platforms."
+  ],
+  "matters": [
+    "Zero-real-data sim-to-real on deformables like cables and power cords is the part the field has repeatedly failed at, and it is demonstrated on five platforms rather than one."
+  ],
+  "limits": [
+    "Company blog only: no paper, no code, no independent reproduction, and the sim-real alignment claim is self-reported.",
+    "Which simulator backends are used is not stated, so the physics assumptions are opaque.",
+    "Autonomy is reported as demonstration runs, not as a measured failure rate over a task distribution."
+  ],
+  "lineage": "Marble's exportable generated scenes pointed at robot training, with domain randomization applied to reconstructions instead of hand-authored assets.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.worldlabs.ai/blog/real-to-sim-to-real",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Building+Worlds+That+Train+Robots+(R2S2R)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-07",
+  "updated": "2026-09-07",
+  "content_hash": "6eff5c49c366b2a1"
+}

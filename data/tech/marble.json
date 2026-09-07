@@ -1,0 +1,32 @@
+{
+  "id": "marble",
+  "name": "Marble",
+  "summary": "Marble turns text, a single image or a video clip into a persistent, navigable 3D environment that can be edited and exported, rather than into a video that exists only as pixels. The distinction is the whole point of World Labs' spatial-intelligence thesis: the output is scene geometry — point clouds and Gaussian splats — so it can be re-rendered from any viewpoint, imported into a simulator and interacted with, instead of being a fixed camera path. It is the first world model commercialised as a general product, and the substrate World Labs' later robotics work is built on.",
+  "innovation": [
+    "Emits persistent 3D geometry rather than video frames, so the generated world survives being looked at from a new angle.",
+    "Made world models a product with an export path into existing 3D and simulation tooling."
+  ],
+  "matters": [
+    "Established the generated-scene-as-asset pattern that the real-to-sim robotics pipeline later depends on."
+  ],
+  "limits": [
+    "Commercial product with no paper or weights; architecture details are not public.",
+    "Scene generation quality is the selling point; physical fidelity of the resulting worlds is not characterised."
+  ],
+  "lineage": "Generative interactive environments in the Genie tradition, redirected from playable video to exportable 3D geometry.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.worldlabs.ai/blog/marble-world-model",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Marble:+A+Multimodal+World+Model+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-07",
+  "updated": "2026-09-07",
+  "content_hash": "eebdd6bbff9658df"
+}

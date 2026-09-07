@@ -1,0 +1,35 @@
+{
+  "id": "atlas",
+  "name": "Atlas",
+  "summary": "Atlas is a multimodal autoregressive diffusion transformer pretrained from scratch on text, images, video, camera poses and 3D data. Its organising idea is that standard multimodal models flatten everything into one- or two-dimensional sequences, which makes spatial tasks unnecessarily hard; Atlas instead encodes inputs into a shared spatial context where each image is grounded at a 3D position, and treats camera geometry as a native input rather than something coaxed out of a text prompt. The same model generates camera-controlled video up to a minute at 1440p, reconstructs scenes from as few as two or three photos into point clouds and Gaussian splats, and simulates space and time together for robot Real-to-Sim workflows over rigid, articulated and deformable objects. World Labs reports 93% human preference over FLUX 3 on camera-controlled generation and 25.3 AbsRel on 3D reconstruction against 28.7 for the next-best baseline, and says each increase in pretraining compute unlocked new capabilities.",
+  "innovation": [
+    "3D-grounded spatial context: inputs are anchored at positions in space rather than flattened into token sequences.",
+    "Camera pose as a native modality, giving geometric rather than linguistic control over viewpoint.",
+    "Generation, reconstruction and simulation unified in one pretrained model instead of three specialised ones."
+  ],
+  "matters": [
+    "The strongest argument yet that the world model a robot needs is 3D and camera-native rather than a video generator — the opposite bet from the video-diffusion world-action models.",
+    "It is the engine behind World Labs' real-to-sim pipeline, which is where the robotics payoff actually lands."
+  ],
+  "limits": [
+    "Early access with select partners; no weights, no code, no paper, and no independent evaluation.",
+    "Reported comparisons are against generative video and reconstruction baselines, not against robot-policy outcomes — its manipulation value is so far argued rather than measured.",
+    "Human-preference win rates are World Labs' own evaluations."
+  ],
+  "lineage": "Marble's 3D scene generation rebuilt as a from-scratch multimodal foundation model with camera geometry as a first-class input.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.worldlabs.ai/blog/atlas",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Atlas:+A+World+Model+for+Spatial+Intelligence+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-07",
+  "updated": "2026-09-07",
+  "content_hash": "3993806d47986946"
+}

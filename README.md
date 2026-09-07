@@ -7,7 +7,7 @@ robot manipulation intelligence — VLA models, world action models, imitation l
 reinforcement learning, world models and dreaming, VLM grounding, representations,
 human/egocentric data, robot datasets, benchmarks and simulators.
 
-**135 technologies · 54 labs and companies · 11 domains · 1989 → 2026**
+**138 technologies · 55 labs and companies · 11 domains · 1989 → 2026**
 
 ---
 
@@ -112,7 +112,7 @@ change to the storage layout can never look like a change to an entry's content.
 
 `updated` is the date this entry's **content** last changed — not the date the site was
 last rebuilt. Those are different, and conflating them makes the field worthless: a naive
-generator stamps today's date on all 135 files on every run, so `updated` ends up meaning
+generator stamps today's date on all 138 files on every run, so `updated` ends up meaning
 "when did I last run the script".
 
 So the tooling hashes each entry's content (index fields plus detail fields, excluding the

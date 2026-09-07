@@ -1,7 +1,7 @@
 # Keeping RobotEvolve current
 
 The field moves fast enough that a static list rots in weeks. `data/labs.json` exists to
-make refreshing it mechanical: it is a watchlist of the ~54 groups that actually produce
+make refreshing it mechanical: it is a watchlist of the ~55 groups that actually produce
 this work, each with a priority and the exact URLs to check.
 
 ## Priorities
@@ -9,7 +9,7 @@ this work, each with a priority and the exact URLs to check.
 | Priority | Cadence | Who |
 | --- | --- | --- |
 | **1** | weekly | Google DeepMind, Physical Intelligence, NVIDIA GEAR, Berkeley RAIL, Stanford IRIS/SVL/REALab, Figure, TRI, Hugging Face, CMU RI, MIT CSAIL, UT Austin RPL |
-| **2** | monthly | Meta FAIR, OpenAI, ByteDance Seed, Skild, Spirit AI, Robbyant, OpenDriveLab, 1X, Dyna, Generalist, Boston Dynamics, RAI, Amazon FAR, AI2, AgiBot, Shanghai AI Lab, Columbia, UCSD, NYU, Berkeley AUTOLab, UW, Tsinghua, Tesla |
+| **2** | monthly | Meta FAIR, OpenAI, World Labs, ByteDance Seed, Skild, Spirit AI, Robbyant, OpenDriveLab, 1X, Dyna, Generalist, Boston Dynamics, RAI, Amazon FAR, AI2, AgiBot, Shanghai AI Lab, Columbia, UCSD, NYU, Berkeley AUTOLab, UW, Tsinghua, Tesla |
 | **3** | quarterly | Microsoft Research, Unitree, Galbot, X Square, Apptronik, HKU MMLab, USTC, AIRoA, Axis Robotics, KAIST, Soochow, PKU, Imperial, Freiburg, ETH RSL, TU Darmstadt |
 
 Priority is about *rate of output that changes the map*, not importance. Move a lab up when
@@ -162,6 +162,12 @@ groups not yet on the watchlist:
 
 When something appears from a group that is not in `labs.json`, add the lab first. The
 watchlist growing is the point.
+
+The recurring trap is the **spin-out**: a professor is on the list as an academic lab while
+the work that moves the map ships from their company. Fei-Fei Li was on it as Stanford SVL
+for months while World Labs shipped Marble, a real-to-sim engine and Atlas — none of which a
+search anchored on the lab's academic keywords will surface. When a name on the watchlist
+also runs a company, both belong on it, cross-referenced in `notes`.
 
 ## Pruning
 

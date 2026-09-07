@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated": "2026-09-04",
+  "generated": "2026-09-07",
   "note": "priority 1 = check weekly, 2 = monthly, 3 = quarterly. Used by tools/update_queue.py to order the update crawl.",
   "labs": [
     {
@@ -180,7 +180,7 @@
         "data",
         "sim"
       ],
-      "notes": "VoxPoser, ReKep, BEHAVIOR benchmark suite. Zero-shot manipulation via foundation-model grounding.",
+      "notes": "VoxPoser, ReKep, BEHAVIOR benchmark suite. Zero-shot manipulation via foundation-model grounding. Note Fei-Fei Li's company World Labs is tracked separately as `world-labs`.",
       "sources": {
         "site": "https://svl.stanford.edu/",
         "github": "https://github.com/StanfordVL"
@@ -637,6 +637,23 @@
       "sources": {
         "site": "https://robotics.cs.washington.edu/"
       }
+    },
+    {
+      "id": "world-labs",
+      "name": "World Labs (Fei-Fei Li)",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "world-model",
+        "sim"
+      ],
+      "notes": "Fei-Fei Li's spatial-intelligence company, distinct from her Stanford lab. Marble, the Atlas omni world model, and — after acquiring SceniX in July 2026 — a real-to-sim-to-real engine that trains manipulation policies with no real-world data.",
+      "sources": {
+        "blog": "https://www.worldlabs.ai/blog",
+        "site": "https://www.worldlabs.ai/"
+      },
+      "last_checked": "2026-09-07"
     },
     {
       "id": "airoa",
