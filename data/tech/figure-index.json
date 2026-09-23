@@ -1,0 +1,36 @@
+{
+  "id": "figure-index",
+  "name": "Index",
+  "summary": "Index is Figure's crowdsourced human-video corpus, taken out of stealth on 25 August 2026 after running for roughly a year as an internal effort. Ordinary people - Figure calls them Creators - record themselves doing everyday tasks on a phone app and are paid for accepted footage; businesses can also hire Creators to film work on site. At announcement Figure reported 264,000 downloads across 108 countries, over 44,000 weekly active users, more than 16 million uploaded videos, roughly 30 minutes of new footage arriving every second, and $15M already paid out, against a stated commitment of over $1B on data and compute across the following twelve months. Diversity is reported per unit of collection rather than in absolute terms: per 1,000 hours, 373 unique tasks, 1,146 unique manipulated objects and 116 unique environments. A five-stage pipeline - automated quality filtering, human fraud review, embedding-based deduplication, quota and cluster rebalancing, then hierarchical caption annotation - sits between upload and training set. Figure says it first tried buying data and found vendors could not meet the throughput, diversity or quality bar. The corpus is proprietary and not released.",
+  "innovation": [
+    "Consumer smartphones and a paid-creator marketplace as the capture rig, which removes the two things that cap every teleoperation programme: hardware cost and the number of sites you can staff.",
+    "Diversity reported and managed per 1,000 hours, with rebalancing quotas in the pipeline - treating distribution, not volume, as the quantity being purchased.",
+    "Explicit adversarial handling: a human fraud-review stage, because paying per upload creates an incentive to game uploads that prior academic corpora never faced."
+  ],
+  "matters": [
+    "Helix 2.5 attributes most of its zero-shot generalization to Index pretraining, which makes this the rare dataset with a published before-and-after on the same architecture.",
+    "If the long tail of manipulation is what generalization needs, a global consumer capture network samples it in a way no lab or vendor programme can."
+  ],
+  "limits": [
+    "Company blog only, all figures self-reported, and the 'largest and most diverse' claim is not independently verified.",
+    "Proprietary: no access, no external audit of the curation pipeline, and no way for anyone else to reproduce results that depend on it.",
+    "Total hours are never stated - only downloads, videos and per-1,000-hour diversity - so the corpus cannot be compared directly against the datasets it claims to exceed.",
+    "Phone video gives no force, tactile or precise joint signal, so what transfers is visual and kinematic prior, not contact behaviour."
+  ],
+  "lineage": "Ego4D's bet that egocentric human video is a foundation-scale resource, rebuilt as a paid commercial supply chain with curation and fraud control instead of an academic collection effort.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.figure.ai/news/introducing-index",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Index:+Building+the+World's+Largest+and+Most+Diverse+Physical+Dataset+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-23",
+  "updated": "2026-09-23",
+  "content_hash": "beb073f3fad544c3"
+}

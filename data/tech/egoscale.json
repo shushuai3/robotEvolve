@@ -1,0 +1,40 @@
+{
+  "id": "egoscale",
+  "name": "EgoScale",
+  "summary": "EgoScale trains a flow-based VLA on over 20,854 hours of action-labelled egocentric human video - more than 20x the largest prior effort - and reports a log-linear scaling law between human data volume and validation loss, arguing that human-to-robot dexterous transfer is fundamentally a scaling phenomenon rather than an architecture problem. The pipeline has three stages: large-scale human pretraining, aligned human-robot mid-training, and task-specific post-training from roughly 100 teleoperated demonstrations. Hand motion is recovered by 3D hand-pose extraction, with MANUS gloves supplying precise motion ground truth for the alignment stage, and a unified human-robot action space is handled by embodiment-specific adapters on a shared trunk. On a 22-DoF robotic hand the method improves average success rate by 54% over baseline, supports one-shot adaptation to new tasks with minimal robot supervision, and transfers to lower-DoF hands, which is the evidence offered that the learned motor prior is embodiment-agnostic. Submitted 18 February 2026 by authors at NVIDIA GEAR, UC Berkeley, UT Austin, Stanford, Georgia Tech and UMD.",
+  "innovation": [
+    "Action labels on human video at a scale where a clean log-linear loss curve appears, turning 'collect more human video' into a forecastable engineering decision rather than a hope.",
+    "A three-stage human-pretrain / human-robot-align / task-post-train recipe that separates the motor prior from the embodiment, so the expensive stage is paid once.",
+    "Embodiment-specific adapters over a shared flow-based trunk, which is what lets one prior serve hands with different degrees of freedom."
+  ],
+  "matters": [
+    "It is the first result to put a scaling law on the human-video axis specifically, and the industrial human-data programmes that followed within six months - Dyna-2 at a million hours, Figure's Index - are arguing the same thesis at larger scale.",
+    "Dexterous multi-fingered manipulation is where teleoperated robot data is most expensive, so it is the setting where substituting human video pays most."
+  ],
+  "limits": [
+    "The headline scaling law is on validation loss; the on-robot evidence is a 54% relative improvement on one 22-DoF hand, not a curve over many platforms.",
+    "Stage-2 alignment depends on MANUS glove capture, so reproducing the pipeline is not simply a matter of scraping more video.",
+    "Code was listed as coming soon on the project page and no official NVIDIA release has been confirmed, so the result is not independently reproduced."
+  ],
+  "lineage": "Takes PH2D and EgoDex's use of action-labelled egocentric human video as robot supervision and asks the scaling question of it, with LAPA's action-free pretraining as the alternative it implicitly argues against.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2602.16710",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://research.nvidia.com/labs/gear/egoscale/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=EgoScale:+Scaling+Dexterous+Manipulation+with+Diverse+Egocentric+Human+Data+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-23",
+  "updated": "2026-09-23",
+  "content_hash": "4cd96298f2120e96"
+}

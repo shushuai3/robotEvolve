@@ -1,0 +1,36 @@
+{
+  "id": "dyna-2",
+  "name": "Dyna-2",
+  "summary": "Announced 10 August 2026, Dyna-2 is a world-action model pretrained entirely on over one million hours of first-person human video - roughly 170 years of waking experience - with no robot data in pretraining at all. The backbone is a mixture of transformers over a video-diffusion trunk: separate DiT layers for video and action, a shallow action transformer joined at early layers, causal masking on video tokens and bidirectional attention on action tokens, text cross-attending to video rather than to action, trained with a flow-matching objective on co-trained video and action losses. Supervision comes from 3D hand-pose extraction giving wrist poses and grasp signals. Dyna reports a scaling law across four orders of magnitude, 1,000 to 1,000,000 hours, on held-out human data and - the stronger claim - a human-to-robot transfer scaling law in which zero-shot performance on 39 robot tasks rises monotonically with human pretraining volume, with an inflection between 10k and 100k hours. On a 14-task benchmark with post-training, mean normalized performance moves 20% to 28% to 45% to 53% as pretraining scale increases. Against Dyna-1 it completes tasks 1.55x more often and wins 65% of head-to-head comparisons; at a customer deployment it passes 87% against Dyna-1's 46%. Bottle-cap untwisting reaches 50% from ten minutes of robot data. Video-only data without action labels still improves robot generalization by 34%, which is the report's argument that video co-training is what carries cross-embodiment transfer.",
+  "innovation": [
+    "Pushes the world-action model formulation to a million hours of human video with zero robot data in pretraining, making the dynamics model the thing that scales rather than the action head.",
+    "Separates the two scaling claims - one on held-out human data, one on downstream robot performance - and shows the second does not plateau, which is the claim that actually licenses more spending.",
+    "Isolates video co-training as the transfer mechanism: action-free video alone buys 34% better robot generalization, so the video loss is not a regularizer but the carrier."
+  ],
+  "matters": [
+    "A no-plateau transfer curve over four orders of magnitude is the strongest public argument yet that human video substitutes for robot data rather than merely supplementing it, and the deployment numbers (46% to 87%) are on a real customer site rather than a benchmark.",
+    "It arrives the same month as Figure's Index and six months after EgoScale, three independent groups converging on the same thesis at different scales."
+  ],
+  "limits": [
+    "Company research report: no paper, no code, no weights, and no independent reproduction of either scaling law.",
+    "Head-mounted video gives no force or tactile channel, so the prior is kinematic; the hardest contact-rich failures are not addressed by adding hours.",
+    "The 39 zero-shot tasks and 14-task benchmark are Dyna's own, and the customer deployment is unnamed, so the comparison set cannot be inspected.",
+    "'One million hours' is unaudited, and the licensing and consent basis for the underlying footage is not described."
+  ],
+  "lineage": "DreamZero's joint video-and-action denoising backbone, retargeted from robot and simulation video onto a million hours of human egocentric footage, with EgoScale's scaling-law framing applied three orders of magnitude further out.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.dyna.co/dyna-2",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Dyna-2:+A+1-Million-Hour+Scaling+Law+for+World-Action+Models+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-23",
+  "updated": "2026-09-23",
+  "content_hash": "8ebdf350d276892d"
+}

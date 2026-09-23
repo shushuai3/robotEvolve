@@ -36,7 +36,7 @@
         "blog": "https://www.figure.ai/news",
         "site": "https://www.figure.ai/"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "google-deepmind",
@@ -56,7 +56,7 @@
         "site": "https://deepmind.google/",
         "github": "https://github.com/google-deepmind"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "huggingface",
@@ -75,7 +75,7 @@
         "site": "https://huggingface.co/lerobot",
         "blog": "https://huggingface.co/blog"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "mit-csail",
@@ -113,7 +113,7 @@
         "site": "https://research.nvidia.com/labs/gear/",
         "github": "https://github.com/NVIDIA/Isaac-GR00T"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "physical-intelligence",
@@ -132,7 +132,7 @@
         "site": "https://www.pi.website/",
         "github": "https://github.com/Physical-Intelligence/openpi"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "stanford-iris",
@@ -149,7 +149,7 @@
         "site": "https://irislab.stanford.edu/",
         "github": "https://github.com/tonyzhaozh"
       },
-      "last_checked": "2026-09-04"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "stanford-realab",
@@ -203,7 +203,7 @@
         "site": "https://www.tri.global/research/robotics",
         "github": "https://github.com/ToyotaResearchInstitute"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-09-23"
     },
     {
       "id": "berkeley-rail",

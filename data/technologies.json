@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generated": "2026-09-07",
-  "last_changed": "2026-09-07",
+  "generated": "2026-09-23",
+  "last_changed": "2026-09-23",
   "counts": {
-    "technologies": 138,
+    "technologies": 142,
     "labs": 55,
     "categories": 11
   },
@@ -152,6 +152,72 @@
       "updated": "2026-09-04"
     },
     {
+      "id": "helix-25",
+      "name": "Helix 2.5",
+      "full_name": "Helix 2.5: Zero-Shot 30-Home Generalization",
+      "cat": "vla",
+      "year": 2026,
+      "month": 9,
+      "orgs": [
+        "figure-ai"
+      ],
+      "parents": [
+        "helix-02",
+        "figure-index"
+      ],
+      "influences": [
+        "egoscale",
+        "dyna-2"
+      ],
+      "license": "closed",
+      "tags": [
+        "zero-shot",
+        "humanoid",
+        "whole-body",
+        "human video pretraining"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Drop the pretrained VLM, pretrain from scratch on human video instead, and zero-shot success in strangers' homes goes from 9% to 56%.",
+      "site": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+      "detailPath": "data/tech/helix-25.json",
+      "added": "2026-09-23",
+      "updated": "2026-09-23"
+    },
+    {
+      "id": "dyna-2",
+      "name": "Dyna-2",
+      "full_name": "Dyna-2: A 1-Million-Hour Scaling Law for World-Action Models",
+      "cat": "wam",
+      "year": 2026,
+      "month": 8,
+      "orgs": [
+        "dyna-robotics"
+      ],
+      "parents": [
+        "dreamzero"
+      ],
+      "influences": [
+        "egoscale",
+        "lapa",
+        "cosmos"
+      ],
+      "license": "closed",
+      "tags": [
+        "world action model",
+        "human video",
+        "scaling law",
+        "cross-embodiment"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "A million hours of head-mounted human video, no robot data in pretraining, and a human-to-robot transfer curve that has not bent yet.",
+      "site": "https://www.dyna.co/dyna-2",
+      "detailPath": "data/tech/dyna-2.json",
+      "added": "2026-09-23",
+      "updated": "2026-09-23"
+    },
+    {
       "id": "gen-15",
       "name": "GEN-1.5",
       "full_name": "GEN-1.5",
@@ -180,6 +246,38 @@
       "detailPath": "data/tech/gen-15.json",
       "added": "2026-08-31",
       "updated": "2026-08-31"
+    },
+    {
+      "id": "figure-index",
+      "name": "Index",
+      "full_name": "Index: Building the World's Largest and Most Diverse Physical Dataset",
+      "cat": "human-data",
+      "year": 2026,
+      "month": 8,
+      "orgs": [
+        "figure-ai"
+      ],
+      "parents": [
+        "ego4d"
+      ],
+      "influences": [
+        "egodex",
+        "egoscale"
+      ],
+      "license": "closed",
+      "tags": [
+        "crowdsourced",
+        "egocentric video",
+        "paid creators",
+        "data pipeline"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "Pay 44,000 strangers across 108 countries to film themselves doing chores, and the robot-data bottleneck becomes a logistics problem.",
+      "site": "https://www.figure.ai/news/introducing-index",
+      "detailPath": "data/tech/figure-index.json",
+      "added": "2026-09-23",
+      "updated": "2026-09-23"
     },
     {
       "id": "skild-s1",
@@ -747,6 +845,41 @@
       "detailPath": "data/tech/dreamzero.json",
       "added": "2026-08-31",
       "updated": "2026-08-31"
+    },
+    {
+      "id": "egoscale",
+      "name": "EgoScale",
+      "full_name": "EgoScale: Scaling Dexterous Manipulation with Diverse Egocentric Human Data",
+      "cat": "human-data",
+      "year": 2026,
+      "month": 2,
+      "orgs": [
+        "nvidia-gear",
+        "ut-austin-rpl"
+      ],
+      "parents": [
+        "human-policy",
+        "egodex"
+      ],
+      "influences": [
+        "lapa",
+        "pi-0"
+      ],
+      "license": "closed",
+      "tags": [
+        "egocentric video",
+        "scaling law",
+        "dexterous hands",
+        "human-to-robot transfer"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "20,854 hours of action-labelled human video, and a log-linear scaling law saying the bottleneck was never robot data.",
+      "paper": "https://arxiv.org/abs/2602.16710",
+      "site": "https://research.nvidia.com/labs/gear/egoscale/",
+      "detailPath": "data/tech/egoscale.json",
+      "added": "2026-09-23",
+      "updated": "2026-09-23"
     },
     {
       "id": "molmospaces",

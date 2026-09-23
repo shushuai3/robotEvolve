@@ -1,0 +1,38 @@
+{
+  "id": "helix-25",
+  "name": "Helix 2.5",
+  "summary": "Announced 17 September 2026, Helix 2.5 is the first Figure model pretrained from random initialization entirely on Index, rather than starting from a pretrained vision-language model as Helix 02 did. One Index-pretrained base was adapted to three long-horizon behaviours - tidying living rooms, folding towels, making beds - spanning locomotion, rigid and deformable manipulation, bimanual coordination and active perception, then run in 30 unseen Bay Area homes with no data collected in any of them, no fine-tuning and no adaptation to the furniture, surfaces or objects involved. Zero-shot success was 56%. Holding task-specific data, architecture, training and evaluation fixed, the same model trained without Index pretraining scored 9%, a 6x gap that Figure says accounts for most of Helix 2.5's zero-shot capability. Figure also reports a human-to-humanoid transfer scaling law: test loss fell predictably with each doubling of Index data, and the largest run's test loss was forecast to four decimal places before it was trained. Helix 2.5 reached Helix 02's success level on a comparable behaviour using half the task-specific adaptation data. Figure is explicit that this does not mean general humanoid robotics is solved.",
+  "innovation": [
+    "Discards the pretrained VLM initialization entirely - the field's default since RT-2 - and shows that at Index's scale human video alone is a better starting point for this class of behaviour.",
+    "An ablation that isolates pretraining rather than reporting a system number: same architecture, same task data, 9% against 56%.",
+    "A forecastable human-to-humanoid loss curve, reported precisely enough to predict the largest run before running it, which turns data purchasing into a planning problem.",
+    "Zero-shot whole-body generalization across 30 genuinely unseen homes, rather than held-out configurations inside a lab."
+  ],
+  "matters": [
+    "Thirty unfamiliar homes with zero in-situ data is the most demanding public generalization test a humanoid has been put through, and the controlled ablation makes it attributable to pretraining rather than to hardware or task engineering.",
+    "If dropping the VLM initialization holds up, it inverts the assumption that internet-scale vision-language pretraining is the necessary substrate for embodied policies."
+  ],
+  "limits": [
+    "Company blog only: no paper, no code, no weights, no independent evaluation, and all numbers self-reported.",
+    "56% is a majority of attempts failing; the per-behaviour breakdown, failure modes and what counts as success are not published.",
+    "All 30 homes are in the Bay Area, so the environment distribution is far narrower than 'unseen homes' suggests.",
+    "Three behaviours, all domestic tidying, on one hardware platform - the scaling law is evidence about this slice, not about manipulation generally.",
+    "Depends entirely on Index, which nobody outside Figure can access, so the central claim cannot be tested elsewhere."
+  ],
+  "lineage": "Helix 02's learned whole-body motion prior, repointed onto Index: the VLM initialization is removed and the human-video corpus becomes the pretraining substrate, in the same move Dyna-2 makes for world-action models.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.figure.ai/news/helix-2-5-zero-shot-30-home-generalization",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Helix+2.5:+Zero-Shot+30-Home+Generalization+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-09-23",
+  "updated": "2026-09-23",
+  "content_hash": "5218006e54bf88db"
+}
