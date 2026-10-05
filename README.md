@@ -82,6 +82,7 @@ change to the storage layout can never look like a change to an entry's content.
   "paper": "https://…",
   "code":  "https://…",
   "tags":  ["7B", "LoRA"],
+  "methods": ["vlm-backbone", "ar-tokens", "behavior-cloning", "teleop", "cross-embodiment"],
   "impact": 5,                   // 1–5, drives node size
   "confidence": "high",          // high | medium — "medium" renders a "verify" chip
   "tagline": "one line…",
@@ -183,6 +184,25 @@ and the distinctions are load-bearing:
   retargeting, human/robot co-training — is its own technical domain. Entries elsewhere in
   the site depend on it: R3M and GR-1 pretrain on Ego4D, and GR00T N1's data pyramid rests
   on latent actions inferred from action-free human video.
+
+### Methods
+
+`cat` says which domain an entry belongs to; `methods` says how it works. Each record
+carries a list of method ids drawn from a fixed vocabulary (defined in
+`tools/seed_methods.py` and mirrored into `technologies.json` under `method_facets` and
+`methods`), grouped into four facets:
+
+| Facet | Methods |
+| --- | --- |
+| **Model & action head** | `ar-tokens` · `diffusion` · `flow-matching` · `dit` · `regression` · `action-chunking` · `vlm-backbone` · `hierarchical` · `reasoning` · `video-model` · `latent-dynamics` · `3d-repr` · `keypoints` · `planning` · `llm-planner` |
+| **Training recipe** | `behavior-cloning` · `co-training` · `latent-actions` · `video-pretraining` · `self-supervised` · `retargeting` · `online-rl` · `offline-rl` · `rl-post-training` · `sim2real` · `imagination` · `human-in-loop` · `learned-reward` · `in-context` · `training-free` |
+| **Training data** | `teleop` · `wearable` · `human-video` · `internet-video` · `web-vl` · `simulation` · `synthetic` · `robot-experience` · `cross-embodiment` |
+| **Evaluation** | `sim-eval` · `real-eval` · `model-eval` |
+
+Unlike `tags`, which are free-form, an unknown method id fails `validate.py`. `methods` is
+excluded from `content_hash`: it is this site's classification of an entry, not a
+description of it, so re-tagging does not advance `updated` or make an unverified entry
+look freshly checked.
 
 ---
 

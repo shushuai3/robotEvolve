@@ -22,7 +22,7 @@ DATA = os.path.join(ROOT, "data")
 TODAY = dt.date.today()
 
 # Kept identical to tools/generate.py — if one changes, change both.
-HASH_EXCLUDED = ("added", "updated", "content_hash", "detailPath")
+HASH_EXCLUDED = ("added", "updated", "content_hash", "detailPath", "methods")
 
 
 def content_hash(index_rec, detail_rec):
@@ -53,6 +53,14 @@ def main():
 
     techs = index["technologies"]
     cat_ids = {c["id"] for c in index["categories"]}
+    facet_ids = {f["id"] for f in index.get("method_facets", [])}
+    method_ids = set()
+    for m in index.get("methods", []):
+        if m.get("id") in method_ids:
+            problems.append("duplicate method id: %s" % m.get("id"))
+        method_ids.add(m.get("id"))
+        if m.get("facet") not in facet_ids:
+            problems.append("method %s: facet %r is not in method_facets" % (m.get("id"), m.get("facet")))
     lab_ids = {l["id"] for l in labs["labs"]}
     tech_ids = set()
 
@@ -75,6 +83,11 @@ def main():
                 problems.append("%s: org %r is not in labs.json" % (tid, o))
         if not t.get("orgs"):
             warnings.append("%s: no orgs listed" % tid)
+        for m in t.get("methods", []):
+            if m not in method_ids:
+                problems.append("%s: method %r is not in the methods vocabulary" % (tid, m))
+        if len(set(t.get("methods", []))) != len(t.get("methods", [])):
+            problems.append("%s: duplicate entries in methods" % tid)
 
     for t in techs:
         tid = t["id"]

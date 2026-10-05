@@ -29,6 +29,7 @@ TECH_DIR = os.path.join(DATA, "tech")
 sys.path.insert(0, HERE)
 
 from seed_labs import CATEGORIES, LABS            # noqa: E402
+from seed_methods import METHOD_FACETS, METHODS   # noqa: E402
 from seed_vla_1 import VLA_1                      # noqa: E402
 from seed_vla_2 import VLA_2                      # noqa: E402
 from seed_il import IL                            # noqa: E402
@@ -47,7 +48,7 @@ ALL_TECHS = VLA_1 + VLA_2 + IL + REP + RL + WM + VLM + HUMAN + DATASETS + BENCH 
 # Fields that live in the lightweight index (loaded up front, drives list + graph).
 INDEX_FIELDS = (
     "id", "name", "full_name", "cat", "year", "month", "orgs", "parents",
-    "influences", "license", "tags", "impact", "confidence", "tagline",
+    "influences", "license", "tags", "methods", "impact", "confidence", "tagline",
     "paper", "code", "site",
 )
 # Fields that live in the per-tech detail file (fetched on click).
@@ -64,6 +65,7 @@ def build_index_record(t):
     rec.setdefault("parents", [])
     rec.setdefault("influences", [])
     rec.setdefault("tags", [])
+    rec.setdefault("methods", [])
     rec.setdefault("orgs", [])
     rec.setdefault("impact", 3)
     rec.setdefault("confidence", "medium")
@@ -101,7 +103,9 @@ def build_detail_record(t):
 # today's date and the field carries no information at all.
 # `detailPath` is excluded too: it is a pure function of the id, so hashing it would
 # make a change to the storage layout look like a change to the entry's content.
-HASH_EXCLUDED = ("added", "updated", "content_hash", "detailPath")
+# `methods` is excluded because it is this site's classification of the entry, not
+# a description of it: re-tagging must not make an unverified entry look fresh.
+HASH_EXCLUDED = ("added", "updated", "content_hash", "detailPath", "methods")
 
 
 def content_hash(index_rec, detail_rec):
@@ -143,9 +147,13 @@ def check(techs):
         ids.add(t["id"])
     lab_ids = {l["id"] for l in LABS}
     cat_ids = {c["id"] for c in CATEGORIES}
+    method_ids = {m["id"] for m in METHODS}
     for t in techs:
         if t["cat"] not in cat_ids:
             errors.append("%s: unknown category %r" % (t["id"], t["cat"]))
+        for m in t.get("methods", []):
+            if m not in method_ids:
+                errors.append("%s: unknown method %r (add it to seed_methods.METHODS)" % (t["id"], m))
         for o in t.get("orgs", []):
             if o not in lab_ids:
                 errors.append("%s: unknown org %r (add it to seed_labs.LABS)" % (t["id"], o))
@@ -205,8 +213,11 @@ def main():
             "technologies": len(techs),
             "labs": len(LABS),
             "categories": len(CATEGORIES),
+            "methods": len(METHODS),
         },
         "categories": CATEGORIES,
+        "method_facets": METHOD_FACETS,
+        "methods": METHODS,
         "technologies": index_records,
     })
 

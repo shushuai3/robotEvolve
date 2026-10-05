@@ -9,7 +9,7 @@ Non-interactive (handy for scripting or for an agent doing the update sweep):
 
 The JSON payload accepts the same keys used in the seed modules:
     id, name, full_name, cat, year, month, orgs[], parents[], influences[],
-    license, paper, code, site, tags[], impact, confidence, tagline,
+    license, paper, code, site, tags[], methods[], impact, confidence, tagline,
     summary, innovation[], matters[], limits[], lineage
 
 Index fields land in data/technologies.json; the prose fields become
@@ -35,13 +35,13 @@ TECH_PATH = os.path.join(DATA, "technologies.json")
 LABS_PATH = os.path.join(DATA, "labs.json")
 
 INDEX_FIELDS = ("id", "name", "full_name", "cat", "year", "month", "orgs", "parents",
-                "influences", "license", "tags", "impact", "confidence", "tagline",
+                "influences", "license", "tags", "methods", "impact", "confidence", "tagline",
                 "paper", "code", "site")
 DETAIL_FIELDS = ("summary", "innovation", "matters", "limits", "lineage")
 LICENSES = ("open", "weights", "code", "closed")
 
 # Kept identical to tools/generate.py and tools/validate.py.
-HASH_EXCLUDED = ("added", "updated", "content_hash", "detailPath")
+HASH_EXCLUDED = ("added", "updated", "content_hash", "detailPath", "methods")
 
 
 def content_hash(index_rec, detail_rec):
@@ -136,6 +136,8 @@ def interactive(index, labs):
         if v:
             e[k] = v
     e["tags"] = ask_list("Tags")
+    e["methods"] = ask_list("Method ids (see `methods` in technologies.json)",
+                            {m["id"] for m in index.get("methods", [])})
     e["impact"] = int(ask("Influence rating 1-5", default="3"))
     e["confidence"] = ask("Confidence", choices=("high", "medium"), default="medium")
     e["tagline"] = ask("One-line hook", required=True)
@@ -152,6 +154,7 @@ def upsert(entry, index, labs):
     cats = {c["id"] for c in index["categories"]}
     lab_ids = {l["id"] for l in labs["labs"]}
     tech_ids = {t["id"] for t in index["technologies"]}
+    method_ids = {m["id"] for m in index.get("methods", [])}
 
     errs = []
     if not entry.get("id"):
@@ -160,6 +163,9 @@ def upsert(entry, index, labs):
         errs.append("cat %r must be one of %s" % (entry.get("cat"), sorted(cats)))
     if entry.get("license") not in LICENSES:
         errs.append("license %r must be one of %s" % (entry.get("license"), list(LICENSES)))
+    for m in entry.get("methods", []):
+        if m not in method_ids:
+            errs.append("method %r is not in the `methods` vocabulary" % m)
     for o in entry.get("orgs", []):
         if o not in lab_ids:
             errs.append("org %r not in labs.json — add the lab first" % o)
@@ -176,6 +182,7 @@ def upsert(entry, index, labs):
     rec.setdefault("parents", [])
     rec.setdefault("influences", [])
     rec.setdefault("tags", [])
+    rec.setdefault("methods", [])
     rec.setdefault("orgs", [])
     rec.setdefault("impact", 3)
     rec.setdefault("confidence", "medium")
