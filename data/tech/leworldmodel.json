@@ -1,0 +1,43 @@
+{
+  "id": "leworldmodel",
+  "name": "LeWorldModel",
+  "summary": "LeWorldModel (LeWM) trains a JEPA world model from raw pixels with no pretrained encoder, EMA target network or auxiliary supervision. The loss has only two terms: predict the next frame's embedding, and a regulariser (SIGReg, from LeJEPA) that pushes embeddings toward an isotropic Gaussian so the representation cannot collapse. That cuts the tunable loss hyperparameters from six to one compared with the previous end-to-end JEPA. The model is about 15M parameters, trains on a single GPU in a few hours, and is used for goal-conditioned planning on 2D and 3D navigation, manipulation (PushT, OGBench-Cube) and locomotion tasks. It is competitive with foundation-model world models such as DINO-WM while planning up to 48x faster. Probing shows physical quantities can be read out of its latents, and its prediction error spikes on physically implausible events.",
+  "innovation": [
+    "Replaces the stack of anti-collapse tricks (EMA teachers, frozen encoders, multi-term losses) with a single distribution-matching regulariser, which makes end-to-end JEPA training stable.",
+    "Small and cheap: a world model useful for planning that a single lab GPU can train in hours."
+  ],
+  "matters": [
+    "The clearest current statement of LeCun's JEPA world-model programme in a control setting, and a cheap, reproducible counterpoint to large video-generation world models.",
+    "Its planning speed makes latent MPC practical where pixel-space or foundation-feature world models are too slow."
+  ],
+  "limits": [
+    "Benchmarks are simulated and short-horizon (PushT, cube manipulation, two-room navigation); no real-robot results.",
+    "Planning still needs a goal observation and offline data from the target environment."
+  ],
+  "lineage": "V-JEPA 2's latent-prediction idea trained end-to-end from pixels, using the SIGReg regulariser from LeJEPA (Balestriero and LeCun, 2025). Mila, NYU, Samsung SAIL and Brown.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2603.19312",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/lucas-maes/le-wm",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://le-wm.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=LeWorldModel:+Stable+End-to-End+Joint-Embedding+Predictive+Architecture+from+Pixels+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-15",
+  "updated": "2026-10-15",
+  "content_hash": "0ad5d679e250d269"
+}

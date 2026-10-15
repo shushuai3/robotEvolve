@@ -1,0 +1,43 @@
+{
+  "id": "dino-wm",
+  "name": "DINO-WM",
+  "summary": "DINO-WM learns a world model on top of a frozen, pretrained DINOv2 encoder. A transformer predictor is trained on offline trajectories to map the current spatial patch features plus an action to the next patch features. No image reconstruction or reward is learned. At test time the goal is given as an image, and model-predictive control searches for the action sequence whose predicted features match the goal's features. The same recipe solves six environments without task-specific training, including maze navigation, PushT, wall crossing, deformable rope and granular-material manipulation.",
+  "innovation": [
+    "Uses frozen self-supervised patch features as the world-model state, so the dynamics model never has to learn perception or reconstruct pixels.",
+    "Task-agnostic: one offline dataset per environment, then any goal image can be planned to at test time with no reward."
+  ],
+  "matters": [
+    "Showed that a general-purpose vision foundation model already gives a latent space good enough for planning. That is the bridge between DINO-style representations and JEPA-style world models such as V-JEPA 2 and LeWorldModel, which use it as a baseline.",
+    "Handles deformable and granular objects that are awkward for state-based models."
+  ],
+  "limits": [
+    "Evaluated in simulation on short-horizon tasks; planning by sampling-based MPC is slow.",
+    "Needs offline interaction data for each environment, and the goal must be an image."
+  ],
+  "lineage": "PlaNet-style latent planning, with a learned encoder replaced by a frozen DINOv2 backbone. LeCun and Pinto at NYU.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2411.04983",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/gaoyuezhou/dino_wm",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://dino-wm.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=DINO-WM:+World+Models+on+Pre-trained+Visual+Features+enable+Zero-shot+Planning+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-15",
+  "updated": "2026-10-15",
+  "content_hash": "5fcb664373021939"
+}

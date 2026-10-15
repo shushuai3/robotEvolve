@@ -7,7 +7,7 @@ robot manipulation intelligence — VLA models, world action models, imitation l
 reinforcement learning, world models and dreaming, VLM grounding, representations,
 human/egocentric data, robot datasets, benchmarks and simulators.
 
-**138 technologies · 55 labs and companies · 11 domains · 1989 → 2026**
+**144 technologies · 57 labs and companies · 11 domains · 1989 → 2026**
 
 ---
 

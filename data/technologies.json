@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated": "2026-09-23",
-  "last_changed": "2026-09-23",
+  "generated": "2026-10-15",
+  "last_changed": "2026-10-15",
   "counts": {
-    "technologies": 142,
-    "labs": 55,
+    "technologies": 144,
+    "labs": 57,
     "categories": 11,
     "methods": 42
   },
@@ -1152,6 +1152,47 @@
       "detailPath": "data/tech/pi-07.json",
       "added": "2026-08-31",
       "updated": "2026-08-31"
+    },
+    {
+      "id": "leworldmodel",
+      "name": "LeWorldModel",
+      "full_name": "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels",
+      "cat": "world-model",
+      "year": 2026,
+      "month": 3,
+      "orgs": [
+        "nyu-cilvr"
+      ],
+      "parents": [
+        "v-jepa-2"
+      ],
+      "influences": [
+        "dino-wm",
+        "td-mpc2"
+      ],
+      "license": "open",
+      "tags": [
+        "JEPA",
+        "LeWM",
+        "~15M params",
+        "single GPU",
+        "48x faster planning"
+      ],
+      "methods": [
+        "latent-dynamics",
+        "planning",
+        "self-supervised",
+        "simulation"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "The first JEPA world model that trains stably end-to-end from raw pixels, with two loss terms and one hyperparameter.",
+      "paper": "https://arxiv.org/abs/2603.19312",
+      "code": "https://github.com/lucas-maes/le-wm",
+      "site": "https://le-wm.github.io/",
+      "detailPath": "data/tech/leworldmodel.json",
+      "added": "2026-10-15",
+      "updated": "2026-10-15"
     },
     {
       "id": "pi-mem",
@@ -2451,6 +2492,46 @@
       "detailPath": "data/tech/cogact.json",
       "added": "2026-08-25",
       "updated": "2026-08-25"
+    },
+    {
+      "id": "dino-wm",
+      "name": "DINO-WM",
+      "full_name": "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+      "cat": "world-model",
+      "year": 2024,
+      "month": 11,
+      "orgs": [
+        "nyu-grail",
+        "nyu-cilvr"
+      ],
+      "parents": [
+        "planet"
+      ],
+      "influences": [
+        "td-mpc2",
+        "dreamerv3"
+      ],
+      "license": "code",
+      "tags": [
+        "DINOv2 patch features",
+        "no reconstruction",
+        "reward-free",
+        "PushT / Rope / Granular"
+      ],
+      "methods": [
+        "latent-dynamics",
+        "planning",
+        "simulation"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "Freeze DINOv2, predict how its patch features change under an action, and plan to a goal image with no reward and no pixel decoder.",
+      "paper": "https://arxiv.org/abs/2411.04983",
+      "code": "https://github.com/gaoyuezhou/dino_wm",
+      "site": "https://dino-wm.github.io/",
+      "detailPath": "data/tech/dino-wm.json",
+      "added": "2026-10-15",
+      "updated": "2026-10-15"
     },
     {
       "id": "aloha-unleashed",

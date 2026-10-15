@@ -440,6 +440,22 @@
       }
     },
     {
+      "id": "nyu-cilvr",
+      "name": "NYU — CILVR (Yann LeCun)",
+      "type": "academic",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "world-model",
+        "rep"
+      ],
+      "notes": "LeCun's academic group, and where most JEPA world-model papers now appear (DINO-WM, LeWorldModel), usually with Mila and Brown co-authors. LeCun also chairs AMI Labs; watch both.",
+      "sources": {
+        "site": "https://cilvr.nyu.edu/",
+        "github": "https://github.com/galilai-group"
+      }
+    },
+    {
       "id": "openai",
       "name": "OpenAI",
       "type": "industry",
@@ -925,6 +941,21 @@
         "site": "https://www.x2robot.com/"
       },
       "last_checked": "2026-08-31"
+    },
+    {
+      "id": "ami-labs",
+      "name": "AMI Labs",
+      "type": "industry",
+      "country": "FR",
+      "priority": 2,
+      "focus": [
+        "world-model"
+      ],
+      "notes": "Advanced Machine Intelligence, the Paris world-model startup LeCun founded after leaving Meta (CEO Alexandre LeBrun; $1.03B seed, 2026). Its pitch is JEPA-based world models. Nothing robot-specific is attributed to it yet; for now the JEPA papers come out under NYU CILVR.",
+      "sources": {
+        "updates": "https://amilabs.xyz/updates",
+        "site": "https://amilabs.xyz/"
+      }
     }
   ]
 }
