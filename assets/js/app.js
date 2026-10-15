@@ -173,6 +173,8 @@
   function applyFilters() {
     var list = visible();
     $('#result-count').textContent = list.length + ' / ' + DB.techs.length + ' shown';
+    $('#filters-toggle').classList.toggle('active',
+      !!(state.license || state.method || state.year || state.sort !== 'newest'));
     renderGrid(list);
     renderTimeline(list);
     renderThreads(list);
@@ -762,6 +764,11 @@
       $('#sort-filter').value = 'newest';
       refreshChips();
       applyFilters();
+    });
+    $('#filters-toggle').addEventListener('click', function () {
+      var open = $('#sidebar').classList.toggle('open');
+      this.setAttribute('aria-expanded', open);
+      this.setAttribute('aria-label', open ? 'Hide filters' : 'Show filters');
     });
     $('#drawer-close').addEventListener('click', closeDrawer);
     $('#scrim').addEventListener('click', closeDrawer);

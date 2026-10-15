@@ -109,7 +109,7 @@
           </svg>
       <span class="brand-text">
         <h1>Robot<b>Evolve</b></h1>
-        <span class="sub">The technology behind robot manipulation intelligence</span>
+        <span class="sub">Evolution of Physical Intelligence</span>
       </span>
     </a>
 
@@ -121,6 +121,15 @@
       <button class="tab" role="tab" data-view="labs"     aria-selected="false">Labs</button>
     </nav>
 
+    <!-- phone only: folds Access / Method / From / Sort away so the map gets the screen -->
+    <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="sidebar"
+            aria-label="Show filters" title="Filters">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 6l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path>
+      </svg>
+    </button>
+
     <div class="searchwrap">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
         <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
@@ -130,7 +139,7 @@
     </div>
   </header>
 
-  <aside class="sidebar filters" aria-label="Filters">
+  <aside class="sidebar filters" id="sidebar" aria-label="Filters">
     <div class="fgroup catgroup">
       <div class="flabel">Domain</div>
       <div class="chips" id="cat-filters"></div>

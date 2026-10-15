@@ -113,6 +113,21 @@ code, kbd { font-family: var(--mono); }
 #search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent); }
 #search::placeholder { color: var(--ink-3); }
 
+/* Phone-only control that folds the secondary filters; hidden on wider screens. */
+.filters-toggle {
+  display: none; position: relative; flex: 0 0 auto; align-items: center; justify-content: center;
+  width: 30px; height: 30px; padding: 0; cursor: pointer;
+  background: transparent; border: 1px solid var(--rule); border-radius: var(--radius); color: var(--ink-2);
+}
+.filters-toggle svg { transition: transform .18s; }
+.filters-toggle[aria-expanded="true"] { background: var(--paper-3); color: var(--ink); }
+.filters-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+/* a dot says a folded-away filter is still narrowing the results */
+.filters-toggle.active::after {
+  content: ""; position: absolute; top: 3px; right: 3px; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--accent);
+}
+
 /* ---------------------------------------------------------------- sidebar */
 .sidebar {
   grid-area: side;
@@ -429,14 +444,32 @@ button.mchip:hover { background: color-mix(in srgb, var(--c, var(--accent)) 14%,
     grid-template-areas: "top" "side" "main" "foot";
   }
   .topbar { flex-wrap: wrap; gap: 8px 12px; padding: 8px 12px; }
-  .searchwrap { flex: 1 1 140px; margin-left: auto; }
-  .tabs { order: 3; flex: 1 0 100%; overflow-x: auto; scrollbar-width: none; }
+  /* tabs + the filters toggle share the second row: 100% minus the toggle and the gap forces the wrap */
+  .tabs { order: 3; flex: 1 0 calc(100% - 42px); overflow-x: auto; scrollbar-width: none; }
   .tab { flex: 0 0 auto; }
+
+  /* search folds to a magnifier; it opens on tap and stays open while it holds a query */
+  .searchwrap { flex: 0 0 34px; min-width: 0; margin-left: auto; transition: flex-basis .18s; }
+  .searchwrap svg { pointer-events: none; }
+  .searchwrap kbd { display: none; }
+  #search { -webkit-appearance: none; appearance: none; height: 30px; padding: 0 0 0 30px; cursor: pointer; }
+  .searchwrap:not(:focus-within):not(:has(#search:not(:placeholder-shown))) #search {
+    color: transparent; background: transparent; border-color: transparent;
+  }
+  .searchwrap:not(:focus-within):not(:has(#search:not(:placeholder-shown))) #search::placeholder { color: transparent; }
+  .searchwrap:not(:focus-within):not(:has(#search:not(:placeholder-shown))) svg { color: var(--ink-2); }
+  .searchwrap:focus-within, .searchwrap:has(#search:not(:placeholder-shown)) { flex: 1 1 140px; }
+  .searchwrap:focus-within #search, .searchwrap:has(#search:not(:placeholder-shown)) #search { padding-right: 8px; cursor: text; }
+
+  .filters-toggle { display: inline-flex; order: 4; }
+
   .sidebar {
     flex-direction: row; flex-wrap: wrap; align-items: flex-end; gap: 8px 10px;
     border-right: 0; border-bottom: 1px solid var(--rule); padding: 8px 12px; overflow: visible;
   }
   .catgroup { flex: 1 0 100%; }
+  .catgroup .flabel { display: none; }
+  .sidebar:not(.open) .fgroup:not(.catgroup), .sidebar:not(.open) .side-foot { display: none; }
   .chips {
     flex-direction: row; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-right: 18px;
     -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent);
