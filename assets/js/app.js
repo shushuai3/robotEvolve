@@ -307,24 +307,9 @@
     window.addEventListener('resize', function () {
       graph.resize();
       graph.fit();
-      // reshaping the cluster ring is only worth doing once the drag has settled
+      // reshaping the cluster ring is only worth doing once the resize has settled
       clearTimeout(rt);
       rt = setTimeout(function () { graph.reflowIfNeeded(); }, 200);
-    });
-
-    $('#g-fit').addEventListener('click', function () { graph.fit(); });
-    $('#g-relayout').addEventListener('click', function () { graph.relayout(); });
-    $('#g-edges').addEventListener('click', function () {
-      graph.showInfluences = !graph.showInfluences;
-      this.setAttribute('aria-pressed', String(graph.showInfluences));
-      this.textContent = 'influences: ' + (graph.showInfluences ? 'on' : 'off');
-      graph.redraw();
-    });
-    $('#g-labels').addEventListener('click', function () {
-      graph.showLabels = !graph.showLabels;
-      this.setAttribute('aria-pressed', String(graph.showLabels));
-      this.textContent = 'labels: ' + (graph.showLabels ? 'on' : 'off');
-      graph.redraw();
     });
   }
 

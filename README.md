@@ -27,7 +27,7 @@ that on `file://` URLs. Any static server works (`python -m http.server`, `npx s
 
 | View | What it shows |
 | --- | --- |
-| **Graph** | Force-directed map of every technology. Colour = domain, node size = influence rating, solid edge = *derives from*, dotted edge = *influenced by*. Hover isolates a node's neighbourhood, drag to rearrange, scroll to zoom, click to open the detail panel. |
+| **Graph** | Force-directed map of every technology. Colour = domain, node size = influence rating, solid edge = *derives from*, dotted edge = *influenced by*. Hover isolates a node's neighbourhood, drag to pan, scroll or pinch to zoom, click to open the detail panel. |
 | **Index** | Filterable card grid — the "latest tech list". Sorts by publication date, influence, name, or when the entry was added/edited here. |
 | **Timeline** | The same set laid out by year, so you can see when each branch appeared. |
 | **Labs** | The priority watchlist that drives updates, with the source links for each lab. |

@@ -42,10 +42,8 @@
     this.alpha = 0;
     this.hover = null;
     this.selected = null;
-    this.dragNode = null;
+    this.pressNode = null;         // node under the pointer at press; a tap on it selects
     this.panning = false;
-    this.showInfluences = true;
-    this.showLabels = true;
     this.dimmed = new Set();       // ids filtered out — drawn faint, not removed
     this._raf = null;
     this._bind();
@@ -195,25 +193,17 @@
     this._loop();
   };
 
-  /* Throw the layout away and build it again — the "re-layout" button. */
-  TechGraph.prototype.relayout = function () {
-    this._seedPositions();
-    this._shapeToViewport(340);
-    this.fit();
-    this.run(70, 0.25);
-  };
-
   TechGraph.prototype._loop = function () {
     var self = this;
     if (this._raf) cancelAnimationFrame(this._raf);
     var step = function () {
-      if (self._ticksLeft > 0 || self.dragNode) {
+      if (self._ticksLeft > 0) {
         self._tick();
-        if (!self.dragNode) self._ticksLeft--;
+        self._ticksLeft--;
         self.alpha = Math.max(0.02, self.alpha * 0.985);
       }
       self.draw();
-      if (self._ticksLeft > 0 || self.dragNode || self._needsDraw) {
+      if (self._ticksLeft > 0 || self._needsDraw) {
         self._needsDraw = false;
         self._raf = requestAnimationFrame(step);
       } else {
@@ -280,7 +270,6 @@
       a.vx += (0 - a.x) * this._gx * k;
       a.vy += (0 - a.y) * this._gy * k;
 
-      if (a === this.dragNode) { a.vx = a.vy = 0; continue; }
       a.vx *= 0.82; a.vy *= 0.82;
       a.x += Math.max(-18, Math.min(18, a.vx));
       a.y += Math.max(-18, Math.min(18, a.vy));
@@ -378,7 +367,6 @@
 
     // ---- edges
     this.links.forEach(function (l) {
-      if (l.kind === 'influence' && !self.showInfluences) return;
       var a = self.byId.get(l.s), b = self.byId.get(l.t);
       var on = focus && (l.s === focus || l.t === focus);
       var op = Math.min(alphaFor(l.s), alphaFor(l.t));
@@ -445,7 +433,6 @@
        would overlap one already placed. Because they are laid down in order of
        influence, what survives on a crowded phone screen is the map's backbone,
        and zooming in reveals the rest — the labels thin out instead of colliding. */
-    if (!this.showLabels) return;
     ctx.save();
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
@@ -527,23 +514,16 @@
     c.addEventListener('mousedown', function (e) {
       var p = pos(e);
       moved = false;
-      var n = self._pick(p.x, p.y);
-      if (n) { self.dragNode = n; self.alpha = Math.max(self.alpha, 0.35); self._loop(); }
-      else { self.panning = true; c.classList.add('dragging'); }
+      self.pressNode = self._pick(p.x, p.y);
+      self.panning = true;
+      c.classList.add('dragging');
       last = p;
     });
 
     global.addEventListener('mousemove', function (e) {
       var p = pos(e);
-      if (self.dragNode) {
-        moved = true;
-        var w = self._toWorld(p.x, p.y);
-        self.dragNode.x = w.x; self.dragNode.y = w.y;
-        last = p;
-        return;
-      }
       if (self.panning && last) {
-        moved = true;
+        if (Math.abs(p.x - last.x) + Math.abs(p.y - last.y) > 0) moved = true;
         self.tx += p.x - last.x; self.ty += p.y - last.y;
         last = p; self.redraw();
         return;
@@ -562,9 +542,11 @@
     });
 
     global.addEventListener('mouseup', function () {
-      if (self.dragNode && !moved && self.opts.onSelect) self.opts.onSelect(self.dragNode.id);
-      else if (self.panning && !moved && self.opts.onBlank) self.opts.onBlank();
-      self.dragNode = null;
+      if (self.panning && !moved) {
+        if (self.pressNode && self.opts.onSelect) self.opts.onSelect(self.pressNode.id);
+        else if (!self.pressNode && self.opts.onBlank) self.opts.onBlank();
+      }
+      self.pressNode = null;
       self.panning = false;
       last = null;
       c.classList.remove('dragging');
@@ -589,7 +571,7 @@
     /* ---------------------------------------------------------------- touch
        The mouse handlers above never fire for real gestures, so without this a
        phone can only zoom the page — the graph itself stays fixed. One finger
-       pans or drags a node, two fingers pinch. The canvas carries
+       pans (or taps a node), two fingers pinch. The canvas carries
        touch-action:none so the browser hands us the gesture instead of
        scrolling and zooming the page underneath. */
     var touch = null;
@@ -605,15 +587,13 @@
 
     function startOne(t) {
       var p = tp(t);
-      var n = self._pick(p.x, p.y, 14);           // fingers are blunter than cursors
-      touch = { mode: n ? 'node' : 'pan', last: p, moved: false };
-      if (n) { self.dragNode = n; self.alpha = Math.max(self.alpha, 0.35); self._loop(); }
+      // fingers are blunter than cursors
+      touch = { mode: 'pan', node: self._pick(p.x, p.y, 14), last: p, moved: false };
     }
 
     function startTwo(t1, t2) {
       var p1 = tp(t1), p2 = tp(t2);
       var m = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
-      self.dragNode = null;
       touch = { mode: 'pinch', d0: span(p1, p2), s0: self.scale, w0: self._toWorld(m.x, m.y), moved: true };
     }
 
@@ -642,10 +622,7 @@
       var p = tp(e.touches[0]);
       var dx = p.x - touch.last.x, dy = p.y - touch.last.y;
       if (Math.abs(dx) > 2 || Math.abs(dy) > 2) touch.moved = true;
-      if (touch.mode === 'node' && self.dragNode) {
-        var w = self._toWorld(p.x, p.y);
-        self.dragNode.x = w.x; self.dragNode.y = w.y;
-      } else if (touch.mode === 'pan') {
+      if (touch.mode === 'pan') {
         self.tx += dx; self.ty += dy;
         self.redraw();
       }
@@ -660,10 +637,9 @@
         return;
       }
       if (!touch.moved) {
-        if (touch.mode === 'node' && self.dragNode && self.opts.onSelect) self.opts.onSelect(self.dragNode.id);
-        else if (touch.mode === 'pan' && self.opts.onBlank) self.opts.onBlank();
+        if (touch.node && self.opts.onSelect) self.opts.onSelect(touch.node.id);
+        else if (!touch.node && self.opts.onBlank) self.opts.onBlank();
       }
-      self.dragNode = null;
       touch = null;
     }
 
