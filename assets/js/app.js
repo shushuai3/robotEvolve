@@ -3,9 +3,10 @@
 (function () {
   'use strict';
 
-  var DB = { techs: [], cats: [], catById: {}, labs: [], labById: {} };
+  var DB = { techs: [], cats: [], catById: {}, labs: [], labById: {},
+             methods: [], methodById: {}, facets: [], facetById: {} };
   var detailCache = new Map();
-  var state = { view: 'graph', q: '', cats: new Set(), license: '', year: 0, sort: 'newest' };
+  var state = { view: 'matrix', q: '', cats: new Set(), license: '', method: '', year: 0, sort: 'newest' };
   var graph = null;
 
   var $ = function (s) { return document.querySelector(s); };
@@ -38,11 +39,16 @@
       DB.cats.forEach(function (c) { DB.catById[c.id] = c; });
       DB.labs = l.labs;
       DB.labs.forEach(function (x) { DB.labById[x.id] = x; });
+      DB.methods = t.methods || [];
+      DB.methods.forEach(function (m) { DB.methodById[m.id] = m; });
+      DB.facets = t.method_facets || [];
+      DB.facets.forEach(function (f) { DB.facetById[f.id] = f; });
 
       DB.techs.forEach(function (x) {
         x._search = [
           x.name, x.full_name || '', x.tagline || '',
           (x.tags || []).join(' '),
+          (x.methods || []).map(function (m) { return DB.methodById[m] ? DB.methodById[m].name : m; }).join(' '),
           (x.orgs || []).map(function (o) { return DB.labById[o] ? DB.labById[o].name : o; }).join(' '),
           DB.catById[x.cat] ? DB.catById[x.cat].name : x.cat
         ].join(' ').toLowerCase();
@@ -59,8 +65,9 @@
       renderCatFilters();
       renderLabs();
       initGraph();
+      renderMethodFilter();
       wire();
-      show('graph');
+      show('matrix');
       applyFilters();
       openFromHash();
     }).catch(function (err) {
@@ -109,6 +116,7 @@
     var out = DB.techs.filter(function (t) {
       if (state.cats.size && !state.cats.has(t.cat)) return false;
       if (state.license && t.license !== state.license) return false;
+      if (state.method && (t.methods || []).indexOf(state.method) === -1) return false;
       if (state.year && t.year < state.year) return false;
       if (q && t._search.indexOf(q) === -1) return false;
       return true;
@@ -132,6 +140,7 @@
     $('#result-count').textContent = list.length + ' / ' + DB.techs.length + ' shown';
     renderGrid(list);
     renderTimeline(list);
+    renderMatrix(list);
     if (graph) graph.setDimmed(list.map(function (t) { return t.id; }));
   }
 
@@ -282,6 +291,148 @@
     });
   }
 
+  /* ---------------------------------------------------------- method matrix */
+  function methodChip(id, asButton) {
+    var m = DB.methodById[id];
+    if (!m) return '';
+    var f = DB.facetById[m.facet];
+    var tag = asButton ? 'button' : 'span';
+    return '<' + tag + ' class="mchip" style="--c:' + esc(f ? f.color : '') + '"' +
+      (asButton ? ' data-method="' + esc(id) + '" title="' + esc(m.blurb) + '"' : '') + '>' +
+      esc(m.name) + '</' + tag + '>';
+  }
+
+  /* Methods in facet order, which is also the column order of the matrix. */
+  function methodColumns() {
+    var cols = [];
+    DB.facets.forEach(function (f) {
+      DB.methods.forEach(function (m) { if (m.facet === f.id) cols.push(m); });
+    });
+    return cols;
+  }
+
+  function renderMethodFilter() {
+    var sel = $('#method-filter');
+    DB.facets.forEach(function (f) {
+      var g = el('optgroup');
+      g.label = f.name;
+      DB.methods.forEach(function (m) {
+        if (m.facet !== f.id) return;
+        var o = el('option', null, esc(m.name));
+        o.value = m.id;
+        g.appendChild(o);
+      });
+      sel.appendChild(g);
+    });
+  }
+
+  function setMethod(id) {
+    state.method = id || '';
+    $('#method-filter').value = state.method;
+    applyFilters();
+  }
+
+  /* One row per technology, one column per method, a dot where the technology uses
+     the method. Rows are grouped by domain and ordered by the Sort control, so reading
+     down a column shows how a method spread; reading along a row shows a recipe. */
+  function renderMatrix(list) {
+    var wrap = $('#matrix');
+    if (!list.length) { wrap.innerHTML = '<div class="empty">Nothing matches those filters.</div>'; return; }
+    var cols = methodColumns();
+    var count = {};
+    list.forEach(function (t) { (t.methods || []).forEach(function (m) { count[m] = (count[m] || 0) + 1; }); });
+
+    var h = '<table class="mx"><colgroup><col class="mx-namecol">' +
+      cols.map(function (m) { return '<col data-m="' + esc(m.id) + '">'; }).join('') + '</colgroup><thead>';
+
+    h += '<tr class="mx-facets"><th class="mx-corner" rowspan="2"><div class="mx-key">' +
+      '<span><i class="mx-dot" style="--c:var(--txt-dim)"></i> uses the method</span>' +
+      '<span>click a method to filter</span><span>hover a row to see its lineage</span></div></th>';
+    DB.facets.forEach(function (f) {
+      var n = cols.filter(function (m) { return m.facet === f.id; }).length;
+      if (n) h += '<th colspan="' + n + '" style="--c:' + esc(f.color) + '"><span>' + esc(f.name) + '</span></th>';
+    });
+    h += '</tr><tr class="mx-methods">';
+    cols.forEach(function (m) {
+      var f = DB.facetById[m.facet];
+      h += '<th data-m="' + esc(m.id) + '" style="--c:' + esc(f ? f.color : '') + '"' +
+        (state.method === m.id ? ' class="on"' : '') + ' title="' + esc(m.name + ' — ' + m.blurb) + '">' +
+        '<span class="mx-mname">' + esc(m.name) + '</span>' +
+        '<span class="mx-count">' + (count[m.id] || 0) + '</span></th>';
+    });
+    h += '</tr></thead>';
+
+    DB.cats.forEach(function (c) {
+      var rows = list.filter(function (t) { return t.cat === c.id; });
+      if (!rows.length) return;
+      h += '<tbody style="--c:' + esc(c.color) + '"><tr class="mx-group"><th>' + esc(c.name) +
+        ' <span>' + rows.length + '</span></th><td colspan="' + cols.length + '"></td></tr>';
+      rows.forEach(function (t) {
+        var has = {};
+        (t.methods || []).forEach(function (m) { has[m] = true; });
+        h += '<tr class="mx-row" data-id="' + esc(t.id) + '"><th><span class="n">' + esc(t.name) +
+          '</span><span class="y">' + t.year + '</span></th>';
+        cols.forEach(function (m) {
+          h += has[m.id]
+            ? '<td data-m="' + esc(m.id) + '"><i class="mx-dot" style="--c:' + esc(DB.facetById[m.facet].color) + '"></i></td>'
+            : '<td data-m="' + esc(m.id) + '"></td>';
+        });
+        h += '</tr>';
+      });
+      h += '</tbody>';
+    });
+    wrap.innerHTML = h + '</table>';
+  }
+
+  function wireMatrix() {
+    var wrap = $('#matrix');
+    var hlCol = null;
+
+    wrap.addEventListener('click', function (e) {
+      var head = e.target.closest('thead th[data-m]');
+      if (head) { setMethod(state.method === head.dataset.m ? '' : head.dataset.m); return; }
+      var row = e.target.closest('tr.mx-row');
+      if (row) openTech(row.dataset.id);
+    });
+
+    // column highlight goes on the <col>, so one class change lights the whole column
+    wrap.addEventListener('mouseover', function (e) {
+      var cell = e.target.closest('[data-m]');
+      var col = cell ? wrap.querySelector('col[data-m="' + cell.dataset.m + '"]') : null;
+      if (col !== hlCol) {
+        if (hlCol) hlCol.classList.remove('hl');
+        if (col) col.classList.add('hl');
+        hlCol = col;
+      }
+      var row = e.target.closest('tr.mx-row');
+      markKin(row ? row.dataset.id : null);
+    });
+    wrap.addEventListener('mouseleave', function () {
+      if (hlCol) hlCol.classList.remove('hl');
+      hlCol = null;
+      markKin(null);
+    });
+
+    var kinOf = null;
+    function markKin(id) {
+      if (id === kinOf) return;
+      kinOf = id;
+      wrap.querySelectorAll('tr.kin-parent, tr.kin-child').forEach(function (r) {
+        r.classList.remove('kin-parent', 'kin-child');
+      });
+      var t = id && DB.byId[id];
+      if (!t) return;
+      (t.parents || []).forEach(function (p) {
+        var r = wrap.querySelector('tr.mx-row[data-id="' + p + '"]');
+        if (r) r.classList.add('kin-parent');
+      });
+      (t._children || []).forEach(function (p) {
+        var r = wrap.querySelector('tr.mx-row[data-id="' + p + '"]');
+        if (r) r.classList.add('kin-child');
+      });
+    }
+  }
+
   /* --------------------------------------------------------------- drawer */
   function openTech(id) {
     var t = DB.byId[id];
@@ -308,6 +459,14 @@
       body.innerHTML = renderDetail(t, d);
       body.querySelectorAll('[data-goto]').forEach(function (b) {
         b.addEventListener('click', function () { openTech(b.getAttribute('data-goto')); });
+      });
+      // a method chip filters the site to everything else that uses that method
+      body.querySelectorAll('[data-method]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          closeDrawer();
+          show('matrix');
+          setMethod(b.getAttribute('data-method'));
+        });
       });
       body.scrollTop = 0;
     }).catch(function (e) {
@@ -362,6 +521,16 @@
       (t.tags && t.tags.length ? '<dt>Tags</dt><dd>' + t.tags.map(esc).join(' · ') + '</dd>' : '') +
       '<dt>Influence</dt><dd>' + '●'.repeat(t.impact) + '<span style="opacity:.25">' + '●'.repeat(5 - t.impact) + '</span></dd>' +
       '</dl></div>';
+
+    if ((t.methods || []).length) {
+      h += '<div class="sect"><h4>Methods</h4><dl class="mfacets">';
+      DB.facets.forEach(function (f) {
+        var mine = t.methods.filter(function (m) { return DB.methodById[m] && DB.methodById[m].facet === f.id; });
+        if (!mine.length) return;
+        h += '<dt>' + esc(f.name) + '</dt><dd>' + mine.map(function (m) { return methodChip(m, true); }).join('') + '</dd>';
+      });
+      h += '</dl></div>';
+    }
 
     if (d.lineage)
       h += '<div class="sect"><h4>Lineage</h4><p>' + esc(d.lineage) + '</p></div>';
@@ -432,11 +601,13 @@
       t = setTimeout(function () { state.q = v; applyFilters(); }, 130);
     });
     $('#license-filter').addEventListener('change', function (e) { state.license = e.target.value; applyFilters(); });
+    $('#method-filter').addEventListener('change', function (e) { setMethod(e.target.value); });
+    wireMatrix();
     $('#year-filter').addEventListener('change', function (e) { state.year = +e.target.value; applyFilters(); });
     $('#sort-filter').addEventListener('change', function (e) { state.sort = e.target.value; applyFilters(); });
     $('#reset-filters').addEventListener('click', function () {
-      state.q = ''; state.cats.clear(); state.license = ''; state.year = 0; state.sort = 'newest';
-      $('#search').value = ''; $('#license-filter').value = ''; $('#year-filter').value = '0';
+      state.q = ''; state.cats.clear(); state.license = ''; state.method = ''; state.year = 0; state.sort = 'newest';
+      $('#search').value = ''; $('#license-filter').value = ''; $('#method-filter').value = ''; $('#year-filter').value = '0';
       $('#sort-filter').value = 'newest';
       document.querySelectorAll('#cat-filters .chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
       applyFilters();

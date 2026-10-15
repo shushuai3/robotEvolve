@@ -176,6 +176,7 @@ select, .btn {
   cursor: pointer; outline: none;
 }
 select:focus, .btn:hover { border-color: var(--line-2); color: var(--txt); }
+#method-filter { max-width: 190px; }
 .spacer { flex: 1 1 auto; }
 #result-count { font-family: var(--mono); font-size: 11px; color: var(--txt-faint); }
 
@@ -209,16 +210,104 @@ main { flex: 1 1 auto; position: relative; overflow: hidden; }
   touch-action: none; -webkit-user-select: none; user-select: none;
 }
 #graph-canvas.dragging { cursor: grabbing; }
-.graph-tools { position: absolute; right: 16px; top: 16px; display: flex; flex-direction: column; gap: 6px; }
+.graph-tools { position: absolute; right: 16px; top: 16px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
 .graph-tools .btn { text-align: center; min-width: 104px; }
-#graph-tip {
+.viz-tip {
   position: absolute; pointer-events: none; opacity: 0; transform: translate(-50%, -100%);
   background: var(--panel-solid); border: 1px solid var(--line-2); border-radius: 8px;
   padding: 8px 11px; max-width: 260px; font-size: 12px; line-height: 1.45;
   box-shadow: 0 8px 32px rgba(0,0,0,.6); transition: opacity .12s; z-index: 5;
 }
-#graph-tip strong { display: block; color: var(--accent); font-size: 12.5px; margin-bottom: 2px; }
-#graph-tip em { color: var(--txt-faint); font-style: normal; font-family: var(--mono); font-size: 10.5px; }
+.viz-tip strong { display: block; color: var(--accent); font-size: 12.5px; margin-bottom: 2px; }
+.viz-tip em { color: var(--txt-faint); font-style: normal; font-family: var(--mono); font-size: 10.5px; }
+
+/* ------------------------------------------------------------ method matrix */
+/* A plain table: sticky header row and sticky name column, so the method names and
+   the technology names stay on screen however far you scroll in either direction. */
+.matrix { padding: 0 22px 60px; }
+.mx {
+  border-collapse: separate; border-spacing: 0; font-size: 12.5px;
+  margin-top: 0;
+}
+.mx col.mx-namecol { width: 230px; }
+.mx col { width: 26px; }
+.mx col.hl { background: rgba(0, 229, 255, 0.07); }
+
+.mx thead th { position: sticky; background: var(--bg-2); z-index: 2; }
+.mx-facets th { top: 0; height: 30px; padding: 8px 4px 0; text-align: left; vertical-align: bottom; }
+.mx-facets th span {
+  display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--c); white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; border-bottom: 2px solid var(--c); padding-bottom: 4px;
+}
+.mx-methods th {
+  top: 30px; height: 170px; padding: 6px 0; vertical-align: bottom; cursor: pointer;
+  border-bottom: 1px solid var(--line-2);
+}
+.mx-methods th:hover { background: #0e1626; }
+.mx-mname {
+  display: block; margin: 0 auto; writing-mode: vertical-rl; transform: rotate(180deg);
+  white-space: nowrap; font-size: 11.5px; color: var(--txt-dim); line-height: 26px;
+}
+.mx-methods th:hover .mx-mname { color: var(--txt); }
+.mx-methods th.on { background: color-mix(in srgb, var(--c) 16%, var(--bg-2)); }
+.mx-methods th.on .mx-mname { color: var(--c); font-weight: 600; }
+.mx-count {
+  display: block; text-align: center; margin-top: 6px;
+  font-family: var(--mono); font-size: 9.5px; color: var(--txt-faint);
+}
+/* the corner sits above both the header and the name column */
+.mx-corner {
+  left: 0; top: 0; z-index: 4 !important; vertical-align: bottom; text-align: left;
+  border-bottom: 1px solid var(--line-2); padding: 0 12px 10px 0;
+}
+.mx-key { display: flex; flex-direction: column; gap: 4px; font-size: 11px; font-weight: 400; color: var(--txt-faint); }
+.mx-key span { display: flex; align-items: center; gap: 6px; }
+
+.mx tbody th {
+  position: sticky; left: 0; z-index: 1; background: var(--bg);
+  text-align: left; font-weight: 400; padding: 0 12px 0 10px;
+  border-left: 3px solid var(--c);
+}
+.mx-group th {
+  padding-top: 18px !important; padding-bottom: 6px !important; border-left-color: transparent !important;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--c); font-weight: 600 !important; white-space: nowrap;
+}
+.mx-group th span { color: var(--txt-faint); font-weight: 400; margin-left: 6px; }
+.mx-group td { border-bottom: 1px solid color-mix(in srgb, var(--c) 35%, transparent); }
+
+.mx-row { cursor: pointer; }
+.mx-row th { height: 26px; border-bottom: 1px solid var(--line); }
+.mx-row th .n { display: inline-block; max-width: 168px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+.mx-row th .y { float: right; font-family: var(--mono); font-size: 10.5px; color: var(--txt-faint); line-height: 26px; }
+.mx-row td { border-bottom: 1px solid var(--line); text-align: center; padding: 0; }
+.mx-row:hover th, .mx-row:hover td { background-color: rgba(255, 255, 255, 0.05); }
+.mx-row:hover th { color: var(--accent); }
+/* lineage of the hovered row: what it derives from, and what derives from it */
+.mx-row.kin-parent th, .mx-row.kin-child th { background-color: #0d1828; }
+.mx-row.kin-parent th .n::before { content: "\2196  "; color: var(--accent); }
+.mx-row.kin-child th .n::before { content: "\21B3  "; color: var(--accent-2); }
+
+.mx-dot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--c); box-shadow: 0 0 5px color-mix(in srgb, var(--c) 60%, transparent);
+  vertical-align: middle;
+}
+
+/* Method chips: used in the drawer and the tooltip */
+.mchip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--mono); font-size: 10.5px; color: var(--c, var(--txt-dim));
+  border: 1px solid color-mix(in srgb, var(--c, var(--accent)) 45%, transparent);
+  background: color-mix(in srgb, var(--c, var(--accent)) 8%, transparent);
+  border-radius: 4px; padding: 1px 7px;
+}
+button.mchip { cursor: pointer; transition: background .14s; }
+button.mchip:hover { background: color-mix(in srgb, var(--c, var(--accent)) 20%, transparent); }
+.mfacets { display: grid; grid-template-columns: 108px 1fr; gap: 8px 12px; }
+.mfacets dt { font-family: var(--mono); font-size: 10.5px; color: var(--txt-faint); text-transform: uppercase; letter-spacing: .06em; padding-top: 3px; }
+.mfacets dd { margin: 0; display: flex; flex-wrap: wrap; gap: 5px; }
 
 /* -------------------------------------------------------------- list view */
 .grid {
@@ -387,6 +476,9 @@ main { flex: 1 1 auto; position: relative; overflow: hidden; }
   .tl-year-label { flex-basis: 52px; font-size: 16px; }
   .filters { padding: 8px 14px; gap: 8px 12px; }
   header { padding: 12px 14px 0; }
+  /* five tabs no longer fit a phone at desktop padding */
+  .tabs { overflow-x: auto; scrollbar-width: none; }
+  .tab { padding: 8px 10px; letter-spacing: .06em; flex: 0 0 auto; }
   /* a column of buttons in the corner covers the part of the map a phone can
      least spare — move them to one row along the bottom edge */
   .graph-tools {
@@ -394,4 +486,8 @@ main { flex: 1 1 auto; position: relative; overflow: hidden; }
     flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px;
   }
   .graph-tools .btn { min-width: 0; padding: 6px 10px; background: rgba(8,12,22,.94); }
+  .matrix { padding: 0 0 40px; }
+  .mx col.mx-namecol { width: 150px; }
+  .mx-row th .n { max-width: 100px; }
+  .mx-row th .y { display: none; }
 }

@@ -121,7 +121,8 @@
     </div>
 
     <nav class="tabs" role="tablist">
-      <button class="tab" role="tab" data-view="graph"    aria-selected="true">Graph</button>
+      <button class="tab" role="tab" data-view="matrix"   aria-selected="true">Methods</button>
+      <button class="tab" role="tab" data-view="graph"    aria-selected="false">Graph</button>
       <button class="tab" role="tab" data-view="list"     aria-selected="false">Index</button>
       <button class="tab" role="tab" data-view="timeline" aria-selected="false">Timeline</button>
       <button class="tab" role="tab" data-view="labs"     aria-selected="false">Labs</button>
@@ -141,6 +142,12 @@
         <option value="weights">open weights</option>
         <option value="code">code / data only</option>
         <option value="closed">closed</option>
+      </select>
+    </div>
+    <div class="fgroup">
+      <span class="flabel">Method</span>
+      <select id="method-filter">
+        <option value="">any</option>
       </select>
     </div>
     <div class="fgroup">
@@ -170,9 +177,11 @@
   </div>
 
   <main>
-    <section class="view active" id="view-graph">
+    <section class="view active" id="view-matrix"><div class="matrix" id="matrix"></div></section>
+
+    <section class="view" id="view-graph">
       <canvas id="graph-canvas"></canvas>
-      <div id="graph-tip"></div>
+      <div id="graph-tip" class="viz-tip"></div>
       <div class="graph-tools">
         <button class="btn" id="g-relayout">re-layout</button>
         <button class="btn" id="g-fit">fit to view</button>

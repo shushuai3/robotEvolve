@@ -11,13 +11,13 @@ teleop + web image-text (methods); a dataset (cat) usually only carries data met
 """
 
 METHOD_FACETS = [
-    {"id": "model", "name": "Model & action head",
+    {"id": "model", "color": "#c3a6ff", "name": "Model & action head",
      "blurb": "How the network is built and how it turns observations into actions or predictions."},
-    {"id": "training", "name": "Training recipe",
+    {"id": "training", "color": "#ffd166", "name": "Training recipe",
      "blurb": "The learning signal and procedure: imitation, RL, pretraining objectives, prompting."},
-    {"id": "data", "name": "Training data",
+    {"id": "data", "color": "#7dffcf", "name": "Training data",
      "blurb": "Where the experience comes from, from robot teleoperation to internet video."},
-    {"id": "eval", "name": "Evaluation",
+    {"id": "eval", "color": "#ff9ec7", "name": "Evaluation",
      "blurb": "For benchmarks and evaluators: where a policy is scored."},
 ]
 
