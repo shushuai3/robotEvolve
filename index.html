@@ -13,129 +13,130 @@
 <meta property="og:url" content="https://www.robotevolve.com/">
 <meta property="og:image" content="https://www.robotevolve.com/assets/og-image.svg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#e5eee0">
 </head>
 <body>
 <div id="app">
 
-  <header>
-    <div class="masthead">
-      <a class="brand" href="./" aria-label="RobotEvolve — home">
-        <svg class="brand-logo" width="190" height="38" viewBox="30 62 1140 226" aria-hidden="true" focusable="false">
-          <!-- the march of progress: arm -> mobile -> legged -> humanoid -> AI-driven -->
-          <defs>
-            <linearGradient id="logoGrad" x1="1015" y1="0" x2="1095" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#00e5ff"/>
-              <stop offset="1" stop-color="#7c5cff"/>
-            </linearGradient>
-          </defs>
-          <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-            <!-- ground line with arrow -->
-            <g stroke-width="5" opacity=".5">
-              <path d="M40 272 H1132"/>
-              <path d="M1132 264 l20 8 l-20 8"/>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="RobotEvolve — home">
+      <svg class="brand-logo" width="150" height="30" viewBox="30 62 1140 226" aria-hidden="true" focusable="false">
+            <!-- the march of progress: arm -> mobile -> legged -> humanoid -> AI-driven -->
+            <defs>
+              <linearGradient id="logoGrad" x1="1015" y1="0" x2="1095" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0" style="stop-color:var(--logo-a)"/>
+                <stop offset="1" style="stop-color:var(--logo-b)"/>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+              <!-- ground line with arrow -->
+              <g stroke-width="5" opacity=".5">
+                <path d="M40 272 H1132"/>
+                <path d="M1132 264 l20 8 l-20 8"/>
+              </g>
+              <!-- 01 · industrial arm -->
+              <g opacity=".55">
+                <path d="M75 272 v-16 h70 v16"/>
+                <path d="M110 256 L145 200"/>
+                <path d="M145 200 L110 150"/>
+                <path d="M110 150 l-15 -13 M110 150 l3 -19"/>
+                <circle cx="110" cy="256" r="6"/>
+                <circle cx="145" cy="200" r="6"/>
+                <circle cx="110" cy="150" r="6"/>
+              </g>
+              <!-- 02 · mobile + sensors -->
+              <g opacity=".68">
+                <circle cx="310" cy="262" r="10"/>
+                <circle cx="354" cy="262" r="10"/>
+                <path d="M296 254 v-48 h72 v48"/>
+                <path d="M332 206 v-28"/>
+                <path d="M316 178 h32 v-22 h-32 z"/>
+                <path d="M332 156 v-14"/>
+                <circle cx="332" cy="167" r="6" fill="currentColor" stroke="none"/>
+                <circle cx="332" cy="138" r="7" fill="currentColor" stroke="none"/>
+              </g>
+              <!-- 03 · legged -->
+              <g opacity=".8">
+                <path d="M522 186 h96 a12 12 0 0 1 12 12 v6 a12 12 0 0 1 -12 12 h-96 a12 12 0 0 1 -12 -12 v-6 a12 12 0 0 1 12 -12 z"/>
+                <path d="M528 216 l-2 26 l6 30"/>
+                <path d="M552 216 v26 l-4 30"/>
+                <path d="M600 216 l4 26 l-2 30"/>
+                <path d="M622 216 l2 26 l4 30"/>
+                <path d="M628 188 l20 -17"/>
+                <path d="M640 176 h30 v-18 h-30 z"/>
+                <path d="M510 190 l-14 -12"/>
+                <circle cx="662" cy="167" r="6" fill="currentColor" stroke="none"/>
+              </g>
+              <!-- 04 · humanoid v1 (hunched) -->
+              <g opacity=".9">
+                <path d="M786 272 l4 -26 l14 -22"/>
+                <path d="M836 272 l-6 -24 l-26 -24"/>
+                <path d="M804 224 L838 172"/>
+                <path d="M838 172 L852 226"/>
+                <path d="M834 178 L818 224"/>
+                <circle cx="846" cy="158" r="13"/>
+              </g>
+              <!-- 05 · AI-driven (upright, glowing mind) -->
+              <g stroke="url(#logoGrad)">
+                <path d="M1038 272 V202"/>
+                <path d="M1066 272 V202"/>
+                <path d="M1038 202 h28"/>
+                <path d="M1040 202 V138"/>
+                <path d="M1064 202 V138"/>
+                <path d="M1034 138 h36"/>
+                <path d="M1034 138 l-8 54"/>
+                <path d="M1070 138 l20 -34"/>
+                <path d="M1052 138 v-10"/>
+                <circle class="logo-glow" cx="1052" cy="114" r="14"/>
+              </g>
+              <!-- spark of intelligence -->
+              <g class="logo-spark" stroke-width="5">
+                <path d="M1028 99 L1041 106"/>
+                <path d="M1052 86 v12"/>
+                <path d="M1076 99 L1063 106"/>
+              </g>
+              <g fill="url(#logoGrad)" stroke="none">
+                <circle cx="1022" cy="94" r="7"/>
+                <circle cx="1052" cy="82" r="7"/>
+                <circle cx="1082" cy="94" r="7"/>
+              </g>
             </g>
-            <!-- 01 · industrial arm -->
-            <g opacity=".55">
-              <path d="M75 272 v-16 h70 v16"/>
-              <path d="M110 256 L145 200"/>
-              <path d="M145 200 L110 150"/>
-              <path d="M110 150 l-15 -13 M110 150 l3 -19"/>
-              <circle cx="110" cy="256" r="6"/>
-              <circle cx="145" cy="200" r="6"/>
-              <circle cx="110" cy="150" r="6"/>
-            </g>
-            <!-- 02 · mobile + sensors -->
-            <g opacity=".68">
-              <circle cx="310" cy="262" r="10"/>
-              <circle cx="354" cy="262" r="10"/>
-              <path d="M296 254 v-48 h72 v48"/>
-              <path d="M332 206 v-28"/>
-              <path d="M316 178 h32 v-22 h-32 z"/>
-              <path d="M332 156 v-14"/>
-              <circle cx="332" cy="167" r="6" fill="currentColor" stroke="none"/>
-              <circle cx="332" cy="138" r="7" fill="currentColor" stroke="none"/>
-            </g>
-            <!-- 03 · legged -->
-            <g opacity=".8">
-              <path d="M522 186 h96 a12 12 0 0 1 12 12 v6 a12 12 0 0 1 -12 12 h-96 a12 12 0 0 1 -12 -12 v-6 a12 12 0 0 1 12 -12 z"/>
-              <path d="M528 216 l-2 26 l6 30"/>
-              <path d="M552 216 v26 l-4 30"/>
-              <path d="M600 216 l4 26 l-2 30"/>
-              <path d="M622 216 l2 26 l4 30"/>
-              <path d="M628 188 l20 -17"/>
-              <path d="M640 176 h30 v-18 h-30 z"/>
-              <path d="M510 190 l-14 -12"/>
-              <circle cx="662" cy="167" r="6" fill="currentColor" stroke="none"/>
-            </g>
-            <!-- 04 · humanoid v1 (hunched) -->
-            <g opacity=".9">
-              <path d="M786 272 l4 -26 l14 -22"/>
-              <path d="M836 272 l-6 -24 l-26 -24"/>
-              <path d="M804 224 L838 172"/>
-              <path d="M838 172 L852 226"/>
-              <path d="M834 178 L818 224"/>
-              <circle cx="846" cy="158" r="13"/>
-            </g>
-            <!-- 05 · AI-driven (upright, glowing mind) -->
-            <g stroke="url(#logoGrad)">
-              <path d="M1038 272 V202"/>
-              <path d="M1066 272 V202"/>
-              <path d="M1038 202 h28"/>
-              <path d="M1040 202 V138"/>
-              <path d="M1064 202 V138"/>
-              <path d="M1034 138 h36"/>
-              <path d="M1034 138 l-8 54"/>
-              <path d="M1070 138 l20 -34"/>
-              <path d="M1052 138 v-10"/>
-              <circle class="logo-glow" cx="1052" cy="114" r="14"/>
-            </g>
-            <!-- spark of intelligence -->
-            <g stroke="#7c5cff" stroke-width="5">
-              <path d="M1028 99 L1041 106"/>
-              <path d="M1052 86 v12"/>
-              <path d="M1076 99 L1063 106"/>
-            </g>
-            <g fill="url(#logoGrad)" stroke="none">
-              <circle cx="1022" cy="94" r="7"/>
-              <circle cx="1052" cy="82" r="7"/>
-              <circle cx="1082" cy="94" r="7"/>
-            </g>
-          </g>
-        </svg>
-        <span class="brand-text">
-          <h1>Robot<b>Evolve</b></h1>
-          <span class="sub">The technology behind robot manipulation intelligence</span>
-        </span>
-      </a>
-
-      <div class="searchwrap">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-          <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
-        </svg>
-        <input id="search" type="search" placeholder="search tech, lab, tag…" autocomplete="off" spellcheck="false">
-      </div>
-
-      <div class="stats" id="stats"></div>
-    </div>
+          </svg>
+      <span class="brand-text">
+        <h1>Robot<b>Evolve</b></h1>
+        <span class="sub">The technology behind robot manipulation intelligence</span>
+      </span>
+    </a>
 
     <nav class="tabs" role="tablist">
-      <button class="tab" role="tab" data-view="matrix"   aria-selected="true">Methods</button>
+      <button class="tab" role="tab" data-view="methods"  aria-selected="true">Methods</button>
       <button class="tab" role="tab" data-view="graph"    aria-selected="false">Graph</button>
       <button class="tab" role="tab" data-view="list"     aria-selected="false">Index</button>
       <button class="tab" role="tab" data-view="timeline" aria-selected="false">Timeline</button>
       <button class="tab" role="tab" data-view="labs"     aria-selected="false">Labs</button>
     </nav>
+
+    <div class="searchwrap">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
+      </svg>
+      <input id="search" type="search" placeholder="search tech, lab, tag…" autocomplete="off" spellcheck="false" aria-label="Search">
+      <kbd>/</kbd>
+    </div>
   </header>
 
-  <div class="filters">
+  <aside class="sidebar filters" aria-label="Filters">
     <div class="fgroup catgroup">
-      <span class="flabel">Domain</span>
+      <div class="flabel">Domain</div>
       <div class="chips" id="cat-filters"></div>
     </div>
     <div class="fgroup">
-      <span class="flabel">Access</span>
+      <label class="flabel" for="license-filter">Access</label>
       <select id="license-filter">
         <option value="">any</option>
         <option value="open">open source</option>
@@ -145,13 +146,13 @@
       </select>
     </div>
     <div class="fgroup">
-      <span class="flabel">Method</span>
+      <label class="flabel" for="method-filter">Method</label>
       <select id="method-filter">
         <option value="">any</option>
       </select>
     </div>
     <div class="fgroup">
-      <span class="flabel">From</span>
+      <label class="flabel" for="year-filter">From</label>
       <select id="year-filter">
         <option value="0">all time</option>
         <option value="2025">2025+</option>
@@ -161,7 +162,7 @@
       </select>
     </div>
     <div class="fgroup" id="sort-group">
-      <span class="flabel">Sort</span>
+      <label class="flabel" for="sort-filter">Sort</label>
       <select id="sort-filter">
         <option value="newest">newest first</option>
         <option value="oldest">oldest first</option>
@@ -171,13 +172,15 @@
         <option value="edited">recently edited here</option>
       </select>
     </div>
-    <span class="spacer"></span>
-    <span id="result-count"></span>
-    <button class="btn" id="reset-filters">reset</button>
-  </div>
+    <div class="side-foot">
+      <span id="result-count"></span>
+      <button class="btn" id="reset-filters">reset</button>
+    </div>
+    <div class="stats" id="stats"></div>
+  </aside>
 
   <main>
-    <section class="view active" id="view-matrix"><div class="matrix" id="matrix"></div></section>
+    <section class="view active" id="view-methods"><div class="threads" id="threads"></div></section>
 
     <section class="view" id="view-graph">
       <canvas id="graph-canvas"></canvas>
@@ -206,6 +209,13 @@
     </section>
   </main>
 
+  <!-- Details slide in over the page when a technology is picked. -->
+  <aside id="drawer" aria-hidden="true" aria-label="Technology details">
+    <button id="drawer-close" aria-label="Close">&times;</button>
+    <div class="drawer-head" id="drawer-head"></div>
+    <div class="drawer-body" id="drawer-body"></div>
+  </aside>
+
   <footer class="site-footer">
     RobotEvolve · Tracking the evolution of robots &amp; AI ·
     <a href="https://www.robotevolve.com">www.robotevolve.com</a>
@@ -213,11 +223,6 @@
 </div>
 
 <div id="scrim"></div>
-<aside id="drawer" aria-hidden="true">
-  <button id="drawer-close" aria-label="Close">&times;</button>
-  <div class="drawer-head" id="drawer-head"></div>
-  <div class="drawer-body" id="drawer-body"></div>
-</aside>
 
 <script src="assets/js/graph.js"></script>
 <script src="assets/js/app.js"></script>

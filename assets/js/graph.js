@@ -294,7 +294,23 @@
     this.canvas.width = Math.max(1, Math.round(r.width * dpr));
     this.canvas.height = Math.max(1, Math.round(r.height * dpr));
     this.w = r.width; this.h = r.height; this.dpr = dpr;
+    this._th = null;   // re-read the theme colours on the next draw
     this.redraw();
+  };
+
+  /* Canvas colours come from CSS custom properties, so the stylesheet owns the theme. */
+  TechGraph.prototype._theme = function () {
+    if (this._th) return this._th;
+    var cs = global.getComputedStyle(global.document.documentElement);
+    function v(name, fallback) { return (cs.getPropertyValue(name) || '').trim() || fallback; }
+    this._th = {
+      edge: v('--g-edge', '#6f8a76'),
+      stroke: v('--g-node-stroke', '#e5eee0'),
+      ink: v('--ink', '#22332a'),
+      label: v('--g-label', '#33463a'),
+      halo: v('--g-label-halo', '#dbe7d5')
+    };
+    return this._th;
   };
 
   /* Re-aim the clusters at anchors for the current canvas shape and let the
@@ -343,6 +359,7 @@
   TechGraph.prototype.draw = function () {
     var ctx = this.ctx, self = this;
     if (!this.w) return;
+    var th = this._theme();
     ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
     ctx.clearRect(0, 0, this.w, this.h);
     ctx.save();
@@ -374,8 +391,8 @@
 
       ctx.beginPath();
       ctx.setLineDash(l.kind === 'influence' ? [3, 4] : []);
-      ctx.strokeStyle = on ? self.color(b.cat) : 'rgba(140,190,255,0.85)';
-      ctx.globalAlpha = on ? 0.85 : op * 0.3;
+      ctx.strokeStyle = on ? self.color(b.cat) : th.edge;
+      ctx.globalAlpha = on ? 0.85 : op * 0.45;
       ctx.lineWidth = (on ? 1.7 : 0.9) / self.scale;   // constant width on screen
       ctx.moveTo(a.x, a.y);
       ctx.quadraticCurveTo(cx, cy, b.x, b.y);
@@ -407,21 +424,14 @@
       var col = self.color(n.cat);
       ctx.globalAlpha = op;
 
-      if ((n.id === focus || (near && near.has(n.id))) && op > 0.5) {
-        ctx.shadowColor = col; ctx.shadowBlur = 18;
-      } else if (n.impact >= 5 && !focus) {
-        ctx.shadowColor = col; ctx.shadowBlur = 10;
-      } else { ctx.shadowBlur = 0; }
-
       ctx.beginPath();
       ctx.arc(n.x, n.y, self._drawR(n), 0, Math.PI * 2);
       ctx.fillStyle = col;
       ctx.globalAlpha = op * (n.id === focus ? 1 : 0.82);
       ctx.fill();
-      ctx.shadowBlur = 0;
 
       ctx.lineWidth = (n.id === self.selected ? 2.4 : 1.1) / self.scale;
-      ctx.strokeStyle = n.id === self.selected ? '#fff' : 'rgba(5,7,13,0.85)';
+      ctx.strokeStyle = n.id === self.selected ? th.ink : th.stroke;
       ctx.globalAlpha = op;
       ctx.stroke();
     });
@@ -470,16 +480,16 @@
         if (sx < -80 || sx > self.w + 80 || sy < -20 || sy > self.h + 20) continue;
 
         var big = n.impact >= 5;
-        ctx.font = (big ? '600 12px ' : '500 11px ') + 'ui-monospace, monospace';
+        ctx.font = (big ? '600 12px ' : '500 11px ') + '"JetBrains Mono", ui-monospace, monospace';
         var key = big ? '_w6' : '_w5';
         if (n[key] == null) n[key] = ctx.measureText(n.name).width;   // width never changes
         if (!claim(sx, sy, n[key] + 8, 14)) continue;
 
         ctx.globalAlpha = op * (n.id === focus ? 1 : 0.82);
         ctx.lineWidth = 3;
-        ctx.strokeStyle = 'rgba(5,7,13,0.92)';
+        ctx.strokeStyle = th.halo;
         ctx.strokeText(n.name, sx, sy);
-        ctx.fillStyle = n.id === focus ? '#fff' : '#c2d3e8';
+        ctx.fillStyle = n.id === focus ? th.ink : th.label;
         ctx.fillText(n.name, sx, sy);
       }
     }

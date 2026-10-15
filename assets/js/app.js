@@ -6,7 +6,7 @@
   var DB = { techs: [], cats: [], catById: {}, labs: [], labById: {},
              methods: [], methodById: {}, facets: [], facetById: {} };
   var detailCache = new Map();
-  var state = { view: 'matrix', q: '', cats: new Set(), license: '', method: '', year: 0, sort: 'newest' };
+  var state = { view: 'methods', q: '', cats: new Set(), license: '', method: '', year: 0, sort: 'newest' };
   var graph = null;
 
   var $ = function (s) { return document.querySelector(s); };
@@ -27,6 +27,22 @@
     code: 'code / data', closed: 'closed'
   };
 
+  /* The colours in technologies.json were picked for a dark neon page. On the green
+     paper theme they glare and some vanish, so the page swaps in muted inks by id.
+     Ids not listed here keep their colour from the data. */
+  var INK = {
+    vla: '#2f6f8f', il: '#6a4f9c', rl: '#a2445f', 'world-model': '#8a5d0c',
+    wam: '#b04a32', vlm: '#2d6e45', rep: '#a85a1c', data: '#3c5fa8',
+    bench: '#8c4a8a', 'human-data': '#5b7419', sim: '#56636c',
+    model: '#6f5a99', training: '#8a6a1f', eval: '#a24f6b'
+  };
+  var FACET_INK = { data: '#2f7a5d' };   // the "data" facet would otherwise share the dataset domain's blue
+  function inkCat(c) { if (INK[c.id]) c.color = INK[c.id]; }
+  function inkFacet(f) { if (FACET_INK[f.id] || INK[f.id]) f.color = FACET_INK[f.id] || INK[f.id]; }
+
+  /* Domain names are long; the sidebar uses the part before " & " or " / ". */
+  function shortName(c) { return c.name.split(/ & | \/ /)[0]; }
+
   /* ------------------------------------------------------------------ boot */
   function boot() {
     Promise.all([
@@ -36,13 +52,13 @@
       var t = res[0], l = res[1];
       DB.techs = t.technologies;
       DB.cats = t.categories;
-      DB.cats.forEach(function (c) { DB.catById[c.id] = c; });
+      DB.cats.forEach(function (c) { inkCat(c); DB.catById[c.id] = c; });
       DB.labs = l.labs;
       DB.labs.forEach(function (x) { DB.labById[x.id] = x; });
       DB.methods = t.methods || [];
       DB.methods.forEach(function (m) { DB.methodById[m.id] = m; });
       DB.facets = t.method_facets || [];
-      DB.facets.forEach(function (f) { DB.facetById[f.id] = f; });
+      DB.facets.forEach(function (f) { inkFacet(f); DB.facetById[f.id] = f; });
 
       DB.techs.forEach(function (x) {
         x._search = [
@@ -67,7 +83,7 @@
       initGraph();
       renderMethodFilter();
       wire();
-      show('matrix');
+      show('methods');
       applyFilters();
       openFromHash();
     }).catch(function (err) {
@@ -84,9 +100,8 @@
     var years = DB.techs.map(function (t) { return t.year; });
     var openCount = DB.techs.filter(function (t) { return t.license === 'open' || t.license === 'weights'; }).length;
     $('#stats').innerHTML =
-      '<span class="stat"><b>' + DB.techs.length + '</b> technologies</span>' +
-      '<span class="stat"><b>' + DB.labs.length + '</b> labs</span>' +
-      '<span class="stat"><b>' + openCount + '</b> open</span>' +
+      '<span class="stat"><b>' + DB.techs.length + '</b> technologies · <b>' + DB.methods.length + '</b> methods</span>' +
+      '<span class="stat"><b>' + DB.labs.length + '</b> labs · <b>' + openCount + '</b> open</span>' +
       '<span class="stat">' + Math.min.apply(null, years) + '–' + Math.max.apply(null, years) + '</span>' +
       // last_changed tracks real content edits; `generated` only says when the file
       // was last written, which changes even on a no-op regeneration.
@@ -96,17 +111,37 @@
 
   function renderCatFilters() {
     var wrap = $('#cat-filters');
+    var count = {};
+    DB.techs.forEach(function (t) { count[t.cat] = (count[t.cat] || 0) + 1; });
+    // The swatch is the
+    // domain's colour, which makes this list the legend for the graph too.
     DB.cats.forEach(function (c) {
-      var b = el('button', 'chip', '<span class="dot"></span>' + esc(c.short));
+      var b = el('button', 'chip',
+        '<span class="sw"></span><span class="nm">' + esc(shortName(c)) +
+        '</span><span class="n">' + (count[c.id] || 0) + '</span>');
       b.style.setProperty('--c', c.color);
-      b.setAttribute('aria-pressed', 'false');
+      b.dataset.cat = c.id;
       b.title = c.name + ' — ' + c.blurb;
-      b.addEventListener('click', function () {
-        if (state.cats.has(c.id)) state.cats.delete(c.id); else state.cats.add(c.id);
-        b.setAttribute('aria-pressed', state.cats.has(c.id) ? 'true' : 'false');
-        applyFilters();
-      });
+      b.addEventListener('click', function () { toggleCat(c.id); });
       wrap.appendChild(b);
+    });
+    refreshChips();
+  }
+
+  function toggleCat(id) {
+    if (state.cats.has(id)) state.cats.delete(id); else state.cats.add(id);
+    refreshChips();
+    applyFilters();
+  }
+
+  /* A domain is "in view" while no domain is picked, or when it is one of the picked ones. */
+  function refreshChips() {
+    var any = state.cats.size > 0;
+    document.querySelectorAll('#cat-filters .chip').forEach(function (b) {
+      var picked = state.cats.has(b.dataset.cat);
+      var inView = !any || picked;
+      b.setAttribute('aria-pressed', picked ? 'true' : 'false');
+      b.classList.toggle('inc', inView);
     });
   }
 
@@ -140,7 +175,7 @@
     $('#result-count').textContent = list.length + ' / ' + DB.techs.length + ' shown';
     renderGrid(list);
     renderTimeline(list);
-    renderMatrix(list);
+    renderThreads(list);
     if (graph) graph.setDimmed(list.map(function (t) { return t.id; }));
   }
 
@@ -291,7 +326,7 @@
     });
   }
 
-  /* ---------------------------------------------------------- method matrix */
+  /* --------------------------------------------------------------- methods */
   function methodChip(id, asButton) {
     var m = DB.methodById[id];
     if (!m) return '';
@@ -302,7 +337,7 @@
       esc(m.name) + '</' + tag + '>';
   }
 
-  /* Methods in facet order, which is also the column order of the matrix. */
+  /* Methods in facet order, the order they are listed in everywhere. */
   function methodColumns() {
     var cols = [];
     DB.facets.forEach(function (f) {
@@ -332,105 +367,219 @@
     applyFilters();
   }
 
-  /* One row per technology, one column per method, a dot where the technology uses
-     the method. Rows are grouped by domain and ordered by the Sort control, so reading
-     down a column shows how a method spread; reading along a row shows a recipe. */
-  function renderMatrix(list) {
-    var wrap = $('#matrix');
+  /* Method threads. Methods (grouped by facet) on the left, domains on the right, and a
+     thread wherever technologies in that domain use the method, as thick as how many do.
+     Hovering a method or a domain lights its threads and fills the side panel; clicking a
+     domain toggles that domain's filter, and the panel can filter the site by a method. */
+  var threads = { list: [], focus: null, users: {}, links: [] };   // focus: { kind: 'method' | 'cat', id }
+
+  function renderThreads(list) {
+    threads.list = list;
+    if (state.view !== 'methods') return;   // a hidden view measures 0 wide; show() draws it
+    var wrap = $('#threads');
     if (!list.length) { wrap.innerHTML = '<div class="empty">Nothing matches those filters.</div>'; return; }
+
     var cols = methodColumns();
-    var count = {};
-    list.forEach(function (t) { (t.methods || []).forEach(function (m) { count[m] = (count[m] || 0) + 1; }); });
+    var users = {};
+    cols.forEach(function (m) { users[m.id] = []; });
+    list.forEach(function (t) { (t.methods || []).forEach(function (m) { if (users[m]) users[m].push(t); }); });
+    var newest = function (a, b) { return (b.year * 12 + (b.month || 0)) - (a.year * 12 + (a.month || 0)); };
+    cols.forEach(function (m) { users[m.id].sort(newest); });
+    var cats = DB.cats.filter(function (c) { return list.some(function (t) { return t.cat === c.id; }); });
 
-    var h = '<table class="mx"><colgroup><col class="mx-namecol">' +
-      cols.map(function (m) { return '<col data-m="' + esc(m.id) + '">'; }).join('') + '</colgroup><thead>';
+    var totalUses = 0;
+    cols.forEach(function (m) { totalUses += users[m.id].length; });
+    // a filtered list has few threads; scale them up so the picture still fills the space
+    var K = Math.max(0.9, Math.min(6, 560 / Math.max(1, totalUses)));
 
-    h += '<tr class="mx-facets"><th class="mx-corner" rowspan="2"><div class="mx-key">' +
-      '<span><i class="mx-dot" style="--c:var(--txt-dim)"></i> uses the method</span>' +
-      '<span>click a method to filter</span><span>hover a row to see its lineage</span></div></th>';
-    DB.facets.forEach(function (f) {
-      var n = cols.filter(function (m) { return m.facet === f.id; }).length;
-      if (n) h += '<th colspan="' + n + '" style="--c:' + esc(f.color) + '"><span>' + esc(f.name) + '</span></th>';
-    });
-    h += '</tr><tr class="mx-methods">';
+    wrap.innerHTML = '<div class="th-chart"><svg role="img" aria-label="Methods linked to the domains that use them"></svg></div>' +
+      '<aside class="th-side" id="th-side"></aside>';
+    var box = wrap.querySelector('.th-chart');
+    // label columns are fixed by the longest names; the threads take what is left,
+    // and below that the chart scrolls sideways rather than squeezing its labels
+    var W = Math.max(660, box.clientWidth);
+    var x0 = 234, x1 = W - 200;
+
+    // method rows: each as tall as its threads, with a floor so its label fits
+    var y = 22, mNode = {}, lastF = null;
     cols.forEach(function (m) {
-      var f = DB.facetById[m.facet];
-      h += '<th data-m="' + esc(m.id) + '" style="--c:' + esc(f ? f.color : '') + '"' +
-        (state.method === m.id ? ' class="on"' : '') + ' title="' + esc(m.name + ' — ' + m.blurb) + '">' +
-        '<span class="mx-mname">' + esc(m.name) + '</span>' +
-        '<span class="mx-count">' + (count[m.id] || 0) + '</span></th>';
+      if (lastF && lastF !== m.facet) y += 18;
+      lastF = m.facet;
+      var h = users[m.id].length * K;
+      mNode[m.id] = { y: y, h: h, row: Math.max(h, 14), off: 0 };
+      y += mNode[m.id].row + 3;
     });
-    h += '</tr></thead>';
+    var H = y + 8;
 
-    DB.cats.forEach(function (c) {
-      var rows = list.filter(function (t) { return t.cat === c.id; });
-      if (!rows.length) return;
-      h += '<tbody style="--c:' + esc(c.color) + '"><tr class="mx-group"><th>' + esc(c.name) +
-        ' <span>' + rows.length + '</span></th><td colspan="' + cols.length + '"></td></tr>';
-      rows.forEach(function (t) {
-        var has = {};
-        (t.methods || []).forEach(function (m) { has[m] = true; });
-        h += '<tr class="mx-row" data-id="' + esc(t.id) + '"><th><span class="n">' + esc(t.name) +
-          '</span><span class="y">' + t.year + '</span></th>';
-        cols.forEach(function (m) {
-          h += has[m.id]
-            ? '<td data-m="' + esc(m.id) + '"><i class="mx-dot" style="--c:' + esc(DB.facetById[m.facet].color) + '"></i></td>'
-            : '<td data-m="' + esc(m.id) + '"></td>';
-        });
-        h += '</tr>';
-      });
-      h += '</tbody>';
+    // domain blocks: sized by their share of all threads, spread over the same height
+    var uses = {};
+    cats.forEach(function (c) { uses[c.id] = 0; });
+    list.forEach(function (t) { uses[t.cat] += (t.methods || []).filter(function (m) { return users[m]; }).length; });
+    var sum = 0;
+    cats.forEach(function (c) { sum += uses[c.id] * K; });
+    var gap = cats.length > 1 ? Math.max(14, (H - 30 - sum) / (cats.length - 1)) : 0;
+    H = Math.max(H, 30 + sum + gap * (cats.length - 1));
+    var dy = 22, dNode = {};
+    cats.forEach(function (c) { dNode[c.id] = { y: dy, h: Math.max(uses[c.id] * K, 3), off: 0 }; dy += uses[c.id] * K + gap; });
+
+    var links = [];
+    cols.forEach(function (m) {
+      var by = {};
+      users[m.id].forEach(function (t) { by[t.cat] = (by[t.cat] || 0) + 1; });
+      cats.forEach(function (c) { if (by[c.id]) links.push({ m: m.id, c: c.id, n: by[c.id], w: by[c.id] * K }); });
     });
-    wrap.innerHTML = h + '</table>';
+    // stack threads in method order at both ends so they never cross inside a block
+    links.forEach(function (l) { var n = mNode[l.m]; l.ya = n.y + n.off + l.w / 2; n.off += l.w; });
+    links.forEach(function (l) { var n = dNode[l.c]; l.yb = n.y + n.off + l.w / 2; n.off += l.w; });
+
+    var mid = (x0 + x1) / 2;
+    var s = '';
+    links.forEach(function (l, i) {
+      s += '<path class="th-rib" data-i="' + i + '" data-m="' + esc(l.m) + '" stroke="' +
+        esc(DB.catById[l.c].color) + '" stroke-width="' + Math.max(l.w, 0.8).toFixed(2) + '" d="M' + x0 + ',' +
+        l.ya.toFixed(1) + ' C' + mid + ',' + l.ya.toFixed(1) + ' ' + mid + ',' + l.yb.toFixed(1) + ' ' + x1 + ',' + l.yb.toFixed(1) + '"/>';
+    });
+    lastF = null;
+    cols.forEach(function (m) {
+      var n = mNode[m.id], f = DB.facetById[m.facet], cy = n.y + Math.min(n.row, 14) / 2 + 4;
+      if (lastF !== m.facet) {
+        s += '<text class="th-facet" x="0" y="' + (n.y - 6) + '" fill="' + esc(f.color) + '">' + esc(f.name.toUpperCase()) + '</text>';
+        lastF = m.facet;
+      }
+      var cnt = users[m.id].length;
+      s += '<g class="th-m' + (cnt ? '' : ' none') + '" data-m="' + esc(m.id) + '">' +
+        '<title>' + esc(m.name + ' — ' + (m.blurb || '')) + '</title>' +
+        '<rect class="hit" x="0" y="' + (n.y - 1.5) + '" width="' + x0 + '" height="' + (n.row + 3) + '"/>' +
+        '<rect x="' + (x0 - 4) + '" y="' + n.y + '" width="4" height="' + Math.max(n.h, 1) + '" fill="' + esc(f.color) + '"/>' +
+        '<text class="lab" x="' + (x0 - 34) + '" y="' + cy + '" text-anchor="end">' + esc(m.name) + '</text>' +
+        '<text class="num" x="' + (x0 - 12) + '" y="' + cy + '" text-anchor="end">' + cnt + '</text></g>';
+    });
+    cats.forEach(function (c) {
+      var n = dNode[c.id], cy = n.y + n.h / 2 + 4;
+      var cnt = list.filter(function (t) { return t.cat === c.id; }).length;
+      s += '<g class="th-c" data-c="' + esc(c.id) + '"><title>' + esc(c.name + ' — ' + (c.blurb || '')) + '</title>' +
+        '<rect class="hit" x="' + x1 + '" y="' + (n.y - 3) + '" width="' + (W - x1) + '" height="' + (n.h + 6) + '"/>' +
+        '<rect x="' + x1 + '" y="' + n.y + '" width="5" height="' + n.h + '" fill="' + esc(c.color) + '"/>' +
+        '<text class="lab" x="' + (x1 + 14) + '" y="' + cy + '" fill="' + esc(c.color) + '">' + esc(shortName(c)) + '</text>' +
+        '<text class="num" x="' + (W - 4) + '" y="' + cy + '" text-anchor="end">' + cnt + '</text></g>';
+    });
+    var svg = box.querySelector('svg');
+    H = Math.ceil(H);
+    svg.setAttribute('width', W);
+    svg.setAttribute('height', H);
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.innerHTML = s;
+
+    threads.users = users;
+    threads.links = links;
+    // keep whatever was being traced, if it is still on screen
+    var f = threads.focus;
+    if (state.method && users[state.method]) focusThreads({ kind: 'method', id: state.method });
+    else if (f && (f.kind === 'method' ? users[f.id] && users[f.id].length : uses[f.id] != null)) focusThreads(f);
+    else focusThreads(null);
   }
 
-  function wireMatrix() {
-    var wrap = $('#matrix');
-    var hlCol = null;
-
-    wrap.addEventListener('click', function (e) {
-      var head = e.target.closest('thead th[data-m]');
-      if (head) { setMethod(state.method === head.dataset.m ? '' : head.dataset.m); return; }
-      var row = e.target.closest('tr.mx-row');
-      if (row) openTech(row.dataset.id);
+  function focusThreads(f) {
+    threads.focus = f;
+    var wrap = $('#threads');
+    var on = function (l) { return f.kind === 'method' ? l.m === f.id : l.c === f.id; };
+    wrap.querySelectorAll('.th-rib').forEach(function (p) {
+      var l = threads.links[+p.dataset.i];
+      p.classList.toggle('lit', !!f && on(l));
+      p.classList.toggle('dim', !!f && !on(l));
+    });
+    wrap.querySelectorAll('.th-m').forEach(function (g) { g.classList.toggle('hot', !!f && f.kind === 'method' && g.dataset.m === f.id); });
+    wrap.querySelectorAll('.th-c').forEach(function (g) {
+      g.classList.toggle('hot', !!f && f.kind === 'cat' && g.dataset.c === f.id);
+      g.classList.toggle('on', state.cats.has(g.dataset.c));
     });
 
-    // column highlight goes on the <col>, so one class change lights the whole column
-    wrap.addEventListener('mouseover', function (e) {
-      var cell = e.target.closest('[data-m]');
-      var col = cell ? wrap.querySelector('col[data-m="' + cell.dataset.m + '"]') : null;
-      if (col !== hlCol) {
-        if (hlCol) hlCol.classList.remove('hl');
-        if (col) col.classList.add('hl');
-        hlCol = col;
-      }
-      var row = e.target.closest('tr.mx-row');
-      markKin(row ? row.dataset.id : null);
-    });
-    wrap.addEventListener('mouseleave', function () {
-      if (hlCol) hlCol.classList.remove('hl');
-      hlCol = null;
-      markKin(null);
-    });
-
-    var kinOf = null;
-    function markKin(id) {
-      if (id === kinOf) return;
-      kinOf = id;
-      wrap.querySelectorAll('tr.kin-parent, tr.kin-child').forEach(function (r) {
-        r.classList.remove('kin-parent', 'kin-child');
-      });
-      var t = id && DB.byId[id];
-      if (!t) return;
-      (t.parents || []).forEach(function (p) {
-        var r = wrap.querySelector('tr.mx-row[data-id="' + p + '"]');
-        if (r) r.classList.add('kin-parent');
-      });
-      (t._children || []).forEach(function (p) {
-        var r = wrap.querySelector('tr.mx-row[data-id="' + p + '"]');
-        if (r) r.classList.add('kin-child');
-      });
+    var list = threads.list, users = threads.users;
+    var techLi = function (t) {
+      var c = DB.catById[t.cat];
+      return '<li><button data-goto="' + esc(t.id) + '"><i style="background:' + esc(c ? c.color : '') + '"></i>' +
+        '<span class="n">' + esc(t.name) + '</span><span class="y">' + t.year + '</span></button></li>';
+    };
+    var methodLi = function (m, n) {
+      var fc = DB.facetById[m.facet];
+      return '<li><button data-focus-m="' + esc(m.id) + '"><i style="background:' + esc(fc ? fc.color : '') + '"></i>' +
+        '<span class="n">' + esc(m.name) + '</span><span class="y">' + n + '</span></button></li>';
+    };
+    var ranked = function (inCat) {
+      return methodColumns().map(function (m) {
+        return [m, users[m.id].filter(function (t) { return !inCat || t.cat === inCat; }).length];
+      }).filter(function (p) { return p[1]; }).sort(function (a, b) { return b[1] - a[1]; });
+    };
+    var h;
+    if (f && f.kind === 'method') {
+      var m = DB.methodById[f.id], fc = DB.facetById[m.facet], u = users[f.id];
+      h = '<div class="kick" style="color:' + esc(fc.color) + '">' + esc(fc.name) + '</div><h3>' + esc(m.name) + '</h3>' +
+        (m.blurb ? '<p>' + esc(m.blurb) + '</p>' : '') +
+        '<div class="sub">' + u.length + ' technolog' + (u.length === 1 ? 'y' : 'ies') + ', newest first</div>' +
+        '<ul>' + u.map(techLi).join('') + '</ul>' +
+        '<button class="btn" data-filter-m="' + esc(m.id) + '">' +
+        (state.method === m.id ? 'clear this method filter' : 'show only these technologies') + '</button>';
+    } else if (f && f.kind === 'cat') {
+      var c = DB.catById[f.id];
+      var n = list.filter(function (t) { return t.cat === f.id; }).length;
+      h = '<div class="kick" style="color:' + esc(c.color) + '">Domain · ' + n + ' technologies</div><h3>' + esc(c.name) + '</h3>' +
+        (c.blurb ? '<p>' + esc(c.blurb) + '</p>' : '') + '<div class="sub">Methods it uses most</div>' +
+        '<ul>' + ranked(f.id).map(function (p) { return methodLi(p[0], p[1]); }).join('') + '</ul>' +
+        '<button class="btn" data-filter-c="' + esc(c.id) + '">' +
+        (state.cats.has(c.id) ? 'remove this domain filter' : 'show only this domain') + '</button>';
+    } else {
+      var all = ranked(null);
+      h = '<div class="kick">How to read this</div><h3>' + list.length + ' technologies, ' + all.length + ' methods</h3>' +
+        '<p>Each thread joins a method to a domain. The thicker the thread, the more technologies in that domain use the method. ' +
+        'Hover a method or a domain to trace it.</p><div class="sub">Most-used methods</div>' +
+        '<ul>' + all.slice(0, 14).map(function (p) { return methodLi(p[0], p[1]); }).join('') + '</ul>';
     }
+    $('#th-side').innerHTML = h;
+  }
+
+  /* threads of one method lit for a moment, without changing the side panel */
+  function previewMethod(id) {
+    $('#threads').querySelectorAll('.th-rib').forEach(function (p) {
+      p.classList.toggle('peek', !!id && p.dataset.m === id);
+    });
+  }
+
+  function wireThreads() {
+    var wrap = $('#threads');
+    wrap.addEventListener('mouseover', function (e) {
+      // the side panel is where you go to click a name, so hovering a method listed
+      // there only previews its threads instead of replacing the list under the pointer
+      var p = e.target.closest('[data-focus-m]');
+      if (p) { previewMethod(p.dataset.focusM); return; }
+      var g = e.target.closest('.th-m:not(.none), .th-c');
+      if (!g) return;
+      var f = g.dataset.c ? { kind: 'cat', id: g.dataset.c } : { kind: 'method', id: g.dataset.m };
+      var cur = threads.focus;
+      if (!cur || cur.kind !== f.kind || cur.id !== f.id) focusThreads(f);
+    });
+    wrap.addEventListener('mouseout', function (e) {
+      if (e.target.closest('[data-focus-m]')) previewMethod(null);
+    });
+    wrap.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-goto]');
+      if (b) { openTech(b.dataset.goto); return; }
+      b = e.target.closest('[data-filter-m]');
+      if (b) { setMethod(state.method === b.dataset.filterM ? '' : b.dataset.filterM); return; }
+      b = e.target.closest('[data-filter-c]');
+      if (b) { toggleCat(b.dataset.filterC); return; }
+      b = e.target.closest('[data-focus-m]');
+      if (b) { focusThreads({ kind: 'method', id: b.dataset.focusM }); return; }
+      // taps on a phone have no hover, so a tap on the chart traces too
+      var g = e.target.closest('.th-m:not(.none)');
+      if (g) { focusThreads({ kind: 'method', id: g.dataset.m }); return; }
+      g = e.target.closest('.th-c');
+      if (g) focusThreads({ kind: 'cat', id: g.dataset.c });
+    });
+    var rt = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { renderThreads(threads.list); }, 120);
+    });
   }
 
   /* --------------------------------------------------------------- drawer */
@@ -464,7 +613,7 @@
       body.querySelectorAll('[data-method]').forEach(function (b) {
         b.addEventListener('click', function () {
           closeDrawer();
-          show('matrix');
+          show('methods');
           setMethod(b.getAttribute('data-method'));
         });
       });
@@ -519,7 +668,8 @@
       '<dt>Origin</dt><dd>' + orgNames(t).map(esc).join('<br>') + '</dd>' +
       '<dt>Access</dt><dd>' + esc(LICENSE_LABEL[t.license] || t.license) + '</dd>' +
       (t.tags && t.tags.length ? '<dt>Tags</dt><dd>' + t.tags.map(esc).join(' · ') + '</dd>' : '') +
-      '<dt>Influence</dt><dd>' + '●'.repeat(t.impact) + '<span style="opacity:.25">' + '●'.repeat(5 - t.impact) + '</span></dd>' +
+      '<dt>Influence</dt><dd class="impact" title="' + t.impact + ' of 5">' +
+        '<i class="on"></i>'.repeat(t.impact) + '<i></i>'.repeat(5 - t.impact) + '</dd>' +
       '</dl></div>';
 
     if ((t.methods || []).length) {
@@ -537,9 +687,9 @@
 
     if (parents || infl || children) {
       h += '<div class="sect"><h4>Related</h4>';
-      if (parents) h += '<div style="margin-bottom:8px"><div style="font-size:11px;color:var(--txt-faint);margin-bottom:5px">Derives from</div><div class="rel">' + parents + '</div></div>';
-      if (infl) h += '<div style="margin-bottom:8px"><div style="font-size:11px;color:var(--txt-faint);margin-bottom:5px">Influenced by</div><div class="rel">' + infl + '</div></div>';
-      if (children) h += '<div><div style="font-size:11px;color:var(--txt-faint);margin-bottom:5px">Descendants</div><div class="rel">' + children + '</div></div>';
+      if (parents) h += '<div class="rel-label">Derives from</div><div class="rel">' + parents + '</div>';
+      if (infl) h += '<div class="rel-label">Influenced by</div><div class="rel">' + infl + '</div>';
+      if (children) h += '<div class="rel-label">Descendants</div><div class="rel">' + children + '</div>';
       h += '</div>';
     }
 
@@ -554,7 +704,7 @@
       '<dt title="When this entry\'s content last changed — not when the site was rebuilt">Updated</dt>' +
       '<dd>' + esc(d.updated || 'unknown') +
       (d.added && d.updated === d.added
-        ? ' <span style="color:var(--txt-faint)">(unchanged since)</span>' : '') + '</dd>' +
+        ? ' <span style="color:var(--ink-3)">(unchanged since)</span>' : '') + '</dd>' +
       '</dl></div>';
     return h;
   }
@@ -588,6 +738,7 @@
     // a hidden canvas measures 0, so the graph only learns about a resize that
     // happened on another tab when it comes back into view
     if (v === 'graph' && graph) { graph.resize(); graph.reflowIfNeeded(); }
+    if (v === 'methods') renderThreads(threads.list);
   }
 
   function wire() {
@@ -602,14 +753,14 @@
     });
     $('#license-filter').addEventListener('change', function (e) { state.license = e.target.value; applyFilters(); });
     $('#method-filter').addEventListener('change', function (e) { setMethod(e.target.value); });
-    wireMatrix();
+    wireThreads();
     $('#year-filter').addEventListener('change', function (e) { state.year = +e.target.value; applyFilters(); });
     $('#sort-filter').addEventListener('change', function (e) { state.sort = e.target.value; applyFilters(); });
     $('#reset-filters').addEventListener('click', function () {
       state.q = ''; state.cats.clear(); state.license = ''; state.method = ''; state.year = 0; state.sort = 'newest';
       $('#search').value = ''; $('#license-filter').value = ''; $('#method-filter').value = ''; $('#year-filter').value = '0';
       $('#sort-filter').value = 'newest';
-      document.querySelectorAll('#cat-filters .chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+      refreshChips();
       applyFilters();
     });
     $('#drawer-close').addEventListener('click', closeDrawer);
