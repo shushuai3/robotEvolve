@@ -1,0 +1,44 @@
+{
+  "id": "facet-0",
+  "name": "Facet-0",
+  "summary": "General VLAs are trained on vision and do poorly when success depends on contact: insertions, snap-fits, connectors. Facet-0 makes force a first-class input and output. A reasoning VLM plans at 5-10 Hz while a precision controller runs at about 200 Hz; a force-residual head takes the wrist force/torque history and corrects coarse action-and-force chunks in a closed loop at about 20 Hz, and a safety critic scores candidate actions and blocks ones that would exceed contact-safe force bounds. Training runs in three stages: pretraining on ManuFacet-1K (about 1,000 hours of force-synchronised teleoperated precision-assembly data) plus assembly VQA, post-training with reward-driven updates from real-world rollouts, and few-shot, safety-bounded adaptation that updates about 6.6% of the weights. On five precision computer-assembly tasks the task-adapted system averaged 82% success versus 15% for the strongest baseline, at 0.5 mm action precision.",
+  "innovation": [
+    "Predicts action and force chunks together and corrects them from measured wrench, instead of treating force as an afterthought to vision.",
+    "A learned safety critic gates execution, so real-world RL can run on contact-rich tasks without damaging parts.",
+    "Releases a 1,000-hour force-synchronised assembly dataset."
+  ],
+  "matters": [
+    "Targets the industrial tasks (electronics assembly) where vision-only VLAs fail, with a large margin over baselines.",
+    "Code and data give other labs a starting point for force-aware foundation models."
+  ],
+  "limits": [
+    "Evaluated on one domain (computer assembly) with a single sensor setup.",
+    "Requires a wrist F/T sensor, which many low-cost arms lack."
+  ],
+  "lineage": "Hierarchical VLM-plus-controller design in the line of Hi Robot, with RL from real rollouts as in pi-0.6 RECAP, adding force as a predicted modality.",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2609.01596",
+      "kind": "paper"
+    },
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/PINE-Lab-NTU/FACET",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://pine-lab-ntu.github.io/facet-0/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Facet-0:+A+Robotic+Foundation+Model+for+Contact-Rich+Precise+Manipulation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "f2c70ea399bd5582"
+}

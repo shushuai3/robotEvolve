@@ -1,0 +1,38 @@
+{
+  "id": "unifolm-wla",
+  "name": "UnifoLM-WLA-1.0",
+  "summary": "UnifoLM-WLA-1.0 is Unitree's open foundation model for its G1 humanoid. It has three parts. UnifoLM-ER-1, a 4B embodied reasoner built on Qwen3-VL-4B and trained on over 5 million embodied samples, handles perception and spatial reasoning. UnifoLM-ER-Flow is a small world model that predicts how the scene will change: it estimates optical flow between timesteps and turns the moving regions into discrete tokens with a VQ-VAE. An MMDiT flow-matching action expert then generates continuous commands split into three streams (end-effector poses, hand or gripper joints, lower-body joints), so one model coordinates the whole body. Trained on about 2,500 hours of real-robot data, a single checkpoint covers 64 tasks without task-specific fine-tuning: 10 whole-body mobile-manipulation tasks (taking out trash, loading a washing machine, making beds) and 54 tabletop dexterous tasks, with parallel grippers and two kinds of multi-finger hand. The reasoner and world-model weights were released on 11 September 2026, the full WLA-1.0-Base weights and fine-tuning code on 28 September.",
+  "innovation": [
+    "Conditions the action expert on predicted scene motion (optical-flow tokens) as a lightweight world model, rather than predicting full future video.",
+    "Separate action streams for end-effector, hands and legs inside one flow-matching decoder, giving whole-body control from a single policy."
+  ],
+  "matters": [
+    "The most capable fully open whole-body humanoid policy, released by the maker of the most widely used research humanoid.",
+    "Makes whole-body VLA research reproducible on hardware many academic labs already own."
+  ],
+  "limits": [
+    "Results are Unitree's own, on Unitree hardware; no paper or independent evaluation.",
+    "Some datasets and LoRA fine-tuning code were still listed as planned at release."
+  ],
+  "lineage": "Follows the pi-0.5 recipe (VLM backbone plus flow-matching action expert), adding a flow-based world model and whole-body action streams. Builds on Unitree's earlier UnifoLM-WMA world-model-action work.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/unitreerobotics/unifolm-wla",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://unigen-x.github.io/unifolm-wla.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=UnifoLM-WLA-1.0:+One+Model+Driven,+Whole-Body+Coordination+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "2671ced05a25af84"
+}

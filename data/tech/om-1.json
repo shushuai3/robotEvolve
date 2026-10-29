@@ -1,0 +1,33 @@
+{
+  "id": "om-1",
+  "name": "OM-1 (Omnibody)",
+  "summary": "OM-1 is Reward AI's manipulation model, trained entirely on robot-free human demonstrations collected with the Omnibody Hand: a wearable seven-degree-of-freedom capture hand with high-rate tactile sensing, pre-contact proximity sensors and global-shutter in-hand cameras. Hand pose is tracked visually and inertially, corrected by electromagnetic sensing (cutting high-speed overshoot error from 24.9 mm to 9.5 mm), and force is recorded along the same trajectory. The model takes images, touch, finger proximity and hand-pose history, each at its sensor's native rate, and outputs motion direction, speed, force and the timing of events such as grasp onset. Pretraining and post-training are merged into one stage. A separate low-level controller, trained with reinforcement learning in simulation, runs on its own high-frequency clock to absorb dynamics, disturbances and inference latency, which lets the same model run on industrial arms, humanoids and mobile robots. Reward AI reports learning new tasks, including dynamic ones such as conveyor sorting, tossing and opening a sealed fridge door, from under 30 minutes of human data.",
+  "innovation": [
+    "Removes the robot from data collection entirely: one capture device (the 'one data interface') feeds a policy for any body.",
+    "Predicts force and event timing, not only poses, and hands execution to an RL-trained controller decoupled from model latency."
+  ],
+  "matters": [
+    "The strongest commercial bet yet that wearable human capture, not teleoperation, can be the primary data source for dexterous robots.",
+    "Comes from the team behind DexCap, the academic system that first made this approach credible."
+  ],
+  "limits": [
+    "Company blog only: no paper, weights, API or independent evaluation; success rates are not published.",
+    "Transfer quality likely depends on how closely the robot hand matches the 7-DoF capture hand."
+  ],
+  "lineage": "Commercial successor to DexCap (Stanford, 2024), the portable mocap glove for dexterous imitation; same goal as UMI's robot-free collection, extended to multi-finger hands with touch.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.rewardai.com/blog/OM-1/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=OM-1:+One+Model,+One+Data+Interface,+Any+Body+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "f4ac2c19679243b2"
+}

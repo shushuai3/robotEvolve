@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated": "2026-10-15",
-  "last_changed": "2026-10-15",
+  "generated": "2026-10-29",
+  "last_changed": "2026-10-29",
   "counts": {
-    "technologies": 144,
-    "labs": 57,
+    "technologies": 152,
+    "labs": 60,
     "categories": 11,
     "methods": 42
   },
@@ -369,6 +369,125 @@
   ],
   "technologies": [
     {
+      "id": "agibot-go3",
+      "name": "AgiBot GO-3 Preview",
+      "full_name": "GO-3 Preview: World Reasoning Action Model (WRAM)",
+      "cat": "wam",
+      "year": 2026,
+      "month": 10,
+      "orgs": [
+        "agibot"
+      ],
+      "parents": [
+        "agibot-go2"
+      ],
+      "influences": [
+        "ge-act-2"
+      ],
+      "license": "closed",
+      "tags": [
+        "WRAM",
+        "reason + predict + act",
+        "post-deployment training",
+        "RoboDojo #1"
+      ],
+      "methods": [
+        "vlm-backbone",
+        "reasoning",
+        "latent-dynamics",
+        "rl-post-training",
+        "robot-experience"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "AgiBot merges its GO policy line and GE world-model line into one model that reasons, predicts consequences and acts.",
+      "site": "https://www.prnewswire.com/apac/news-releases/agibot-introduces-worken-to-measure-productive-robot-work-at-agibot-innovation-day-2026-302923481.html",
+      "detailPath": "data/tech/agibot-go3.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
+    },
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon (Video-to-Sim-to-Real)",
+      "full_name": "Gemini 4 Argon for Robotics",
+      "cat": "sim",
+      "year": 2026,
+      "month": 10,
+      "orgs": [
+        "google-deepmind",
+        "apptronik"
+      ],
+      "influences": [
+        "gemini-robotics-2",
+        "world-labs-r2s2r"
+      ],
+      "license": "closed",
+      "tags": [
+        "Video-to-Sim-to-Real",
+        "auto-built MuJoCo twins",
+        "ERQA 87%",
+        "Apollo 2 cornhole",
+        "Spot",
+        "API"
+      ],
+      "methods": [
+        "llm-planner",
+        "reasoning",
+        "simulation",
+        "synthetic",
+        "sim2real",
+        "human-video",
+        "retargeting"
+      ],
+      "impact": 4,
+      "confidence": "high",
+      "tagline": "A frontier model that watches a video, writes the physics simulation itself, practises in it, and transfers the skill to a real robot.",
+      "site": "https://developers.googleblog.com/gemini-4-argon-for-robotics/",
+      "parents": [],
+      "detailPath": "data/tech/gemini-4-argon.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
+    },
+    {
+      "id": "neuron-ai",
+      "name": "Neuron AI",
+      "full_name": "NEURA Neuron AI: Perception-Language-Action Foundation Model",
+      "cat": "vla",
+      "year": 2026,
+      "month": 10,
+      "orgs": [
+        "neura-robotics"
+      ],
+      "influences": [
+        "pi-mem",
+        "helix"
+      ],
+      "license": "closed",
+      "tags": [
+        "PLA",
+        "3D + touch + audio",
+        "object memory",
+        "5 embodiments",
+        "on-device",
+        "data suits"
+      ],
+      "methods": [
+        "co-training",
+        "cross-embodiment",
+        "wearable",
+        "synthetic",
+        "robot-experience"
+      ],
+      "impact": 2,
+      "confidence": "medium",
+      "tagline": "A robot foundation model that listens and feels: point clouds, touch, force and audio fused with language in one policy.",
+      "site": "https://neura-robotics.com/neuron-ai/",
+      "parents": [],
+      "detailPath": "data/tech/neuron-ai.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
+    },
+    {
       "id": "atlas",
       "name": "Atlas",
       "full_name": "Atlas: A World Model for Spatial Intelligence",
@@ -445,6 +564,91 @@
       "updated": "2026-09-04"
     },
     {
+      "id": "facet-0",
+      "name": "Facet-0",
+      "full_name": "Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation",
+      "cat": "vla",
+      "year": 2026,
+      "month": 9,
+      "orgs": [
+        "ntu-pine"
+      ],
+      "influences": [
+        "pi-06",
+        "hi-robot"
+      ],
+      "license": "code",
+      "tags": [
+        "wrist F/T",
+        "force-residual head",
+        "safety critic",
+        "200 Hz control",
+        "0.5 mm precision",
+        "ManuFacet-1K"
+      ],
+      "methods": [
+        "vlm-backbone",
+        "hierarchical",
+        "rl-post-training",
+        "robot-experience",
+        "teleop",
+        "real-eval"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "A foundation model that predicts forces as well as motions, built for millimetre-precision assembly.",
+      "paper": "https://arxiv.org/abs/2609.01596",
+      "code": "https://github.com/PINE-Lab-NTU/FACET",
+      "site": "https://pine-lab-ntu.github.io/facet-0/",
+      "parents": [],
+      "detailPath": "data/tech/facet-0.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
+    },
+    {
+      "id": "ge-act-2",
+      "name": "GE-Act 2.0",
+      "full_name": "GE-Act 2.0: Pretraining and Scaling a World-Action Model for Robotic Manipulation",
+      "cat": "wam",
+      "year": 2026,
+      "month": 9,
+      "orgs": [
+        "agibot"
+      ],
+      "influences": [
+        "dreamzero",
+        "agibot-world",
+        "vla-jepa"
+      ],
+      "license": "closed",
+      "tags": [
+        "from-scratch WAM",
+        "single-step visual planner",
+        "inverse dynamics",
+        "KASO",
+        "30k hours",
+        "100 tasks zero-shot"
+      ],
+      "methods": [
+        "latent-dynamics",
+        "planning",
+        "video-pretraining",
+        "co-training",
+        "cross-embodiment",
+        "robot-experience",
+        "real-eval"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "A world-action model trained from scratch on manipulation data, not on a pretrained video generator, with a measured data-scaling curve.",
+      "paper": "https://arxiv.org/abs/2609.05588",
+      "site": "https://ge-act-v2.github.io/",
+      "parents": [],
+      "detailPath": "data/tech/ge-act-2.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
+    },
+    {
       "id": "helix-25",
       "name": "Helix 2.5",
       "full_name": "Helix 2.5: Zero-Shot 30-Home Generalization",
@@ -480,6 +684,90 @@
       "detailPath": "data/tech/helix-25.json",
       "added": "2026-09-23",
       "updated": "2026-09-23"
+    },
+    {
+      "id": "om-1",
+      "name": "OM-1 (Omnibody)",
+      "full_name": "OM-1: One Model, One Data Interface, Any Body",
+      "cat": "human-data",
+      "year": 2026,
+      "month": 9,
+      "orgs": [
+        "reward-ai"
+      ],
+      "influences": [
+        "umi",
+        "egoscale",
+        "figure-index"
+      ],
+      "license": "closed",
+      "tags": [
+        "robot-free data",
+        "wearable 7-DoF hand",
+        "tactile + proximity",
+        "no teleop",
+        "<30 min per task",
+        "arms + humanoids"
+      ],
+      "methods": [
+        "wearable",
+        "behavior-cloning",
+        "cross-embodiment",
+        "sim2real",
+        "online-rl"
+      ],
+      "impact": 3,
+      "confidence": "medium",
+      "tagline": "A manipulation policy trained only on people wearing a sensor hand, with no teleoperation and no robot data at all.",
+      "site": "https://www.rewardai.com/blog/OM-1/",
+      "parents": [],
+      "detailPath": "data/tech/om-1.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
+    },
+    {
+      "id": "unifolm-wla",
+      "name": "UnifoLM-WLA-1.0",
+      "full_name": "UnifoLM-WLA-1.0: One Model Driven, Whole-Body Coordination",
+      "cat": "vla",
+      "year": 2026,
+      "month": 9,
+      "orgs": [
+        "unitree"
+      ],
+      "parents": [
+        "pi-05"
+      ],
+      "influences": [
+        "groot-n15",
+        "wholebody-vla"
+      ],
+      "license": "open",
+      "tags": [
+        "6B",
+        "Qwen3-VL-4B reasoner",
+        "optical-flow world tokens",
+        "MMDiT flow matching",
+        "64 tasks on G1",
+        "whole-body"
+      ],
+      "methods": [
+        "vlm-backbone",
+        "flow-matching",
+        "dit",
+        "latent-dynamics",
+        "cross-embodiment",
+        "robot-experience",
+        "real-eval"
+      ],
+      "impact": 3,
+      "confidence": "high",
+      "tagline": "An open 6B humanoid foundation model that drives arms, hands and legs from one set of weights across 64 real tasks.",
+      "code": "https://github.com/unitreerobotics/unifolm-wla",
+      "site": "https://unigen-x.github.io/unifolm-wla.github.io/",
+      "detailPath": "data/tech/unifolm-wla.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
     },
     {
       "id": "dyna-2",
@@ -999,6 +1287,48 @@
       "detailPath": "data/tech/yubi.json",
       "added": "2026-09-04",
       "updated": "2026-09-04"
+    },
+    {
+      "id": "cosmos-3",
+      "name": "Cosmos 3",
+      "full_name": "NVIDIA Cosmos 3: Open Omnimodel for Physical AI",
+      "cat": "wam",
+      "year": 2026,
+      "month": 5,
+      "orgs": [
+        "nvidia-gear"
+      ],
+      "parents": [
+        "cosmos"
+      ],
+      "influences": [
+        "dreamzero",
+        "groot-n15"
+      ],
+      "license": "open",
+      "tags": [
+        "omnimodel",
+        "mixture-of-transformers",
+        "Super / Nano / Edge",
+        "action trajectories",
+        "open weights"
+      ],
+      "methods": [
+        "video-model",
+        "dit",
+        "reasoning",
+        "video-pretraining",
+        "internet-video",
+        "cross-embodiment"
+      ],
+      "impact": 4,
+      "confidence": "medium",
+      "tagline": "One open model that reasons about a scene and then generates both its future video and the robot's action trajectory.",
+      "code": "https://github.com/nvidia/Cosmos",
+      "site": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai",
+      "detailPath": "data/tech/cosmos-3.json",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
     },
     {
       "id": "expo-ft",

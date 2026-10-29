@@ -1,0 +1,33 @@
+{
+  "id": "gemini-4-argon",
+  "name": "Gemini 4 Argon (Video-to-Sim-to-Real)",
+  "summary": "Gemini 4 Argon is Google's general frontier model (released 13 October 2026), and its robotics showcase is a 'Video-to-Sim-to-Real' workflow in which the model automates the slow, manual part of simulation-based robot learning. Given a single human video of a cornhole throw, Argon mapped the scene, retargeted the arm swing to the joints of Apptronik's Apollo 2 humanoid, wrote a MuJoCo simulation, practised there and transferred the behaviour; the real robot then sank seven consecutive shots. From one overhead photo it built a calibrated digital twin and synthesised more than 4,500 domain-randomised episodes, lifting a real task's success from 56% to 75% and cutting completion time from 35 s to 24 s. Other demos: an articulated MuJoCo twin of a foot-pedal bin rehearsed before a Boston Dynamics Spot steps on it, checked by a two-agent verifier; retargeting egocentric human video onto a 76-DoF bimanual humanoid in simulation; dense progress labels and data reweighting for behaviour cloning; and iterative self-improvement on an SO-101 arm (pick-and-place from 58.9 s to 17.4 s). It scores 87% on the ERQA embodied-reasoning benchmark and is available through the Gemini API.",
+  "innovation": [
+    "Uses a general-purpose model to write and calibrate the physics simulation, turning Real2Sim from weeks of engineering into hours.",
+    "Closes the loop end to end: video or photo in, simulated practice, real-robot execution with verification checks before risky steps."
+  ],
+  "matters": [
+    "Makes simulation, the field's most scalable data source, cheap to create for one-off real scenes, which was the bottleneck sim2real always had.",
+    "Shows frontier models acting as robot-learning engineers (building sims, labelling data, writing reward-like progress signals), not just as planners."
+  ],
+  "limits": [
+    "Single-task internal demos; throw count, board distance and failure rates were not disclosed, and a DeepMind researcher noted the robot needed a few real throws first.",
+    "Closed model, available only through paid API and Ultra subscriptions."
+  ],
+  "lineage": "Google's frontier Gemini line, extending the embodied reasoning of Gemini Robotics-ER into automatic simulation building. Same goal as World Labs' Real-to-Sim-to-Real, reached by code generation rather than 3D generative models.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://developers.googleblog.com/gemini-4-argon-for-robotics/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=Gemini+4+Argon+for+Robotics+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "d0f9c22c641c6b20"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "cosmos-3",
+  "name": "Cosmos 3",
+  "summary": "Cosmos 3 folds NVIDIA's previously separate Cosmos models (Predict for video, Reason for understanding, Transfer for sim-to-real styling) into a single 'omnimodel' that reads and writes text, images, video, ambient sound and robot actions. It is a mixture-of-transformers: a reasoning transformer works out object interactions, motion and spatio-temporal relations, and an expert generation transformer then produces video and action trajectories conditioned on that reasoning. Action trajectories are part of pretraining rather than a fine-tuning add-on, so the model can be post-trained directly as the backbone of a world action model. It ships in Super (highest fidelity, for post-training robot and AV models) and Nano (low latency) sizes, with an Edge size announced, as open weights on Hugging Face. NVIDIA reports it ranks first among open models on the RoboArena and RoboLab action-policy leaderboards. Announced at GTC Taipei on 31 May 2026 alongside a 'Cosmos Coalition' of partners including Skild AI, Generalist and Agile Robots.",
+  "innovation": [
+    "Puts video generation, physical reasoning and action generation in one open model instead of a family of single-purpose checkpoints.",
+    "Reason-then-generate split (reasoning transformer feeding a generation transformer) inside one network.",
+    "Trains on action trajectories natively, making it a ready backbone for world action models."
+  ],
+  "matters": [
+    "The first fully open model at this scale that others can post-train into a world action model, which lowers the entry cost for the WAM approach DreamZero and GR00T N2 point toward.",
+    "Its partner coalition means several robot-foundation-model companies may build on a shared open backbone."
+  ],
+  "limits": [
+    "Leaderboard claims are NVIDIA's own; no technical report was linked at launch.",
+    "Parameter counts differ between NVIDIA's GitHub release and press coverage; check the model cards.",
+    "The Edge model for on-robot inference was announced but not released at launch."
+  ],
+  "lineage": "Successor to the Cosmos world foundation models (Predict / Reason / Transfer 2.5), merged into one omnimodel with native action output.",
+  "links": [
+    {
+      "label": "Code / weights",
+      "url": "https://github.com/nvidia/Cosmos",
+      "kind": "code"
+    },
+    {
+      "label": "Project page",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=NVIDIA+Cosmos+3:+Open+Omnimodel+for+Physical+AI+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "8c413859266e46bc"
+}

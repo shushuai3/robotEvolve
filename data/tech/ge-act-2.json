@@ -1,0 +1,39 @@
+{
+  "id": "ge-act-2",
+  "name": "GE-Act 2.0",
+  "summary": "Most world action models start from a large pretrained video generator and bolt an action head on. GE-Act 2.0 instead trains every generative and action component from scratch on manipulation data. It has three parts: a control-oriented autoencoder that compresses observations heavily while keeping what matters for actions and instructions; a single-step visual planner that predicts the whole future state in one pass rather than denoising a video; and an inverse dynamics model that reads actions off the predicted future. The planner and inverse dynamics model can be pretrained separately (the planner on action-free video), then trained jointly with KASO, a selection step that keeps only predicted futures consistent with the recorded actions. Pretrained checkpoints are evaluated with no per-task fine-tuning on 100 tasks across 20 skill groups, including held-out scenes, lighting and objects. Scaling co-training data from 300 to 30,000 hours lifted success from 17.1% to 44.1% on the AgiBot G1 suite and from 13.4% to 31.1% on G2, even though G2 was under 2% of the data.",
+  "innovation": [
+    "Shows a world action model does not need an internet-video generator as its starting point; manipulation data alone suffices at 30k hours.",
+    "One-pass future prediction (no iterative video denoising) keeps planning cheap enough for control.",
+    "KASO filters imagined futures by consistency with real actions, so action-free and action-labelled data can be combined."
+  ],
+  "matters": [
+    "One of the clearest published data-scaling curves for a world action model on real robots, with per-skill coverage strongly predicting zero-shot success (Spearman 0.85).",
+    "Evidence of cross-embodiment transfer: the G2 robot gained 17.7 points from data that was mostly from G1."
+  ],
+  "limits": [
+    "Absolute zero-shot success is still under 50%.",
+    "No code or weights released; results are on AgiBot's own robots."
+  ],
+  "lineage": "Second generation of the GE-Act policy inside AgiBot's Genie Envisioner world-model platform (2025).",
+  "links": [
+    {
+      "label": "Paper",
+      "url": "https://arxiv.org/abs/2609.05588",
+      "kind": "paper"
+    },
+    {
+      "label": "Project page",
+      "url": "https://ge-act-v2.github.io/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GE-Act+2.0:+Pretraining+and+Scaling+a+World-Action+Model+for+Robotic+Manipulation+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "46b7c23c8a5520e8"
+}

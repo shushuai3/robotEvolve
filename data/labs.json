@@ -36,7 +36,7 @@
         "blog": "https://www.figure.ai/news",
         "site": "https://www.figure.ai/"
       },
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "google-deepmind",
@@ -56,7 +56,7 @@
         "site": "https://deepmind.google/",
         "github": "https://github.com/google-deepmind"
       },
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "huggingface",
@@ -75,7 +75,7 @@
         "site": "https://huggingface.co/lerobot",
         "blog": "https://huggingface.co/blog"
       },
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "mit-csail",
@@ -113,7 +113,7 @@
         "site": "https://research.nvidia.com/labs/gear/",
         "github": "https://github.com/NVIDIA/Isaac-GR00T"
       },
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "physical-intelligence",
@@ -132,7 +132,7 @@
         "site": "https://www.pi.website/",
         "github": "https://github.com/Physical-Intelligence/openpi"
       },
-      "last_checked": "2026-09-23"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "stanford-iris",
@@ -270,12 +270,12 @@
         "data",
         "vla"
       ],
-      "notes": "AgiBot World — one of the largest open real-robot manipulation datasets; GO-1 / GO-2 ViLLA policy family.",
+      "notes": "AgiBot World — one of the largest open real-robot manipulation datasets; GO-1 / GO-2 ViLLA policy family. GE-Act world-action models (Genie Envisioner line) and GO-3 / WRAM (Oct 2026).",
       "sources": {
         "site": "https://www.agibot.com/",
         "github": "https://github.com/OpenDriveLab/AgiBot-World"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "ai2",
@@ -837,14 +837,15 @@
       "priority": 3,
       "focus": [
         "rl",
-        "sim"
+        "sim",
+        "vla"
       ],
-      "notes": "Hardware-first (G1/H1 humanoids, arms). Matters mainly as the cheap platform much open manipulation research now runs on.",
+      "notes": "Hardware-first (G1/H1 humanoids, arms). Matters mainly as the cheap platform much open manipulation research now runs on. Since Sep 2026 also ships open foundation models (UnifoLM-WLA-1.0).",
       "sources": {
         "site": "https://www.unitree.com/",
         "github": "https://github.com/unitreerobotics"
       },
-      "last_checked": "2026-08-31"
+      "last_checked": "2026-10-29"
     },
     {
       "id": "freiburg",
@@ -955,6 +956,54 @@
       "sources": {
         "updates": "https://amilabs.xyz/updates",
         "site": "https://amilabs.xyz/"
+      }
+    },
+    {
+      "id": "reward-ai",
+      "name": "Reward AI",
+      "type": "industry",
+      "country": "US",
+      "priority": 2,
+      "focus": [
+        "human-data",
+        "il"
+      ],
+      "notes": "Spin-out behind DexCap (Stanford). Omnibody stack: a wearable 7-DoF capture hand and OM-1, a manipulation policy trained only on robot-free human demonstrations.",
+      "sources": {
+        "blog": "https://www.rewardai.com/blog/",
+        "site": "https://www.rewardai.com/"
+      }
+    },
+    {
+      "id": "neura-robotics",
+      "name": "NEURA Robotics",
+      "type": "industry",
+      "country": "DE",
+      "priority": 3,
+      "focus": [
+        "vla",
+        "human-data"
+      ],
+      "notes": "German maker of the 4NE1 humanoid and MAiRA cobots. Neuron AI is its in-house multimodal (vision, touch, audio) foundation model.",
+      "sources": {
+        "site": "https://neura-robotics.com/",
+        "blog": "https://neura-robotics.com/neuron-ai/"
+      }
+    },
+    {
+      "id": "ntu-pine",
+      "name": "NTU — PINE Lab (Ziwei Wang)",
+      "type": "academic",
+      "country": "SG",
+      "priority": 3,
+      "focus": [
+        "vla",
+        "rl"
+      ],
+      "notes": "Nanyang Technological University. Facet-0: force-aware foundation model for contact-rich precision assembly.",
+      "sources": {
+        "site": "https://pine-lab-ntu.github.io/",
+        "github": "https://github.com/PINE-Lab-NTU"
       }
     }
   ]

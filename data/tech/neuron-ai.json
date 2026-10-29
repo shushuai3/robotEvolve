@@ -1,0 +1,33 @@
+{
+  "id": "neuron-ai",
+  "name": "Neuron AI",
+  "summary": "Announced on 14 October 2026, Neuron AI is NEURA Robotics' foundation model, described as a Perception-Language-Action (PLA) model rather than a VLA because vision is one of several equal inputs. It encodes 3D vision (point clouds and depth), tactile and force-torque data from hands and grippers, audio (contact sounds and spoken instructions), robot state and language, aligns them in a shared representation over time, and decodes a single action output. A memory layer keeps track of objects that leave the camera's view. Training combines real-robot data from NEURA's data-collection 'gyms', simulation-amplified data, and human demonstrations recorded in sensor-equipped suits, plus industrial data partnerships with Schaeffler and Bosch. One model runs on five embodiments, including the 4NE1 humanoid in several generations and wheeled and bimanual platforms, with local real-time inference and no cloud dependence. An 11-minute autonomous laundry run on 4NE1 was scheduled for NVIDIA GTC Berlin.",
+  "innovation": [
+    "Treats touch, force and sound as primary inputs alongside vision in a single cross-embodiment policy.",
+    "Explicit object permanence via a memory layer."
+  ],
+  "matters": [
+    "Europe's most prominent in-house robot foundation model, and one of few commercial models to fuse audio and touch.",
+    "On-device inference with no cloud connection suits industrial customers who keep production data on site."
+  ],
+  "limits": [
+    "No paper, model size, architecture details or independent benchmarks; capability claims are company-reported.",
+    "The product page lists the supported embodiments inconsistently."
+  ],
+  "lineage": "Joins the commercial cross-embodiment foundation models (Helix, GR00T, pi), with memory as in pi's MEM and a heavier emphasis on non-visual sensing.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://neura-robotics.com/neuron-ai/",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=NEURA+Neuron+AI:+Perception-Language-Action+Foundation+Model+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "bf14a4009ca109b8"
+}

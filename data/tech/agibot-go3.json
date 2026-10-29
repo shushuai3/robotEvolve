@@ -1,0 +1,33 @@
+{
+  "id": "agibot-go3",
+  "name": "AgiBot GO-3 Preview",
+  "summary": "Shown at AgiBot Innovation Day in Shanghai on 29 October 2026, GO-3 Preview is AgiBot's next embodied foundation model, built around WRAM (World Reasoning Action Model): a single framework that does high-level reasoning, predicts how the world will respond to an action, and outputs the action. It merges the company's two research lines, the GO vision-language-action policies and the GE (Genie Envisioner) world-action models. AgiBot frames training as 'Physical Intelligence Scaling': pretraining followed by post-training that continues after deployment on fielded robots. The company reports first place on RoboDojo (task success and process score) and RoboColiseum, and the top overall score on RoboTwin, and claims zero- and few-shot generalisation beyond learned task sequences. The same event introduced WITA-Omni, a full-duplex speech, expression and motion interaction model, and Worken, a proposed metric for productive robot work (active robots x autonomous hours x output efficiency).",
+  "innovation": [
+    "Combines reasoning, world prediction and action in one model, joining AgiBot's VLA and world-action-model families.",
+    "Treats post-deployment learning as part of the training recipe rather than a separate stage."
+  ],
+  "matters": [
+    "A sign the field's two leading architectures (VLA with a VLM backbone, and world action models) are converging into one model in industry.",
+    "AgiBot has one of the largest deployed fleets in China, so continued training after deployment is a meaningful data source."
+  ],
+  "limits": [
+    "Preview only: announced by press release with no paper, architecture details, parameter count or scores.",
+    "All benchmark rankings are company-reported."
+  ],
+  "lineage": "Successor to GO-2, absorbing the world-prediction approach of GE-Act 2.0.",
+  "links": [
+    {
+      "label": "Project page",
+      "url": "https://www.prnewswire.com/apac/news-releases/agibot-introduces-worken-to-measure-productive-robot-work-at-agibot-innovation-day-2026-302923481.html",
+      "kind": "site"
+    },
+    {
+      "label": "Search Google Scholar",
+      "url": "https://scholar.google.com/scholar?q=GO-3+Preview:+World+Reasoning+Action+Model+(WRAM)+robot+manipulation",
+      "kind": "search"
+    }
+  ],
+  "added": "2026-10-29",
+  "updated": "2026-10-29",
+  "content_hash": "6ed612418b4b5509"
+}
